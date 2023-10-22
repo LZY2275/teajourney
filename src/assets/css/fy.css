@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+  }
+  /* 隐藏滚动条 */
+  .container::-webkit-scrollbar {
+      display: none;
+  }
+  /* 顶部导航栏 谷歌*/
+  .container {
+    width: 100%;
+    height: 100%;
+    /* 溢出y轴保留滚动条，x轴隐藏滚动条 */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    /* 放在父级上，沿着y轴滑动  */
+    scroll-snap-type: y mandatory;
+      /*隐藏滚动条 兼容ie.火狐*/
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE 10+ */
+  
+  }
+  
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .navbar li {
+    list-style: none;
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+  
+  .navbar li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f4f4f4;
+  }
+  
+  .navbar li a:hover {
+    color: #22bbff;
+  }
+  /* 内容 */
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    color: #f4f4f4;
+  
+    /* 放在子元素上，和上面那个父元素一伙的 */
+    scroll-snap-align: center;
+  }
