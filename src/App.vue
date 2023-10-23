@@ -1,22 +1,157 @@
 <template>
   <div id="app">
-    <!-- 右侧导航栏 -->
-    <div class="nav">
-      <p class="nav-title">种茶</p>
-      <template>
-        <t-steps :defaultCurrent="1"
-                  separator="dashed"
-                  layout="vertical"
-                  theme="dot">
-          <t-step-item title="种茶" content="提示文字" />
-          <t-step-item title="采茶" content="提示文字" />
-          <t-step-item title="销茶" content="提示文字" />
-          <t-step-item title="品茶" content="提示文字" />
-        </t-steps>
-      </template>
+    <!-- 首页 -->
+    <div style="width: 100vw;height: 100vh;">
+        <h1>首页</h1>
+        <p class="lead">HOME</p>
     </div>
+    <div style="display: flex;">
+      <!-- 左侧导航栏 -->
+      <div class="nav">
+        <p class="nav-title">{{ title[current] }}</p>
+        <t-divider></t-divider>
+        <template>
+          <t-steps :defaultCurrent="current"
+                    separator="dashed"
+                    layout="vertical"
+                    theme="dot"
+                    @change="onChangeSteps">
+            <t-step-item title="种茶" content="春风吹绿苗" />
+            <t-step-item title="采茶" content="晨朝掇灵芽" />
+            <t-step-item title="销茶" content="茶香弥漫市" />
+            <t-step-item title="品茶" content="圭璧无纤瑕" />
+          </t-steps>
+        </template>
+      </div>
+      
+      <!-- 右侧内容区 -->
+      <div class="content-view" id="content-view" style="overflow: auto;" >
+        <section id="plant">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
+          <h1>种茶</h1>
+          <p class="lead">RHODES ISLAND</p>
+        </section>
+        <section id="pick">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
+          <h1>采茶</h1>
+          <p class="lead">INFORMATION</p>
+        </section>
+        <section id="sale">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
+          <h1>销茶</h1>
+          <p class="lead">STAFF</p>
+        </section>
+        <section id="taste">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
+          <h1>品茶</h1>
+          <p class="lead">WORLD</p>
+        </section>
+      </div>
+    </div>
+
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        current:0,
+        title:['种茶','采茶','销茶','品茶'],
+        scrollHeight:0, //当前滚轮高度
+        metaHeight:15,  //最小滚动距离
+        metaTime: 10,   //最小执行时间
+        targetHeight:0,     //目标区域滚轮高度
+        clientHeight:0,
+      };
+    },
+    mounted() {
+      
+    },
+    beforeDestroy() {
+      
+    },
+    methods: {
+      onChangeSteps(e){
+        this.current=e;
+        this.toArea(e)
+      },
+      handleScroll(e){
+        // console.log(e)
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        this.scrollHeight = scrollTop
+        let clientHeight = window.innerHeight;
+        this.clientHeight = clientHeight
+        // console.log(scrollTop,clientHeight);
+        if(scrollTop >= clientHeight && scrollTop < 2*clientHeight){
+          this.current=0;
+        }else if(scrollTop >= 2*clientHeight && scrollTop < 3*clientHeight){
+          this.current=1
+        }else if(scrollTop >= 3*clientHeight && scrollTop < 4*clientHeight){
+          this.current=2;
+        }else if(scrollTop >= 4*clientHeight){
+          this.current=3;
+        }
+      },
+      toArea(index) { // 这里的index是左侧导航栏传的参数，是不同区域设定好的索引值
+        switch (index) { // 匹配不同区域的滚轮高度
+          case 0: //区域一
+            this.targetHeight= this.clientHeight  //这里将第一步获取到的滚轮高度取整
+            break;
+          case 1: //区域二
+            this.targetHeight= 2*this.clientHeight
+            break;
+          case 2: //区域三
+            this.targetHeight= 3*this.clientHeight
+            break;
+          case 3: //区域四
+            this.targetHeight= 4*this.clientHeight
+            break;
+          default: //默认：区域一
+            this.targetHeight= this.clientHeight
+            break;
+        }
+
+        // 当指定区域高度大于当前滚动条位置时（即目标区在当前滚轮的下方）
+        if(this.targetHeight> this.scrollHeight){
+          // 计算高度差
+          let x = this.targetHeight- this.scrollHeight;
+          // 先加上余数，保证高度差能整除设定的最小移动单位
+          document.documentElement.scrollTop += x%this.metaHeight;
+          x -= x%this.metaHeight;
+          const goto = setInterval(() => { // 建立执行操作的定时器
+            document.documentElement.scrollTop  += this.metaHeight; // 控制移动滚动条
+            x-= this.metaHeight; // 缩减高度差
+            if (x == 0) { // 到达指定位置后清除定时器
+              clearInterval(goto); //清除定时器
+            }
+          }, this.metaTime);
+        }
+        // 当指定区域高度小于当前滚动条位置时（即目标区在当前滚轮的上方）
+        else{
+          // 计算高度差
+          let x = this.scrollHeight - this.targetHeight;
+          // 先减去余数，保证高度差能整除设定的最小移动单位
+          document.documentElement.scrollTop -= x%this.metaHeight;
+          x -= x%this.metaHeight;
+          const goto = setInterval(() => {
+            document.documentElement.scrollTop -= this.metaHeight;
+            x-= this.metaHeight;
+            if (x == 0) {
+              clearInterval(goto); //清除定时器
+            }
+          }, 1);
+        }
+      },
+    },
+    created(){
+      window.addEventListener('scroll', this.handleScroll);
+      let clientHeight = window.innerHeight;
+      this.clientHeight = clientHeight
+    }
+
+  };
+</script>
 
 
 <style lang="less">
@@ -31,12 +166,37 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #FFFEF2;
 }
 
 .nav{
-  padding: 48px 30px;
+  padding: 48px 0 30px 30px;
+  height: 50vh;
+  width: 200px;
+  position: sticky;
+  top: 0;
 }
 .nav-title{
   color: var(--td-brand-color);font-size: 36px; font-weight: 600; text-align: left; margin-bottom: 36px;
 }
+
+.content-view{
+  width: calc(100vw - 230px);
+  height: 400vh;
+  margin-left: 230px;
+}
+
+/* 内容 */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    /* 放在子元素上，和上面那个父元素一伙的 */
+    scroll-snap-align: center;
+  }
+
 </style>
