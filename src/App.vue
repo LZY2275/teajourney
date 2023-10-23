@@ -183,7 +183,6 @@
 .content-view{
   width: calc(100vw - 230px);
   height: 400vh;
-  margin-left: 230px;
 }
 
 /* 内容 */
