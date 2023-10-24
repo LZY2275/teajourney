@@ -25,26 +25,26 @@
           </template>
         </div>
         <div>
-          <p>{{ teatitle }}</p>
+          <TeaInfoView></TeaInfoView>
         </div>
       </div>
       
       <!-- 右侧内容区 -->
       <div class="content-view" id="content-view" style="overflow: auto;" >
         <section id="plant">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <PlantView></PlantView>
         </section>
         <section id="pick">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <PickView></PickView>
         </section>
         <section id="sale">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <SaleView></SaleView>
         </section>
         <section id="taste">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <TasteView></TasteView>
         </section>
       </div>
@@ -59,6 +59,7 @@ import PickView from './views/PickView.vue';
 import PlantView from './views/PlantView.vue';
 import SaleView from './views/SaleView.vue';
 import TasteView from './views/TasteView.vue';
+import TeaInfoView from './views/TeaInfoView.vue';
 
   export default {
     components:{
@@ -67,6 +68,7 @@ import TasteView from './views/TasteView.vue';
     PickView,
     SaleView,
     TasteView,
+    TeaInfoView,
 },
     data() {
       return {
@@ -186,9 +188,11 @@ import TasteView from './views/TasteView.vue';
 .nav{
   padding: 48px 0 30px 30px;
   height: 50vh;
-  width: 200px;
+  width: 270px;
   position: sticky;
   top: 0;
+  background: linear-gradient(180deg, #FFFEF2 0%, rgba(204, 204, 204, 0) 100%);
+
 }
 .nav-title{
   color: var(--td-brand-color);font-size: 36px; font-weight: 600; text-align: left; margin-bottom: 36px;
@@ -203,9 +207,9 @@ import TasteView from './views/TasteView.vue';
 section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
     width: 100%;
     height: 100vh;
     /* 放在子元素上，和上面那个父元素一伙的 */

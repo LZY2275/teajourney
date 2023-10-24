@@ -1,5 +1,5 @@
 <template>
-    <!-- <div style="height: 35vh; width: 280px ;overflow-y: auto;" class="tea-info-container">
+    <div style="height: 35vh; width: 280px ;overflow-y: auto;" class="tea-info-container">
         <p class="tea-info-title">{{ teatitle }}</p>
         <div style="width: 100%;display: flex;margin-bottom: 8px;">
             <div class="tea-info-card">
@@ -11,14 +11,14 @@
         </div>
         <img src="../assets/img/teaimg.png" alt="" class="tea-info-img">
         <p class="tea-info-content" v-html="teacontent"></p>
-    </div> -->
+    </div>
    
 
 </template>
 
 <script>
 export default {
-    name:'PlantView',
+    name:'TeaInfoView',
     data() {
       return {
         teatitle:'祁门红茶',
@@ -45,10 +45,8 @@ export default {
 </script>
 
 <style scoped>
-    /* .tea-info-container{
-        position: relative;
-        top: calc(65vh - 55px);
-        right: 55px;
+    .tea-info-container{
+        margin-left: 20px;
     }
     .tea-info-img{
         width: 260px;
@@ -79,6 +77,6 @@ export default {
         width: 48%;
         border-radius: 5px;
         border: 1px solid rgba(0, 0, 0, 0.5);;
-    } */
+    }
 
 </style>
