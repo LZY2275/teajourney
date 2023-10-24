@@ -10,6 +10,12 @@
 
 export default {
   name: 'HomeView',
+  data(){
+    return{
+
+    };
+  },
 
 }
 </script>
+
