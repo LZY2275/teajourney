@@ -2,49 +2,50 @@
   <div id="app">
     <!-- 首页 -->
     <div style="width: 100vw;height: 100vh;">
-        <h1>首页</h1>
-        <p class="lead">HOME</p>
+      <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views 高度为100vh-->
+      <HomeView></HomeView>
     </div>
     <div style="display: flex;">
       <!-- 左侧导航栏 -->
-      <div class="nav">
-        <p class="nav-title">{{ title[current] }}</p>
-        <t-divider></t-divider>
-        <template>
-          <t-steps :defaultCurrent="current"
-                    separator="dashed"
-                    layout="vertical"
-                    theme="dot"
-                    @change="onChangeSteps">
-            <t-step-item title="种茶" content="春风吹绿苗" />
-            <t-step-item title="采茶" content="晨朝掇灵芽" />
-            <t-step-item title="销茶" content="茶香弥漫市" />
-            <t-step-item title="品茶" content="圭璧无纤瑕" />
-          </t-steps>
-        </template>
+      <div>
+        <div class="nav">
+          <p class="nav-title">{{ title[current] }}</p>
+          <t-divider></t-divider>
+          <template>
+            <t-steps :defaultCurrent="current"
+                      separator="dashed"
+                      layout="vertical"
+                      theme="dot"
+                      @change="onChangeSteps">
+              <t-step-item title="种茶" content="春风吹绿苗" />
+              <t-step-item title="采茶" content="晨朝掇灵芽" />
+              <t-step-item title="销茶" content="茶香弥漫市" />
+              <t-step-item title="品茶" content="圭璧无纤瑕" />
+            </t-steps>
+          </template>
+        </div>
+        <div>
+          <p>{{ teatitle }}</p>
+        </div>
       </div>
       
       <!-- 右侧内容区 -->
       <div class="content-view" id="content-view" style="overflow: auto;" >
         <section id="plant">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
-          <h1>种茶</h1>
-          <p class="lead">RHODES ISLAND</p>
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <PlantView></PlantView>
         </section>
         <section id="pick">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
-          <h1>采茶</h1>
-          <p class="lead">INFORMATION</p>
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <PickView></PickView>
         </section>
         <section id="sale">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
-          <h1>销茶</h1>
-          <p class="lead">STAFF</p>
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <SaleView></SaleView>
         </section>
         <section id="taste">
-          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 230px） -->
-          <h1>品茶</h1>
-          <p class="lead">WORLD</p>
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 280px） -->
+          <TasteView></TasteView>
         </section>
       </div>
     </div>
@@ -53,7 +54,20 @@
 </template>
 
 <script>
+import HomeView from './views/HomeView.vue';
+import PickView from './views/PickView.vue';
+import PlantView from './views/PlantView.vue';
+import SaleView from './views/SaleView.vue';
+import TasteView from './views/TasteView.vue';
+
   export default {
+    components:{
+    HomeView,
+    PlantView,
+    PickView,
+    SaleView,
+    TasteView,
+},
     data() {
       return {
         current:0,
