@@ -9,7 +9,7 @@
           <p>{{ top_text2 }}</p>
         </div>
       </div>
-      <div style="display: flex;margin-left: 57.958vw;">
+      <div style="display: flex;margin-left: 59.958vw;">
         <div class="top">
           <p>{{ top_text3 }}</p>
         </div>
@@ -44,10 +44,10 @@ export default {
 </script>
 
 <style scoped>
-  @font-face {  
+  /* @font-face {  
     font-family: "HanaMinA";  
-    src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),  
-  } 
+    src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"), 
+  }  */
   .top{
     font-size: 16px;
     font-weight: 700;
@@ -63,7 +63,7 @@ export default {
     padding-left: 4.58vw;
     display: flex;
     color: rgb(255, 255, 255, 1);
-    font-family: 'HanaMinA';
+    /* font-family: 'HanaMinA'; */
   }
   .titleen{
     font-size: 28px;
@@ -78,8 +78,8 @@ export default {
     background-image: url("../assets/img/first.png");
     background-repeat: no-repeat;
     background-clip: padding-box;
-    background-size: calc(100vw / 1440px) auto;
-    background-position: -9vw 20vh;
+    background-size: cover;
+    background-position: 0 20vh;
   }
 
 </style>
