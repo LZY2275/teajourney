@@ -18,10 +18,11 @@
         </div>
       </div>
     </div>
-    <div>
+    <div style="padding-left: 5.347vw;display: flex;">
       <div class="title">{{ title }}</div>
-      <p class="titleen">Tea Journey</p>
+      <div></div>
     </div>
+    <p class="titleen">Tea Journey</p>
   </div>
 </template>
 
