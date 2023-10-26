@@ -18,15 +18,18 @@
         </div>
       </div>
     </div>
-    <div>
+    <div style="padding-top: 4.5898vh;padding-left: 4.58vw;display: flex;">
       <div class="title">{{ title }}</div>
-      <p class="titleen">Tea Journey</p>
+      <div v-html="right" style="margin-left: 63.26vw;"></div>
     </div>
+    <div class="titleen" style="display: flex;padding-left: 4.58vw;">
+      <p>{{ titleen }}</p>
+    </div>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'HomeView',
@@ -37,6 +40,8 @@ export default {
       top_text3:'DATA',
       top_text4:'VISUALIZATION',
       title:'灵芽之旅',
+      right:'<p style="color: rgba(255, 255, 255, 1);font-weight: 10;text-align: right;font-size: 20px;"><span style="font-weight: 500;font-size: 24px">灵芽[ líng yá ]：</span><br>1. 瑞草。<br>2. 指<span style="font-weight: 500;font-size: 24px">茶叶</span>。<br>3.神明本性。</p>',
+      titleen:'Tea Journey',
     };
   },
 
@@ -44,10 +49,10 @@ export default {
 </script>
 
 <style scoped>
-  /* @font-face {  
+  @font-face {  
     font-family: "HanaMinA";  
-    src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"), 
-  }  */
+    src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("truetype"), 
+  } 
   .top{
     font-size: 16px;
     font-weight: 700;
@@ -59,17 +64,16 @@ export default {
     text-shadow: 0px 1.82px 7.29px;
     font-size: 9.77vh;
     font-weight: 400;
-    padding-top: 4.5898vh;
-    padding-left: 4.58vw;
-    display: flex;
     color: rgb(255, 255, 255, 1);
-    /* font-family: 'HanaMinA'; */
+    vertical-align: top;
+    font-family: "HanaMinA", sans-serif;
   }
   .titleen{
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 500;
     letter-spacing: 0px;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: -5vh;
   }
   .global{
     width: 100vw;
