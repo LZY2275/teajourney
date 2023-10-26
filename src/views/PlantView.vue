@@ -218,6 +218,7 @@ export default {
                         "translate("+(0.5*radius+5)+")"
                         + (finalAngle > 0 & finalAngle < Math.PI ? "" : "rotate(180)")
                 })
+                
                 .attr("text-anchor", (d) => (d.endAngle + d.startAngle)/2 > Math.PI
                     ? "end"
                     : null)
