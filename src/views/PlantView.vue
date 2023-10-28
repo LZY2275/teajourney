@@ -75,6 +75,7 @@ export default {
 
             var mouse_over_in_action = false;
             var province_click_current = -1;
+            var name_click_current = -1;
 
 
 
@@ -590,7 +591,9 @@ export default {
                 .attr("d", hover_province_arc)
                 .style("fill", "none")
                 .style("pointer-events", "all")
-                .on("click", mouse_click_province);
+                .on("click", mouse_click_province)
+                .on('mouseover',mouse_over_province)
+                .on('mouseout',mouse_out)
 
             
             d3.selectAll('.name-pie')
@@ -600,6 +603,7 @@ export default {
             
             function mouse_click_province(d,i){
                 d.stopPropagation();
+                name_click_current = -1;
 
                 // 上次点击的和这次点击的不同
                 if(province_click_current != i.province){
@@ -656,8 +660,7 @@ export default {
                 d3.select('#name-label-circle-'+i.index)
                         .style('fill',line_data[0][0].strokeStyle)
 
-                // 显示有左边的内容
-                // ……
+
 
             }
 
@@ -666,6 +669,20 @@ export default {
                 mouse_over_in_action = false;
                 ctx.clearRect(-width / 2, -height / 2, width, height);
                 clear_outer_ring();
+
+                // 如果当前有外圈的显示，只显示线+圆
+                if(name_click_current != -1){
+                    var line_data = cover_data.filter(function(c){ return c[0].target_a === name_click_current})
+                    // console.log(line_data);
+                    ctx.globalAlpha = 0.8;
+                    create_lines('character',line_data)
+                    d3.select('#name-pie-'+name_click_current)
+                        .style('fill',line_data[0][0].strokeStyle)
+                    d3.select('#name-label-circle-'+name_click_current)
+                        .style('fill',line_data[0][0].strokeStyle)
+                    return;
+                }
+                
 
                 // 如果上次选了省份，移除后应该仍然显示省份的茶叶数据
                 if(province_click_current != -1){
@@ -701,22 +718,57 @@ export default {
 
             function mouse_click_name(d,i){
                 d.stopPropagation();
+                // ctx.clearRect(-width / 2, -height / 2, width, height);
+                // clear_outer_ring();
+                
+                // var line_data = cover_data.filter(function(c){ return c[0].target_a === i.index})
+                // var province_index = line_data[0][0].source_a;
+                // // console.log(province_index)
+                // province_click_current = province_index;
+
+                // create_province_current_selected_line(province_index);
+
+                // 若之前选择的茶和现在选择的茶不同，点击后显示该茶,省份选择数据清空
+                if(name_click_current != i.index){
+                    province_click_current = -1;
+                    name_click_current = i.index
+                    clear_outer_ring();
+                    var line_data = cover_data.filter(function(c){ return c[0].target_a === i.index})
+                    ctx.globalAlpha = 0.8;
+                    create_lines("character", line_data );
+                    d3.select('#name-pie-'+i.index)
+                        .style('fill',line_data[0][0].strokeStyle)
+                    d3.select('#name-label-circle-'+i.index)
+                        .style('fill',line_data[0][0].strokeStyle)
+                
+                }else{
+                    name_click_current = -1;
+                    d3.select('#name-pie-'+i.index)
+                        .style('fill','#00000000')
+                }
+
+                // console.log('点击了茶index:'+i.index);  
+            }
+
+            function mouse_over_province(d,i){
+                d.stopPropagation();
+                // console.log(i.index);
+                mouse_over_in_action = true;
                 ctx.clearRect(-width / 2, -height / 2, width, height);
                 clear_outer_ring();
-                var line_data = cover_data.filter(function(c){ return c[0].target_a === i.index})
-                var province_index = line_data[0][0].source_a;
-                // console.log(province_index)
-                province_click_current = province_index;
-
-                create_province_current_selected_line(province_index);
-
-                console.log('点击了茶index:'+i.index);
-
-                
+                var line_data = cover_data.filter(function(c){ return c[0].source_a === i.index})
+                // console.log(line_data);
+                ctx.globalAlpha = 0.3
+                create_lines('character',line_data)
+                for(var i = 0 ; i<line_data.length ;i++){
+                    var index = line_data[i][0].target_a
+                    d3.select('#name-pie-'+index)
+                        .style('fill',line_data[0][0].strokeStyle)
+                    d3.select('#name-label-circle-'+index)
+                        .style('fill',line_data[0][0].strokeStyle)
+                }
             }
-                
-
-            
+                    
 
         },
     },
