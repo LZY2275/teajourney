@@ -9,7 +9,7 @@
           <p>{{ top_text2 }}</p>
         </div>
       </div>
-      <div style="display: flex;margin-left: 59.958vw;">
+      <div style="display: flex;margin-left: 59.26vw;">
         <div class="top">
           <p>{{ top_text3 }}</p>
         </div>
@@ -20,9 +20,9 @@
     </div>
     <div style="padding-top: 4.5898vh;padding-left: 4.58vw;display: flex;">
       <div class="title">{{ title }}</div>
-      <div v-html="right" style="margin-left: 63.26vw;"></div>
+      <div v-html="right" style="margin-left: 59.26vw;"></div>
     </div>
-    <div class="titleen" style="display: flex;padding-left: 4.58vw;">
+    <div class="titleen" style="display: flex;padding-left: 4.58vw;margin-top: 2;">
       <p>{{ titleen }}</p>
     </div>
 
@@ -69,11 +69,10 @@ export default {
     font-family: "HanaMinA", sans-serif;
   }
   .titleen{
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 500;
     letter-spacing: 0px;
     color: rgba(255, 255, 255, 0.5);
-    margin-top: -5vh;
   }
   .global{
     width: 100vw;
