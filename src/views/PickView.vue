@@ -340,91 +340,163 @@
 
       createGantt(){
         let progressChart = echarts.init(this.$refs.ganttChart);
+        let dataAxis = ['碧螺春', '滇青', '西湖龙井', '玉露', '黄山毛峰', '白毫银针', '白牡丹', '黄山白茶', '贡眉', '寿眉', '蒙顶黄芽', '霍山黄芽', '广东大叶青', '海马宫茶', '北港毛尖', '铁观音', '北斗', '水仙', '肉桂', '大红袍', '祁门红茶', '滇红', '金骏眉', '正山小种', '六堡茶', '普洱茶', '泾阳茯砖茶', '安化黑茶', '千两茶'];
+        let data = ['2022-04-07', '2022-04-15', '2022-04-18', '2022-04-19', '2022-04-15', '2022-03-18', '2022-04-05', '2022-04-08', '2022-10-15', '2022-04-28', '2022-04-12', '2022-04-11', '2022-05-15', '2022-05-06', '2022-04-20', '2022-05-14', '2022-05-02', '2022-05-07', '2022-05-08', '2022-05-15', '2022-05-10', '2022-11-12', '2022-05-25', '2022-05-30', '2022-05-25', '2022-11-15', '2022-05-07', '2022-06-10', '2022-08-24']; // 结束时间
         let option = {
           // 鼠标移入提示工具
           tooltip: {
             trigger: 'axis',
             formatter(params) {
               if (params[1].data && params[0].data) {
-                return `<div>开始时间：${params[1].data}</div>` + `<div>结束时间：${params[0].data}</div>`
+                return `<div>开始采摘时间：${params[1].data}</div>` + `<div>结束采摘时间：${params[0].data}</div>`;
+              }else if(params[1].data == '2022-10-05' && params[0].data){
+                return `<div>开始采摘时间：${params[1].data}/2022-10-05</div>` + `<div>结束采摘时间：${params[0].data}/2022-11-05</div>`;
               } else {
-                return ''
+                return '';
               }
             },
             axisPointer: {
-              type: 'shadow'
+              type: 'cross',
+              label: {
+                show: true
+              },
+              shadowStyle: {
+                color: 'rgba(177,243,173,0.2)'
+              }
             }
           },
           grid: {
             containLabel: true,
             show: false,
-            right: 80,
-            left: 40,
-            bottom: 40,
-            top: 20,
-            backgroundColor: '#fff'
-          },
-          legend: {
-            // 图例组件
-            data: ['持续时间'],
-            align: 'auto',
-            top: 'bottom'
+            right: 10,
+            left: 10,
+            bottom: 20,
+            top: 10,
+            backgroundColor: 'transparent'
           },
           xAxis: {
             type: 'time',
             position: 'top', // x 轴位置
             axisTick: {
               // 隐藏刻度
-              show: false
+              show: true
             },
             axisLine: {
               // 隐藏轴线
-              show: false
+              show: true
             },
             splitLine: {
               // 显示网格线
-              show: true
+              show: false
+            },
+            min: new Date('2022-01-01').getTime(), // 设置 x 轴最小值为 2022 年 1 月 1 日
+            max: new Date('2022-12-31').getTime(), // 设置 x 轴最大值为 2022 年 12 月 31 日
+            axisLabel: {
+              formatter: function(value, index) {
+                const date = new Date(value);
+                return date.toLocaleDateString('zh-CN', { month: '2-digit' });
+              }
             }
           },
           yAxis: {
             inverse: true, // y 轴数据翻转，该操作是为了保证项目一放在最上面，项目七在最下面
             axisTick: {
               // 隐藏刻度
-              show: false
+              show: true
             },
             axisLine: {
               // 隐藏轴线
-              show: false
+              show: true
             },
-            data: ['项目一', '项目二', '项目三', '项目四', '项目五', '项目六', '项目七']
+            splitLine: {
+              // 显示网格线
+              show: true
+            },
+            axisPointer: {  
+              type: 'shadow'  
+            },
+            dataZoom: [
+              {
+                type: 'inside'
+              }
+            ],
+            data: dataAxis,
           },
           series: [
             {
               name: '持续时间',
               type: 'bar',
               stack: 'duration',
+              barWidth: 10,
               itemStyle: {
-                color: '#007acc',
-                borderColor: '#fff',
+                color: function(params) {
+                  // Define an array of colors for each bar
+                  const colors = ['rgba(50,132,110,0.8)', 'rgba(50,132,110)', 'rgba(50,132,110)', 'rgba(50,132,110)', 'rgba(50,132,110,0.6)', 'rgba(139,139,139,0.2)', 'rgba(139,139,139,0.4)', 'rgba(139,139,139,0.6)', 'rgba(139,139,139)', 'rgba(139,139,139,0.8)', 'rgba(253,225,28,0.6)', 'rgba(253,225,28,0.4)', 'rgba(253,225,28)', 'rgba(253,225,28,0.8)', 'rgba(253,225,28,0.2)', 'rgba(236,137,36)', 'rgba(236,137,36,0.2)', 'rgba(236,137,36,0.6)', 'rgba(236,137,36,0.4)', 'rgba(236,137,36,0.8)', 'rgba(197,69,34,0.8)', 'rgba(197,69,34)', 'rgba(197,69,34,0.6)', 'rgba(197,69,34,0.4)', 'rgba(89,68,69,0.8)', 'rgba(89,68,69)', 'rgba(89,68,69,0.2)', 'rgba(89,68,69,0.6)', 'rgba(89,68,69,0.4)'];
+                  return colors[params.dataIndex];
+                },
+                borderColor: 'transparent',
                 borderWidth: 1
               },
               zlevel: -1,
-              data: ['2021-01-31', '2021-02-25', '2021-03-25', '2021-04-01', '2021-04-10', '2021-05-25', '2021-07-25'] // 结束时间
+              data: ['2022-04-07', '2022-04-15', '2022-04-18', '2022-04-19', '2022-04-15', '2022-03-18', '2022-04-05', '2022-04-08', '2022-10-15', '2022-04-28', '2022-04-12', '2022-04-11', '2022-05-15', '2022-05-06', '2022-04-20', '2022-05-14', '2022-05-02', '2022-05-07', '2022-05-08', '2022-05-15', '2022-05-10', '2022-11-12', '2022-05-25', '2022-05-30', '2022-05-25', '2022-11-15', '2022-05-07', '2022-06-10', '2022-08-24'] // 结束时间
             },
             {
               name: '持续时间',
               type: 'bar',
               stack: 'duration', // 堆叠标识符，同个类目轴上系列配置相同的 stack 值可以堆叠放置
               itemStyle: {
-                color: '#fff'
+                borderColor: 'transparent',
+                color: '#FFFEF2'
               },
               zlevel: -1, // zlevel 大的 Canvas 会放在 zlevel 小的 Canvas 的上面
               z: 9, // z值小的图形会被z值大的图形覆盖，z相比zlevel优先级更低，而且不会创建新的 Canvas
-              data: ['2021-01-01', '2021-01-31', '2021-02-25', '2021-03-25', '2021-04-01', '2021-04-10', '2021-05-25'] // 开始时间
+              data: ['2022-03-12', '2022-03-15', '2022-03-18', '2022-03-19', '2022-03-24', '2022-03-10', '2022-03-20', '2022-03-21', '2022-04-01', '2022-04-05', '2022-03-14', '2022-03-15', '2022-03-25', '2022-04-04', '2022-04-09', '2022-04-24', '2022-04-27', '2022-04-27', '2022-05-01', '2022-05-01', '2022-03-15', '2022-03-20', '2022-04-10', '2022-04-18', '2022-02-15', '2022-03-10', '2022-04-16', '2022-04-20', '2022-07-16'] // 开始时间
+            },
+            {
+              name: '持续时间',
+              type: 'bar',
+              stack: 'duration',
+              barWidth: 10,
+              itemStyle: {
+                color: function(params) {
+                  // Define an array of colors for each bar
+                  const colors = ['rgba(50,132,110,0.8)', 'rgba(50,132,110)', 'rgba(50,132,110)', 'rgba(50,132,110)', 'rgba(50,132,110,0.6)', 'rgba(139,139,139,0.2)', 'rgba(139,139,139,0.4)', 'rgba(139,139,139,0.6)', 'rgba(139,139,139)', 'rgba(139,139,139,0.8)', 'rgba(253,225,28,0.6)', 'rgba(253,225,28,0.4)', 'rgba(253,225,28)', 'rgba(253,225,28,0.8)', 'rgba(253,225,28,0.2)', 'rgba(236,137,36)', 'rgba(236,137,36,0.2)', 'rgba(236,137,36,0.6)', 'rgba(236,137,36,0.4)', 'rgba(236,137,36,0.8)', 'rgba(197,69,34,0.8)', 'rgba(197,69,34)', 'rgba(197,69,34,0.6)', 'rgba(197,69,34,0.4)', 'rgba(89,68,69,0.8)', 'rgba(89,68,69)', 'rgba(89,68,69,0.2)', 'rgba(89,68,69,0.6)', 'rgba(89,68,69,0.4)'];
+                  return colors[params.dataIndex];
+                },
+                borderColor: 'transparent',
+                borderWidth: 1
+              },
+              zlevel: -2,
+              data: ['2022-01-01', '2022-04-15', '2022-03-18', '2022-03-19', '2022-03-24', '2022-03-10', '2022-03-20', '2022-03-21', '2022-04-01', '2022-04-05', '2022-03-14', '2022-03-15', '2022-03-25', '2022-04-04', '2022-04-09', '2022-11-05', '2022-04-27', '2022-04-27', '2022-05-01', '2022-05-01', '2022-03-15', '2022-03-20', '2022-04-10', '2022-04-18', '2022-02-15', '2022-03-10', '2022-04-16', '2022-04-20', '2022-07-16'] // 结束时间
+            },
+            {
+              name: '持续时间',
+              type: 'bar',
+              stack: 'duration', // 堆叠标识符，同个类目轴上系列配置相同的 stack 值可以堆叠放置
+              itemStyle: {
+                borderColor: 'transparent',
+                color: '#FFFEF2'
+              },
+              zlevel: -2, // zlevel 大的 Canvas 会放在 zlevel 小的 Canvas 的上面
+              z: 9, // z值小的图形会被z值大的图形覆盖，z相比zlevel优先级更低，而且不会创建新的 Canvas
+              data: ['2022-01-01', '2022-04-15', '2022-03-18', '2022-03-19', '2022-03-24', '2022-03-10', '2022-03-20', '2022-03-21', '2022-04-01', '2022-04-05', '2022-03-14', '2022-03-15', '2022-03-25', '2022-04-04', '2022-04-09', '2022-10-05', '2022-04-27', '2022-04-27', '2022-05-01', '2022-05-01', '2022-03-15', '2022-03-20', '2022-04-10', '2022-04-18', '2022-02-15', '2022-03-10', '2022-04-16', '2022-04-20', '2022-07-16'] // 开始时间
             }
           ]
         }
-        progressChart.setOption(option)
+
+        progressChart.setOption(option);
+        
+        // Enable data zoom when user click bar.
+        const zoomSize = 6;
+        progressChart.on('click', function (params) {
+          console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+          progressChart.dispatchAction({
+            type: 'dataZoom',
+            startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+            endValue:
+              dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+          });
+        });
         // 浏览器窗口大小变化，图表大小自适应
         window.addEventListener('resize', function (){
           progressChart.resize();
@@ -438,12 +510,11 @@
 <style scoped>
   .calendar{
     width: 35%; 
-    height:550px;
+    height:560px;
   }
   .gantt{
     width: 65%;
-    height: 550px;
-    border: 1px solid #aaa;
+    height: 560px;
   }
   .title{
     display: flex;
