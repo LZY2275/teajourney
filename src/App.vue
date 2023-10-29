@@ -31,19 +31,19 @@
       
       <!-- 右侧内容区 -->
       <div class="content-view" id="content-view" style="overflow: auto;" >
-        <section id="plant">
+        <section id="plant" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <PlantView></PlantView>
         </section>
-        <section id="pick">
+        <section id="pick" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <PickView></PickView>
         </section>
-        <section id="sale">
+        <section id="sale" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <SaleView></SaleView>
         </section>
-        <section id="taste">
+        <section id="taste" class="section4">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <TasteView></TasteView>
         </section>
@@ -199,12 +199,11 @@ import TeaInfoView from './views/TeaInfoView.vue';
 }
 
 .content-view{
-  width: calc(100vw - 230px);
-  height: 400vh;
+  width: 100%;
 }
 
 /* 内容 */
-section {
+.section-first-3 {
     display: flex;
     flex-direction: column;
     // align-items: center;
@@ -216,4 +215,11 @@ section {
     scroll-snap-align: center;
   }
 
+.section4{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* 放在子元素上，和上面那个父元素一伙的 */
+  scroll-snap-align: center;
+}
 </style>

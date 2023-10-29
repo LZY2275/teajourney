@@ -51,7 +51,7 @@ export default {
 <style scoped>
   @font-face {  
     font-family: "HanaMinA";  
-    src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("truetype"), 
+    src: url("../../public/HanaMinA.ttf") format("truetype"), 
   } 
   .top{
     font-size: 16px;
