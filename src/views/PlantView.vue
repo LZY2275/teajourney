@@ -21,6 +21,7 @@
 
 <script>
 import * as d3 from 'd3';
+import * as d3_annotation from 'd3-svg-annotation';
 
 export default {
     name:'PlantView',
@@ -42,6 +43,7 @@ export default {
     },
     methods: {
         createPieChart(){
+            const _this = this
 
             // 定义变量
             var color = d3.scaleOrdinal()
@@ -62,20 +64,31 @@ export default {
             var name_data_center_angle=[];
             var province_name_center_angle=[];
 
+
             var margin = {top: 0, right:  0, bottom:  0, left: 0},
-                width = this.windowHeight - margin.right - margin.left,
-                height = this.windowHeight - margin.top - margin.bottom,
-                radius = width/2-80;
+                width = this.windowWidth - margin.right - margin.left,
+                height = this.windowHeight - margin.top - margin.bottom;
+            
+            if(width < height){
+                var radius = width/2-80;
+            }else{
+                var radius = height/2 - 80;
+            }
+            
 
             var cover_alpha = 0.3
 
-            var rad_line_max = 0.345,
-                rad_line_min = 0.255,
+            var rad_line_max = 0.24,
+                rad_line_min = 0.185,
                 pi2 = Math.PI*2;
 
+            var basewidth = 1600;
             var mouse_over_in_action = false;
             var province_click_current = -1;
             var name_click_current = -1;
+
+            
+            var size_factor = this.windowWidth/basewidth;
 
 
 
@@ -633,7 +646,6 @@ export default {
                 
 
                 
-
             }
 
             function clear_outer_ring(){
@@ -698,7 +710,7 @@ export default {
                 // 画出要用的曲线
                 ctx.globalAlpha = 0.8;
 
-                var line_data = cover_data.filter(function(c) { console.log(c[0]); return c[0].source_a === index;})
+                var line_data = cover_data.filter(function(c) { return c[0].source_a === index;})
                 var line_color = line_data[0][0].strokeStyle;
                 create_lines("character", line_data );
 
@@ -740,11 +752,14 @@ export default {
                         .style('fill',line_data[0][0].strokeStyle)
                     d3.select('#name-label-circle-'+i.index)
                         .style('fill',line_data[0][0].strokeStyle)
+
+                    _this.$emit('customEvent', name_click_current);
                 
                 }else{
                     name_click_current = -1;
                     d3.select('#name-pie-'+i.index)
                         .style('fill','#00000000')
+                    _this.$emit('customEvent', -1);
                 }
 
                 // console.log('点击了茶index:'+i.index);  
@@ -768,6 +783,29 @@ export default {
                         .style('fill',line_data[0][0].strokeStyle)
                 }
             }
+
+
+            // 为图添加注释
+            // var annotations = [
+            //     {
+            //         note: {
+            //         label: "这是一个注释",
+            //         title: "注释标题"
+            //         },
+            //         x: 50,
+            //         y: 120,
+            //         dx: 50,
+            //         dy: 50
+            //     }
+            // ];
+            
+
+            // var makeAnnotations = d3_annotation.annotation()
+            //     .annotations(annotations);
+
+            // var annotation_group = svg.append("g").attr("class", "annotation-group");
+
+            // annotation_group.call(makeAnnotations);
                     
 
         },

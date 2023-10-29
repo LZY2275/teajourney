@@ -25,7 +25,7 @@
           </template>
         </div>
         <div>
-          <TeaInfoView></TeaInfoView>
+          <TeaInfoView :data="customEventData"></TeaInfoView>
         </div>
       </div>
       
@@ -33,7 +33,7 @@
       <div class="content-view" id="content-view" style="overflow: auto;" >
         <section id="plant" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
-          <PlantView></PlantView>
+          <PlantView @customEvent="handleCustomEvent"></PlantView>
         </section>
         <section id="pick" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
@@ -79,6 +79,7 @@ import TeaInfoView from './views/TeaInfoView.vue';
         metaTime: 10,   //最小执行时间
         targetHeight:0,     //目标区域滚轮高度
         clientHeight:0,
+        customEventData: -1,
       };
     },
     mounted() {
@@ -90,7 +91,7 @@ import TeaInfoView from './views/TeaInfoView.vue';
     methods: {
       onChangeSteps(e){
         this.current=e;
-        this.toArea(e)
+        this.toArea(e);
       },
       handleScroll(e){
         // console.log(e)
@@ -159,6 +160,10 @@ import TeaInfoView from './views/TeaInfoView.vue';
           }, 1);
         }
       },
+      handleCustomEvent(data){
+        this.customEventData = data
+        console.log(data);
+      }
     },
     created(){
       window.addEventListener('scroll', this.handleScroll);
