@@ -63,6 +63,7 @@ export default {
 
             var name_data_center_angle=[];
             var province_name_center_angle=[];
+            
 
 
             var margin = {top: 0, right:  0, bottom:  0, left: 0},
