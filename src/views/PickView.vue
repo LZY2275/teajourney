@@ -510,11 +510,11 @@
 <style scoped>
   .calendar{
     width: 35%; 
-    height:560px;
+    height:calc(100vh - 200px);
   }
   .gantt{
     width: 65%;
-    height: 560px;
+    height: calc(100vh - 200px);
   }
   .title{
     display: flex;
