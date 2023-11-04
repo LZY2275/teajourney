@@ -35,6 +35,7 @@
         </t-drawer>
         <!-- <t-button variant="outline" @click="visible = true">打开抽屉</t-button> -->
         <div id="chart">
+            <div id="province" style="width: 300px;height: 300px;"></div>
         </div>
     </div>
    
@@ -45,6 +46,10 @@
 import Vue from 'vue';
 import * as d3 from 'd3';
 import * as d3_annotation from 'd3-svg-annotation';
+import * as echarts from "echarts/core";
+
+import * as SC from '../assets/mapjs/Sichuan.js';
+Vue.prototype.echarts = echarts;
 
 export default {
     name:'PlantView',
@@ -283,11 +288,118 @@ export default {
     mounted() {
         this.createPieChart();
         // this.drawLines();
+        this.createMapChart();
     },
     beforeDestroy() {
       
     },
     methods: {
+
+        createMapChart(){
+            let myChart = this.$echarts.init(document.getElementById("province"));
+            // var option;
+
+            // option = {
+            // title: {
+            //     text: 'Referer of a Website',
+            //     subtext: 'Fake Data',
+            //     left: 'center'
+            // },
+            // tooltip: {
+            //     trigger: 'item'
+            // },
+            // legend: {
+            //     orient: 'vertical',
+            //     left: 'left'
+            // },
+            // series: [
+            //     {
+            //     name: 'Access From',
+            //     type: 'pie',
+            //     radius: '50%',
+            //     data: [
+            //         { value: 1048, name: 'Search Engine' },
+            //         { value: 735, name: 'Direct' },
+            //         { value: 580, name: 'Email' },
+            //         { value: 484, name: 'Union Ads' },
+            //         { value: 300, name: 'Video Ads' }
+            //     ],
+            //     emphasis: {
+            //         itemStyle: {
+            //         shadowBlur: 10,
+            //         shadowOffsetX: 0,
+            //         shadowColor: 'rgba(0, 0, 0, 0.5)'
+            //         }
+            //     }
+            //     }
+            // ]
+            // };
+
+            this.$echarts.registerMap("SC", SC);
+            // 颜色或文字的配置
+            let option = {
+                geo: {
+                    type: "map",
+                    aspectScale: 1, // 横向拉伸
+                    // roam: true, // 地图操作 开启缩放或者平移，可以设置成 'scale' 或者 'move'。
+                    map: "SC",
+                    // label: {
+                    //     show: true,
+                    //     // normal: {
+                    //     //     show: true, // 默认地图文字字号和字体颜色
+                    //     //     fontSize: 10,
+                    //     //     color: "#ffffff",
+                    //     // },
+                    //     emphasis: {
+                    //         show: true,
+                    //         fontSize: 10, // 选中地图文字字号和字体颜色
+                    //         color: "#CFCFCF",
+                    //     },
+                    // },
+                    itemStyle: {
+                        
+                        areaColor: "#040c3c", //地图本身的颜色
+                        borderColor: "#00feda", //省份边框颜色
+                        borderWidth: 1, // 省份边框宽度
+                        opacity: 1, //图形透明度
+                        // emphasis: {
+                        //     areaColor: "#040c3c", // 高亮时候地图显示的颜色
+                        //     borderWidth: 0, // 高亮时的边框宽度
+                        // },
+                    },
+                    textFixed: {
+                    Alaska: [20, -20],
+                    }
+                },
+                series: [
+                    {
+                    type: "effectScatter",
+                    coordinateSystem: "geo",
+                    symbolSize: 12,
+                    // label: {
+
+                    //     show: false,
+                        
+                    //     emphasis: {
+                    //     show: false,
+                    //     },
+                    // },
+                    itemStyle: {
+
+                        shadowBlur: 10,
+                        color: "#00ECC8",
+
+                        // emphasis: {
+                        // borderColor: "#fff",
+                        // borderWidth: 1,
+                        // },
+                    },
+                    },
+                ],
+            };
+            myChart.setOption(option);
+        },
+
         createPieChart(){
             const _this = this
 
@@ -322,11 +434,16 @@ export default {
                 var radius = height/2 - 80;
             }
             
+            console.log(radius);
 
             var cover_alpha = 0.3
 
-            var rad_line_max = 0.24,
-                rad_line_min = 0.185,
+            
+            var scale_rad_max = 0.24/396.5;
+            var scale_rad_min = 0.185/396.5;
+
+            var rad_line_max = scale_rad_max*radius,
+                rad_line_min = scale_rad_min*radius,
                 pi2 = Math.PI*2;
 
             var basewidth = 1600;
