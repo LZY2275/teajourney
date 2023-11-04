@@ -1,5 +1,5 @@
 <template>
-  <div class="global">
+  <div class="global" >
     <div style="padding-top: 5.17578vh;padding-left: 5.347vw;display: flex;">
       <div style="display: flex;">
         <div class="top">
