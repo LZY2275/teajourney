@@ -13,6 +13,9 @@
 <script>
   import { color } from "d3";
 import * as echarts from "echarts/core";
+import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
+
+echarts.use([SVGRenderer, CanvasRenderer]);
 
   export default {
     name: 'PickView',
@@ -104,7 +107,7 @@ import * as echarts from "echarts/core";
         return data;
       },
       createCalendar(){
-        let myChart = this.$echarts.init(document.getElementById("calendar"));
+        let myChart = this.$echarts.init(document.getElementById("calendar"), null, { renderer: 'svg' });
         let data1 = this.getVirtualData('2022');
 
         var cell_height = this.cell_ratio*(window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
@@ -740,7 +743,7 @@ import * as echarts from "echarts/core";
       },
 
       createGantt(){
-        let progressChart = echarts.init(this.$refs.ganttChart);
+        let progressChart = echarts.init(this.$refs.ganttChart, null, { renderer: 'svg' });
         let dataAxis = ['碧螺春', '滇青', '西湖龙井', '玉露', '黄山毛峰', '白毫银针', '白牡丹', '黄山白茶', '贡眉', '寿眉', '蒙顶黄芽', '霍山黄芽', '广东大叶青', '海马宫茶', '北港毛尖', '铁观音', '北斗', '水仙', '肉桂', '大红袍', '祁门红茶', '滇红', '金骏眉', '正山小种', '六堡茶', '普洱茶', '泾阳茯砖茶', '安化黑茶', '千两茶'];
         let data = ['2022-04-07', '2022-04-15', '2022-04-18', '2022-04-19', '2022-04-15', '2022-03-18', '2022-04-05', '2022-04-08', '2022-10-15', '2022-04-28', '2022-04-12', '2022-04-11', '2022-05-15', '2022-05-06', '2022-04-20', '2022-05-14', '2022-05-02', '2022-05-07', '2022-05-08', '2022-05-15', '2022-05-10', '2022-11-12', '2022-05-25', '2022-05-30', '2022-05-25', '2022-11-15', '2022-05-07', '2022-06-10', '2022-08-24']; // 结束时间
         let option = {
