@@ -11,7 +11,8 @@
   </template>
   
 <script>
-  import * as echarts from "echarts/core";
+  import { color } from "d3";
+import * as echarts from "echarts/core";
 
   export default {
     name: 'PickView',
@@ -159,25 +160,112 @@
 
         ];
         const graphData = [
-          ['2022-01-01', 260],
-          ['2022-01-04', 200],
-          ['2022-01-09', 279],
-          ['2022-01-13', 847],
-          ['2022-01-18', 241],
-          ['2022-01-23', 411],
-          ['2022-01-27', 985]
+          ['2022-02-15', 1],
+          ['2022-03-10', 200],
+          ['2022-03-12', 279],
+          ['2022-03-14', 847],
+          ['2022-03-15', 241],
+          ['2022-03-18', 411],
+          ['2022-03-19', 985],
+          ['2022-03-20', 985],
+          ['2022-03-21', 985],
+          ['2022-03-24', 985],
+          ['2022-03-25', 985],
+          ['2022-04-01', 985],
+          ['2022-04-04', 985],
+          ['2022-04-05', 985],
+          ['2022-04-07', 985],
+          ['2022-04-08', 985],
+          ['2022-04-09', 985],
+          ['2022-04-10', 985],
+          ['2022-04-11', 985],
+          ['2022-04-12', 985],
+          ['2022-04-15', 985],
+          ['2022-04-16', 985],
+          ['2022-04-18', 985],
+          ['2022-04-19', 985],
+          ['2022-04-20', 985],
+          ['2022-04-24', 985],
+          ['2022-04-27', 985],
+          ['2022-04-28', 985],
+          ['2022-05-01', 985],
+          ['2022-05-02', 985],
+          ['2022-05-06', 985],
+          ['2022-05-07', 985],
+          ['2022-05-08', 985],
+          ['2022-05-10', 985],
+          ['2022-05-14', 985],
+          ['2022-05-15', 985],
+          ['2022-05-25', 985],
+          ['2022-05-30', 985],
+          ['2022-06-10', 985],
+          ['2022-07-16', 985],
+          ['2022-08-24', 985],
+          ['2022-10-05', 985],
+          ['2022-10-15', 985],
+          ['2022-11-05', 985],
+          ['2022-11-12', 985],
+          ['2022-11-15', 985]
+        ];
+        const textData = [
+          ['2022-02-15', '六堡茶'],
+          ['2022-03-10', '普洱茶', '白毫银针'],
+          ['2022-03-12', '碧螺春'],
+          ['2022-03-14', '蒙顶黄芽'],
+          ['2022-03-15', '滇青', '祁门红茶', '霍山黄芽'],
+          ['2022-03-18', '西湖龙井', '白毫银针'],
+          ['2022-03-19', '玉露'],
+          ['2022-03-20', '白牡丹', '滇红'],
+          ['2022-03-21', '黄山白茶'],
+          ['2022-03-24', '黄山毛峰'],
+          ['2022-03-25', '广东大叶青'],
+          ['2022-04-01', '贡眉'],
+          ['2022-04-04', '海马宫茶'],
+          ['2022-04-05', '寿眉', '白牡丹'],
+          ['2022-04-07', '碧螺春'],
+          ['2022-04-08', '黄山白茶'],
+          ['2022-04-09', '北港毛尖'],
+          ['2022-04-10', '金骏眉'],
+          ['2022-04-11', '霍山黄芽'],
+          ['2022-04-12', '蒙顶黄芽'],
+          ['2022-04-15', '滇青', '黄山毛峰'],
+          ['2022-04-16', '泾阳茯砖茶'],
+          ['2022-04-18', '正山小种', '西湖龙井'],
+          ['2022-04-19', '玉露'],
+          ['2022-04-20', '安华黑茶', '北港毛尖'],
+          ['2022-04-24', '铁观音'],
+          ['2022-04-27', '水仙', '北斗'],
+          ['2022-04-28', '寿眉'],
+          ['2022-05-01', '大红袍', '肉桂'],
+          ['2022-05-02', '北斗'],
+          ['2022-05-06', '海马宫茶'],
+          ['2022-05-07', '泾阳茯砖茶', '水仙'],
+          ['2022-05-08', '肉桂'],
+          ['2022-05-10', '祁门红茶'],
+          ['2022-05-14', '铁观音'],
+          ['2022-05-15', '广东大叶青', '大红袍'],
+          ['2022-05-25', '六堡茶', '金骏眉'],
+          ['2022-05-30', '正山小种'],
+          ['2022-06-10', '安化黑茶'],
+          ['2022-07-16', '千两茶'],
+          ['2022-08-24', '千两茶'],
+          ['2022-10-05', '铁观音'],
+          ['2022-10-15', '贡眉'],
+          ['2022-11-05', '铁观音'],
+          ['2022-11-12', '滇红'],
+          ['2022-11-15', '普洱茶']
         ];
         const links = graphData.map(function (item, idx) {
           return {
-            source: idx,
-            target: idx + 1
+            source: 0,
+            target: 36
           };
         });
         links.pop();
         let option = {
           backgroundColor: 'rgba(0, 0, 0, 0)',
           tooltip: {
-            position: 'top'
+            //position: 'top'
           },
           visualMap: [
             {
@@ -261,24 +349,351 @@
             {
               type: 'graph',
               edgeSymbol: ['none', 'arrow'],
+              edgeSymbolSize: 10,
               coordinateSystem: 'calendar',
-              links: links,
-              symbolSize: 5,
+              links: [{
+                source: 0,
+                target: 36
+              },{
+                source: 1,
+                target: 45
+              },{
+                source: 1,
+                target: 5
+              },{
+                source: 2,
+                target: 14
+              },{
+                source: 3,
+                target: 19
+              },{
+                source: 4,
+                target: 20
+              },{
+                source: 4,
+                target: 33
+              },{
+                source: 4,
+                target: 18
+              },{
+                source: 5,
+                target: 22
+              },{
+                source: 6,
+                target: 23
+              },{
+                source: 7,
+                target: 13
+              },{
+                source: 7,
+                target: 44
+              },{
+                source: 8,
+                target: 15
+              },{
+                source: 9,
+                target: 20
+              },{
+                source: 10,
+                target: 35
+              },{
+                source: 11,
+                target: 42
+              },{
+                source: 12,
+                target: 30
+              },{
+                source: 13,
+                target: 27
+              },{
+                source: 16,
+                target: 24
+              },{
+                source: 17,
+                target: 36
+              },{
+                source: 21,
+                target: 31
+              },{
+                source: 22,
+                target: 37
+              },{
+                source: 24,
+                target: 38
+              },{
+                source: 25,
+                target: 34
+              },{
+                source: 26,
+                target: 31
+              },{
+                source: 26,
+                target: 29
+              },{
+                source: 28,
+                target: 35
+              },{
+                source: 28,
+                target: 32
+              },{
+                source: 39,
+                target: 40
+              },{
+                source: 41,
+                target: 43
+              }],
+              lineStyle: {
+                width: 1.5,
+                arrowSize: 0,
+                color: 'rgba(1, 1, 1, 0.2)',
+                //curveness: -1,
+              },
+              emphasis: {
+                lineStyle: {
+                  color: 'rgba(1, 1, 1, 1)', 
+                  width: 4,
+                },
+                symbolSize: 10,
+                //focus: 'self',
+                //blurScope: 'coordinateSystem'
+              },
+              //cursor: 'pointer',
+              symbolSize: 7,
               z: 10,
               calendarIndex: 0,
               data: graphData,
-              // tooltip: {
-              //   trigger: 'item',
-              //   show: true,
-              //   formatter: function(params) {
-              //     let content = [];
-              //     //let content = params.name + '<br>';
-              //       content += "正在采摘茶种数" + ': ' + params.data.value + '<br>'
-              //           + "开始采摘"+ ': ' + params.data.begin + '<br>'
-              //           + "结束采摘" + ': ' + params.data.end;
-              //       return content;
-              //   }
-              // }
+              tooltip: {
+                trigger: 'item',
+                show: true,
+                formatter: function(params) {
+                  console.log(params.data[0]);
+                  let content = [];
+                  if (params.data[0] == textData[0][0]) {
+                    content += '<div style="text-align: left;">' + textData[0][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if(params.data[0] == textData[1][0]){
+                    content += '<div style="text-align: left;">' + textData[1][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0]+ '<br>';
+                    content += '<div style="text-align: left;">' + textData[1][2] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[2][0]) {
+                    content += '<div style="text-align: left;">' + textData[2][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[3][0]) {
+                    content += '<div style="text-align: left;">' + textData[3][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[4][0]) {
+                    content += '<div style="text-align: left;">' + textData[4][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[4][2] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[4][3] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[5][0]) {
+                    content += '<div style="text-align: left;">' + textData[5][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[5][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[6][0]) {
+                    content += '<div style="text-align: left;">' + textData[6][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[7][0]) {
+                    content += '<div style="text-align: left;">' + textData[7][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[7][2] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[8][0]) {
+                    content += '<div style="text-align: left;">' + textData[8][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[9][0]) {
+                    content += '<div style="text-align: left;">' + textData[9][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[10][0]) {
+                    content += '<div style="text-align: left;">' + textData[10][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[11][0]) {
+                    content += '<div style="text-align: left;">' + textData[11][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[12][0]) {
+                    content += '<div style="text-align: left;">' + textData[12][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[13][0]) {
+                    content += '<div style="text-align: left;">' + textData[13][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[13][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[14][0]) {
+                    content += '<div style="text-align: left;">' + textData[14][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[15][0]) {
+                    content += '<div style="text-align: left;">' + textData[15][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[16][0]) {
+                    content += '<div style="text-align: left;">' + textData[16][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[17][0]) {
+                    content += '<div style="text-align: left;">' + textData[17][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[18][0]) {
+                    content += '<div style="text-align: left;">' + textData[18][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[19][0]) {
+                    content += '<div style="text-align: left;">' + textData[19][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[20][0]) {
+                    content += '<div style="text-align: left;">' + textData[20][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[20][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }             
+                  else if (params.data[0] == textData[21][0]) {
+                    content += '<div style="text-align: left;">' + textData[21][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[22][0]) {
+                    content += '<div style="text-align: left;">' + textData[22][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[22][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[23][0]) {
+                    content += '<div style="text-align: left;">' + textData[23][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[24][0]) {
+                    content += '<div style="text-align: left;">' + textData[24][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[24][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[25][0]) {
+                    content += '<div style="text-align: left;">' + textData[25][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[26][0]) {
+                    content += '<div style="text-align: left;">' + textData[26][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[26][2] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[27][0]) {
+                    content += '<div style="text-align: left;">' + textData[27][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[28][0]) {
+                    content += '<div style="text-align: left;">' + textData[28][1] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[28][2] + '<br>';
+                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[29][0]) {
+                    content += '<div style="text-align: left;">' + textData[29][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[30][0]) {
+                    content += '<div style="text-align: left;">' + textData[30][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[31][0]) {
+                    content += '<div style="text-align: left;">' + textData[31][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[31][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[32][0]) {
+                    content += '<div style="text-align: left;">' + textData[32][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[33][0]) {
+                    content += '<div style="text-align: left;">' + textData[33][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[34][0]) {
+                    content += '<div style="text-align: left;">' + textData[34][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[35][0]) {
+                    content += '<div style="text-align: left;">' + textData[35][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[35][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[36][0]) {
+                    content += '<div style="text-align: left;">' + textData[36][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + textData[36][2] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[37][0]) {
+                    content += '<div style="text-align: left;">' + textData[37][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[38][0]) {
+                    content += '<div style="text-align: left;">' + textData[38][1] + '<br>';
+                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+
+                }
+              }
             },
             {
               type: 'heatmap',
@@ -313,20 +728,6 @@
               },
               data: data1
             },
-            // {
-            //   type: 'scatter',
-            //   coordinateSystem: 'calendar',
-            //   symbolSize: 0,
-            //   label: {
-            //     show: true,
-            //     formatter: function (params) {
-            //       return echarts.time.format(params.value[0], '{d}', false) + '\n\n';
-            //     },
-            //     fontSize: 5,
-            //     color: '#000000'
-            //   },
-            //   data: data1
-            // },
           ]
         };
 
@@ -510,11 +911,11 @@
 <style scoped>
   .calendar{
     width: 35%; 
-    height:calc(100vh - 200px);
+    height:calc(100vh - 170px);
   }
   .gantt{
     width: 65%;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 170px);
   }
   .title{
     display: flex;
