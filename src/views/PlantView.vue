@@ -718,7 +718,7 @@ export default {
                             }
                         }),
                         left: 'center',
-                        bottom: 10,
+                        bottom: 5,
                     },
                     geo:{
                         map:province_geo_data[index].name,
@@ -785,6 +785,10 @@ export default {
                                     }
                                 }
                             }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
 
                             symbolSize:10,
 
@@ -805,6 +809,10 @@ export default {
                                     }
                                 }
                             }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
 
                             symbolSize:10,
                         
@@ -825,6 +833,10 @@ export default {
                                     }
                                 }
                             }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
 
                             symbolSize:10,
                         
@@ -845,6 +857,10 @@ export default {
                                     }
                                 }
                             }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
 
                             symbolSize:10,
                         
@@ -865,6 +881,10 @@ export default {
                                     }
                                 }
                             }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
 
                             symbolSize:10,
                         
@@ -885,6 +905,10 @@ export default {
                                     }
                                 }
                             }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
 
                             symbolSize:10,
                         },
