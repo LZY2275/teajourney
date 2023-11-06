@@ -4,6 +4,10 @@ import router from './router'
 import store from './store'
 import TDesign from 'tdesign-vue';
 import * as echarts from 'echarts'; //引入echarts
+import $ from 'jquery';
+
+window.jQuery = $
+window.$ = $
 
 // 引入组件库的少量全局样式变量
 import 'tdesign-vue/es/style/index.css';
