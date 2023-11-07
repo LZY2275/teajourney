@@ -353,13 +353,7 @@ export default {
                     value:[
                         {
                             marker:[111.212846,28.374107],
-                            location_name:'安化黑茶-湖南省益阳市安化县',
-                            color:'#594445',
-                            type:'黑茶'
-                        },
-                        {
-                            marker:[111.212805,28.374463],
-                            location_name:'千两茶-湖南省益阳市安化县',
+                            location_name:'安化黑茶、千两茶-湖南省益阳市安化县',
                             color:'#594445',
                             type:'黑茶'
                         },
