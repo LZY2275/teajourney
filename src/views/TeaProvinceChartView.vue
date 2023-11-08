@@ -107,6 +107,9 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 borderColor: '#FFFEF2',
                 borderWidth: 2
               },
+              tooltip:{
+                show: false,
+              },
               data: [
                 { 
                   value: 1, 
@@ -212,6 +215,9 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 borderRadius: 50,
                 borderColor: '#FFFEF2',
                 borderWidth: 2
+              },
+              tooltip:{
+                show: false,
               },
               data: [
                 { 
@@ -447,7 +453,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 <style scoped>
   .pie{
     width: 100%; 
-    height: 290px;
+    height: 50vh;
   }
   .title{
     display: flex;
