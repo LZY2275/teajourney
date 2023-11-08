@@ -30,6 +30,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
       createPie(){
         let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
         let option = {
+          
           // title: {
           //   text: '茶园面积',
           //   left: '1%',
