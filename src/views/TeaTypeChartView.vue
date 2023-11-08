@@ -1,14 +1,15 @@
 <template>
-    <div class="tea-type">
-        <h1>各类茶数据表</h1>
-    </div>
-  </template>
+
+</template>
   
-  <script>
-  // @ is an alias to /src
-  
+<script>
+import * as echarts from "echarts/core";
+import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
+
+echarts.use([SVGRenderer, CanvasRenderer]);
+
   export default {
-    name: 'TeaTypeChartView',
-  
+    name: 'TeaProvinceChartView',
   }
-  </script>
+
+</script>

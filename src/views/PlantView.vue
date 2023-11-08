@@ -34,8 +34,8 @@
             <p class="tea-info-content" v-html="tea_info[current].teacontent"></p>
         </t-drawer>
         <!-- <t-button variant="outline" @click="visible = true">打开抽屉</t-button> -->
-        <div id="chart">
-            <div id="province" style="width: 300px;height: 300px;"></div>
+        <div id="chart" style="height: 100vh;display: flex;justify-content: center;align-items: center;">
+            <div id="province" style="width: 32vh;height: 32vh;z-index: 999;"></div>
         </div>
     </div>
    
@@ -48,8 +48,10 @@ import * as d3 from 'd3';
 import * as d3_annotation from 'd3-svg-annotation';
 import * as echarts from "echarts/core";
 
-import * as SC from '../assets/mapjs/Sichuan.js';
+
+
 Vue.prototype.echarts = echarts;
+
 
 export default {
     name:'PlantView',
@@ -283,121 +285,633 @@ export default {
 
         ],
         current:0,
+
+        myChart:'',
+        distributionOptions:'',
+
+        
+
       };
     },
     mounted() {
         this.createPieChart();
-        // this.drawLines();
-        this.createMapChart();
+        // this.createProvinceChart(0);
+
     },
     beforeDestroy() {
       
     },
     methods: {
 
-        createMapChart(){
-            let myChart = this.$echarts.init(document.getElementById("province"));
-            // var option;
+        clearProvinceChart(){
+            var chartDom = document.getElementById('province');
+            var myChart = echarts.init(chartDom);
 
-            // option = {
-            // title: {
-            //     text: 'Referer of a Website',
-            //     subtext: 'Fake Data',
-            //     left: 'center'
-            // },
-            // tooltip: {
-            //     trigger: 'item'
-            // },
-            // legend: {
-            //     orient: 'vertical',
-            //     left: 'left'
-            // },
-            // series: [
-            //     {
-            //     name: 'Access From',
-            //     type: 'pie',
-            //     radius: '50%',
-            //     data: [
-            //         { value: 1048, name: 'Search Engine' },
-            //         { value: 735, name: 'Direct' },
-            //         { value: 580, name: 'Email' },
-            //         { value: 484, name: 'Union Ads' },
-            //         { value: 300, name: 'Video Ads' }
-            //     ],
-            //     emphasis: {
-            //         itemStyle: {
-            //         shadowBlur: 10,
-            //         shadowOffsetX: 0,
-            //         shadowColor: 'rgba(0, 0, 0, 0.5)'
-            //         }
-            //     }
-            //     }
-            // ]
-            // };
+            // 先清除当前的图表
+            myChart.clear();
+        },
 
-            this.$echarts.registerMap("SC", SC);
-            // 颜色或文字的配置
-            let option = {
-                geo: {
-                    type: "map",
-                    aspectScale: 1, // 横向拉伸
-                    // roam: true, // 地图操作 开启缩放或者平移，可以设置成 'scale' 或者 'move'。
-                    map: "SC",
-                    // label: {
-                    //     show: true,
-                    //     // normal: {
-                    //     //     show: true, // 默认地图文字字号和字体颜色
-                    //     //     fontSize: 10,
-                    //     //     color: "#ffffff",
-                    //     // },
-                    //     emphasis: {
-                    //         show: true,
-                    //         fontSize: 10, // 选中地图文字字号和字体颜色
-                    //         color: "#CFCFCF",
-                    //     },
-                    // },
-                    itemStyle: {
+        createProvinceChart(index){
+
+            let province_geo_data=[
+                {
+                    name:'AH',
+                    province:'安徽省',
+                    value:[
+                        {
+                            marker:[118.41359,29.86076],
+                            location_name:'黄山白茶-安徽省歙县',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+                        {
+                            marker:[118.14161,30.27296],
+                            location_name:'黄山毛峰-安徽省黄山',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        {
+                            marker:[117.718228,29.856608],
+                            location_name:'祁门红茶-安徽省祁门县',
+                            color:'#C54522',
+                            type:'红茶'
+                        },
+                        {
+                            marker:[115.87,31.05],
+                            location_name:'霍山黄芽-安徽省霍山县',
+                            color:'#E9CB6A',
+                            type:'黄茶'
+                        },
                         
-                        areaColor: "#040c3c", //地图本身的颜色
-                        borderColor: "#00feda", //省份边框颜色
-                        borderWidth: 1, // 省份边框宽度
-                        opacity: 1, //图形透明度
-                        // emphasis: {
-                        //     areaColor: "#040c3c", // 高亮时候地图显示的颜色
-                        //     borderWidth: 0, // 高亮时的边框宽度
-                        // },
-                    },
-                    textFixed: {
-                    Alaska: [20, -20],
-                    }
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json',
+                    legend:[{name:'白茶',color:'#D9D9D9'},{name:'绿茶',color:'#D0DC89'},{name:'黄茶',color:'#E9CB6A'},{name:'红茶',color:'#C54522'}]
                 },
-                series: [
-                    {
-                    type: "effectScatter",
-                    coordinateSystem: "geo",
-                    symbolSize: 12,
-                    // label: {
-
-                    //     show: false,
+                {
+                    name:'HN',
+                    province:'湖南省',
+                    value:[
+                        {
+                            marker:[111.212846,28.374107],
+                            location_name:'安化黑茶、千两茶-湖南省益阳市安化县',
+                            color:'#594445',
+                            type:'黑茶'
+                        },
+                        {
+                            marker:[113.152243,29.356149],
+                            location_name:'北港毛尖-湖南省岳阳市北港',
+                            color:'#E9CB6A',
+                            type:'黄茶'
+                        },
                         
-                    //     emphasis: {
-                    //     show: false,
-                    //     },
-                    // },
-                    itemStyle: {
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json',
+                    legend:[{name:'黄茶',color:'#E9CB6A'},{name:'黑茶',color:'#594445'}]
+                },
+                {
+                    name:'ZJ',
+                    province:'浙江省',
+                    value:[
+                        {
+                            marker:[120.107334,30.220546],
+                            location_name:'西湖龙井-浙江省杭州市西湖龙井村',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json',
+                    legend:[{name:'绿茶',color:'#D0DC89'}]
+                },
+                {
+                    name:'GZ',
+                    province:'贵州省',
+                    value:[
+                        {
+                            marker:[105.613174,27.141682],
+                            location_name:'海马宫茶-贵州省大方县海马宫村',
+                            color:'#E9CB6A',
+                            type:'黄茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json',
+                    legend:[{name:'黄茶',color:'#E9CB6A'}]
+                },
+                {
+                    name:'YN',
+                    province:'云南省',
+                    value:[
+                        {
+                            marker:[100.97692,22.78684],
+                            location_name:'滇青-云南省思茅市',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        {
+                            marker:[100.79739,22.00749],
+                            location_name:'滇青-云南省西双版纳',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        {
+                            marker:[100.08233,23.89516],
+                            location_name:'滇青-云南省临沧市',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        {
+                            marker:[99.16579,25.12107],
+                            location_name:'滇青-云南省保山市',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        {
+                            marker:[98.58486,24.43232],
+                            location_name:'滇青-云南省德宏傣族景颇族自治州',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        {
+                            marker:[100.26764,25.60648],
+                            location_name:'滇青-云南省大理市',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
 
-                        shadowBlur: 10,
-                        color: "#00ECC8",
+                        {
+                            marker:[100.079583,23.877573],
+                            location_name:'滇红-云南省临沧市',
+                            color:'#C54522',
+                            type:'红茶'
+                        },
+                        {
+                            marker:[99.161761,25.112046],
+                            location_name:'滇红-云南省保山市',
+                            color:'#C54522',
+                            type:'红茶'
+                        },
+                        {
+                            marker:[99.928460,24.580424],
+                            location_name:'滇红-云南省凤庆县',
+                            color:'#C54522',
+                            type:'红茶'
+                        },
 
-                        // emphasis: {
-                        // borderColor: "#fff",
-                        // borderWidth: 1,
-                        // },
+                        {
+                            marker:[100.797941,22.001724],
+                            location_name:'普洱茶-云南省西双版纳',
+                            color:'#594445',
+                            type:'黑茶'
+                        },
+                        {
+                            marker:[100.09544042015,23.890468556279],
+                            location_name:'普洱茶-云南省临沧市',
+                            color:'#594445',
+                            type:'黑茶'
+                        },
+                        {
+                            marker:[100.97256981473,22.83097918601],
+                            location_name:'普洱茶-云南省普洱市',
+                            color:'#594445',
+                            type:'黑茶'
+                        },
+                        
+
+
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json',
+                    legend:[{name:'绿茶',color:'#D0DC89'},{name:'红茶',color:'#C54522'},{name:'黑茶',color:'#594445'}]
+                },
+                {
+                    name:'GX',
+                    province:'广西壮族自治区',
+                    value:[
+                        {
+                            marker:[111.380906,23.812374],
+                            location_name:'六堡茶-广西壮族自治区梧州市六堡镇',
+                            color:'#594445',
+                            type:'黑茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json',
+                    legend:[{name:'黑茶',color:'#594445'}]
+                },
+                {
+                    name:'JS',
+                    province:'江苏省',
+                    value:[
+                        {
+                            marker:[120.63132,31.30227],
+                            location_name:'碧螺春-江苏省苏州市',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json',
+                    legend:[{name:'绿茶',color:'#D0DC89'}]
+                },
+                {
+                    name:'SC',
+                    province:'四川省',
+                    value:[
+                        {
+                            marker:[103.046,30.106],
+                            location_name:'蒙顶黄牙-四川省雅安市蒙顶山',
+                            color:'#E9CB6A',
+                            type:'黄茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json',
+                    legend:[{name:'黄茶',color:'#E9CB6A'}]
+                },
+                {
+                    name:'FJ',
+                    province:'福建省',
+                    value:[
+                        {
+                            marker:[120.21671,27.32436],
+                            location_name:'白毫银针、白牡丹、寿眉-福建省福鼎市',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+                        {
+                            marker:[118.7854,27.52629],
+                            location_name:'白毫银针、寿眉、贡眉-福建省松溪县',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+                        {
+                            marker:[119.9008,27.23513],
+                            location_name:'白毫银针、寿眉-福建省柘荣县',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+                        {
+                            marker:[118.120427,27.331749],
+                            location_name:'白毫银针、寿眉、贡眉-福建省建阳市',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+                        {
+                            marker:[118.85754,27.36609],
+                            location_name:'白毫银针、白牡丹、寿眉、贡眉-福建省政和县',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+
+                        {
+                            marker:[118.30498,27.02266,],
+                            location_name:'贡眉-福建省建瓯市',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+                        {
+                            marker:[118.54138,27.91721],
+                            location_name:'贡眉-福建省浦城县',
+                            color:'#D9D9D9',
+                            type:'白茶'
+                        },
+
+                        {
+                            marker:[117.7243210000,27.8200900000],
+                            location_name:'正山小种-福建省武夷山',
+                            color:'#C54522',
+                            type:'红茶'
+                        },
+                        {
+                            marker:[117.680638,27.747242],
+                            location_name:'金骏眉-福建省武夷山',
+                            color:'#C54522',
+                            type:'红茶'
+                        },
+
+                        {
+                            marker:[118.18629,25.05596],
+                            location_name:'铁观音-福建省泉州市安溪县',
+                            color:'#EC8924',
+                            type:'乌龙茶'
+                        },
+                        {
+                            marker:[117.68063,27.7472],
+                            location_name:'大红袍、肉桂、北斗-福建省武夷山',
+                            color:'#EC8924',
+                            type:'乌龙茶'
+                        },
+                        {
+                            marker:[117.419823,25.290475],
+                            location_name:'水仙-福建省漳平市',
+                            color:'#EC8924',
+                            type:'乌龙茶'
+                        },
+
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json',
+                    legend:[{name:'白茶',color:'#D9D9D9'},{name:'红茶',color:'#C54522'},{name:'乌龙茶',color:'#EC8924'},]
+                },
+                {
+                    name:'SX',
+                    province:'陕西省',
+                    value:[
+                        {
+                            marker:[108.842623,34.527114],
+                            location_name:'泾阳茯砖茶-陕西省泾阳县',
+                            color:'#594445',
+                            type:'黑茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json',
+                    legend:[{name:'黑茶',color:'#594445'}]
+                },
+
+                {
+                    name:'HB',
+                    province:'湖北省',
+                    value:[
+                        {
+                            marker:[109.48817,30.27217],
+                            location_name:'玉露-湖北省恩施市',
+                            color:'#D0DC89',
+                            type:'绿茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json',
+                    legend:[{name:'绿茶',color:'#D0DC89'}]
+                },
+
+                {
+                    name:'GD',
+                    province:'广东省',
+                    value:[
+                        {
+                            marker:[113.597302,24.811112],
+                            location_name:'广东大叶青-广东省韶关市',
+                            color:'#E9CB6A',
+                            type:'黄茶'
+                        },
+                        
+                    ],
+                    path:'https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json',
+                    legend:[{name:'黄茶',color:'#E9CB6A'}]
+                },
+            ]
+
+            // d3.select('#province')
+                // .attr('transform', "translate(500,500)")
+
+
+
+           this.clearProvinceChart();
+           var chartDom = document.getElementById('province');
+            var myChart = echarts.init(chartDom);
+
+            var path = province_geo_data[index].path;
+            var option;
+
+            myChart.showLoading({
+                text : '加载中...',  //加载时候的文本
+                color:'#32846e',      //加载时候小圆圈的颜色
+                // textColor:'white',  //加载时候文本颜色
+                maskColor:'#08204200' //加载时候的背景颜色
+            });
+            $.get(province_geo_data[index].path,function(usaJson){
+                // console.log('jquery',usaJson);
+                myChart.hideLoading();
+                echarts.registerMap(province_geo_data[index].name,usaJson);
+                option = {
+                    title: {
+                        text:province_geo_data[index].province,
+                        // subtext: 'Data from www.census.gov',
+                        left: 'center'
                     },
+                    tooltip: {
+                        show:true,
+                        trigger: 'item',
+                        showDelay: 0,
+                        transitionDuration: 0.2,
+                        formatter: function(params) {
+                            // console.log('params',params);
+                            // return params.name + ': ' + params.value[2];
+                            return params.data.name
+                        }
                     },
-                ],
-            };
-            myChart.setOption(option);
+                    legend: {
+                        data: province_geo_data[index].legend.map(function(item){
+                            console.log(item);
+                            return{
+                                name:item.name,
+                                itemStyle:{
+                                    color:item.color
+                                }
+                            }
+                        }),
+                        left: 'center',
+                        bottom: 5,
+                    },
+                    geo:{
+                        map:province_geo_data[index].name,
+                        itemStyle: {
+                            areaColor: {
+                                type: 'linear', // 设置渐变色
+                                x: 0,
+                                y: 0,
+                                x2: 0.5,
+                                y2: 1,
+                                colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#5eb139' // 起始颜色
+                                },
+                                {
+                                    offset: 1,
+                                    color: '#2d8241' // 结束颜色
+                                }
+                                ]
+                            },// 地图区域的颜色
+                            borderColor: '#ffecb2', // 地图区域的边框颜色
+                            borderWidth: 0.5 // 地图区域的边框宽度
+                        },
+                        emphasis: {  // 高亮状态下的样式
+                            itemStyle:{
+                                areaColor: {
+                                type: 'linear', // 设置渐变色
+                                x: 0,
+                                y: 0,
+                                x2: 0.5,
+                                y2: 1,
+                                colorStops: [
+                                {
+                                    offset: 0,
+                                    color: '#5eb139' // 起始颜色
+                                },
+                                {
+                                    offset: 1,
+                                    color: '#2d8241' // 结束颜色
+                                }
+                                ]
+                            },// 地图区域的颜色
+                            borderColor: '#ffecb2', // 地图区域的边框颜色
+                            borderWidth: 0.5 // 地图区域的边框宽度
+                            }
+                            
+                        }
+                    },
+                    series:[
+                        {
+                            name:'绿茶',
+                            type:'scatter',
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            coordinateSystem: 'geo',
+                            data:province_geo_data[index].value.map(function(item){
+                                if(item.type == '绿茶'){
+                                    return{
+                                        name:item.location_name,
+                                        value: item.marker,
+                                        itemStyle:{ color: item.color}
+                                    }
+                                }
+                            }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
+
+                            symbolSize:10,
+
+                        },
+                        {
+                            name:'白茶',
+                            type:'scatter',
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            coordinateSystem: 'geo',
+                            data:province_geo_data[index].value.map(function(item){
+                                if(item.type == '白茶'){
+                                    return{
+                                        name:item.location_name,
+                                        value: item.marker,
+                                        itemStyle:{ color: item.color}
+                                    }
+                                }
+                            }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
+
+                            symbolSize:10,
+                        
+                        },
+                        {
+                            name:'黄茶',
+                            type:'scatter',
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            coordinateSystem: 'geo',
+                            data:province_geo_data[index].value.map(function(item){
+                                if(item.type == '黄茶'){
+                                    return{
+                                        name:item.location_name,
+                                        value: item.marker,
+                                        itemStyle:{ color: item.color}
+                                    }
+                                }
+                            }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
+
+                            symbolSize:10,
+                        
+                        },
+                        {
+                            name:'乌龙茶',
+                            type:'scatter',
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            coordinateSystem: 'geo',
+                            data:province_geo_data[index].value.map(function(item){
+                                if(item.type == '乌龙茶'){
+                                    return{
+                                        name:item.location_name,
+                                        value: item.marker,
+                                        itemStyle:{ color: item.color}
+                                    }
+                                }
+                            }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
+
+                            symbolSize:10,
+                        
+                        },
+                        {
+                            name:'红茶',
+                            type:'scatter',
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            coordinateSystem: 'geo',
+                            data:province_geo_data[index].value.map(function(item){
+                                if(item.type == '红茶'){
+                                    return{
+                                        name:item.location_name,
+                                        value: item.marker,
+                                        itemStyle:{ color: item.color}
+                                    }
+                                }
+                            }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
+
+                            symbolSize:10,
+                        
+                        },
+                        {
+                            name:'黑茶',
+                            type:'scatter',
+                            emphasis: {
+                                focus: 'series'
+                            },
+                            coordinateSystem: 'geo',
+                            data:province_geo_data[index].value.map(function(item){
+                                if(item.type == '黑茶'){
+                                    return{
+                                        name:item.location_name,
+                                        value: item.marker,
+                                        itemStyle:{ color: item.color}
+                                    }
+                                }
+                            }),
+                            itemStyle:{
+                                borderColor: '#ffffff', // 设置描边颜色
+                                borderWidth: 2 // 设置描边宽度
+                            },
+
+                            symbolSize:10,
+                        },
+
+                    ]
+                }
+                myChart.setOption(option);
+            });
+            
         },
 
         createPieChart(){
@@ -427,6 +941,8 @@ export default {
             var margin = {top: 0, right:  0, bottom:  0, left: 0},
                 width = this.windowWidth - margin.right - margin.left,
                 height = this.windowHeight - margin.top - margin.bottom;
+
+            var province_geo_scale = 300/396.5;
             
             if(width < height){
                 var radius = width/2-80;
@@ -434,7 +950,7 @@ export default {
                 var radius = height/2 - 80;
             }
             
-            console.log(radius);
+            // console.log(radius);
 
             var cover_alpha = 0.3
 
@@ -450,11 +966,15 @@ export default {
             var mouse_over_in_action = false;
             var province_click_current = -1;
             var name_click_current = -1;
-
-            
+  
             var size_factor = this.windowWidth/basewidth;
 
 
+
+            // 设置省份的宽度
+            // document.getElementById('province').setAttribute('style','width='+(province_geo_scale*radius)+'px;height='+(province_geo_scale*radius)+'px')
+            // d3.select('#province')
+            //     .attr('style','width='+(province_geo_scale*radius)+'px;height='+(province_geo_scale*radius)+'px')
 
 
             var container = d3.select("#chart");
@@ -991,6 +1511,7 @@ export default {
                     // console.log(i)
 
                     create_province_current_selected_line(i.province);
+                    _this.createProvinceChart(i.province);
 
 
                     // 中间显示地图
@@ -1001,7 +1522,7 @@ export default {
                     clear_outer_ring()
                     ctx.clearRect(-width/2, -height/2, width, height);
                     // 清空中间的地图
-                    // ……
+                    _this.clearProvinceChart();
 
                     // 画出线条
                     create_lines("character", cover_data );
