@@ -8,7 +8,7 @@
       </div>
       
       <div style="width: 50%;justify-content: right;display: flex;">
-        <template><t-tabs :defaultValue="1" theme="card" @change="selectTabs">
+        <template><t-tabs :defaultValue="1" @change="selectTabs">
             <t-tab-panel :value="1" label="产量(万吨)">
               <!-- <p style="margin: 20px">选项卡1内容区</p> -->
             </t-tab-panel>
