@@ -5,11 +5,22 @@
       <p class="title">
         各省份近五年产量产值
       </p>
-      <div class="tabs">
-        <div class="tab" :class="{ 'active': selectedTab === 1 }" @click="selectTab(1)">产量（吨）</div>
-        <div class="tab" :class="{ 'active': selectedTab === 2 }" @click="selectTab(2)">产值（亿元）</div>
-      </div>
+
+
+<div class="tabs">
+      <t-tabs :defaultvalue=1  @change="selectTab">
+      <!-- 默认插槽 和 具名插槽（panel）都是用来渲染面板内容 -->
+      <t-tab-panel :value="1" label="产量（吨）" :destroyOnHide="false">
+       
+      </t-tab-panel>
+      <t-tab-panel :value="2" label="产量（亿元）" :destroyOnHide="false">
+
+      </t-tab-panel>
+     
+    </t-tabs>
+  </div>
     </div>
+   
     <component :is="selectedTab === 1 ? 'a1' : 'a2'"></component>
 
   </div>
@@ -22,6 +33,8 @@ import A2 from './a2.vue';
 export default {
   data() {
     return {
+      value: '1',
+      tab: 1,
       selectedTab: 1,
     };
   },
@@ -32,6 +45,7 @@ export default {
   methods: {
     selectTab(tabNumber) {
       this.selectedTab = tabNumber;
+      console.log(tabNumber)
     },
 
   },
