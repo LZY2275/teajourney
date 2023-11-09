@@ -55,7 +55,7 @@ export default {
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
         .selectAll("text") // 选择所有的文本标签
-        .attr("dy", "2.5em"); // 调整垂直偏移
+        .attr("dy", "2em"); // 调整垂直偏移
       // 创建纵轴
       svg.append('g')
         .attr('class', 'y-axis')
