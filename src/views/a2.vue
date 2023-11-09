@@ -195,7 +195,7 @@ export default {
           })
           .on('mousemove', function (event,d) {
             const tooltip = d3.select('.tooltip');
-            tooltip.html(`产量&nbsp&nbsp${d.value}`);
+            tooltip.html(`产值&nbsp&nbsp${d.value}`);
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持
