@@ -19,11 +19,6 @@ import TeaGardenChartView from './TeaGardenChartView.vue';
 import TeaProvinceChartView from './TeaProvinceChartView.vue';
 import TeaTypeChartView from './TeaTypeChartView.vue';
 
-
-
-// @ is an alias to /src
-
-
 export default {
   name: 'SaleView',
   components: {
