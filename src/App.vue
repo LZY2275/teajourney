@@ -8,6 +8,18 @@
     <div style="display: flex;">
       <!-- 左侧导航栏 -->
       <div>
+        <!-- <div class="nav">
+          <p class="nav-title">{{ title[current] }}</p>
+          <t-divider></t-divider>
+          <t-anchor container="#content-view" @click="handleClick">
+            <t-anchor-item href="#plant" title="种茶"></t-anchor-item>
+            <t-anchor-item href="#pick" title="采茶"></t-anchor-item>
+            <t-anchor-item href="#produce" title="制茶"></t-anchor-item>
+            <t-anchor-item href="#sale" title="销茶"></t-anchor-item>
+          <t-anchor-item href="#taste" title="品茶"></t-anchor-item>
+          </t-anchor>
+        </div> -->
+        
         <div class="nav">
           <p class="nav-title">{{ title[current] }}</p>
           <t-divider></t-divider>
@@ -19,6 +31,7 @@
                       @change="onChangeSteps">
               <t-step-item title="种茶" content="春风吹绿苗" />
               <t-step-item title="采茶" content="晨朝掇灵芽" />
+              <t-step-item title="制茶" content="蒸青是主流" />
               <t-step-item title="销茶" content="茶香弥漫市" />
               <t-step-item title="品茶" content="圭璧无纤瑕" />
             </t-steps>
@@ -40,6 +53,10 @@
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <PickView></PickView>
         </section>
+        <section id="produce" class="section-first-3">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
+          <ProduceView></ProduceView>
+        </section>
         <section id="sale" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <SaleView></SaleView>
@@ -58,23 +75,25 @@
 import HomeView from './views/HomeView.vue';
 import PickView from './views/PickView.vue';
 import PlantView from './views/PlantView.vue';
+import ProduceView from './views/ProduceView.vue';
 import SaleView from './views/SaleView.vue';
 import TasteView from './views/TasteView.vue';
 import TeaInfoView from './views/TeaInfoView.vue';
 
   export default {
     components:{
-    HomeView,
-    PlantView,
-    PickView,
-    SaleView,
-    TasteView,
-    TeaInfoView,
-},
+        HomeView,
+        PlantView,
+        PickView,
+        SaleView,
+        TasteView,
+        TeaInfoView,
+        ProduceView
+    },
     data() {
       return {
         current:0,
-        title:['种茶','采茶','销茶','品茶'],
+        title:['种茶','采茶','制茶','销茶','品茶'],
         scrollHeight:0, //当前滚轮高度
         metaHeight:15,  //最小滚动距离
         metaTime: 10,   //最小执行时间
@@ -90,6 +109,10 @@ import TeaInfoView from './views/TeaInfoView.vue';
       
     },
     methods: {
+      // handleClick({ e, href, title }) {
+      //   e.preventDefault();
+      //   console.log('click', href, title);
+      // },
       onChangeSteps(e){
         this.current=e;
         this.toArea(e);
@@ -107,8 +130,10 @@ import TeaInfoView from './views/TeaInfoView.vue';
           this.current=1
         }else if(scrollTop >= 3*clientHeight && scrollTop < 4*clientHeight){
           this.current=2;
-        }else if(scrollTop >= 4*clientHeight){
+        }else if(scrollTop >= 4*clientHeight && scrollTop < 5*clientHeight){
           this.current=3;
+        }else if(scrollTop >= 5*clientHeight){
+          this.current=4;
         }
       },
       toArea(index) { // 这里的index是左侧导航栏传的参数，是不同区域设定好的索引值
@@ -124,6 +149,9 @@ import TeaInfoView from './views/TeaInfoView.vue';
             break;
           case 3: //区域四
             this.targetHeight= 4*this.clientHeight
+            break;
+          case 4: //区域五
+            this.targetHeight= 5*this.clientHeight
             break;
           default: //默认：区域一
             this.targetHeight= this.clientHeight
