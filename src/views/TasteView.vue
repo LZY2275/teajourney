@@ -2,6 +2,7 @@
   <div>
     <div class="global1">
 
+      <!-- 评鉴方法 -->
       <div style="width: 50%;">
         <t-divider class="FirstDivider"></t-divider>
         <div style="display: flex;">
@@ -12,6 +13,7 @@
           <p class="Caption1">说明文字：这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字。</p>
         </div>
 
+        <!-- 评茶方式 -->
         <t-card
           style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
@@ -52,6 +54,7 @@
           </div>
         </t-card>
 
+        <!-- 三看 -->
         <t-card
           style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
@@ -92,6 +95,7 @@
           </div>
         </t-card>
 
+        <!-- 三闻 -->
         <t-card
           style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
@@ -132,6 +136,7 @@
           </div>
         </t-card>
 
+        <!-- 三品 -->
         <t-card
           style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
@@ -174,6 +179,7 @@
 
       </div>
 
+      <!-- 右侧的信息 -->
       <div style="margin-left: 4%;width: 50%;">
         <t-divider class="FirstDivider"></t-divider>
 
@@ -182,7 +188,161 @@
           <p class="FeelingSub">FEELING</p>
         </div>
 
-        <div style="margin-top:3vh;">
+        <template><div :style="{ width: '100%' }">
+          <!-- 换成轮播图 -->
+          <t-swiper :duration="300" :interval="2000" :navigation="{ placement: 'outside' }">
+            <t-swiper-item>
+               <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字1</p>
+                  <p class="Caption4">这是说明文字2</p>
+                  <p class="Caption4">这是说明文字3</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字4</p>
+                </div>
+              </div>
+              <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字5</p>
+                  <p class="Caption4">这是说明文字6</p>
+                  <p class="Caption4">这是说明文字7</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字8</p>
+                </div>
+              </div>
+            </t-swiper-item>
+            <t-swiper-item>
+              <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字9</p>
+                  <p class="Caption4">这是说明文字10</p>
+                  <p class="Caption4">这是说明文字11</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字12</p>
+                </div>
+              </div>
+              <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p class="Taste">口感</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字13</p>
+                  <p class="Caption4">这是说明文字14</p>
+                  <p class="Caption4">这是说明文字15</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字16</p>
+                </div>
+              </div>
+              
+            </t-swiper-item>
+          </t-swiper>
+        </div></template>
+
+        <!-- <div style="margin-top:3vh;">
           <div style="display: flex;">
             <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
 
@@ -324,6 +484,12 @@
               style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
               这是说明文字16</p>
           </div>
+        </div> -->
+
+
+        <!-- 这里放一个桑基图 -->
+        <div style="border: solid 1px #000000; width: 100%;height: calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px); margin-top: 36px;">
+          <SankeyView></SankeyView>
         </div>
 
         <div style="margin-top: 3vh;">
@@ -331,7 +497,165 @@
           <p class="FeelingSub">NEW-STYLE TEA DRINKS</p>
         </div>
 
-        <div style="margin-top:3vh;">
+        <template><div :style="{ width: '100%' }">
+          <!-- 换成轮播图 -->
+          <t-swiper :duration="300" :interval="2000" :navigation="{ placement: 'outside' }">
+            <t-swiper-item>
+              <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字1</p>
+                  <p class="Caption4">这是说明文字2</p>
+                  <p class="Caption4">这是说明文字3</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字4</p>
+                </div>
+              </div>
+            </t-swiper-item>
+            <t-swiper-item>
+              <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字5</p>
+                  <p class="Caption4">这是说明文字6</p>
+                  <p class="Caption4">这是说明文字7</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字8</p>
+                </div>
+              </div>              
+            </t-swiper-item>
+            <t-swiper-item>
+              <div style="margin-top:3vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字9</p>
+                  <p class="Caption4">这是说明文字10</p>
+                  <p class="Caption4">这是说明文字11</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字12</p>
+                </div>
+              </div>            
+            </t-swiper-item>
+            <t-swiper-item>     
+              <div style="margin-top:2vh;">
+                <div style="display: flex;">
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                  <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
+
+                  </t-card>
+                </div>
+
+                <div style="display: flex;">
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p class="Taste">鲜绿香</p>
+                  <p
+                    style="
+                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
+                    口感</p>
+                </div>
+
+                <div style="display: flex;margin-bottom: 2vh;">
+                  <p class="Caption4">这是说明文字13</p>
+                  <p class="Caption4">这是说明文字14</p>
+                  <p class="Caption4">这是说明文字15</p>
+                  <p
+                    style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
+                    这是说明文字16</p>
+                </div>
+              </div>
+            </t-swiper-item>
+          </t-swiper>
+        </div></template>
+
+        <!-- <div style="margin-top:3vh;">
           <div style="display: flex;">
             <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
 
@@ -474,12 +798,18 @@
               style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
               这是说明文字16</p>
           </div>
-        </div>
+        </div> -->
       </div>
 
     </div>
 
+    <div style="padding:26px 45px 0 68px">
+      <div style="width: 100%; border: 1px solid #000000;height: 70vh;">
+        <TeaFragranceView></TeaFragranceView>
+      </div>
+    </div>
 
+    <!-- 汤色 -->
     <div style="padding:26px 45px 214px 68px">
       <t-card style="border: 0;background: rgba(252, 249, 232, 1);">
         <div style="display: flex;">
@@ -625,9 +955,15 @@
 
 <script>
 // @ is an alias to /src
+import SankeyView from '../views/SankeyView.vue';
+import TeaFragranceView from '../views/TeaFragranceView.vue'
 
 export default {
   name: 'TasteView',
+  components:{
+    SankeyView,
+    TeaFragranceView
+  }
 }
 
 </script>
