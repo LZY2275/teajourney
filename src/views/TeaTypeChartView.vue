@@ -2,7 +2,7 @@
   
   <div>
     <!-- 标题区域 -->
-    <div style="padding: 10px;display: flex;">
+    <div style="padding:0 10px;display: flex;">
       <div style="width: 50%;">
         <p class="title">各类茶近五年产量产值</p>
       </div>
@@ -25,7 +25,7 @@
     <!-- 图表展示区域 -->
     <div style="display: flex;padding: 0 10px 10px 10px;">
       <div id="silklable" style="padding: 10px 20px;"></div>
-      <div id="silkchart-container" style="height: calc((50vh - 30px) - 69px);width: calc(100% - 124px);">
+      <div id="silkchart-container" style="height: calc((40vh - 10px) - 69px);width: calc(100% - 124px);">
         <div id="silkchart" style="width: 100%;height: 100%;"></div>
       </div>
 

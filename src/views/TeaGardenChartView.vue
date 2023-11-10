@@ -456,17 +456,12 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
     height: 290px;
   }
   .title{
-    display: flex;
-    margin-left: 0%;
-    margin-top: 0%;
-    font-size: 14px;
-    font-weight: bold;
-    color: rgba(50, 132, 110, 1);
     text-align: left;
-    vertical-align: top;
-    padding-top: 10px;
-    padding-left: 10px;
-    width: auto;
-    height: auto;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--td-brand-color-6);
+    line-height: 49px;
+    padding: 0 10px;
+    margin-left: 10px;
   }
 </style>
