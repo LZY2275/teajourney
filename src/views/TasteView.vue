@@ -487,9 +487,9 @@
         </div> -->
 
 
-        <!-- 这里放一个桑基图 -->
+        <!-- 这里放一个茶香图 -->
         <div style="border: solid 1px #000000; width: 100%;height: calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px); margin-top: 36px;">
-          <SankeyView></SankeyView>
+          <TeaFragranceView></TeaFragranceView>
         </div>
 
         <div style="margin-top: 3vh;">
@@ -805,7 +805,8 @@
 
     <div style="padding:26px 45px 0 68px">
       <div style="width: 100%; border: 1px solid #000000;height: 70vh;">
-        <TeaFragranceView></TeaFragranceView>
+        
+        <SankeyView></SankeyView>
       </div>
     </div>
 
