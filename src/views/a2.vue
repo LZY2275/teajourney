@@ -28,9 +28,8 @@ export default {
         { province: '湖北省'},
         { province: '广东省'},
       ];
-// 现在，scaledRadii 中的值具有一定差异，可以用它们作为圆的半径
       // 定义容器尺寸
-      const margin = { top: 20, right: 20, bottom: 40, left: 60 };
+      const margin = { top: 40, right: 20, bottom: 40, left: 60 };
       const container = d3.select('.line-chart-container');
       const width = container.node().getBoundingClientRect().width - margin.left - margin.right;
       const height = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
@@ -57,7 +56,9 @@ export default {
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
         .selectAll("text") // 选择所有的文本标签
-        .attr("dy", "2em"); // 调整垂直偏移
+        .attr("dy", "2.5em"); // 调整垂直偏移
+        svg.select('.x-axis path').attr('display', 'none');  // 隐藏横轴的线
+      svg.selectAll('.tick line').attr('display', 'none'); // 隐藏刻度线
       // 创建纵轴
       svg.append('g')
         .attr('class', 'y-axis')
@@ -288,9 +289,10 @@ export default {
       
 <style scoped>
 .line-chart-container {
+  float: right;
   text-align: center;
-  width: 100%;
-  height: calc(50vh - 72px);
+  width: 80%;
+  height: calc(58.5vh - 72px);
 }
 
 .line-chart {

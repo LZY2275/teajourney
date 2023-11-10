@@ -28,7 +28,7 @@ export default {
       ];
 
       // 定义容器尺寸
-      const margin = { top: 20, right: 20, bottom: 40, left: 60 };
+      const margin = { top: 40, right: 20, bottom: 40, left: 60 };
       const container = d3.select('.line-chart-container');
       const width = container.node().getBoundingClientRect().width - margin.left - margin.right;
       const height = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
@@ -44,7 +44,7 @@ export default {
         .domain(data.map(d => d.province))
         .range([0, width])
         .padding(0.1);
-      // 动态设置纵轴比例尺（年份）
+      // 动态设置纵轴比例尺（年份）    
       const yScale = d3.scaleLinear()
         .domain([2018, 2022]) // 设置纵轴范围
         .nice()
@@ -55,20 +55,23 @@ export default {
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
         .selectAll("text") // 选择所有的文本标签
-        .attr("dy", "2em"); // 调整垂直偏移
+        .attr("dy", "2.5em"); // 调整垂直偏移 
+      svg.select('.x-axis path').attr('display', 'none');  // 隐藏横轴的线
+      svg.selectAll('.tick line').attr('display', 'none'); // 隐藏刻度线
       // 创建纵轴
       svg.append('g')
         .attr('class', 'y-axis')
         .call(d3.axisLeft(yScale).ticks(5).tickFormat(d3.format('d')))
         .selectAll("text") // 选择所有的文本标签
         .attr("dx", "-1em"); // 调整偏移
+
       // 安徽省的圆
       const data1 = [
         { province: '安徽省', year: 2018, radius: 12.772, value: 134922.00 },
         { province: '安徽省', year: 2019, radius: 12.820, value: 137094.00 },
         { province: '安徽省', year: 2020, radius: 12.860, value: 138900.00 },
         { province: '安徽省', year: 2021, radius: 12.938, value: 142413.00 },
-        { province: '安徽省', year: 2022, radius: 13.198, value: 154100.00 },
+        { province: '安徽省', year: 2022, radius: 33.198, value: 154100.00 },
       ];
       // 湖南省的圆
       const data2 = [
@@ -192,7 +195,7 @@ export default {
               .attr('r', (d) => d.radius + 2)
               .style('fill', d3.rgb(circleColor).brighter(0.5));
           })
-          .on('mousemove', function (event,d) {
+          .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
             tooltip.html(`产量&nbsp&nbsp${d.value}`);
             const xOffset = -60;
@@ -200,9 +203,9 @@ export default {
             let left = event.pageX;  // IE8不支持
             let top = event.pageY;
             tooltip.style('display', 'block');
-            tooltip.style('left',left  + xOffset+ 'px');
-            tooltip.style('top', top+ yOffset +'px');
-            tooltip.style('box-shadow',circleColor)
+            tooltip.style('left', left + xOffset + 'px');
+            tooltip.style('top', top + yOffset + 'px');
+            tooltip.style('box-shadow', circleColor)
           })
           .on('mouseout', function () {
             // 当鼠标离开圆时，隐藏提示框和还原圆的大小和颜色
@@ -292,9 +295,10 @@ export default {
   
 <style scoped>
 .line-chart-container {
+  float: right;
   text-align: center;
-  width: 100%;
-  height: calc(50vh - 72px);
+  width: 80%;
+  height: calc(58.5vh - 72px);
 }
 
 .line-chart {
