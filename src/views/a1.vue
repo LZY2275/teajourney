@@ -205,9 +205,8 @@ export default {
 
         newCircleGroup.append('circle')
           .attr('r', (d) => d.radius)
-          .style('fill', circleColor)
-          .style('opacity', 0.3)
-          .style('stroke', 'black')  // 设置边界颜色
+          .style('fill', circleColor+'80')
+          .style('stroke', circleColor)  // 设置边界颜色
           .style('stroke-width', 2) // 设置边界宽度
           .style('cursor', 'pointer') // 设置鼠标指针样式为可点击
           .on('mouseover', function (event, d) {
@@ -216,7 +215,7 @@ export default {
               .transition()
               .duration(200)
               .attr('r', (d) => d.radius + 2)
-              .style('fill', d3.rgb(circleColor).brighter(0.5));
+              .style('fill', d3.rgb(circleColor+'80').brighter(0.5));
           })
           .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
@@ -237,7 +236,7 @@ export default {
               .transition()
               .duration(200)
               .attr('r', (d) => d.radius)
-              .style('fill', circleColor);
+              .style('fill', circleColor+'80');
           });
       }
       window.addEventListener('resize', () => {

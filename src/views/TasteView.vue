@@ -976,7 +976,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .global1 {
   /* width: calc(100vw - 300px); */
   display: flex;
-  padding: 159px 68px 0px 68px;
+  padding: 82px 68px 0px 68px;
 }
 
 .FirstDivider {

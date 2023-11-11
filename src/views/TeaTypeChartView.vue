@@ -719,7 +719,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                   if(d.source.type == 5)
                     return colors[5]
               })
-              .style("stroke-width", 0.1);
+              .style("stroke-width", 0.3);
 
           // 添加交互
           // d3.selectAll('.link.5')
