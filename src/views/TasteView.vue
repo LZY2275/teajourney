@@ -189,7 +189,7 @@
         </div>
 
         <template><div :style="{ width: '100%' }">
-          <!-- 换成轮播图 -->
+          <!-- 换成轮播图 --> 
           <t-swiper :duration="300" :interval="2000" :navigation="{ placement: 'outside' }">
             <t-swiper-item>
                <div style="margin-top:3vh;">
@@ -804,8 +804,7 @@
     </div>
 
     <div style="padding:26px 45px 0 68px">
-      <div style="width: 100%; border: 1px solid #000000;height: 70vh;">
-        
+      <div style="width: 100%; height: 70vh;">
         <SankeyView></SankeyView>
       </div>
     </div>

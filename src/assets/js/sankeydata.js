@@ -1,165 +1,213 @@
 var data = {
     nodes:[{
         name:"糖类",
-        category:"糖类"
+        category:"糖类",
+        color:'#bbbcac'
     },
     {
         name:'氨基酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#5a705b'
     },{
         name:'嘌呤碱',
-        category:'嘌呤碱'
+        category:'嘌呤碱',
+        color:'#d7b669'
     },{
         name:'酚性物及其氧化物',
-        category:'酚性物及其氧化物'
+        category:'酚性物及其氧化物',
+        color:'#738b6d'
     },{
         name:'有机酸类',
-        category:'有机酸类'
+        category:'有机酸类',
+        color:'#f99f52'
     },{
         name:'茶皂素',
-        category:'茶皂素'
+        category:'茶皂素',
+        color:'#ba948b'
     },
     
     {
         name:"糖",
-        category:"成味成分"
+        category:"成味成分",
+        color:'#d9dace'
     },
     {
         name:'甘氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
+
     },{
         name:'丙氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'茶红素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'氨基酸类',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'茶氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'咖啡碱',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#dbcaa1'
     },{
         name:'茶黄素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'表儿茶素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'没食子儿茶素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'精氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'酚性酸儿茶素类',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'酯型儿茶素黄酮类',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'花表素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'谷氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'谷氨酰胺',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'天冬氨酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'天冬氨酰胺',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'没食子酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'有机酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#dbcaa1'
     },{
         name:'抗坏血酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#dbcaa1'
     },{
         name:'茶皂素类',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#ba948b'
     },{
         name:'果胶素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#d9dace'
     },{
         name:'茶褐素',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },
     
     {
         name:'甜',
-        category:'滋味'
+        category:'滋味',
+        color:'#a7b9a8'
     },{
         name:'鲜甜',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'鲜爽甜',
-        category:'氨基酸'
-    },{
-        name:'鲜爽',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'爽',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'涩',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'甜苦',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'苦涩',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'苦',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'鲜甜酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },{
         name:'酸',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#dbcaa1'
     },{
         name:'辛辣苦',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#c9b0aa'
     },{
         name:'厚',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#a7b9a8'
     },{
         name:'淡',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#acbba6'
     },
     
     {
         name:'甜味',
-        category:'味觉'
+        category:'味觉',
+        color:'#bbbcac'
     },{
         name:'鲜味',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#5a705b'
     },{
         name:'苦味',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#738b6d'
     },{
         name:'酸味',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#f99f52'
     },{
         name:'辣味',
-        category:'氨基酸'
+        category:'氨基酸',
+        color:'#ba948b'
     },{
         name:'空',
-        category:'空'
+        category:'空',
+        color:'#ba948b'
     }
 ],
     links:[
@@ -209,7 +257,7 @@ var data = {
         },
         
         {
-            source:'氨基酸',
+            source:'酚性物及其氧化物',
             target:'茶红素',
             value:1
         },{
@@ -236,36 +284,9 @@ var data = {
             source:'嘌呤碱',
             target:'咖啡碱',
             value:1
-        },{
-            source:'咖啡碱',
-            target:'鲜爽',
-            value:1
-        },{
-            source:'鲜爽',
-            target:'鲜味',
-            value:1
-        },{
-            source:'嘌呤碱',
-            target:'茶黄素',
-            value:1
-        },{
-            source:'茶黄素',
-            target:'鲜爽',
-            value:1
-        },
-        
-        {
-            source:'酚性物及其氧化物',
-            target:'茶红素',
-            value:1
         },
         {
-            source:'酚性物及其氧化物',
-            target:'氨基酸类',
-            value:1
-        },
-        {
-            source:'酚性物及其氧化物',
+            source:'氨基酸',
             target:'茶氨酸',
             value:1
         },{
@@ -277,12 +298,7 @@ var data = {
             target:'鲜味',
             value:1
         },
-        
         {
-            source:'酚性物及其氧化物',
-            target:'咖啡碱',
-            value:1
-        },{
             source:'酚性物及其氧化物',
             target:'茶黄素',
             value:1
@@ -317,7 +333,7 @@ var data = {
             target:'涩',
             value:1
         },{
-            source:'酚性物及其氧化物',
+            source:'氨基酸',
             target:'精氨酸',
             value:1
         },{
@@ -381,7 +397,7 @@ var data = {
             target:'天冬氨酰胺',
             value:1
         },{
-            source:'氨基酸',
+            source:'酚性物及其氧化物',
             target:'没食子酸',
             value:1
         },{
