@@ -49,7 +49,7 @@ export default {
       ];
 
       // 定义容器尺寸
-      const margin = { top: 40, right: 20, bottom: 40, left: 60 };
+      const margin = { top: 40, right: 20, bottom: 60, left: 60 };
       const container = d3.select('.line-chart-container');
       const width = container.node().getBoundingClientRect().width - margin.left - margin.right;
       const height = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
@@ -76,7 +76,9 @@ export default {
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
         .selectAll("text") // 选择所有的文本标签
-        .attr("dy", "3em"); // 调整垂直偏移 
+        .attr("dy", "3.5em") // 调整垂直偏移 
+        .style('font-size','12px')
+
       svg.select('.x-axis path').attr('display', 'none');  // 隐藏横轴的线
       svg.selectAll('.tick line').attr('display', 'none'); // 隐藏刻度线
       // 创建纵轴
