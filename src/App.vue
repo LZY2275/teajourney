@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 首页 -->
-    <div style="width: 100vw;height: 100vh;background: linear-gradient(180deg, rgba(20, 81, 82, 1) 0%, rgba(218, 231, 182, 1) 100%);">
+    <div style="width: 99vw;height: 100vh;background: linear-gradient(180deg, rgba(20, 81, 82, 1) 0%, rgba(218, 231, 182, 1) 100%);">
       <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views 高度为100vh-->
       <HomeView></HomeView>
     </div>
@@ -234,6 +234,7 @@ import TeaInfoView from './views/TeaInfoView.vue';
 
 .content-view{
   width: 100%;
+  overflow-x:hidden;
 }
 
 /* 内容 */

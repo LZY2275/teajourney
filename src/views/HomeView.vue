@@ -75,7 +75,7 @@ export default {
     color: rgba(255, 255, 255, 0.5);
   }
   .global{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     background-image: url("../assets/img/first.png");
