@@ -124,15 +124,15 @@ import TeaInfoView from './views/TeaInfoView.vue';
         let clientHeight = window.innerHeight;
         this.clientHeight = clientHeight
         // console.log(scrollTop,clientHeight);
-        if(scrollTop >= clientHeight && scrollTop < 2*clientHeight){
+        if(scrollTop >= clientHeight-300 && scrollTop < 2*clientHeight-300){
           this.current=0;
-        }else if(scrollTop >= 2*clientHeight && scrollTop < 3*clientHeight){
+        }else if(scrollTop >= 2*clientHeight-300 && scrollTop < 3*clientHeight-300){
           this.current=1
-        }else if(scrollTop >= 3*clientHeight && scrollTop < 4*clientHeight){
+        }else if(scrollTop >= 3*clientHeight-300 && scrollTop < 4*clientHeight-300){
           this.current=2;
-        }else if(scrollTop >= 4*clientHeight && scrollTop < 5*clientHeight){
+        }else if(scrollTop >= 4*clientHeight-300 && scrollTop < 5*clientHeight-300){
           this.current=3;
-        }else if(scrollTop >= 5*clientHeight){
+        }else if(scrollTop >= 5*clientHeight-300){
           this.current=4;
         }
       },
