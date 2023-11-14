@@ -203,6 +203,14 @@ import TeaInfoView from './views/TeaInfoView.vue';
   };
 </script>
 
+<!-- <style rel="stylesheet/scss" lang="scss">
+ 
+  @import url("./assets/font/font.css");
+ 
+  body{
+    font-family:HYRunYuan-65W
+  }
+</style> -->
 
 <style lang="less">
 *{
@@ -210,8 +218,13 @@ import TeaInfoView from './views/TeaInfoView.vue';
   padding: 0;
 }
 
+@font-face {  
+  font-family: "HYRunYuan-65W";  
+  src: url("./assets/font/HYRunYuan-65W.ttf") format("truetype"), 
+} 
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
