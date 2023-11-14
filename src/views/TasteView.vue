@@ -456,284 +456,92 @@
 
         <template>
           <div :style="{ width: '100%' }">
-            <!-- 换成轮播图 -->
-            <t-swiper :duration="300" :interval="2000" :navigation="{ placement: 'outside' }">
+            <!-- 换成轮播图 -----lzy修改 -->
+            <t-swiper :duration="300" :interval="6000" :navigation="{ placement: 'outside' }">
               <t-swiper-item>
-                <div style="margin-top:3vh;">
-                  <div style="display: flex;">
-                    <img src="../assets/img/newtea1.jpg" style="flex: 1;margin-right: 75px;; height: 13.215vh;">
-                    <img src="../assets/img/newtea2.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/newtea3.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/newtea4.jpg" style="flex: 1; height: 13.215vh;">
+                <div style="margin-top:3vh;width: 100%;display: flex;">
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[0].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[0].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[0].note }}</div>
                   </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">茉莉奶绿</p>
-                    <p class="Taste">铁观音奶冻</p>
-                    <p class="Taste">黄金椰椰乌龙</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      桂花酒酿奶绿</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[1].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[1].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[1].note }}</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">七窖茉莉香气馥郁端正，制成奶茶清甜怡人，小啜一口，浓郁的奶香和茉莉花香经唇入喉，淡雅香气经久留存。</p>
-                    <p class="Caption4">铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味。铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味。</p>
-                    <p class="Caption4">岩韵奇兰奶茶底蕴含绵远花香与豆香，入喉茶味香醇，加入Q弹椰果为茶香增添了无限玩味。</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      精选一年一季的优质五常糯米搭配桂林金桂，酿出微醺甜润，融入七窖茉莉茶底，口感更轻盈。</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[2].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[2].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[2].note }}</div>
+                  </div>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[3].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[3].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[3].note }}</div>
                   </div>
                 </div>
               </t-swiper-item>
               <t-swiper-item>
-                <div style="margin-top:3vh;">
-                  <div style="display: flex;">
-                    <img src="../assets/img/newtea5.jpg" style="flex: 1;margin-right: 75px;; height: 13.215vh;">
-                    <img src="../assets/img/newtea6.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/newtea7.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/newtea8.jpg" style="flex: 1; height: 13.215vh;">
+                <div style="margin-top:3vh;width: 100%;display: flex;">
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[4].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[4].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[4].note }}</div>
                   </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">芝芝绿妍茶后</p>
-                    <p class="Taste">青稞牛乳茶</p>
-                    <p class="Taste">超清爽柠打绿</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      青提柠绿茶</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[5].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[5].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[5].note }}</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">2012年首创第一杯芝士茶。定制绿茶底，融入真牛乳。</p>
-                    <p class="Caption4">经典嫣红牛乳茶加入软糯有嚼劲的青稞，入口奶香、茶香醇醇鲜明，还带有淡淡自然青稞麦香，风味高扬馥郁。</p>
-                    <p class="Caption4">优选新鲜柠檬，每日鲜切暴打，融合甄选茶园定制绿茶汤，酸甜沁爽。</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      优选阳光玫瑰青提，颗颗精细去皮，加入暴打新鲜柠檬，融合绿茶底。</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[6].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[6].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[6].note }}</div>
+                  </div>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[7].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[7].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[7].note }}</div>
                   </div>
                 </div>
               </t-swiper-item>
               <t-swiper-item>
-                <div style="margin-top:3vh;">
-                  <div style="display: flex;">
-                    <img src="../assets/img/newtea9.jpg" style="flex: 1;margin-right: 75px;; height: 13.215vh;">
-                    <img src="../assets/img/newtea10.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/newtea11.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/newtea12.jpg" style="flex: 1; height: 13.215vh;">
+                <div style="margin-top:3vh;width: 100%;display: flex;">
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[8].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[8].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[8].note }}</div>
                   </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">米布丁珍珠大红袍</p>
-                    <p class="Taste">碧螺知春拿铁</p>
-                    <p class="Taste">茉莉海盐拿铁</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      葡萄碎玉</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[9].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[9].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[9].note }}</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">大师定制武夷山大红袍，13道工序传承东方岩韵，花香焙火香浑然天成。</p>
-                    <p class="Caption4">优选碧螺知春茶底，呈现花香蜜韵。</p>
-                    <p class="Caption4">源自广西横州双瓣茉莉，六窨一提工艺，香气升级。</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口。</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[10].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[10].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[10].note }}</div>
                   </div>
-                </div>
-              </t-swiper-item>
-              <t-swiper-item>
-                <div style="margin-top:2vh;">
-                  <div style="display: flex;">
-                    <t-card
-                      style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-                    </t-card>
-
-                    <t-card
-                      style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-                    </t-card>
-                    <t-card
-                      style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-                    </t-card>
-                    <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-                    </t-card>
-                  </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">鲜绿香</p>
-                    <p class="Taste">鲜绿香</p>
-                    <p class="Taste">鲜绿香</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      口感</p>
-                  </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">这是说明文字13</p>
-                    <p class="Caption4">这是说明文字14</p>
-                    <p class="Caption4">这是说明文字15</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      这是说明文字16</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img :src="new_style_drinks[11].image_path" ></div>
+                    <div class="item-title">{{ new_style_drinks[11].name }}</div>
+                    <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[11].note }}</div>
                   </div>
                 </div>
               </t-swiper-item>
             </t-swiper>
           </div>
         </template>
-
-        <!-- <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字1</p>
-            <p class="Caption4">这是说明文字2</p>
-            <p class="Caption4">这是说明文字3</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字4</p>
-          </div>
-        </div>
-        <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字5</p>
-            <p class="Caption4">这是说明文字6</p>
-            <p class="Caption4">这是说明文字7</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字8</p>
-          </div>
-        </div>
-        <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字9</p>
-            <p class="Caption4">这是说明文字10</p>
-            <p class="Caption4">这是说明文字11</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字12</p>
-          </div>
-        </div>
-        <div style="margin-top:2vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p class="Taste">鲜绿香</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字13</p>
-            <p class="Caption4">这是说明文字14</p>
-            <p class="Caption4">这是说明文字15</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字16</p>
-          </div>
-        </div> -->
       </div>
 
     </div>
@@ -888,6 +696,72 @@ export default {
   components: {
     SankeyView,
     TeaFragranceView
+  },
+  data(){
+    return{
+      new_style_drinks:[
+        {
+          name:"茉莉奶绿",
+          note:"七窖茉莉香气馥郁端正，制成奶茶清甜怡人，浓郁奶香和茉莉花香经唇入喉，淡雅香气经久留存",
+          image_path:require('../assets/img/newtea1.jpg')
+        },
+        {
+          name:"铁观音奶冻",
+          note:"铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味",
+          image_path:require('../assets/img/newtea2.jpg')
+        },
+        {
+          name:"黄金椰椰乌龙",
+          note:"岩韵奇兰奶茶底蕴含绵远花香与豆香，入喉茶味香醇，加入Q弹椰果为茶香增添了无限玩味",
+          image_path:require('../assets/img/newtea3.jpg')
+        },
+        {
+          name:"桂花酒酿奶绿",
+          note:"精选一年一季的优质五常糯米搭配桂林金桂，酿出微醺甜润，融入七窖茉莉茶底，口感更轻盈",
+          image_path:require('../assets/img/newtea4.jpg')
+        },
+        {
+          name:"芝芝绿妍茶后",
+          note:"2012年首创第一杯芝士茶。定制绿茶底，融入真牛乳",
+          image_path:require('../assets/img/newtea5.jpg')
+        },
+        {
+          name:"青稞牛乳茶",
+          note:"经典嫣红牛乳茶加入软糯有嚼劲的青稞，入口奶香、茶香醇醇鲜明，还带有淡淡自然青稞麦香",
+          image_path:require('../assets/img/newtea6.jpg')
+        },
+        {
+          name:"超清爽柠打绿",
+          note:"优选新鲜柠檬，每日鲜切暴打，融合甄选茶园定制绿茶汤，酸甜沁爽",
+          image_path:require('../assets/img/newtea7.jpg')
+        },
+        {
+          name:"青提柠绿茶",
+          note:"优选阳光玫瑰青提，颗颗精细去皮，加入暴打新鲜柠檬，融合绿茶底",
+          image_path:require('../assets/img/newtea8.jpg')
+        },
+        {
+          name:"米布丁珍珠大红袍",
+          note:"大师定制武夷山大红袍，13道工序传承东方岩韵，花香焙火香浑然天成",
+          image_path:require('../assets/img/newtea9.jpg')
+        },
+        {
+          name:"碧螺知春拿铁",
+          note:"优选碧螺知春茶底，呈现花香蜜韵",
+          image_path:require('../assets/img/newtea10.jpg')
+        },
+        {
+          name:"茉莉海盐拿铁",
+          note:"源自广西横州双瓣茉莉，六窨一提工艺，香气升级",
+          image_path:require('../assets/img/newtea11.jpg')
+        },
+        {
+          name:"葡萄碎玉",
+          note:"铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口",
+          image_path:require('../assets/img/newtea12.jpg')
+        },
+      ]
+    }
   }
 }
 
@@ -1070,7 +944,6 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   font-size: 0.8em;
   font-weight: 400;
   line-height: 14.06px;
-  letter-spacing: 1px;
   color: rgba(50, 132, 110, 0.5);
 }
 
@@ -1141,4 +1014,35 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
   vertical-align: middle;
-}</style>
+}
+
+/* ——————————————————————————————————lzy写的样式从这里开始———————————————————————————————————— */
+
+
+.four-container{
+  width: 22.012%;
+}
+
+.four-container img{
+  width: 100%;
+  border-radius:8px
+}
+
+.three-padding{
+  width: 3.984%;
+}
+
+.item-title{
+  font-size: 1em;
+  font-weight: 500;
+  color: rgba(50, 132, 110, 1);
+}
+
+.item-note{
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: rgba(50, 132, 110, 0.5);
+}
+
+</style>
