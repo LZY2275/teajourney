@@ -409,8 +409,10 @@ img {
 }
 
 .slanted-text {
-  font-style: italic;
-  transform: rotate(-40deg);
+  transform: rotate(-30deg);
   transform-origin: 0 100%;
   margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00000080;
 }</style>

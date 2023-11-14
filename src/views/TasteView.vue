@@ -179,7 +179,7 @@
         <template>
           <div :style="{ width: '100%' }">
             <!-- 换成轮播图 -->
-            <t-swiper :duration="300" :interval="2000" :navigation="{ placement: 'outside' }">
+            <t-swiper :duration="1000" :interval="4000" :navigation="{ placement: 'outside' }">
               <t-swiper-item>
                 <div style="margin-top:3vh;">
                   <div style="display: flex;">
@@ -443,8 +443,9 @@
 
 
         <!-- 这里放一个茶香图 -->
+        <!-- calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px) -->
         <div
-          style="border: solid 1px #000000; width: 100%;height: calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px); margin-top: 36px;">
+          style="border: solid 1px #000000; width: 100%;height: 780px; margin-top: 36px;">
           <TeaFragranceView></TeaFragranceView>
         </div>
 
@@ -973,7 +974,6 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .Caption2 {
-  width: 267px;
   height: 43px;
   font-size: 10px;
   margin-left: 24px;
