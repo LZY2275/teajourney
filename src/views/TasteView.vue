@@ -35,23 +35,21 @@
             <p class="Caption2">评茶是一种传统的中国茶文化活动，通常由茶艺师或茶叶爱好者主持。在评茶过程中，参与者会品尝不同种类的茶叶，并对其外形、香气、滋味、汤色等方面进行评价。</p>
           </div>
           <div style="display: flex; width: 100%;">
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2"
+>
                 <img src="../assets/img/method1.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
                 <p class="NewlyTea">闻</p>
               <p class="Caption3">将茶汤倒入茶海，闻盖碗中茶叶香气，评鉴茶叶香气和杂味。</p>
             </t-card>
             
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
              
                 <img src="../assets/img/method2.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">观</p>
               <p class="Caption3">从玻璃茶海观茶汤色色泽、清亮度、有无沉淀、有无漂浮。</p>
             </t-card>
-            <t-card
-              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left">
             
                 <img src="../assets/img/method3.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
@@ -73,23 +71,20 @@
             <p class="Caption2">净、整、色</p>
           </div>
           <div style="display: flex; width: 100%;">
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
                 <img src="../assets/img/method4.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
                 <p class="NewlyTea">看干茶</p>
               <p class="Caption3">看干茶的色泽、质地、匀齐度、紧结度、显毫状况。</p>
             </t-card>
             
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
              
                 <img src="../assets/img/method5.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">看茶汤色泽</p>
               <p class="Caption3">观茶茶汤的色泽，主要看鲜亮度、透析度、有无杂质、有无浑浊。</p>
             </t-card>
-            <t-card
-              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left">
             
                 <img src="../assets/img/method6.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
@@ -112,23 +107,20 @@
             <p class="Caption2">干、热、冷。</p>
           </div>
           <div style="display: flex; width: 100%;">
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
                 <img src="../assets/img/method7.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
                 <p class="NewlyTea">干闻（干茶）</p>
               <p class="Caption3">该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道。</p>
             </t-card>
             
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
              
                 <img src="../assets/img/method8.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">热闻（冲泡后）</p>
               <p class="Caption3">在茶温度较高时闻香。闻香形式：盖碗缝隙、盖香、茶香、公道杯香。</p>
             </t-card>
-            <t-card
-              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left">
             
                 <img src="../assets/img/method9.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
@@ -151,23 +143,20 @@
             <p class="Caption2">甘、润、韵。品茶方法：将茶汤含在嘴里，像含着一朵鲜花一样慢慢感受，细细品味，吞下去时还要注意感受茶汤过喉时是否爽滑。</p>
           </div>
           <div style="display: flex; width: 100%;">
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
                 <img src="../assets/img/method10.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
                 <p class="NewlyTea">滋味</p>
               <p class="Caption3">让茶汤在口腔内流动，与舌部充分接触，细品茶味是浓烈鲜爽、甜爽，还是苦涩、淡薄。</p>
             </t-card>
             
-            <t-card
-              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left card-first-2">
              
                 <img src="../assets/img/method11.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">甘醇度</p>
               <p class="Caption3">厚：代表茶浸出物多，丰富、耐泡；细腻度、油润度：又厚又油润喝起来就不会烫刺喉咙。</p>
             </t-card>
-            <t-card
-              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            <t-card class="card-left">
             
                 <img src="../assets/img/method12.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
@@ -193,7 +182,7 @@
         <template>
           <div style="width:100%;height:26% ;">
             <!-- 换成轮播图 -->
-            <t-swiper :duration="1000" :interval="4000" :navigation="{ placement: 'outside' }">
+            <t-swiper :duration="300" :interval="6000" :navigation="{ placement: 'outside' }">
               <t-swiper-item>
                 <div style="margin-top:3vh;width: 100%;">
                   <div style="display: flex;">
@@ -791,7 +780,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .global1 {
   /* width: calc(100vw - 300px); */
   display: flex;
-  padding: 82px 68px 0px 68px;
+  padding: 102px 68px 0px 68px;
 }
 
 .FirstDivider {
@@ -825,11 +814,10 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .Caption1 {
   width: 353px;
   height: 43px;
-  font-size: 10px;
+  font-size: 12px;
   margin-left: 25%;
   font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 15px;
+  line-height: 16px;
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
   vertical-align: middle;
@@ -864,14 +852,15 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 
 .Caption2 {
   height: 43px;
-  font-size: 10px;
+  font-size: 12px;
   margin-left: 24px;
   font-weight: 500;
-  letter-spacing: 1px;
   line-height: 15px;
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
   vertical-align: middle;
+  display: flex;
+  align-items: center;
 }
 
 .NewlyTea {
@@ -1070,6 +1059,19 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   line-height: 15px;
   color: rgba(50, 132, 110, 0.5);
 
+}
+
+.card-left{
+  flex: 1;
+  height: 290px;
+  border: 0; 
+  display: flex;
+  flex-direction: column; 
+  background: rgb(255, 254, 242, 1);           
+}
+
+.card-first-2{
+  margin-right: 1vw;
 }
 
 </style>
