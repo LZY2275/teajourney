@@ -13,9 +13,20 @@
           <p class="Caption1">说明文字：这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字。</p>
         </div>
 
+        <div style=".container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+  margin-top: 2vh; /* Top spacing */
+  margin-bottom: 2vh; /* Bottom spacing */
+}
+">
+
         <!-- 评茶方式 -->
+        <div class="section">
         <t-card
-          style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">评茶方式</p>
@@ -25,35 +36,35 @@
           </div>
           <div style="display: flex; width: 100%;">
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0; display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
                 <img src="../assets/img/method1.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
-              <p class="NewlyTea">闻</p>
+                <p class="NewlyTea">闻</p>
               <p class="Caption3">将茶汤倒入茶海，闻盖碗中茶叶香气，评鉴茶叶香气和杂味。</p>
             </t-card>
+            
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0;display: flex;  flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+             
                 <img src="../assets/img/method2.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">观</p>
               <p class="Caption3">从玻璃茶海观茶汤色色泽、清亮度、有无沉淀、有无漂浮。</p>
             </t-card>
             <t-card
-              style="flex: 1;width: 10vw; height: 31.5vh;border: 0;display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            
                 <img src="../assets/img/method3.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">饮</p>
               <p class="Caption3">当茶汤温度降至45℃以下，取10ml-15ml含入口中，让茶汤接触口腔所有部位，之后缓慢吞下。</p>
             </t-card>
           </div>
         </t-card>
-
+      </div>
         <!-- 三看 -->
+        <div class="section">
         <t-card
-          style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">三看</p>
@@ -63,73 +74,75 @@
           </div>
           <div style="display: flex; width: 100%;">
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0; display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
                 <img src="../assets/img/method4.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
-              <p class="NewlyTea">看干茶</p>
-              <p class="Caption3">看干茶的色泽、质地、匀齐度、紧结度、显毫状况</p>
+                <p class="NewlyTea">看干茶</p>
+              <p class="Caption3">看干茶的色泽、质地、匀齐度、紧结度、显毫状况。</p>
             </t-card>
+            
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0;display: flex;  flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+             
                 <img src="../assets/img/method5.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">看茶汤色泽</p>
-              <p class="Caption3">观茶茶汤的色泽，主要看鲜亮度、透析度、有无杂质、有无浑浊</p>
+              <p class="Caption3">观茶茶汤的色泽，主要看鲜亮度、透析度、有无杂质、有无浑浊。</p>
             </t-card>
             <t-card
-              style="flex: 1;width: 10vw; height: 31.5vh;border: 0;display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            
                 <img src="../assets/img/method6.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">看茶底</p>
-              <p class="Caption3">看展开后茶叶的细嫩、匀齐以及完整度，还要看是否存有焦斑、红筋、红梗等现象</p>
+              <p class="Caption3">看展开后茶叶的细嫩、匀齐以及完整度，还要看是否存有焦斑、红筋、红梗等现象。</p>
             </t-card>
           </div>
         </t-card>
+      </div>
 
         <!-- 三闻 -->
+        <div class="section">
         <t-card
-          style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">三闻</p>
               <p class="ThreeSub">THREE SMELL</p>
             </div>
-            <p class="Caption2">干、热、冷</p>
+            <p class="Caption2">干、热、冷。</p>
           </div>
           <div style="display: flex; width: 100%;">
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0; display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
                 <img src="../assets/img/method7.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
-              <p class="NewlyTea">干闻（干茶）</p>
-              <p class="Caption3">该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道</p>
+                <p class="NewlyTea">干闻（干茶）</p>
+              <p class="Caption3">该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道。</p>
             </t-card>
+            
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0;display: flex;  flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+             
                 <img src="../assets/img/method8.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">热闻（冲泡后）</p>
               <p class="Caption3">在茶温度较高时闻香。闻香形式：盖碗缝隙、盖香、茶香、公道杯香。</p>
             </t-card>
             <t-card
-              style="flex: 1;width: 10vw; height: 31.5vh;border: 0;display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            
                 <img src="../assets/img/method9.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">冷闻（器皿及茶底）</p>
               <p class="Caption3">温度降低后再闻茶盖或杯底留香，这时可闻到在高温时，因茶叶芬香物大量挥发而掩盖的其他香味。</p>
             </t-card>
           </div>
         </t-card>
+      </div>
 
         <!-- 三品 -->
+        <div class="section">
         <t-card
-          style="width:35vw; height:22.1%; border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">三品</p>
@@ -139,32 +152,33 @@
           </div>
           <div style="display: flex; width: 100%;">
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0; display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0; display: flex;flex-direction: column; background: rgb(255, 254, 242, 1);">
                 <img src="../assets/img/method10.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
-              <p class="NewlyTea">滋味</p>
+                <p class="NewlyTea">滋味</p>
               <p class="Caption3">让茶汤在口腔内流动，与舌部充分接触，细品茶味是浓烈鲜爽、甜爽，还是苦涩、淡薄。</p>
             </t-card>
+            
             <t-card
-              style="flex: 1; margin-right: 1vw;width: 10vw; height: 31.5vh;border: 0;display: flex;  flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1; margin-right: 1vw;height: 38vh;border: 0;display: flex;  flex-direction: column; background: rgb(255, 254, 242, 1);">
+             
                 <img src="../assets/img/method11.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">甘醇度</p>
               <p class="Caption3">厚：代表茶浸出物多，丰富、耐泡；细腻度、油润度：又厚又油润喝起来就不会烫刺喉咙。</p>
             </t-card>
             <t-card
-              style="flex: 1;width: 10vw; height: 31.5vh;border: 0;display: flex;flex-direction: column; align-items: center; justify-content: center; background: rgb(255, 254, 242, 1);">
-              <div style="border-radius: 50%; display: flex; align-items: center; justify-content: center">
+              style="flex: 1;height: 38vh;border: 0;display: flex;flex-direction: column;  background: rgb(255, 254, 242, 1);">
+            
                 <img src="../assets/img/method12.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-              </div>
+
               <p class="NewlyTea">回味</p>
-              <p class="Caption3">茶人在品茶之后的感受。一是舌根回味甘甜;二是齿颊回味甘醇;三是喉底回味甘爽。</p>
+              <p class="Caption3">当茶汤温度降至45℃以下，取10ml-15ml含入口中，让茶汤接触口腔所有部位，之后缓慢吞下。</p>
             </t-card>
           </div>
         </t-card>
+      </div>
 
+      </div>
       </div>
 
       <!-- 右侧的信息 -->
@@ -177,122 +191,122 @@
         </div>
 
         <template>
-          <div :style="{ width: '100%' }">
+          <div style="width:100%;height:26% ;">
             <!-- 换成轮播图 -->
             <t-swiper :duration="1000" :interval="4000" :navigation="{ placement: 'outside' }">
               <t-swiper-item>
-                <div style="margin-top:3vh;">
+                <div style="margin-top:3vh;width: 100%;">
                   <div style="display: flex;">
-                    <img src="../assets/img/feeling1.jpg" style="flex: 1; height: 13.215vh;margin-right: 75px;">
-                    <img src="../assets/img/feeling2.jpg" style="flex: 1;height: 13.215vh;margin-right: 75px;">
-                    <img src="../assets/img/feeling3.jpg" style="flex: 1;height: 13.215vh;margin-right: 75px;">
-                    <img src="../assets/img/feeling4.jpg" style="flex: 1;height: 13.215vh;">
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling1.jpg" ></div>
+                    <div class="item-title">清香</div>
+                    <div class="item-note" style="margin-top:8px;">见于鲜叶嫩度在一芽二、三叶，制茶及时正常的绿茶等。</div>
                   </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">清香</p>
-                    <p class="Taste">青草香</p>
-                    <p class="Taste">花香</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      板栗香</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling2.jpg" ></div>
+                    <div class="item-title">青草香</div>
+                    <div class="item-note" style="margin-top:8px;">野生茶具备的浓郁香味，用青草香来描述。</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">见于鲜叶嫩度在一芽二、三叶，制茶及时正常的绿茶等。</p>
-                    <p class="Caption4">野生茶具备的浓郁香味，用青草香来描述。</p>
-                    <p class="Caption4">各种类似鲜花的香气，按花香青甜的不同，分为青花香和甜花香两种。</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      似栗子炒熟时发出的香气。高山优质茶的香型。</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling3.jpg" ></div>
+                    <div class="item-title">花香</div>
+                    <div class="item-note" style="margin-top:8px;">各种类似鲜花的香气，按花香青甜的不同，分为青花香和甜花香两种。</div>
                   </div>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling4.jpg" ></div>
+                    <div class="item-title">板栗香</div>
+                    <div class="item-note" style="margin-top:8px;">似栗子炒熟时发出的香气。高山优质茶的香型。</div>
+                  </div>       
                 </div>
-                <div style="margin-top:3vh;">
+                  <div class="three-padding"></div>
                   <div style="display: flex;">
-                    <img src="../assets/img/feeling5.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/feeling6.jpg" style="flex: 1;margin-right: 75px;height: 13.215vh;">
-                    <img src="../assets/img/feeling7.jpg" style="flex: 1;margin-right: 75px;height: 13.215vh;">
-                    <img src="../assets/img/feeling8.jpg" style="flex: 1;height: 13.215vh;">
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling5.jpg" ></div>
+                    <div class="item-title">兰香</div>
+                    <div class="item-note" style="margin-top:8px;">幽然之香，清爽幽雅，是最珍贵的茶香</div>
                   </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">兰香</p>
-                    <p class="Taste">水果香</p>
-                    <p class="Taste">蜜香</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      火香</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling6.jpg" ></div>
+                    <div class="item-title">水果香</div>
+                    <div class="item-note" style="margin-top:8px;">类似各种水果香气，如雪梨香、佛手香、桔子香、李子香等等。</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">幽然之香，清爽幽雅，是最珍贵的茶香</p>
-                    <p class="Caption4">类似各种水果香气，如雪梨香、佛手香、桔子香、李子香等等。</p>
-                    <p class="Caption4">2~5年的茶都会呈现出的香味，即经过发酵一段时间的生饼。</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      茶叶在干燥时温度比较高，在精制时适度焙火而来。</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling7.jpg" ></div>
+                    <div class="item-title">蜜香</div>
+                    <div class="item-note" style="margin-top:8px;">2~5年的茶都会呈现出的香味，即经过发酵一段时间的生饼。</div>
                   </div>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling8.jpg" ></div>
+                    <div class="item-title">火香</div>
+                    <div class="item-note" style="margin-top:8px;">茶叶在干燥时温度比较高，在精制时适度焙火而来。</div>
+                  </div>       
+                </div>
+                  <div class="three-padding"></div>
                 </div>
               </t-swiper-item>
               <t-swiper-item>
-                <div style="margin-top:3vh;">
+                <div style="margin-top:3vh;width: 100%;">
                   <div style="display: flex;">
-                    <img src="../assets/img/feeling9.jpg" style="flex: 1;margin-right: 75px;; height: 13.215vh;">
-                    <img src="../assets/img/feeling10.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/feeling11.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/feeling12.jpg" style="flex: 1; height: 13.215vh;">
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling9.jpg" ></div>
+                    <div class="item-title">檀香</div>
+                    <div class="item-note" style="margin-top:8px;">青壮叶生茶在一定时间的高温存储和退仓后，茶汤所产生的特有香气。</div>
                   </div>
-
-                  <div style="display: flex;">
-                    <p class="Taste">檀香</p>
-                    <p class="Taste">药香</p>
-                    <p class="Taste">荷香</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      参香</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling10.jpg" ></div>
+                    <div class="item-title">药香</div>
+                    <div class="item-note" style="margin-top:8px;">在年份老的茶中会出现的香味，这种味道与熬中药的药汤外形和口感都接近。</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">青壮叶生茶在一定时间的高温存储和退仓后，茶汤所产生的特有香气。</p>
-                    <p class="Caption4">在年份老的茶中会出现的香味，这种味道与熬中药的药汤外形和口感都接近。</p>
-                    <p class="Caption4">茶叶经过适当度的陈化后发酵，去掉浓烈的青叶香，自然而留下淡淡的荷香。</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      木质化香气，陈年老茶居多。</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling11.jpg" ></div>
+                    <div class="item-title">荷香</div>
+                    <div class="item-note" style="margin-top:8px;">茶叶经过适当度的陈化后发酵，去掉浓烈的青叶香，自然而留下淡淡的荷香。。</div>
                   </div>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling12.jpg" ></div>
+                    <div class="item-title">参香</div>
+                    <div class="item-note" style="margin-top:8px;">木质化香气，陈年老茶居多。</div>
+                  </div>       
                 </div>
-                <div style="margin-top:3vh;">
+                  <div class="three-padding"></div>
                   <div style="display: flex;">
-                    <img src="../assets/img/feeling9.jpg" style="flex: 1;margin-right: 75px;; height: 13.215vh;">
-                    <img src="../assets/img/feeling10.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/feeling11.jpg" style="flex: 1;margin-right: 75px; height: 13.215vh;">
-                    <img src="../assets/img/feeling12.jpg" style="flex: 1; height: 13.215vh;">
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling5.jpg" ></div>
+                    <div class="item-title">兰香</div>
+                    <div class="item-note" style="margin-top:8px;">幽然之香，清爽幽雅，是最珍贵的茶香</div>
                   </div>
-
-
-                  <div style="display: flex;">
-                    <p class="Taste">口感</p>
-                    <p class="Taste">口感</p>
-                    <p class="Taste">口感</p>
-                    <p
-                      style="
-                    margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-                      口感</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling6.jpg" ></div>
+                    <div class="item-title">水果香</div>
+                    <div class="item-note" style="margin-top:8px;">类似各种水果香气，如雪梨香、佛手香、桔子香、李子香等等。</div>
                   </div>
-
-                  <div style="display: flex;margin-bottom: 2vh;">
-                    <p class="Caption4">这是说明文字13</p>
-                    <p class="Caption4">这是说明文字14</p>
-                    <p class="Caption4">这是说明文字15</p>
-                    <p
-                      style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-                      这是说明文字16</p>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling7.jpg" ></div>
+                    <div class="item-title">蜜香</div>
+                    <div class="item-note" style="margin-top:8px;">2~5年的茶都会呈现出的香味，即经过发酵一段时间的生饼。</div>
                   </div>
+                  <div class="three-padding"></div>
+                  <div class="four-container">
+                    <div><img src="../assets/img/feeling8.jpg" ></div>
+                    <div class="item-title">火香</div>
+                    <div class="item-note" style="margin-top:8px;">茶叶在干燥时温度比较高，在精制时适度焙火而来。</div>
+                  </div>       
                 </div>
-
+                  <div class="three-padding"></div>
+                </div>
               </t-swiper-item>
+
             </t-swiper>
           </div>
         </template>
@@ -445,15 +459,14 @@
         <!-- 这里放一个茶香图 -->
         <!-- calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px) -->
         <div
-          style="border: solid 1px #000000; width: 100%;height: 780px; margin-top: 36px;">
+          style="border: solid 1px #000000; width: 100%;height: 46%; margin-top: 36px;">
           <TeaFragranceView></TeaFragranceView>
         </div>
 
-        <div style="margin-top: 3vh;">
+        <div style="height:18%;margin-top: 2vh;">
           <p class="Feeling">新式茶饮</p>
           <p class="FeelingSub">NEW-STYLE TEA DRINKS</p>
-        </div>
-
+ 
         <template>
           <div :style="{ width: '100%' }">
             <!-- 换成轮播图 -----lzy修改 -->
@@ -543,6 +556,7 @@
           </div>
           
         </template>
+      </div>
       </div>
 
     </div>
@@ -1016,11 +1030,21 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   text-align: left;
   vertical-align: middle;
 }
-
+.section {
+  flex: 1;
+  background-color: rgba(255, 249, 232, 1);
+  margin-bottom: 2vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+}
 /* ——————————————————————————————————lzy写的样式从这里开始———————————————————————————————————— */
 
 
 .four-container{
+  margin-top: 10px;
   width: 22.012%;
 }
 
@@ -1037,6 +1061,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   font-size: 1em;
   font-weight: 500;
   color: rgba(50, 132, 110, 1);
+
 }
 
 .item-note{
@@ -1044,6 +1069,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   font-weight: 500;
   line-height: 15px;
   color: rgba(50, 132, 110, 0.5);
+
 }
 
 </style>
