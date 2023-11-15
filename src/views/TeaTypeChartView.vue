@@ -277,8 +277,8 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           .html((d, i) => {
             // console.log(d)
               return `<div class="lable_sel" id="lable_${i}" height=${lable_height} style="margin-left:10px;margin-bottom:5px;padding-left:5px;text-align:left">
-                <svg width="10" height="10">
-                    <circle class="circle_sel" company=${i} r=5 style="fill:${d.color};cursor:pointer; fill-opacity:1" transform="translate(5,5)"/>
+                <svg width="14" height="14">
+                    <circle class="circle_sel" id=${'circle_sel_'+i} company=${i} r=5 style="fill:${d.color};cursor:pointer; fill-opacity:1" transform="translate(7,7)"/>
                 </svg>
               <span class="topic_span">
                     <b>${d.teatype}</b>
@@ -298,11 +298,29 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             // _this.$emit('getcompany', company)
             // // _this.$emit('getcompanyall', "noreset")
           })
+          .on('mouseover',function(d){
+            d.stopPropagation();
+            var element = d3.select(this)
+            let i = element.attr("company") //获取点击的矩形的标签
+            console.log("移动到了第"+i+'个上');
+            d3.select('#circle_sel_'+i)
+              .attr('r',7)
+          })
+          .on('mouseout',function(d){
+            d.stopPropagation();
+            var element = d3.select(this)
+            let i = element.attr("company") //获取点击的矩形的标签
+            console.log("离开了了第"+i+'个上');
+            d3.select('#circle_sel_'+i)
+              .attr('r',5)
+          })
+          
 
           d3.select('#select_all').on("click",function(d,i){
             d.stopPropagation();
             showAllLegend();
           })
+
           
           var that = this
 

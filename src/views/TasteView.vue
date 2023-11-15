@@ -10,18 +10,17 @@
             <p class="EvaluationMethod">评鉴方法</p>
             <p class="Method">METHOD</p>
           </div>
-          <p class="Caption1">说明文字：这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字这是说明文字。</p>
+          <p class="Caption1">鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。</p>
         </div>
 
         <div style=".container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
- 
-  margin-top: 2vh; /* Top spacing */
-  margin-bottom: 2vh; /* Bottom spacing */
-}
-">
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                  
+                    margin-top: 2vh; /* Top spacing */
+                    margin-bottom: 2vh; /* Bottom spacing */
+                  }">
 
         <!-- 评茶方式 -->
         <div class="section">
@@ -568,14 +567,14 @@
               因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。</p>
           </div>
 
-          <div style="width:100%;margin-left: 1vw;">
+          <div style="width:100%;margin-left: 2vw;">
 
             <div style="flex: 1; display: flex;margin-bottom: 1vh;">
               <img src="../assets/img/color1.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
 
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">艳绿</p>
-                <p class="Caption7">水色翠绿微黄，清澈鲜艳，亮丽显油光，为质优绿茶的汤色。</p>
+                <p class="Caption7">水色翠绿微黄，清澈鲜艳，亮丽显油光，为质优绿茶的汤色</p>
               </div>
             </div>
 
@@ -583,7 +582,7 @@
               <img src="../assets/img/color2.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">绿黄</p>
-                <p class="Caption7">绿中显黄的汤色。</p>
+                <p class="Caption7">绿中显黄的汤色</p>
               </div>
             </div>
 
@@ -591,7 +590,7 @@
               <img src="../assets/img/color3.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">黄绿</p>
-                <p class="Caption7">黄中带绿的汤色。</p>
+                <p class="Caption7">黄中带绿的汤色</p>
               </div>
             </div>
 
@@ -604,7 +603,7 @@
               <img src="../assets/img/color4.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">浅黄</p>
-                <p class="Caption7">汤色黄而淡，亦称浅黄色。</p>
+                <p class="Caption7">汤色黄而淡，亦称浅黄色</p>
               </div>
             </div>
 
@@ -612,7 +611,7 @@
               <img src="../assets/img/color5.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">金黄</p>
-                <p class="Caption7">汤色以黄为主稍带橙黄色，清澈亮丽，犹如黄金之色泽。</p>
+                <p class="Caption7">汤色以黄为主稍带橙黄色，清澈亮丽，犹如黄金之色泽</p>
               </div>
             </div>
 
@@ -620,7 +619,7 @@
               <img src="../assets/img/color6.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">橙黄</p>
-                <p class="Caption7">汤色黄中带微红，似成熟甜橙之色泽。</p>
+                <p class="Caption7">汤色黄中带微红，似成熟甜橙之色泽</p>
               </div>
             </div>
           </div>
@@ -630,7 +629,7 @@
               <img src="../assets/img/color7.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">橙红</p>
-                <p class="Caption7">汤色深黄偏红色。</p>
+                <p class="Caption7">汤色深黄偏红色</p>
               </div>
             </div>
 
@@ -638,7 +637,7 @@
               <img src="../assets/img/color8.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">红汤</p>
-                <p class="Caption7">烘焙过度或陈茶的汤色，呈浅红或暗红。</p>
+                <p class="Caption7">烘焙过度或陈茶的汤色，呈浅红或暗红</p>
               </div>
             </div>
 
@@ -646,7 +645,7 @@
               <img src="../assets/img/color9.jpg" style="width: 58px; height: 58px; border-radius: 50%;">
               <div style="margin-left: 1vw;">
                 <p class="BrightGreen">凝乳</p>
-                <p class="Caption7">茶汤冷却后出现浅褐色或橙色乳状的浑汤现象（品质好、滋味浓烈的红茶常有此现象）。</p>
+                <p class="Caption7">茶汤冷却后出现浅褐色或橙色乳状的浑汤现象（品质好的红茶常有此现象）</p>
               </div>
             </div>
 
@@ -989,7 +988,6 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   margin-top: 20px;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 1px;
   line-height: 15px;
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
@@ -999,7 +997,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .BrightGreen {
   width: 50px;
   height: 22px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 15px;
@@ -1011,10 +1009,9 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .Caption7 {
   width: 132px;
   height: 43px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 17.38px;
+  line-height: 14px;
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
   vertical-align: middle;
