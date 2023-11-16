@@ -3,10 +3,17 @@
     <div class="title">
         <p>{{ title }}</p>
     </div>
-    <div>
-      <!-- <div class="arrow"><img src="../assets/img/point.svg" style="height: 800px; width: 10px; margin-left: -5px;"></div> -->
-      <div class="fragrance" id="fragrance"></div>
+    <p class="sub-title">TEA FRAGRANCE</p>
+    <div class="content-container" style="margin-top: 12px;">
+      <div class="note-container">
+        <p>截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。</p>
+        <p>普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。</p>
+      </div>
+      <div class="chart-container">
+        <div class="fragrance" id="fragrance"></div>
+      </div>
     </div>
+    
   </div>
 </template>
   
@@ -245,8 +252,8 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
               },
               {
                 name: '乌龙茶',
-                symbolSize: [30, 200],
-                value: [7.5, 6],
+                symbolSize: [30, 120],
+                value: [7.5, 5.2],
                 itemStyle: {
                   color: '#EC8924'
                 }
@@ -457,7 +464,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                         x2: 1,  
                         y2: 0,  
                         colorStops: [{  
-                          offset: 0, color: '#DFBA9D'  
+                          offset: 0, color: '#D5B195'  
                         }, {  
                           offset: 1, color: '#FFF9E8' 
                         }],  
@@ -480,7 +487,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                         x2: 1,  
                         y2: 0,  
                         colorStops: [{  
-                          offset: 0, color: '#D5B195'  
+                          offset: 0, color: '#DFBA9D'  
                         }, {  
                           offset: 1, color: '#FFF9E8' 
                         }],  
@@ -549,7 +556,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                         x2: 1,  
                         y2: 0,  
                         colorStops: [{  
-                          offset: 0, color: '#E2C694'  
+                          offset: 0, color: '#ECCE9C'  
                         }, {  
                           offset: 1, color: '#FFF9E8'
                         }],  
@@ -595,7 +602,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                         x2: 1,  
                         y2: 0,  
                         colorStops: [{  
-                          offset: 0, color: '#ECCE9C' 
+                          offset: 0, color: '#E2C694' 
                         }, {  
                           offset: 1, color: '#FFF9E8'  
                         }],  
@@ -694,7 +701,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 <style scoped>
   .fragrance{
     width: 120%;
-    height: 800px;
+    height: 780px;
     margin-left: -50px;
     margin-top: -50px;
     /* background-color: #000000; */
@@ -704,6 +711,38 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
     font-size: 18px;
     /* font-weight: bold; */
     color: var(--td-brand-color-6);
-    line-height: 49px;
+    line-height: 26.06px;
+    
   }
+
+  .sub-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 17.38px;
+  color: rgba(50, 132, 110, 1);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.note-container{
+  padding: 16px 24px;
+}
+
+.note-container p{
+  text-align: left;
+  text-indent: 2em;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: rgba(50, 132, 110, 0.5);
+}
+
+.content-container{
+  background-color: var(--td-bg-color-container);
+}
+
+.chart-container{
+  padding: 0 24px;
+}
 </style>

@@ -25,7 +25,7 @@
         <!-- 评茶方式 -->
         <div class="section">
         <t-card
-          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh;background-color: var(--td-bg-color-container);; display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">评茶方式</p>
@@ -61,7 +61,7 @@
         <!-- 三看 -->
         <div class="section">
         <t-card
-          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background-color: var(--td-bg-color-container);; display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">三看</p>
@@ -97,7 +97,7 @@
         <!-- 三闻 -->
         <div class="section">
         <t-card
-          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background-color: var(--td-bg-color-container);; display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">三闻</p>
@@ -133,7 +133,7 @@
         <!-- 三品 -->
         <div class="section">
         <t-card
-          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background: rgba(255, 249, 232, 1); display: flex; flex-direction: column; align-items: center;">
+          style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh; background-color: var(--td-bg-color-container);; display: flex; flex-direction: column; align-items: center;">
           <div style="display: flex; width: 100%;margin-bottom: 2vh;">
             <div style="flex: 1;">
               <p class="Three">三品</p>
@@ -447,7 +447,7 @@
         <!-- 这里放一个茶香图 -->
         <!-- calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px) -->
         <div
-          style="border: solid 1px #000000; width: 100%;height: 46%; margin-top: 36px;">
+          style="width: 100%;height: 48%; margin-top: 36px;">
           <TeaFragranceView></TeaFragranceView>
         </div>
 
