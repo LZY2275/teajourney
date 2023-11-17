@@ -5,22 +5,243 @@
       <!--左上区域-->
       <div class="left-panel">
 
-<p class="caption">说明文字</p>
-<p class="sub-caption">说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字</p>
+        <div v-if="showImage1" style="height: 50%;">
+        <p class="caption">绿茶制作流程</p>
+        <p class="sub-caption">
+          采青： 在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。<br>
+          杀青： 将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。<br>
+          揉捻： 经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。<br>
+          烘青： 揉捻后的茶叶会经过烘干处理，高温稳定茶叶的品质，确保茶叶不会变质。<br>
+          干燥： 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。
+        </p>
+        </div>
+        <div v-if="showImage2" style="height: 50%;">
+        <p class="caption">白茶制作流程</p>
+        <p class="sub-caption">
+          采青： 与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。<br>
+          晾干： 采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。<br>
+          干燥： 在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。
+        </p>
+        </div>
+        <div v-if="showImage3" style="height: 50%;">
+        <p class="caption">黄茶制作流程</p>
+        <p class="sub-caption">
+          采青： 和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。<br>
+          萎凋： 采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。<br>
+          杀青： 经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。<br>
+          烘青： 杀青后，茶叶经过烘焙处理，这个步骤有助于进一步固定茶叶的香气和品质。<br>
+          干燥： 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，以便长期储存，并保持其品质和口感。
+        </p>
+        </div>
+        <div v-if="showImage4" style="height: 50%;">
+        <p class="caption">青茶制作流程</p>
+        <p class="sub-caption">
+          采青： 茶叶制作始于采摘。在制作青茶时，通常选择嫩绿的茶芽和嫩叶作为原料。<br>
+          摇青： 在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。<br>
+          杀青： 接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。<br>
+          揉捻： 杀青后的茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。<br>
+          干燥： 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。
+        </p>
+        </div>
+        <div v-if="showImage5" style="height: 50%;">
+        <p class="caption">红茶制作流程</p>
+        <p class="sub-caption">
+          采青： 茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。<br>
+          萎凋： 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。<br>
+          揉捻： 茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。<br>
+          氧化发酵： 接下来的关键步骤是氧化发酵。茶叶被散放在适当的环境中，让其在空气中发酵，氧化过程赋予了红茶独特的色泽和口感。<br>
+          干燥： 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。
+        </p>
+        </div>
+        <div v-if="showImage6" style="height: 50%;">
+        <p class="caption">黑茶制作流程</p>
+        <p class="sub-caption">
+          采青： 黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。<br>
+          萎凋： 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。<br>
+          杀青： 接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。<br>
+          揉捻： 经过杀青后，茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。<br>
+          晒青： 黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。<br>
+          干燥： 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。
+        </p>
+        </div>
+        <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
+          <template>
+            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+              <t-step-item title="采青" content="收集茶叶原料">
+              </t-step-item>
+              <t-step-item title="杀青" content="保留颜色香气">
+                <template slot="extra" v-if="current === 1">
+                   
+                </template>
+              </t-step-item>
+              <t-step-item title="揉捻" content="形成特定形状">
+                <template slot="extra" v-if="current === 2">
+     
+                </template>
+              </t-step-item>
+              <t-step-item title="烘青" content="高温稳定品质">
+                <template slot="extra" v-if="current === 3">
+                </template>
+              </t-step-item>
+              <t-step-item title="干燥" content="完全除去水分">
+                <template slot="extra" v-if="current === 4">
+                </template>
+              </t-step-item>
+            </t-steps>
+          </template>
+        </div>
+        <div v-if="showImage2" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+          <template>
+            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+              <t-step-item title="采青" content="收集茶叶原料">
+                <template slot="extra" v-if="current === 0">
 
+                </template>
+              </t-step-item>
+              <t-step-item title="晾干" content="自然风干茶叶">
+                <template slot="extra" v-if="current === 1">
+                
+                </template>
+              </t-step-item>
+              <t-step-item title="干燥" content="完全除去水分">
+                <template slot="extra" v-if="current === 2">
 
+                </template>
+              </t-step-item>
+            </t-steps>
+          </template>
 
+        </div>
+        <div v-if="showImage3" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+          <template>
+            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+              <t-step-item title="采青" content="收集茶叶原料">
+              </t-step-item>
+              <t-step-item title="萎凋" content="失水软化叶片">
+                <template slot="extra" v-if="current === 1">
+                   
+                </template>
+              </t-step-item>
+              <t-step-item title="杀青" content="保留颜色香气">
+                <template slot="extra" v-if="current === 2">
+                   
+                </template>
+              </t-step-item>
+              <t-step-item title="烘青" content="高温稳定品质">
+                <template slot="extra" v-if="current === 3">
+                </template>
+              </t-step-item>
+              <t-step-item title="干燥" content="完全除去水分">
+                <template slot="extra" v-if="current === 4">
+                </template>
+              </t-step-item>
+            </t-steps>
+          </template>
 
+        </div>
+        <div v-if="showImage4" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+          <template>
+            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+              <t-step-item title="采青" content="收集茶叶原料">
+                <template slot="extra" v-if="current === 0">
 
+                </template>
+              </t-step-item>
+              <t-step-item title="摇青" content="破碎叶缘释汁液">
+                <template slot="extra" v-if="current === 1">
+           
+                </template>
+              </t-step-item>
+              <t-step-item title="杀青" content="保留颜色香气">
+                <template slot="extra" v-if="current === 2">
+
+                </template>
+              </t-step-item>
+              <t-step-item title="揉捻" content="形成特定形状">
+                <template slot="extra" v-if="current === 2">
+
+                </template>
+              </t-step-item>.
+              <t-step-item title="干燥" content="完全除去水分">
+                <template slot="extra" v-if="current === 2">
+
+                </template>
+              </t-step-item>
+            </t-steps>
+          </template>
+
+        </div>
+        <div v-if="showImage5" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+          <template>
+            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+              <t-step-item title="采青" content="收集茶叶原料">
+              </t-step-item>
+              <t-step-item title="萎凋" content="失水软化叶片">
+                <template slot="extra" v-if="current === 1">
+                   
+                </template>
+              </t-step-item>
+              <t-step-item title="揉捻" content="形成特定形状">
+                <template slot="extra" v-if="current === 2">
+                   
+                </template>
+              </t-step-item>
+              <t-step-item title="氧化发酵" content="空气中发酵茶叶">
+                <template slot="extra" v-if="current === 3">
+                </template>
+              </t-step-item>
+              <t-step-item title="干燥" content="完全除去水分">
+                <template slot="extra" v-if="current === 4">
+                </template>
+              </t-step-item>
+            </t-steps>
+          </template>
+
+        </div>
+        <div v-if="showImage6" style="height: 50%;width: 106%;display: flex; justify-content: center; align-items: center;">
+          <template>
+            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+              <t-step-item title="采青" content="收集茶叶原料">
+                <template slot="extra" >
+                </template>
+              </t-step-item>
+              <t-step-item title="萎凋" content="失水软化叶片">
+                <template slot="extra" v-if="current === 1">
+      
+                </template>
+              </t-step-item>
+              <t-step-item title="杀青" content="保留颜色香气">
+                <template slot="extra" v-if="current === 2">
+
+                </template>
+              </t-step-item>
+              <t-step-item title="揉捻" content="形成特定形状">
+                <template slot="extra" v-if="current === 3">
+
+                </template>
+              </t-step-item>
+              <t-step-item title="晒青" content="自然晾干茶叶">
+                <template slot="extra" v-if="current === 4">
+
+                </template>
+              </t-step-item>
+              <t-step-item title="干燥" content="完全除去水分">
+                <template slot="extra" v-if="current === 5">
+
+                </template>
+              </t-step-item>
+            </t-steps>
+          </template>
+
+        </div>
       </div>
       <!--右上区域-->
       <div class="right-panel">
 
-
       </div>
     </div>
 
-      <!--底部区域-->
+    <!--底部区域-->
     <div class="bottom-section">
 
       <!--第一部分-->
@@ -28,13 +249,18 @@
 
         <div class="image-with-circles">
           <svg class="circle-svg">
-            <circle cx="50%" cy="10%" r="15" fill="green" />
-            <circle cx="50%" cy="30%" r="15" fill="green" />
-            <circle cx="50%" cy="50%" r="15" fill="green" />
-            <circle cx="50%" cy="70%" r="15" fill="green" />
-            <circle cx="50%" cy="90%" r="15" fill="green" />
+            <circle cx="50%" cy="10%" r="15" fill="#D0DC89CC" opacity="0.7" stroke-opacity="1" stroke="#D0DC89"
+              stroke-width="3" />
+            <circle cx="50%" cy="30%" r="15" fill="#D0DC89CC" opacity="0.7" stroke-opacity="1" stroke="#D0DC89"
+              stroke-width="3" />
+            <circle cx="50%" cy="50%" r="15" fill="#D0DC89CC" opacity="0.7" stroke-opacity="1" stroke="#D0DC89"
+              stroke-width="3" />
+            <circle cx="50%" cy="70%" r="15" fill="#D0DC89CC" opacity="0.7" stroke-opacity="1" stroke="#D0DC89"
+              stroke-width="3" />
+            <circle cx="50%" cy="90%" r="15" fill="#D0DC89CC" opacity="0.7" stroke-opacity="1" stroke="#D0DC89"
+              stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/tea.png" alt="Image 1" @click="showSecondPart1">
+          <img class="image" src="../assets/img/producetea13.jpg" alt="Image 1" @click="showGraph(1)">
         </div>
         <div class="text-container">
           <p class="slanted-text">西湖龙井</p>
@@ -50,13 +276,18 @@
 
         <div class="image-with-circles">
           <svg class="circle-svg">
-            <circle cx="50%" cy="10%" r="15" fill="red" />
-            <circle cx="50%" cy="30%" r="15" fill="blue" />
-            <circle cx="50%" cy="50%" r="15" fill="purple" />
-            <circle cx="50%" cy="70%" r="15" fill="purple" />
-            <circle cx="50%" cy="90%" r="15" fill="purple" />
+            <circle cx="50%" cy="10%" r="15" fill="#D9D9D9CC" opacity="0.7" stroke-opacity="1" stroke="#D9D9D9"
+              stroke-width="3" />
+            <circle cx="50%" cy="30%" r="15" fill="#D9D9D9CC" opacity="0.7" stroke-opacity="1" stroke="#D9D9D9"
+              stroke-width="3" />
+            <circle cx="50%" cy="50%" r="15" fill="#D9D9D9CC" opacity="0.7" stroke-opacity="1" stroke="#D9D9D9"
+              stroke-width="3" />
+            <circle cx="50%" cy="70%" r="15" fill="#D9D9D9CC" opacity="0.7" stroke-opacity="1" stroke="#D9D9D9"
+              stroke-width="3" />
+            <circle cx="50%" cy="90%" r="15" fill="#D9D9D9CC" opacity="0.7" stroke-opacity="1" stroke="#D9D9D9"
+              stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/tea.png" alt="Image 2" @click="showSecondPart2">
+          <img class="image" src="../assets/img/producetea14.jpg" alt="Image 2" @click="showGraph(2)">
         </div>
         <div class="text-container">
           <p class="slanted-text">白毫银针</p>
@@ -72,13 +303,18 @@
 
         <div class="image-with-circles">
           <svg class="circle-svg">
-            <circle cx="50%" cy="10%" r="15" fill="orange" />
-            <circle cx="50%" cy="30%" r="15" fill="orange" />
-            <circle cx="50%" cy="50%" r="15" fill="orange" />
-            <circle cx="50%" cy="70%" r="15" fill="orange" />
-            <circle cx="50%" cy="90%" r="15" fill="orange" />
+            <circle cx="50%" cy="10%" r="15" fill="#E9CB6ACC" opacity="0.7" stroke-opacity="1" stroke="#E9CB6A"
+              stroke-width="3" />
+            <circle cx="50%" cy="30%" r="15" fill="#E9CB6ACC" opacity="0.7" stroke-opacity="1" stroke="#E9CB6A"
+              stroke-width="3" />
+            <circle cx="50%" cy="50%" r="15" fill="#E9CB6ACC" opacity="0.7" stroke-opacity="1" stroke="#E9CB6A"
+              stroke-width="3" />
+            <circle cx="50%" cy="70%" r="15" fill="#E9CB6ACC" opacity="0.7" stroke-opacity="1" stroke="#E9CB6A"
+              stroke-width="3" />
+            <circle cx="50%" cy="90%" r="15" fill="#E9CB6ACC" opacity="0.7" stroke-opacity="1" stroke="#E9CB6A"
+              stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/tea.png" alt="Image 3" @click="showSecondPart3">
+          <img class="image" src="../assets/img/producetea15.jpg" alt="Image 3" @click="showGraph(3)">
         </div>
         <div class="text-container">
           <p class="slanted-text">海马宫茶</p>
@@ -94,13 +330,18 @@
 
         <div class="image-with-circles">
           <svg class="circle-svg">
-            <circle cx="50%" cy="10%" r="15" fill="blue" />
-            <circle cx="50%" cy="30%" r="15" fill="blue" />
-            <circle cx="50%" cy="50%" r="15" fill="blue" />
-            <circle cx="50%" cy="70%" r="15" fill="blue" />
-            <circle cx="50%" cy="90%" r="15" fill="blue" />
+            <circle cx="50%" cy="10%" r="15" fill="#ECB924CC" opacity="0.7" stroke-opacity="1" stroke="#ECB924"
+              stroke-width="3" />
+            <circle cx="50%" cy="30%" r="15" fill="#ECB924CC" opacity="0.7" stroke-opacity="1" stroke="#ECB924"
+              stroke-width="3" />
+            <circle cx="50%" cy="50%" r="15" fill="#ECB924CC" opacity="0.7" stroke-opacity="1" stroke="#ECB924"
+              stroke-width="3" />
+            <circle cx="50%" cy="70%" r="15" fill="#ECB924CC" opacity="0.7" stroke-opacity="1" stroke="#ECB924"
+              stroke-width="3" />
+            <circle cx="50%" cy="90%" r="15" fill="#ECB924CC" opacity="0.7" stroke-opacity="1" stroke="#ECB924"
+              stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/tea.png" alt="Image 4" @click="showSecondPart4">
+          <img class="image" src="../assets/img/producetea16.jpg" alt="Image 4" @click="showGraph(4)">
         </div>
         <div class="text-container">
           <p class="slanted-text">铁观音</p>
@@ -116,13 +357,18 @@
 
         <div class="image-with-circles">
           <svg class="circle-svg">
-            <circle cx="50%" cy="10%" r="15" fill="red" />
-            <circle cx="50%" cy="30%" r="15" fill="red" />
-            <circle cx="50%" cy="50%" r="15" fill="red" />
-            <circle cx="50%" cy="70%" r="15" fill="red" />
-            <circle cx="50%" cy="90%" r="15" fill="red" />
+            <circle cx="50%" cy="10%" r="15" fill="#C54522CC" opacity="0.7" stroke-opacity="1" stroke="#C54522"
+              stroke-width="3" />
+            <circle cx="50%" cy="30%" r="15" fill="#C54522CC" opacity="0.7" stroke-opacity="1" stroke="#C54522"
+              stroke-width="3" />
+            <circle cx="50%" cy="50%" r="15" fill="#C54522CC" opacity="0.7" stroke-opacity="1" stroke="#C54522"
+              stroke-width="3" />
+            <circle cx="50%" cy="70%" r="15" fill="#C54522CC" opacity="0.7" stroke-opacity="1" stroke="#C54522"
+              stroke-width="3" />
+            <circle cx="50%" cy="90%" r="15" fill="#C54522CC" opacity="0.7" stroke-opacity="1" stroke="#C54522"
+              stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/tea.png" alt="Image 5" @click="showSecondPart5">
+          <img class="image" src="../assets/img/producetea17.jpg" alt="Image 5" @click="showGraph(5)">
         </div>
         <div class="text-container">
           <p class="slanted-text">祁门红茶</p>
@@ -138,13 +384,18 @@
 
         <div class="image-with-circles">
           <svg class="circle-svg">
-            <circle cx="50%" cy="10%" r="15" fill="black" />
-            <circle cx="50%" cy="30%" r="15" fill="black" />
-            <circle cx="50%" cy="50%" r="15" fill="black" />
-            <circle cx="50%" cy="70%" r="15" fill="black" />
-            <circle cx="50%" cy="90%" r="15" fill="black" />
+            <circle cx="50%" cy="10%" r="15" fill="#594445CC" opacity="0.7" stroke-opacity="1" stroke="#594445"
+              stroke-width="3" />
+            <circle cx="50%" cy="30%" r="15" fill="#594445CC" opacity="0.7" stroke-opacity="1" stroke="#594445"
+              stroke-width="3" />
+            <circle cx="50%" cy="50%" r="15" fill="#594445CC" opacity="0.7" stroke-opacity="1" stroke="#594445"
+              stroke-width="3" />
+            <circle cx="50%" cy="70%" r="15" fill="#594445CC" opacity="0.7" stroke-opacity="1" stroke="#594445"
+              stroke-width="3" />
+            <circle cx="50%" cy="90%" r="15" fill="#594445CC" opacity="0.7" stroke-opacity="1" stroke="#594445"
+              stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/tea.png" alt="Image 6" @click="showSecondPart6">
+          <img class="image" src="../assets/img/producetea18.jpg" alt="Image 6" @click="showGraph(6)">
         </div>
         <div class="text-container">
           <p class="slanted-text">安化黑茶</p>
@@ -160,111 +411,57 @@
       </div>
 
       <!--第二部分-->
-      <div style="height: 20%;margin-top: 5%; position: relative;">
-
-        <svg class="tree-svg" v-show="showSecondPartContent1" viewBox="0 0 100 100">
-          <path class="tree-path" d="M-590 5 Q-600 80, -600 100" />
-          <path class="tree-path" d="M-590 5 Q-230 100, -250 100" />
-          <path class="tree-path" d="M-590 5 Q-230 50, -80 120" />
-          <path class="tree-path" d="M-590 5 Q-150 -10, 720 120" />
-          <path class="tree-path" d="M-590 5 Q-50 -10, 850 120" />
-          <circle cx="-590" cy="8" r="8" fill="green" />
-        </svg>
-
-        <svg class="tree-svg" v-show="showSecondPartContent2" viewBox="0 0 100 100">
-          <path class="tree-path" d="M-352 5 Q-500 5, -595 100" />
-          <path class="tree-path" d="M-352 5 Q700 50, 190 180" />
-          <path class="tree-path" d="M-352 5 Q800 40, 700 120" />
-          <circle cx="-352" cy="8" r="8" fill="green" />
-        </svg>
-
-        <svg class="tree-svg" v-show="showSecondPartContent3" viewBox="0 0 100 100">
-          <path class="tree-path" d="M-116 5 Q-500 5, -595 100" />
-          <path class="tree-path" d="M-116 5 Q-500 5, -480 120" />
-          <path class="tree-path" d="M-116 5 Q-200 5, -260 140" />
-          <path class="tree-path" d="M-116 5 Q700 10, 380 200" />
-          <path class="tree-path" d="M-116 5 Q1000 10, 620 220" />
-          <circle cx="-116" cy="8" r="8" fill="green" />
-        </svg>
-
-        <svg class="tree-svg" v-show="showSecondPartContent4" viewBox="0 0 100 100">
-          <path class="tree-path" d="M120 5 Q-500 15, -595 100" />
-          <path class="tree-path" d="M120 5 Q-500 15, -480 120" />
-          <path class="tree-path" d="M120 5 Q-500 15, -320 180" />
-          <path class="tree-path" d="M120 5 Q-300 15, -250 200" />
-          <path class="tree-path" d="M120 5 Q-200 50, -100 200" />
-          <path class="tree-path" d="M120 5 Q1000 0, 600 300" />
-          <circle cx="120" cy="8" r="8" fill="green" />
-        </svg>
-        <svg class="tree-svg" v-show="showSecondPartContent5" viewBox="0 0 100 100">
-          <path class="tree-path" d="M350 5 Q-500 15, -610 100" />
-          <path class="tree-path" d="M350 5 Q-400 20, -490 100" />
-          <path class="tree-path" d="M350 5 Q-100 15, -120 100" />
-          <path class="tree-path" d="M350 5 Q20 15, -90 200" />
-          <path class="tree-path" d="M350 5 Q1000 40, 520 300" />
-          <circle cx="365" cy="8" r="8" fill="green" />
-        </svg>
-        <svg class="tree-svg" v-show="showSecondPartContent6" viewBox="0 0 100 100">
-          <path class="tree-path" d="M610 5 Q-500 15, -610 100" />
-          <path class="tree-path" d="M610 5 Q-400 25, -490 100" />
-          <path class="tree-path" d="M610 5 Q-200 25, -250 100" />
-          <path class="tree-path" d="M610 5 Q-250 40, -110 140" />
-          <path class="tree-path" d="M610 5 Q-80 50, 190 160" />
-          <path class="tree-path" d="M610 5 Q-90 50, 500 400" />
-          <path class="tree-path" d="M610 5 Q1000 350, 1300 600" />
-          <circle cx="610" cy="8" r="8" fill="green" />
-        </svg>
-      </div>
+      <div id="container" style="height: 20%;margin-top: 5%; position: relative;"></div>
 
       <!--第三部分-->
       <div style="height: 10%; display: flex;">
 
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 1" class="bottom-image">
+          <img src="../assets/img/producetea1.jpg" alt="Image 1" class="bottom-image">
           <p class="text">采青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 2" class="bottom-image">
+          <img src="../assets/img/producetea2.jpg" alt="Image 2" class="bottom-image">
           <p class="text">萎凋</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 3" class="bottom-image">
+          <img src="../assets/img/producetea3.jpg" alt="Image 3" class="bottom-image">
           <p class="text">摇青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 4" class="bottom-image">
+          <img src="../assets/img/producetea4.jpg" alt="Image 4" class="bottom-image">
           <p class="text">杀青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 5" class="bottom-image">
+          <img src="../assets/img/producetea5.jpg" alt="Image 5" class="bottom-image">
           <p class="text">揉捻</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 6" class="bottom-image">
+          <img src="../assets/img/producetea6.jpg" alt="Image 6" class="bottom-image">
           <p class="text">氧化发酵</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 7" class="bottom-image">
+          <img src="../assets/img/producetea7.jpg" alt="Image 7" class="bottom-image">
           <p class="text">晒青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 8" class="bottom-image">
+          <img src="../assets/img/producetea8.jpg" alt="Image 8" class="bottom-image">
           <p class="text">渥堆</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 9" class="bottom-image">
+          <img src="../assets/img/producetea9.jpg" alt="Image 9" class="bottom-image">
           <p class="text">晾干</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 10" class="bottom-image">
+          <img src="../assets/img/producetea10.jpg" alt="Image 10" class="bottom-image">
           <p class="text">闷黄</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 11" class="bottom-image">
+          <img src="../assets/img/producetea11.jpg" alt="Image 11" class="bottom-image">
           <p class="text">烘青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/tea.png" alt="Image 12" class="bottom-image">
+          <img src="../assets/img/producetea12.jpg" alt="Image 12" class="bottom-image">
           <p class="text">干燥</p>
         </div>
       </div>
@@ -275,79 +472,1117 @@
 </template>
 
 
+
+
 <script>
+import G6 from '@antv/g6';
+
 export default {
-  methods: {
-    showSecondPart1() {
-      this.showSecondPartContent1 = true;
-      this.showSecondPartContent2 = false;
-      this.showSecondPartContent3 = false;
-      this.showSecondPartContent4 = false;
-      this.showSecondPartContent5 = false;
-      this.showSecondPartContent6 = false;
 
-    },
-    showSecondPart2() {
-      this.showSecondPartContent1 = false;
-      this.showSecondPartContent2 = true;
-      this.showSecondPartContent3 = false;
-      this.showSecondPartContent4 = false;
-      this.showSecondPartContent5 = false;
-      this.showSecondPartContent6 = false;
-
-    },
-    showSecondPart3() {
-      this.showSecondPartContent1 = false;
-      this.showSecondPartContent2 = false;
-      this.showSecondPartContent3 = true;
-      this.showSecondPartContent4 = false;
-      this.showSecondPartContent5 = false;
-      this.showSecondPartContent6 = false;
-
-    },
-    showSecondPart4() {
-      this.showSecondPartContent1 = false;
-      this.showSecondPartContent2 = false;
-      this.showSecondPartContent3 = false;
-      this.showSecondPartContent4 = true;
-      this.showSecondPartContent5 = false;
-      this.showSecondPartContent6 = false;
-
-    },
-    showSecondPart5() {
-      this.showSecondPartContent1 = false;
-      this.showSecondPartContent2 = false;
-      this.showSecondPartContent3 = false;
-      this.showSecondPartContent4 = false;
-      this.showSecondPartContent5 = true;
-      this.showSecondPartContent6 = false;
-
-    },
-    showSecondPart6() {
-      this.showSecondPartContent1 = false;
-      this.showSecondPartContent2 = false;
-      this.showSecondPartContent3 = false;
-      this.showSecondPartContent4 = false;
-      this.showSecondPartContent5 = false;
-      this.showSecondPartContent6 = true;
-
-    },
-  },
   data() {
     return {
-      showSecondPartContent1: true,
-      showSecondPartContent2: false,
-      showSecondPartContent3: false,
-      showSecondPartContent4: false,
-      showSecondPartContent5: false,
-      showSecondPartContent6: false
+      current: 0,
+      showImage1: true,
+      showImage2: false,
+      showImage3: false,
+      showImage4: false,
+      showImage5: false,
+      showImage6: false,
     };
-  }
+  },
+  mounted() {
+    this.initGraph1()
+  },
+
+  methods: {
+    onCurChanged(cur, pre) {
+      this.current = cur;
+    },
+    initGraph1() {
+      const data = {
+        nodes: [
+          {
+            id: 'node1',
+            x: -1.60 * document.getElementById('container').clientWidth,
+            y: -0.6 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node2',
+            x: -1.598 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node3',
+            x: -1.355 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node4',
+            x: -1.273 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node5',
+            x: -0.77 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node6',
+            x: -0.688 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+
+        ],
+        edges: [
+          {
+            source: 'node1',
+            target: 'node2',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node3',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node4',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node5',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node6',
+            type: 'cubic-vertical',
+          },
+        ],
+      };
+
+      const width = document.getElementById('container').scrollWidth;
+      const height = document.getElementById('container').scrollHeight || 500;
+      const graph = new G6.Graph({
+        container: 'container',
+        width,
+        height,
+        // translate the graph to align the canvas's center, support by v3.5.1
+        fitCenter: true,
+        modes: {
+          default: ['drag-canvas'],
+        },
+        defaultEdge: {
+          type: 'cubic-horizontal',
+          style: {
+            stroke: '#A7E4AE', // 浅绿色
+            lineWidth: 2, // 控制边的粗细
+          },
+          stateStyles: {
+            hover: {
+              stroke: '#A7E4AE',
+              lineWidth: 4,
+            },
+          },
+        },
+
+      });
+      graph.data(data);
+      graph.render();
+
+      graph.on('edge:mouseenter', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', true);
+      });
+
+      graph.on('edge:mouseleave', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', false);
+      });
+
+      graph.on('edge:click', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'selected', true);
+      });
+      graph.on('canvas:click', (evt) => {
+        graph.getEdges().forEach((edge) => {
+          graph.clearItemStates(edge);
+        });
+      });
+    },
+    initGraph2() {
+
+      const data = {
+        nodes: [
+          {
+            id: 'node1',
+            x: -1.73 * document.getElementById('container').clientWidth,
+            y: -0.6 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node2',
+            x: -1.9 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node3',
+            x: -1.24 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node4',
+            x: -0.99 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+        ],
+        edges: [
+          {
+            source: 'node1',
+            target: 'node2',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node3',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node4',
+            type: 'cubic-vertical',
+          },
+
+        ],
+      };
+
+      const width = document.getElementById('container').scrollWidth;
+      const height = document.getElementById('container').scrollHeight || 500;
+      const graph = new G6.Graph({
+        container: 'container',
+        width,
+        height,
+        // translate the graph to align the canvas's center, support by v3.5.1
+        fitCenter: true,
+        modes: {
+          default: ['drag-canvas'],
+        },
+        defaultEdge: {
+          type: 'cubic-horizontal',
+          style: {
+            stroke: '#A7E4AE', // 浅绿色
+            lineWidth: 2, // 控制边的粗细
+          },
+          stateStyles: {
+            hover: {
+              stroke: '#A7E4AE',
+              lineWidth: 4,
+            },
+          },
+        },
+
+      });
+      graph.data(data);
+      graph.render();
+
+      graph.on('edge:mouseenter', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', true);
+      });
+
+      graph.on('edge:mouseleave', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', false);
+      });
+
+      graph.on('edge:click', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'selected', true);
+      });
+      graph.on('canvas:click', (evt) => {
+        graph.getEdges().forEach((edge) => {
+          graph.clearItemStates(edge);
+        });
+      });
+    },
+    initGraph3() {
+
+      const data = {
+        nodes: [
+          {
+            id: 'node1',
+            x: -1.265 * document.getElementById('container').clientWidth,
+            y: -0.6 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node2',
+            x: -1.59 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node3',
+            x: -1.51 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node4',
+            x: -1.344 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node5',
+            x: -0.77 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node6',
+            x: -0.688 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+
+        ],
+        edges: [
+          {
+            source: 'node1',
+            target: 'node2',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node3',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node4',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node5',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node6',
+            type: 'cubic-vertical',
+          },
+        ],
+      };
+
+      const width = document.getElementById('container').scrollWidth;
+      const height = document.getElementById('container').scrollHeight || 500;
+      const graph = new G6.Graph({
+        container: 'container',
+        width,
+        height,
+        // translate the graph to align the canvas's center, support by v3.5.1
+        fitCenter: true,
+        modes: {
+          default: ['drag-canvas'],
+        },
+        defaultEdge: {
+          type: 'cubic-horizontal',
+          style: {
+            stroke: '#A7E4AE', // 浅绿色
+            lineWidth: 2, // 控制边的粗细
+          },
+          stateStyles: {
+            hover: {
+              stroke: '#A7E4AE',
+              lineWidth: 4,
+            },
+          },
+        },
+
+      });
+      graph.data(data);
+      graph.render();
+
+      graph.on('edge:mouseenter', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', true);
+      });
+
+      graph.on('edge:mouseleave', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', false);
+      });
+
+      graph.on('edge:click', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'selected', true);
+      });
+      graph.on('canvas:click', (evt) => {
+        graph.getEdges().forEach((edge) => {
+          graph.clearItemStates(edge);
+        });
+      });
+    },
+    initGraph4() {
+
+      const data = {
+        nodes: [
+          {
+            id: 'node1',
+            x: -1.09 * document.getElementById('container').clientWidth,
+            y: -0.6 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node2',
+            x: -1.59 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node3',
+            x: -1.59 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node4',
+            x: -1.42 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node5',
+            x: -1.339 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node6',
+            x: -1.257 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node7',
+            x: -0.68 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+        ],
+        edges: [
+          {
+            source: 'node1',
+            target: 'node2',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node3',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node4',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node5',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node6',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node7',
+            type: 'cubic-vertical',
+          },
+        ],
+      };
+
+      const width = document.getElementById('container').scrollWidth;
+      const height = document.getElementById('container').scrollHeight || 500;
+      const graph = new G6.Graph({
+        container: 'container',
+        width,
+        height,
+        // translate the graph to align the canvas's center, support by v3.5.1
+        fitCenter: true,
+        modes: {
+          default: ['drag-canvas'],
+        },
+        defaultEdge: {
+          type: 'cubic-horizontal',
+          style: {
+            stroke: '#A7E4AE', // 浅绿色
+            lineWidth: 2, // 控制边的粗细
+          },
+          stateStyles: {
+            hover: {
+              stroke: '#A7E4AE',
+              lineWidth: 4,
+            },
+          },
+        },
+
+      });
+      graph.data(data);
+      graph.render();
+
+      graph.on('edge:mouseenter', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', true);
+      });
+
+      graph.on('edge:mouseleave', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', false);
+      });
+
+      graph.on('edge:click', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'selected', true);
+      });
+      graph.on('canvas:click', (evt) => {
+        graph.getEdges().forEach((edge) => {
+          graph.clearItemStates(edge);
+        });
+      });
+    },
+    initGraph5() {
+
+      const data = {
+        nodes: [
+          {
+            id: 'node1',
+            x: -1.382 * document.getElementById('container').clientWidth,
+            y: -0.6 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node2',
+            x: -2.05 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node3',
+            x: -1.965 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node4',
+            x: -1.715 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node5',
+            x: -1.635 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node6',
+            x: -1.142 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+
+        ],
+        edges: [
+          {
+            source: 'node1',
+            target: 'node2',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node3',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node4',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node5',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node6',
+            type: 'cubic-vertical',
+          },
+
+        ],
+      };
+
+      const width = document.getElementById('container').scrollWidth;
+      const height = document.getElementById('container').scrollHeight || 500;
+      const graph = new G6.Graph({
+        container: 'container',
+        width,
+        height,
+        // translate the graph to align the canvas's center, support by v3.5.1
+        fitCenter: true,
+        modes: {
+          default: ['drag-canvas'],
+        },
+        defaultEdge: {
+          type: 'cubic-horizontal',
+          style: {
+            stroke: '#A7E4AE', // 浅绿色
+            lineWidth: 2, // 控制边的粗细
+          },
+          stateStyles: {
+            hover: {
+              stroke: '#A7E4AE',
+              lineWidth: 4,
+            },
+          },
+        },
+
+      });
+      graph.data(data);
+      graph.render();
+
+      graph.on('edge:mouseenter', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', true);
+      });
+
+      graph.on('edge:mouseleave', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', false);
+      });
+
+      graph.on('edge:click', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'selected', true);
+      });
+      graph.on('canvas:click', (evt) => {
+        graph.getEdges().forEach((edge) => {
+          graph.clearItemStates(edge);
+        });
+      });
+    },
+    initGraph6() {
+
+      const data = {
+        nodes: [
+          {
+            id: 'node1',
+            x: -0.735 * document.getElementById('container').clientWidth,
+            y: -0.6 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node2',
+            x: -1.567 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node3',
+            x: -1.485 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node4',
+            x: -1.318 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node5',
+            x: -1.234 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node6',
+            x: -1.068 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+          {
+            id: 'node7',
+            x: -0.66 * document.getElementById('container').clientWidth,
+            y: 0.1 * document.getElementById('container').clientHeight,
+            size: 10,
+            style: {
+              fill: '#A7E4AE', // 浅绿色
+              stroke: '#A7E4AE',
+            },
+            anchorPoints: [
+              [0.5, 0.5],
+              [0.5, 0.5],
+            ],
+          },
+        ],
+        edges: [
+          {
+            source: 'node1',
+            target: 'node2',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node3',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node4',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node5',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node6',
+            type: 'cubic-vertical',
+          },
+          {
+            source: 'node1',
+            target: 'node7',
+            type: 'cubic-vertical',
+          },
+        ],
+      };
+
+      const width = document.getElementById('container').scrollWidth;
+      const height = document.getElementById('container').scrollHeight || 500;
+      const graph = new G6.Graph({
+        container: 'container',
+        width,
+        height,
+        // translate the graph to align the canvas's center, support by v3.5.1
+        fitCenter: true,
+        modes: {
+          default: ['drag-canvas'],
+        },
+        defaultEdge: {
+          type: 'cubic-horizontal',
+          style: {
+            stroke: '#A7E4AE', // 浅绿色
+            lineWidth: 2, // 控制边的粗细
+          },
+          stateStyles: {
+            hover: {
+              stroke: '#A7E4AE',
+              lineWidth: 4,
+            },
+          },
+        },
+
+      });
+      graph.data(data);
+      graph.render();
+
+      graph.on('edge:mouseenter', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', true);
+      });
+
+      graph.on('edge:mouseleave', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'active', false);
+      });
+
+      graph.on('edge:click', (evt) => {
+        const { item } = evt;
+        graph.setItemState(item, 'selected', true);
+      });
+      graph.on('canvas:click', (evt) => {
+        graph.getEdges().forEach((edge) => {
+          graph.clearItemStates(edge);
+        });
+      });
+    },
+    showGraph(graphNumber) {
+      // 清除容器内容
+      document.getElementById('container').innerHTML = '';
+      switch (graphNumber) {
+        case 1:
+          this.initGraph1();
+          this.current=0,
+          this.showImage1 = true;
+          this.showImage2 = false;
+          this.showImage3 = false;
+          this.showImage4 = false;
+          this.showImage5 = false;
+          this.showImage6 = false;
+          break;
+        case 2:
+          this.initGraph2();
+          this.current=0,
+          this.showImage1 = false;
+          this.showImage2 = true;
+          this.showImage3 = false;
+          this.showImage4 = false;
+          this.showImage5 = false;
+          this.showImage6 = false;
+          break;
+        case 3:
+          this.initGraph3();
+          this.current=0,
+          this.showImage1 = false;
+          this.showImage2 = false;
+          this.showImage3 = true;
+          this.showImage4 = false;
+          this.showImage5 = false;
+          this.showImage6 = false;
+          break;
+        case 4:
+          this.initGraph4();
+          this.current=0,
+          this.showImage1 = false;
+          this.showImage2 = false;
+          this.showImage3 = false;
+          this.showImage4 = true;
+          this.showImage5 = false;
+          this.showImage6 = false;
+          break;
+        case 5:
+          this.initGraph5();
+          this.current=0,
+          this.showImage1 = false;
+          this.showImage2 = false;
+          this.showImage3 = false;
+          this.showImage4 = false;
+          this.showImage5 = true;
+          this.showImage6 = false;
+          break;
+        case 6:
+          this.initGraph6();
+          this.current=0,
+          this.showImage1 = false;
+          this.showImage2 = false;
+          this.showImage3 = false;
+          this.showImage4 = false;
+          this.showImage5 = false;
+          this.showImage6 = true;
+          break;
+        default:
+          // 默认情况
+          break;
+      }
+    }
+  },
+
 }
+
 </script>
   
-
 <style>
+.circle {
+  fill: aqua
+}
 
 .container {
   padding: 20px;
@@ -362,12 +1597,12 @@ export default {
 }
 
 .left-panel {
-  flex: 2;
+  flex: 3;
   border: 1px solid black;
 }
 
 .right-panel {
-  flex: 3;
+  flex: 2;
   border: 1px solid black;
 }
 
@@ -399,19 +1634,17 @@ export default {
 }
 
 .image {
-  width: 40%;
+  width: 35%;
   height: auto;
   display: block;
   position: absolute;
   top: 95%;
   left: 50%;
   cursor: pointer;
-  /* 鼠标悬停时显示可点击状态 */
   transform: translate(-50%, -50%);
 }
 
 .text {
-  margin-top: -5px;
   font-size: 16px;
   font-family: serif;
 }
@@ -420,7 +1653,7 @@ export default {
   position: relative;
   justify-content: space-between;
   text-align: center;
-  width: 50%;
+  width: 40%;
   height: auto;
 }
 
@@ -462,19 +1695,23 @@ export default {
   stroke-width: 2;
 }
 
-.caption{
+.caption {
   text-align: left;
   font-size: 18px;
   font-weight: bold;
   color: var(--td-brand-color-6);
   line-height: 49px;
   margin-left: 20px;
+  width: 100%;
+  height: 10%;
 }
-.sub-caption{
-  width: 400px;
-  height: 43px;
+
+.sub-caption {
+  width: 80%;
+  height: 90%;
   font-size: 12px;
   margin-left: 10%;
+  margin-top: 5%;
   font-weight: 1000;
   letter-spacing: 1px;
   line-height: 15px;
