@@ -383,7 +383,7 @@
           <p class="slanted-text">北斗</p>
           <p
             style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            青茶
+            乌龙茶
           </p>
         </div>
 
@@ -403,11 +403,11 @@
           <img class="image" src="../assets/img/producetea17.jpg" alt="Image 5" @click="showGraph(5)">
         </div>
         <div class="text-container">
+          <p class="slanted-text">坦洋工夫</p>
           <p class="slanted-text">祁门红茶</p>
           <p class="slanted-text">滇红</p>
           <p class="slanted-text">正山小种</p>
           <p class="slanted-text">金骏眉</p>
-          <p class="slanted-text">坦洋工夫</p>
           <p
             style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
             红茶
@@ -539,8 +539,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -553,8 +553,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -567,8 +567,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -581,8 +581,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -595,8 +595,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -609,8 +609,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -662,12 +662,13 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              // 原来的颜色#A7E4AE
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -707,8 +708,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -721,8 +722,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -735,8 +736,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -749,8 +750,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -792,12 +793,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -837,8 +838,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -851,8 +852,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -865,8 +866,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -879,8 +880,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -893,8 +894,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -907,8 +908,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -960,12 +961,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -1005,8 +1006,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1019,8 +1020,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1033,8 +1034,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1047,8 +1048,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1061,8 +1062,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1075,8 +1076,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1089,8 +1090,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1146,12 +1147,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -1191,8 +1192,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1205,8 +1206,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1219,8 +1220,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1233,8 +1234,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1247,8 +1248,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1261,8 +1262,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1315,12 +1316,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -1360,8 +1361,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1374,8 +1375,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1388,8 +1389,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1402,8 +1403,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1416,8 +1417,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1430,8 +1431,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1444,8 +1445,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1501,12 +1502,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
