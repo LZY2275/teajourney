@@ -411,13 +411,10 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
               label: {
                 show: false,
               },
-              // tooltip: {
-              //   trigger: 'item',
-              //   position: 'right',
-              //   formatter: function(params) {
-              //     return `<div style="text-align: left">${params.seriesName}<br>${params.marker} ${params.name}: ${params.value}</div>`;
-              //   },
-              // },
+              tooltip: {
+                trigger: 'item',
+                position: 'right',
+              },
               itemStyle: {
                 color: 'rgba(106,196,130, 1)', // 设置点的颜色
               },
@@ -469,7 +466,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
               },
               data: [
                 {
-                  name: '近5年茶园面积对比',
+                  name: '近5年茶园面积对比(万亩)',
                   value: [0,0,0,0,0],
                 }
               ]
@@ -619,7 +616,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 <style scoped>
   .pie{
     width: 100%; 
-    height: 290px;
+    height: 32vh;
   }
   .title{
     text-align: left;
