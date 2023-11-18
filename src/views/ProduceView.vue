@@ -117,7 +117,7 @@
                 </div>
                 <template><div style="width:14vw;">
                   <div style="position: relative;top: 30%;">
-                    <t-progress :percentage="item.percentage" :label="false" theme="plump" :color="{ from: '#32846e', to: '#00A870' }" trackColor="#e7e7e780"/>
+                    <t-progress :percentage="item.percentage" :label="false" theme="plump" :color="{ from: '#32846e', to: '#00A870' }" trackColor="#e7e7e780" :status="'active'"/>
                   </div>
                 </div></template>
                 <div style="width:83px">
