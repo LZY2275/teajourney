@@ -284,7 +284,8 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               right: '1%',
               bottom: '0%',
               //bottom: 0
-            }
+            },
+            
           ],
           calendar: [
             {
@@ -469,7 +470,6 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 trigger: 'item',
                 show: true,
                 formatter: function(params) {
-                  console.log(params.data[0]);
                   let content = [];
                   if (params.data[0] == textData[0][0]) {
                     content += '<div style="text-align: left;">' + textData[0][1] + '<br>';
@@ -694,10 +694,47 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                     content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
                     return content;
                   }
+                  else if (params.data[0] == textData[39][0]) {
+                    content += '<div style="text-align: left;">' + textData[39][1] + '<br>';
+                      content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[40][0]) {
+                    content += '<div style="text-align: left;">' + textData[40][1] + '<br>';
+                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[41][0]) {
+                    content += '<div style="text-align: left;">' + textData[41][1] + '<br>';
+                      content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[42][0]) {
+                    content += '<div style="text-align: left;">' + textData[42][1] + '<br>';
+                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[43][0]) {
+                    content += '<div style="text-align: left;">' + textData[43][1] + '<br>';
+                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[44][0]) {
+                    content += '<div style="text-align: left;">' + textData[44][1] + '<br>';
+                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+                  else if (params.data[0] == textData[45][0]) {
+                    content += '<div style="text-align: left;">' + textData[45][1] + '<br>';
+                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    return content;
+                  }
+
 
                 }
               }
             },
+            
             {
               type: 'heatmap',
               coordinateSystem: 'calendar',
@@ -713,7 +750,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 disabled: false,
                 //focus: 'series'
               },
-              data: data1
+              data: data1,
             },
             {
               type: 'heatmap',
