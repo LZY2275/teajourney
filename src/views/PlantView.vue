@@ -345,17 +345,23 @@ export default {
         handle_guide_click(){
             console.log('click');
             this.guide_current = 0;
-            this.createProvinceChart(0);
+            // this.createProvinceChart(0);
         },
         handleChange(current, { e, total }){
             // 当前点击了茶类别显示地图
             if(current === 3){
                 console.log('display');
-                // this.createProvinceChart(0);
+                this.createProvinceChart(0);
+            }
+            else{
+                this.visible = false;
+                this.clearProvinceChart();
             }
         },
+        
         handleFinish(){
             console.log('finish');
+            this.visible = false;
             this.clearProvinceChart()
         },
         clearProvinceChart(){
@@ -723,7 +729,7 @@ export default {
 
 
            this.clearProvinceChart();
-           var chartDom = document.getElementById('province');
+            var chartDom = document.getElementById('province');
             var myChart = echarts.init(chartDom);
 
             var path = province_geo_data[index].path;
