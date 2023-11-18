@@ -274,19 +274,19 @@
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling14.jpg" ></div>
+                    <div><img src="../assets/img/feeling16.jpg" ></div>
                     <div class="item-title">菌花香</div>
                     <div class="item-note" style="margin-top:8px;">部分有“金花”的黑茶特有的香气。</div>
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling15.jpg" ></div>
+                    <div><img src="../assets/img/feeling14.jpg" ></div>
                     <div class="item-title">日晒香</div>
                     <div class="item-note" style="margin-top:8px;">白茶经过日晒产生的气味。</div>
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling16.jpg" ></div>
+                    <div><img src="../assets/img/feeling15.jpg" ></div>
                     <div class="item-title">麦香</div>
                     <div class="item-note" style="margin-top:8px;">经过麦香香精的注入或者与麦香干燥花朵混合加工而成的香气。</div>
                   </div>       

@@ -6,7 +6,7 @@
       <div class="left-panel">
 
         <!-- 说明文字 -->
-        <div style="background-color:var(--td-bg-color-container);height: 30vh;">
+        <div style="background-color:var(--td-bg-color-container);height: 30vh;width: calc(100% - 24px);">
           <div v-if="showImage1" style="height: 50%;">
         <p class="caption">绿茶制作流程</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
@@ -91,6 +91,44 @@
       </div>
       <!--右上区域-->
       <div class="right-panel">
+        <div style="height: 30vh;display: flex;">
+          <!-- 标题区域 -->
+          <div class="right-title-container">
+            <p class="caption" style="padding:0;">茶的种类发酵工艺</p>
+            <p class="sub-title" style="padding: 0;line-height: 12px;margin-top: 4px;">FERMENTATION TECHNOLOGY</p>
+            <p class="sub-caption" style="padding: 0;padding-top: 12px;text-indent: 2em;">
+              茶叶的发酵实际上是茶叶细胞中茶多酚和多酚氧化酶相互作用的过程。发酵的程度不同，影响了茶叶的颜色、味道、香气和汤色等特征，从而将茶叶分为六大类。
+            </p>
+          </div>
+          <!-- 图表区域 -->
+          <div class="right-chart-container" style="display:flex;">
+            <!-- 左边的图例区域 -->
+            <div class="fermentation-legend-container">
+              <p>低</p>
+              <div class="fermentation-legend"></div>
+              <p>高</p>
+            </div>
+            <!-- 右边的主体区域 -->
+            <div class="chart-containter">
+              <div class="chart-item-container" v-for="(item, index) in fermentation_data">
+                <img :src="item.img" alt="" height="100%">
+                <div style="width:80px" >
+                  <p class="type-text">{{ item.type }}</p>
+                </div>
+                <template><div style="width:14vw;">
+                  <div style="position: relative;top: 30%;">
+                    <t-progress :percentage="item.percentage" :label="false" theme="plump" :color="{ from: '#32846e', to: '#00A870' }" trackColor="#e7e7e780"/>
+                  </div>
+                </div></template>
+                <div style="width:83px">
+                  <p class="type-text">{{ item.percentage_text }}</p>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+        
 
       </div>
     </div>
@@ -520,6 +558,44 @@ export default {
       showImage4: false,
       showImage5: false,
       showImage6: false,
+      fermentation_data:[
+        {
+          img:require('../assets/img/producetea13.jpg'),
+          type:'绿茶发酵',
+          percentage:2.5,
+          percentage_text:'0%~5%'
+        },
+        {
+          img:require('../assets/img/producetea14.jpg'),
+          type:'白茶发酵',
+          percentage:7.5,
+          percentage_text:'0%~10%'
+        },
+        {
+          img:require('../assets/img/producetea15.jpg'),
+          type:'黄茶发酵',
+          percentage:15,
+          percentage_text:'10%~20%'
+        },
+        {
+          img:require('../assets/img/producetea16.jpg'),
+          type:'乌龙茶发酵',
+          percentage:50,
+          percentage_text:'30%~60%'
+        },
+        {
+          img:require('../assets/img/producetea17.jpg'),
+          type:'红茶发酵',
+          percentage:85,
+          percentage_text:'80%~90%'
+        },
+        {
+          img:require('../assets/img/producetea18.jpg'),
+          type:'黑茶发酵',
+          percentage:95,
+          percentage_text:'85%~100%'
+        },
+      ]
     };
   },
   mounted() {
@@ -1759,5 +1835,64 @@ export default {
   line-height: 20px;
   color: rgba(50, 132, 110, 1);
   text-align: left;
+}
+
+.right-title-container{
+  width: 152px;
+  padding: 0 12px;
+}
+
+/* .right-title-container p{
+  font-size: 18px;
+  color: var(--td-brand-color-6);
+  letter-spacing: 1px;
+} */
+
+.right-chart-container{
+  width: calc(100% - 160px);
+  height: 30vh;
+  background-color: var(--td-bg-color-container);
+}
+
+.fermentation-legend-container{
+  padding: 12px 12px;
+  width: 16px;
+  height: calc(100% - 24px);
+}
+
+.fermentation-legend-container p{
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--td-brand-color-6);
+}
+
+.fermentation-legend{
+  border-radius: 8px;
+  width: 16px;
+  height: calc(100% - 48px);
+  background: linear-gradient(to bottom, #00A870, var(--td-brand-color-6));  
+}
+
+.chart-item-container{
+  height: 16.67%;
+  /* background-color: rgb(180, 199, 199); */
+  display: flex;
+}
+
+.chart-containter{
+  margin-left:6px;
+  padding: 12px 0;
+  background-color: var(--td-bg-color-container);
+}
+
+.type-text{
+  height: 100%;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--td-brand-color-6);
 }
 </style>
