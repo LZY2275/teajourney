@@ -256,7 +256,7 @@
                   <div class="four-container">
                     <div><img src="../assets/img/feeling11.jpg" ></div>
                     <div class="item-title">荷香</div>
-                    <div class="item-note" style="margin-top:8px;">茶叶经过适当度的陈化后发酵，去掉浓烈的青叶香，自然而留下淡淡的荷香。。</div>
+                    <div class="item-note" style="margin-top:8px;">茶叶经过适当度的陈化后发酵，去掉浓烈的青叶香，自然而留下淡淡的荷香。</div>
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
@@ -268,27 +268,27 @@
                   <div class="three-padding"></div>
                   <div style="display: flex;">
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling5.jpg" ></div>
-                    <div class="item-title">兰香</div>
-                    <div class="item-note" style="margin-top:8px;">幽然之香，清爽幽雅，是最珍贵的茶香</div>
+                    <div><img src="../assets/img/feeling13.jpg" ></div>
+                    <div class="item-title">枣香</div>
+                    <div class="item-note" style="margin-top:8px;">老白茶具有的像红枣般的香气。</div>
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling6.jpg" ></div>
-                    <div class="item-title">水果香</div>
-                    <div class="item-note" style="margin-top:8px;">类似各种水果香气，如雪梨香、佛手香、桔子香、李子香等等。</div>
+                    <div><img src="../assets/img/feeling16.jpg" ></div>
+                    <div class="item-title">菌花香</div>
+                    <div class="item-note" style="margin-top:8px;">部分有“金花”的黑茶特有的香气。</div>
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling7.jpg" ></div>
-                    <div class="item-title">蜜香</div>
-                    <div class="item-note" style="margin-top:8px;">2~5年的茶都会呈现出的香味，即经过发酵一段时间的生饼。</div>
+                    <div><img src="../assets/img/feeling14.jpg" ></div>
+                    <div class="item-title">日晒香</div>
+                    <div class="item-note" style="margin-top:8px;">白茶经过日晒产生的气味。</div>
                   </div>
                   <div class="three-padding"></div>
                   <div class="four-container">
-                    <div><img src="../assets/img/feeling8.jpg" ></div>
-                    <div class="item-title">火香</div>
-                    <div class="item-note" style="margin-top:8px;">茶叶在干燥时温度比较高，在精制时适度焙火而来。</div>
+                    <div><img src="../assets/img/feeling15.jpg" ></div>
+                    <div class="item-title">麦香</div>
+                    <div class="item-note" style="margin-top:8px;">经过麦香香精的注入或者与麦香干燥花朵混合加工而成的香气。</div>
                   </div>       
                 </div>
                   <div class="three-padding"></div>

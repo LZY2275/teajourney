@@ -5,68 +5,141 @@
       <!--左上区域-->
       <div class="left-panel">
 
-        <div v-if="showImage1" style="height: 50%;">
+        <!-- 说明文字 -->
+        <div style="background-color:var(--td-bg-color-container);height: 30vh;width: calc(100% - 24px);">
+          <div v-if="showImage1" style="height: 50%;">
         <p class="caption">绿茶制作流程</p>
-        <p class="sub-caption">
-          采青： 在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。<br>
-          杀青： 将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。<br>
-          揉捻： 经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。<br>
-          烘青： 揉捻后的茶叶会经过烘干处理，高温稳定茶叶的品质，确保茶叶不会变质。<br>
-          干燥： 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。
-        </p>
+        <p class="sub-title">TEA PRODUCTION PROCESS</p>
+        <div>
+          <ul class="sub-caption">
+            <li><strong>采青：</strong> 在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。</li>
+            <li><strong>杀青：</strong> 将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。</li>
+            <li><strong>揉捻：</strong> 经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。</li>
+            <li><strong>烘青：</strong> 揉捻后的茶叶会经过烘干处理，高温稳定茶叶的品质，确保茶叶不会变质。</li>
+            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。</li>
+          </ul>
+        </div>
         </div>
         <div v-if="showImage2" style="height: 50%;">
         <p class="caption">白茶制作流程</p>
-        <p class="sub-caption">
-          采青： 与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。<br>
-          晾干： 采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。<br>
-          干燥： 在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。
-        </p>
+        <p class="sub-title">TEA PRODUCTION PROCESS</p>
+        <div>
+          <ul class="sub-caption">
+            <li><strong>采青：</strong> 与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。</li>
+            <li><strong>晾干：</strong> 采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。</li>
+            <li><strong>干燥：</strong> 在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。</li>
+          </ul>
+        </div>
         </div>
         <div v-if="showImage3" style="height: 50%;">
         <p class="caption">黄茶制作流程</p>
-        <p class="sub-caption">
-          采青： 和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。<br>
-          萎凋： 采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。<br>
-          杀青： 经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。<br>
-          烘青： 杀青后，茶叶经过烘焙处理，这个步骤有助于进一步固定茶叶的香气和品质。<br>
-          干燥： 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，以便长期储存，并保持其品质和口感。
-        </p>
+        <p class="sub-title">TEA PRODUCTION PROCESS</p>
+        <div>
+          <ul class="sub-caption">
+            <li><strong>采青：</strong> 和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。</li>
+            <li><strong>萎凋：</strong> 采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。</li>
+            <li><strong>杀青：</strong> 经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。</li>
+            <li><strong>烘青：</strong> 杀青后，茶叶经过烘焙处理，这个步骤有助于进一步固定茶叶的香气和品质。</li>
+            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，以便长期储存，并保持其品质和口感。</li>
+          </ul>
+        </div>
         </div>
         <div v-if="showImage4" style="height: 50%;">
         <p class="caption">青茶制作流程</p>
-        <p class="sub-caption">
-          采青： 茶叶制作始于采摘。在制作青茶时，通常选择嫩绿的茶芽和嫩叶作为原料。<br>
-          摇青： 在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。<br>
-          杀青： 接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。<br>
-          揉捻： 杀青后的茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。<br>
-          干燥： 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。
-        </p>
+        <p class="sub-title">TEA PRODUCTION PROCESS</p>
+        <div>
+          <ul class="sub-caption">
+            <li><strong>采青：</strong> 茶叶制作始于采摘。在制作青茶时，通常选择嫩绿的茶芽和嫩叶作为原料。</li>
+            <li><strong>摇青：</strong> 在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。</li>
+            <li><strong>杀青：</strong> 接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。</li>
+            <li><strong>揉捻：</strong> 杀青后的茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。</li>
+            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。</li>
+          </ul>
+        </div>
         </div>
         <div v-if="showImage5" style="height: 50%;">
         <p class="caption">红茶制作流程</p>
-        <p class="sub-caption">
-          采青： 茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。<br>
-          萎凋： 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。<br>
-          揉捻： 茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。<br>
-          氧化发酵： 接下来的关键步骤是氧化发酵。茶叶被散放在适当的环境中，让其在空气中发酵，氧化过程赋予了红茶独特的色泽和口感。<br>
-          干燥： 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。
-        </p>
+        <p class="sub-title">TEA PRODUCTION PROCESS</p>
+        <div>
+          <ul class="sub-caption">
+            <li><strong>采青：</strong> 茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。</li>
+            <li><strong>萎凋：</strong> 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。</li>
+            <li><strong>揉捻：</strong> 茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。</li>
+            <li><strong>氧化发酵：</strong> 接下来的关键步骤是氧化发酵。茶叶被散放在适当的环境中，让其在空气中发酵，氧化过程赋予了红茶独特的色泽和口感。</li>
+            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。</li>
+          </ul>
+        </div>
         </div>
         <div v-if="showImage6" style="height: 50%;">
         <p class="caption">黑茶制作流程</p>
-        <p class="sub-caption">
-          采青： 黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。<br>
-          萎凋： 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。<br>
-          杀青： 接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。<br>
-          揉捻： 经过杀青后，茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。<br>
-          晒青： 黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。<br>
-          干燥： 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。
-        </p>
+        <p class="sub-title">TEA PRODUCTION PROCESS</p>
+        <div>
+          <ul class="sub-caption">
+            <li><strong>采青：</strong> 黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。</li>
+            <li><strong>萎凋：</strong> 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。</li>
+            <li><strong>杀青：</strong> 接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。</li>
+            <li><strong>揉捻：</strong> 经过杀青后，茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。</li>
+            <li><strong>晒青：</strong> 黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。</li>
+            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。</li>
+          </ul>
         </div>
-        <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
+        </div>
+
+        </div>
+
+
+      </div>
+      <!--右上区域-->
+      <div class="right-panel">
+        <div style="height: 30vh;display: flex;">
+          <!-- 标题区域 -->
+          <div class="right-title-container">
+            <p class="caption" style="padding:0;">茶的种类发酵工艺</p>
+            <p class="sub-title" style="padding: 0;line-height: 12px;margin-top: 4px;">FERMENTATION TECHNOLOGY</p>
+            <p class="sub-caption" style="padding: 0;padding-top: 12px;text-indent: 2em;">
+              茶叶的发酵实际上是茶叶细胞中茶多酚和多酚氧化酶相互作用的过程。发酵的程度不同，影响了茶叶的颜色、味道、香气和汤色等特征，从而将茶叶分为六大类。
+            </p>
+          </div>
+          <!-- 图表区域 -->
+          <div class="right-chart-container" style="display:flex;">
+            <!-- 左边的图例区域 -->
+            <div class="fermentation-legend-container">
+              <p>低</p>
+              <div class="fermentation-legend"></div>
+              <p>高</p>
+            </div>
+            <!-- 右边的主体区域 -->
+            <div class="chart-containter">
+              <div class="chart-item-container" v-for="(item, index) in fermentation_data">
+                <img :src="item.img" alt="" height="100%">
+                <div style="width:80px" >
+                  <p class="type-text">{{ item.type }}</p>
+                </div>
+                <template><div style="width:14vw;">
+                  <div style="position: relative;top: 30%;">
+                    <t-progress :percentage="item.percentage" :label="false" theme="plump" :color="{ from: '#32846e', to: '#00A870' }" trackColor="#e7e7e780"/>
+                  </div>
+                </div></template>
+                <div style="width:83px">
+                  <p class="type-text">{{ item.percentage_text }}</p>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+    
+            <!-- 步骤条 -->
+      <div style="width: calc(100vw - 350px); display: flex;justify-content: center;">
+        <div style="width: calc(100vw - 460px);"   :class="{ 'last-step': showImage6 }">
+          <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
           <template>
-            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item title="采青" content="收集茶叶原料">
               </t-step-item>
               <t-step-item title="杀青" content="保留颜色香气">
@@ -92,7 +165,7 @@
         </div>
         <div v-if="showImage2" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
-            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item title="采青" content="收集茶叶原料">
                 <template slot="extra" v-if="current === 0">
 
@@ -114,7 +187,7 @@
         </div>
         <div v-if="showImage3" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
-            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item title="采青" content="收集茶叶原料">
               </t-step-item>
               <t-step-item title="萎凋" content="失水软化叶片">
@@ -141,7 +214,7 @@
         </div>
         <div v-if="showImage4" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
-            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item title="采青" content="收集茶叶原料">
                 <template slot="extra" v-if="current === 0">
 
@@ -173,7 +246,7 @@
         </div>
         <div v-if="showImage5" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
-            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item title="采青" content="收集茶叶原料">
               </t-step-item>
               <t-step-item title="萎凋" content="失水软化叶片">
@@ -200,7 +273,7 @@
         </div>
         <div v-if="showImage6" style="height: 50%;width: 106%;display: flex; justify-content: center; align-items: center;">
           <template>
-            <t-steps layout="horizontal" :current="current" :onChange="onCurChanged">
+            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item title="采青" content="收集茶叶原料">
                 <template slot="extra" >
                 </template>
@@ -235,11 +308,8 @@
 
         </div>
       </div>
-      <!--右上区域-->
-      <div class="right-panel">
-
-      </div>
     </div>
+
 
     <!--底部区域-->
     <div class="bottom-section">
@@ -351,7 +421,7 @@
           <p class="slanted-text">北斗</p>
           <p
             style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            青茶
+            乌龙茶
           </p>
         </div>
 
@@ -371,11 +441,11 @@
           <img class="image" src="../assets/img/producetea17.jpg" alt="Image 5" @click="showGraph(5)">
         </div>
         <div class="text-container">
+          <p class="slanted-text">坦洋工夫</p>
           <p class="slanted-text">祁门红茶</p>
           <p class="slanted-text">滇红</p>
           <p class="slanted-text">正山小种</p>
           <p class="slanted-text">金骏眉</p>
-          <p class="slanted-text">坦洋工夫</p>
           <p
             style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
             红茶
@@ -481,13 +551,51 @@ export default {
 
   data() {
     return {
-      current: 0,
+      current: 'FINISH',
       showImage1: true,
       showImage2: false,
       showImage3: false,
       showImage4: false,
       showImage5: false,
       showImage6: false,
+      fermentation_data:[
+        {
+          img:require('../assets/img/producetea13.jpg'),
+          type:'绿茶发酵',
+          percentage:2.5,
+          percentage_text:'0%~5%'
+        },
+        {
+          img:require('../assets/img/producetea14.jpg'),
+          type:'白茶发酵',
+          percentage:7.5,
+          percentage_text:'0%~10%'
+        },
+        {
+          img:require('../assets/img/producetea15.jpg'),
+          type:'黄茶发酵',
+          percentage:15,
+          percentage_text:'10%~20%'
+        },
+        {
+          img:require('../assets/img/producetea16.jpg'),
+          type:'乌龙茶发酵',
+          percentage:50,
+          percentage_text:'30%~60%'
+        },
+        {
+          img:require('../assets/img/producetea17.jpg'),
+          type:'红茶发酵',
+          percentage:85,
+          percentage_text:'80%~90%'
+        },
+        {
+          img:require('../assets/img/producetea18.jpg'),
+          type:'黑茶发酵',
+          percentage:95,
+          percentage_text:'85%~100%'
+        },
+      ]
     };
   },
   mounted() {
@@ -507,8 +615,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -521,8 +629,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -535,8 +643,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -549,8 +657,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -563,8 +671,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -577,8 +685,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -630,12 +738,13 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              // 原来的颜色#A7E4AE
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -675,8 +784,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -689,8 +798,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -703,8 +812,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -717,8 +826,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -760,12 +869,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -805,8 +914,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -819,8 +928,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -833,8 +942,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -847,8 +956,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -861,8 +970,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -875,8 +984,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -928,12 +1037,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -973,8 +1082,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -987,8 +1096,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1001,8 +1110,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1015,8 +1124,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1029,8 +1138,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1043,8 +1152,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1057,8 +1166,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1114,12 +1223,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -1159,8 +1268,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1173,8 +1282,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1187,8 +1296,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1201,8 +1310,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1215,8 +1324,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1229,8 +1338,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1283,12 +1392,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -1328,8 +1437,8 @@ export default {
             y: -0.6 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1342,8 +1451,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1356,8 +1465,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1370,8 +1479,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1384,8 +1493,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1398,8 +1507,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1412,8 +1521,8 @@ export default {
             y: 0.1 * document.getElementById('container').clientHeight,
             size: 10,
             style: {
-              fill: '#A7E4AE', // 浅绿色
-              stroke: '#A7E4AE',
+              fill: '#32846e80', // 浅绿色
+              stroke: '#32846e80',
             },
             anchorPoints: [
               [0.5, 0.5],
@@ -1469,12 +1578,12 @@ export default {
         defaultEdge: {
           type: 'cubic-horizontal',
           style: {
-            stroke: '#A7E4AE', // 浅绿色
+            stroke: '#32846e80', // 浅绿色
             lineWidth: 2, // 控制边的粗细
           },
           stateStyles: {
             hover: {
-              stroke: '#A7E4AE',
+              stroke: '#32846e80',
               lineWidth: 4,
             },
           },
@@ -1597,18 +1706,18 @@ export default {
 }
 
 .left-panel {
-  flex: 3;
-  border: 1px solid black;
+  flex: 2;
+  /* border: 1px solid black; */
 }
 
 .right-panel {
   flex: 2;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .bottom-section {
   flex: 6;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .image-with-circles-container {
@@ -1698,25 +1807,92 @@ export default {
 .caption {
   text-align: left;
   font-size: 18px;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: var(--td-brand-color-6);
-  line-height: 49px;
-  margin-left: 20px;
-  width: 100%;
-  height: 10%;
+  line-height: 26.06px;
+  padding: 16px 24px 0 24px;
 }
 
 .sub-caption {
-  width: 80%;
-  height: 90%;
-  font-size: 12px;
-  margin-left: 10%;
-  margin-top: 5%;
-  font-weight: 1000;
-  letter-spacing: 1px;
-  line-height: 15px;
-  color: rgba(50, 132, 110, 0.5);
+  padding: 12px 24px 12px 48px;
   text-align: left;
-  vertical-align: middle;
+  /* text-indent: 2em; */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: rgba(50, 132, 110, 0.5);
+}
+
+.last-step{
+  position: relative;
+  left: -3vw;
+}
+
+.sub-title{
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(50, 132, 110, 1);
+  text-align: left;
+}
+
+.right-title-container{
+  width: 152px;
+  padding: 0 12px;
+}
+
+/* .right-title-container p{
+  font-size: 18px;
+  color: var(--td-brand-color-6);
+  letter-spacing: 1px;
+} */
+
+.right-chart-container{
+  width: calc(100% - 160px);
+  height: 30vh;
+  background-color: var(--td-bg-color-container);
+}
+
+.fermentation-legend-container{
+  padding: 12px 12px;
+  width: 16px;
+  height: calc(100% - 24px);
+}
+
+.fermentation-legend-container p{
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--td-brand-color-6);
+}
+
+.fermentation-legend{
+  border-radius: 8px;
+  width: 16px;
+  height: calc(100% - 48px);
+  background: linear-gradient(to bottom, #00A870, var(--td-brand-color-6));  
+}
+
+.chart-item-container{
+  height: 16.67%;
+  /* background-color: rgb(180, 199, 199); */
+  display: flex;
+}
+
+.chart-containter{
+  margin-left:6px;
+  padding: 12px 0;
+  background-color: var(--td-bg-color-container);
+}
+
+.type-text{
+  height: 100%;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--td-brand-color-6);
 }
 </style>
