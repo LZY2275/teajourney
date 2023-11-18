@@ -43,7 +43,7 @@
       </div>
       
       <!-- 右侧内容区 -->
-      <div class="content-view" id="content-view" style="overflow: auto;" >
+      <div class="content-view" id="content-view" style="overflow-x: hidden;" >
         <section id="plant" class="section-first-3" style="position: relative;">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <!-- <PlantView @customEvent="handleCustomEvent"></PlantView> -->
