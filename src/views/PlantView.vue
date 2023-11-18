@@ -15,6 +15,7 @@
 
 
     <div>
+        
         <t-drawer :visible.sync="visible" :placement="placement" :mode="mode" :header="tea_info[current].teatitle" :showOverlay="false" showInAttachedElement >
             <div style="width: 100%;display: flex;margin-bottom: 8px;">
                 <div class="tea-info-card" style="text-align: center;">
@@ -33,6 +34,14 @@
             <img :src="tea_info[current].teaimg" alt="" class="tea-info-img">
             <p class="tea-info-content" v-html="tea_info[current].teacontent"></p>
         </t-drawer>
+        <t-guide
+            :current.sync="guide_current"
+            :steps="steps"
+            @change="handleChange"
+            @finish="handleFinish"
+            @skip="handleFinish"
+        />
+        <div style="position: absolute;  top: 20px; right: 20px; z-index:99 "><HelpCircleIcon size="24" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/></div>
         <!-- <t-button variant="outline" @click="visible = true">打开抽屉</t-button> -->
         <div id="chart" style="height: 100vh;display: flex;justify-content: center;align-items: center;">
             <div id="province" style="width: 32vh;height: 32vh;z-index: 999;"></div>
@@ -47,6 +56,7 @@ import Vue from 'vue';
 import * as d3 from 'd3';
 import * as d3_annotation from 'd3-svg-annotation';
 import * as echarts from "echarts/core";
+import { HelpCircleIcon } from "tdesign-icons-vue";
 
 
 
@@ -55,8 +65,38 @@ Vue.prototype.echarts = echarts;
 
 export default {
     name:'PlantView',
+    components: {
+        HelpCircleIcon
+    },
     data() {
       return {
+        guide_current:-1,
+        steps: [
+        {
+          element: '.arc',
+          title: '茶的类别及品种',
+          body: '外圈环显示茶的类别及该类别下茶的品种。颜色代表茶的类别：绿茶、白茶、黄茶、乌龙茶、红茶、黑茶。',
+          placement: 'bottom-right',
+        },
+        {
+          element: '.province-hover-arc',
+          title: '茶省',
+          body: '内圈表示产茶省份，点击省份显示省份与茶之间的对应关系与产茶地图。圆环的角度越大，说明该省份产茶越多',
+          placement: 'bottom',
+        },
+        {
+          element: '#name-pie-3',
+          title: '茶的详细信息',
+          body: '鼠标点击外环的茶对应的小卡片可以查看该茶的详细信息。',
+          placement: 'right',
+        },
+        {
+          element: '.province-hover-arc-g',
+          title: '产茶地图',
+          body: '点击外环的小卡片后展示，显示该省份产地点位等情况。',
+          placement: 'right',
+        },
+      ],
         teatitle:'祁门红茶',
         teacontent:'<p>祁门红茶，又称祁红，是中国安徽省黄山市祁门县出产的一种名优红茶。祁门红茶起源于明代，具有400多年的历史。它以其独特的外形、香气和口感而闻名于世。</p><p>祁门红茶的茶叶选自祁门县境内的高山茶园，采用传统的手工制作工艺。茶叶外形条索紧结，色泽乌润，金毫显露。冲泡时，茶汤呈红褐色，香气浓郁，口感醇厚。</p><p>祁门红茶的品质受土壤、气候和制作工艺的影响，因此，不同年份和产区的祁门红茶呈现出不同的特点。一般来说，祁门红茶具有独特的果香和花香，同时带有一定的甜味和淡淡的苦涩感。它富含多种有益物质，如茶多酚、咖啡因和氨基酸，具有提神醒脑、消除疲劳、抗氧化等功效。</p><p>祁门红茶是中国四大名茶之一，也是国内外茶叶市场上备受追捧的茶品之一。它被誉为“红茶之王”，享有“色香味俱佳，汤色红艳明亮，滋味醇和回甘”的美誉。无论是作为日常饮品还是送礼品，祁门红茶都是一种受欢迎的选择。</p>',
         teaimg:"../assets/img/teaimg.png",
@@ -302,7 +342,22 @@ export default {
       
     },
     methods: {
-
+        handle_guide_click(){
+            console.log('click');
+            this.guide_current = 0;
+            this.createProvinceChart(0);
+        },
+        handleChange(current, { e, total }){
+            // 当前点击了茶类别显示地图
+            if(current === 3){
+                console.log('display');
+                // this.createProvinceChart(0);
+            }
+        },
+        handleFinish(){
+            console.log('finish');
+            this.clearProvinceChart()
+        },
         clearProvinceChart(){
             var chartDom = document.getElementById('province');
             var myChart = echarts.init(chartDom);
@@ -703,7 +758,7 @@ export default {
                     },
                     legend: {
                         data: province_geo_data[index].legend.map(function(item){
-                            console.log(item);
+                            // console.log(item);
                             return{
                                 name:item.name,
                                 itemStyle:{
