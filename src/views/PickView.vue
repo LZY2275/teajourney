@@ -1,8 +1,18 @@
 <template>
     <div>
-      <div class="title">
-        <p>{{ title }}</p>
+      <div style="display:flex;height:136px">
+        <div class="title" style="width:512px">
+          <p>{{ title }}</p>
+        </div>
+        <t-divider layout="vertical" style="height:90%"></t-divider>
+        <div  class="note-container">
+          <div>
+            <P class="note">茶叶，其实是一年四季皆可采摘制作的。</P>
+            <p class="note">主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。</p>
+            <p class="note">其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。</P></div>
+          </div>
       </div>
+      
       <div style="display: flex;">
         <div id="calendar" class="calendar"></div>
         <div ref="ganttChart" class="gantt"></div>
@@ -950,11 +960,11 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
 <style scoped>
   .calendar{
-    width: 35%; 
+    width: 40%; 
     height:calc(100vh - 170px);
   }
   .gantt{
-    width: 65%;
+    width: 60%;
     height: calc(100vh - 170px);
   }
   .title{
@@ -967,5 +977,20 @@ echarts.use([SVGRenderer, CanvasRenderer]);
     text-align: left;
     vertical-align: top;
     padding: 48px 0;
+  }
+
+  .note-container{
+    padding:12px 24px;
+    display:flex;
+    align-items:center;
+    /* background-color: var(--td-bg-color-container); */
+  }
+
+  .note{
+    color:var(--td-brand-color-6);
+    text-align:left;
+    text-indent:2em;
+    line-height:17px;
+    font-size:14px
   }
 </style>

@@ -4,7 +4,7 @@
 
       <!-- 评鉴方法 -->
       <div style="width: 50%;">
-        <t-divider class="FirstDivider"></t-divider>
+        <t-divider></t-divider>
         <div style="display: flex;">
           <div>
             <p class="EvaluationMethod">评鉴方法</p>
@@ -782,11 +782,6 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   padding: 102px 68px 0px 68px;
 }
 
-.FirstDivider {
-  width: 35vw;
-  height: 0.12%;
-  background: rgba(211, 217, 191, 1);
-}
 
 .EvaluationMethod {
   font-size: 18px;
