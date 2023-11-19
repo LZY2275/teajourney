@@ -41,7 +41,12 @@
             @finish="handleFinish"
             @skip="handleFinish"
         />
-        <div style="position: absolute;  top: 20px; right: 20px; z-index:99 "><HelpCircleIcon size="24" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/></div>
+
+        <div style="position: absolute;  top: 20px; right: 20px; z-index:99 ">
+            <t-popup content="第一次使用？" placement="left" >
+                <HelpCircleIcon size="24" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/>
+            </t-popup>
+        </div>
         <!-- <t-button variant="outline" @click="visible = true">打开抽屉</t-button> -->
         <div id="chart" style="height: 100vh;display: flex;justify-content: center;align-items: center;">
             <div id="province" style="width: 32vh;height: 32vh;z-index: 999;"></div>
@@ -96,7 +101,19 @@ export default {
           body: '点击外环的小卡片后展示，显示该省份产地点位等情况。',
           placement: 'right',
         },
-      ],
+        {
+          element: '.nav',
+          title: '导航栏',
+          body: '使用导航栏可以进行页面之间的快速跳转。',
+          placement: 'right',
+        },
+        {
+          element: '.t-steps-item__inner ',
+          title: '导航项',
+          body: '点击导航项可以直接实现页面的跳转。',
+          placement: 'right',
+        },
+        ],
         teatitle:'祁门红茶',
         teacontent:'<p>祁门红茶，又称祁红，是中国安徽省黄山市祁门县出产的一种名优红茶。祁门红茶起源于明代，具有400多年的历史。它以其独特的外形、香气和口感而闻名于世。</p><p>祁门红茶的茶叶选自祁门县境内的高山茶园，采用传统的手工制作工艺。茶叶外形条索紧结，色泽乌润，金毫显露。冲泡时，茶汤呈红褐色，香气浓郁，口感醇厚。</p><p>祁门红茶的品质受土壤、气候和制作工艺的影响，因此，不同年份和产区的祁门红茶呈现出不同的特点。一般来说，祁门红茶具有独特的果香和花香，同时带有一定的甜味和淡淡的苦涩感。它富含多种有益物质，如茶多酚、咖啡因和氨基酸，具有提神醒脑、消除疲劳、抗氧化等功效。</p><p>祁门红茶是中国四大名茶之一，也是国内外茶叶市场上备受追捧的茶品之一。它被誉为“红茶之王”，享有“色香味俱佳，汤色红艳明亮，滋味醇和回甘”的美誉。无论是作为日常饮品还是送礼品，祁门红茶都是一种受欢迎的选择。</p>',
         teaimg:"../assets/img/teaimg.png",

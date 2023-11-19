@@ -1,10 +1,15 @@
 <template>
   
   <div>
+    <t-guide
+      :current.sync="sale_guide_current"
+      :steps="sale_steps"
+    />
     <!-- 标题区域 -->
     <div style="padding:0 10px;display: flex;">
-      <div style="width: 50%;">
+      <div style="width: 50%; display: flex;">
         <p class="title">各类茶近五年产量产值</p>
+        <div style="margin-left: 12px;display: flex;align-items: center;"><HelpCircleIcon size="20" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/></div>
       </div>
       
       <div style="width: 50%;justify-content: right;display: flex;">
@@ -40,14 +45,44 @@
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 import * as d3 from 'd3';
+import { HelpCircleIcon } from "tdesign-icons-vue";
 
 echarts.use([SVGRenderer, CanvasRenderer]);
 
   export default {
     name: 'TeaTypeChartView',
+    components: {
+        HelpCircleIcon
+    },
     data(){
       return{
-
+        sale_guide_current:-1,
+        sale_steps: [
+          {
+            element: '#svg-container',
+            title: '丝绸图',
+            body: '显示各类茶近五年数据的详细情况，颜色代表茶的类别',
+            placement: 'bottom-left',
+          },
+          {
+            element: '#circle_sel_0',
+            title: '选择图例',
+            body: '点击小圆圈，详细查看某种茶的数据',
+            placement: 'right',
+          },
+          {
+            element: '#select_all',
+            title: '选择所有',
+            body: '点击此处，选择查看所有图例',
+            placement: 'right',
+          },
+          {
+            element: '.t-tabs',
+            title: '选项卡',
+            body: '可以选择要查看的数据类别',
+            placement: 'bottom',
+          },
+        ],
         defaultValue:1,
         first_click: true,
 
@@ -237,6 +272,9 @@ echarts.use([SVGRenderer, CanvasRenderer]);
       }
     },
     methods:{
+      handle_guide_click(){
+        this.sale_guide_current = 0
+      },
       selectTabs(value){
         console.log(value);
       },
@@ -399,6 +437,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
         // 创建SVG容器
         const svg = d3.select('#silkchart')
           .append('svg')
+          .attr('id','svg-container')
           .attr('width', '100%') // 使用百分比宽度
           .attr('height', '100%') // 使用百分比高度
           .append('g')
