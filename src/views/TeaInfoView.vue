@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import * as d3 from 'd3';
 
 export default {
 
@@ -331,7 +330,7 @@ export default {
         font-size: 8px;
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: flex-end;
     }
 
 </style>

@@ -59,7 +59,6 @@
 <script>
 import Vue from 'vue';
 import * as d3 from 'd3';
-import * as d3_annotation from 'd3-svg-annotation';
 import * as echarts from "echarts/core";
 import { HelpCircleIcon } from "tdesign-icons-vue";
 
@@ -1848,7 +1847,7 @@ export default {
         font-size: 8px;
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: flex-end;
     }
 
 </style>
