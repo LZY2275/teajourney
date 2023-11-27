@@ -19,7 +19,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
     name: 'TeaGardenChartView',
     data(){
       return{
-        title:'各省份茶数据',
+        title:'各省份近五年茶园面积',
         //cell_ratio : 0.026836,
       };
     },    
