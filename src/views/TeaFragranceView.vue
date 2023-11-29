@@ -27,7 +27,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
     name:'TeaFragranceView',
     data() {
       return {
-       title: '茶香余韵'
+       title: '茶韵山峦'
       };
     },
     mounted() {
