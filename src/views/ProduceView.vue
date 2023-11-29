@@ -94,7 +94,7 @@
         <div style="height: 30vh;display: flex;">
           <!-- 标题区域 -->
           <div class="right-title-container">
-            <p class="caption" style="padding:0;">茶的种类发酵工艺</p>
+            <p class="caption" style="padding:0;">发酵工艺</p>
             <p class="sub-title" style="padding: 0;line-height: 12px;margin-top: 4px;">FERMENTATION TECHNOLOGY</p>
             <div class="sub-caption" style="padding: 0;padding-top: 12px;text-indent: 2em;max-height:20vh;">
               茶叶的发酵实际上是茶叶细胞中茶多酚和多酚氧化酶相互作用的过程。发酵的程度不同，影响了茶叶的颜色、味道、香气和汤色等特征，从而将茶叶分为六大类。
