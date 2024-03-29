@@ -3,7 +3,7 @@
     <div class="title">
         <p>{{ title }}</p>
     </div>
-    <p class="sub-title">TEA FRAGRANCE</p>
+    <p class="sub-title" style="padding: 0;">TEA FRAGRANCE</p>
     <div class="content-container" style="margin-top: 12px;">
       <div class="note-container">
         <p>截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。</p>
@@ -27,7 +27,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
     name:'TeaFragranceView',
     data() {
       return {
-       title: '茶香余韵'
+       title: '茶韵山峦'
       };
     },
     mounted() {

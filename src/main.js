@@ -6,6 +6,7 @@ import TDesign from 'tdesign-vue';
 import * as echarts from 'echarts'; //引入echarts
 import $ from 'jquery';
 
+
 window.jQuery = $
 window.$ = $
 

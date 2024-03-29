@@ -1,4 +1,6 @@
 # teajourney
+项目网站：
+https://lzy2275.github.io/teajourney/dist/#/
 
 ## Project setup
 ```

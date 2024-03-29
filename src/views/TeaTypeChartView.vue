@@ -8,7 +8,7 @@
     <!-- 标题区域 -->
     <div style="padding:0 10px;display: flex;">
       <div style="width: 50%; display: flex;">
-        <p class="title">各类茶近五年产量产值</p>
+        <p class="title">茶品产销丝绸图</p>
         <div style="margin-left: 12px;display: flex;align-items: center;"><HelpCircleIcon size="20" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/></div>
       </div>
       

@@ -1,7 +1,7 @@
 <template>
     <div class="sankey" style="width: 100%;height: 100%;display: flex;">
         <div id="sankey-chart-note" style="width: 300px;height: 100%;">
-            <div class="title" style="padding: 16px 24px 0px 24px;">茶味形成</div>
+            <div class="title" style="padding: 16px 24px 0px 24px;">茶味溯源</div>
             <div class="subtitle" style="padding: 0 24px;">{{subtitle}}</div>
             <div class="content-container">
                 <p class="font-content">{{ content }}</p>
