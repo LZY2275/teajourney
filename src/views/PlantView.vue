@@ -6,7 +6,7 @@
 
             </div>
             <div class="tea-info-card" style="margin-left: 2%;">
-                
+
             </div>
         </div>
         <img src="../assets/img/teaimg.png" alt="" class="tea-info-img">
@@ -15,7 +15,7 @@
 
 
     <div>
-        
+
         <t-drawer :visible.sync="visible" :placement="placement" :mode="mode" :header="tea_info[current].teatitle" :showOverlay="false" showInAttachedElement >
             <div style="width: 100%;display: flex;margin-bottom: 8px;">
                 <div class="tea-info-card" style="text-align: center;">
@@ -47,12 +47,23 @@
                 <HelpCircleIcon size="24" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/>
             </t-popup>
         </div>
+
+        <div style="position: absolute;  bottom: 20px; right: 20px; z-index:99 ">
+            <p class="note">The chart is inspired by <t-link theme="primary" underline href="https://cardcaptorsakura.visualcinnamon.com/" target="_blank">
+            <link-icon slot="prefix-icon"></link-icon>
+            An Ode to Cardcaptor Sakura
+            </t-link></p>
+        </div>
+
         <!-- <t-button variant="outline" @click="visible = true">打开抽屉</t-button> -->
         <div id="chart" style="height: 100vh;display: flex;justify-content: center;align-items: center;">
             <div id="province" style="width: 32vh;height: 32vh;z-index: 999;"></div>
         </div>
+
+
+
     </div>
-   
+
 
 </template>
 
@@ -345,19 +356,29 @@ export default {
         myChart:'',
         distributionOptions:'',
 
-        
+        radius:0,
+
+
 
       };
     },
     mounted() {
-        this.createPieChart();
+        window.addEventListener('resize', this.handleResize); //监听窗口大小改变
+        // this.createPieChart();
         // this.createProvinceChart(0);
-
     },
     beforeDestroy() {
-      
+        window.removeEventListener('resize', this.handleResize); //销毁窗口大小改变监听
     },
     methods: {
+        handleResize() {
+            this.windowWidth = window.innerWidth;
+            this.windowHeight = window.innerHeight;
+            this.visible = false
+            this.removeChart()
+            this.createPieChart()
+            // console.log('resize');
+        },
         handle_guide_click(){
             console.log('click');
             this.guide_current = 0;
@@ -374,7 +395,7 @@ export default {
                 this.clearProvinceChart();
             }
         },
-        
+
         handleFinish(){
             console.log('finish');
             this.visible = false;
@@ -419,7 +440,7 @@ export default {
                             color:'#E9CB6A',
                             type:'黄茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json',
                     legend:[{name:'白茶',color:'#D9D9D9'},{name:'绿茶',color:'#D0DC89'},{name:'黄茶',color:'#E9CB6A'},{name:'红茶',color:'#C54522'}]
@@ -440,7 +461,7 @@ export default {
                             color:'#E9CB6A',
                             type:'黄茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json',
                     legend:[{name:'黄茶',color:'#E9CB6A'},{name:'黑茶',color:'#594445'}]
@@ -455,7 +476,7 @@ export default {
                             color:'#D0DC89',
                             type:'绿茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json',
                     legend:[{name:'绿茶',color:'#D0DC89'}]
@@ -470,7 +491,7 @@ export default {
                             color:'#E9CB6A',
                             type:'黄茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json',
                     legend:[{name:'黄茶',color:'#E9CB6A'}]
@@ -553,7 +574,7 @@ export default {
                             color:'#594445',
                             type:'黑茶'
                         },
-                        
+
 
 
                     ],
@@ -570,7 +591,7 @@ export default {
                             color:'#594445',
                             type:'黑茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json',
                     legend:[{name:'黑茶',color:'#594445'}]
@@ -585,7 +606,7 @@ export default {
                             color:'#D0DC89',
                             type:'绿茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json',
                     legend:[{name:'绿茶',color:'#D0DC89'}]
@@ -600,7 +621,7 @@ export default {
                             color:'#E9CB6A',
                             type:'黄茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json',
                     legend:[{name:'黄茶',color:'#E9CB6A'}]
@@ -685,7 +706,7 @@ export default {
                             type:'乌龙茶'
                         },
 
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json',
                     legend:[{name:'白茶',color:'#D9D9D9'},{name:'红茶',color:'#C54522'},{name:'乌龙茶',color:'#EC8924'},]
@@ -700,7 +721,7 @@ export default {
                             color:'#594445',
                             type:'黑茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json',
                     legend:[{name:'黑茶',color:'#594445'}]
@@ -716,7 +737,7 @@ export default {
                             color:'#D0DC89',
                             type:'绿茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json',
                     legend:[{name:'绿茶',color:'#D0DC89'}]
@@ -732,7 +753,7 @@ export default {
                             color:'#E9CB6A',
                             type:'黄茶'
                         },
-                        
+
                     ],
                     path:'https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json',
                     legend:[{name:'黄茶',color:'#E9CB6A'}]
@@ -757,6 +778,7 @@ export default {
                 // textColor:'white',  //加载时候文本颜色
                 maskColor:'#08204200' //加载时候的背景颜色
             });
+
             $.get(province_geo_data[index].path,function(usaJson){
                 // console.log('jquery',usaJson);
                 myChart.hideLoading();
@@ -836,7 +858,7 @@ export default {
                             borderColor: '#ffecb2', // 地图区域的边框颜色
                             borderWidth: 0.5 // 地图区域的边框宽度
                             }
-                            
+
                         }
                     },
                     series:[
@@ -886,7 +908,7 @@ export default {
                             },
 
                             symbolSize:10,
-                        
+
                         },
                         {
                             name:'黄茶',
@@ -910,7 +932,7 @@ export default {
                             },
 
                             symbolSize:10,
-                        
+
                         },
                         {
                             name:'乌龙茶',
@@ -934,7 +956,7 @@ export default {
                             },
 
                             symbolSize:10,
-                        
+
                         },
                         {
                             name:'红茶',
@@ -958,7 +980,7 @@ export default {
                             },
 
                             symbolSize:10,
-                        
+
                         },
                         {
                             name:'黑茶',
@@ -988,7 +1010,11 @@ export default {
                 }
                 myChart.setOption(option);
             });
-            
+
+        },
+
+        removeChart(){
+            d3.select("#chart").selectAll('*').remove();
         },
 
         createPieChart(){
@@ -998,7 +1024,7 @@ export default {
             var color = d3.scaleOrdinal()
                 .range(["#D0DC89","#D9D9D9","#E9CB6A","#EC8924","#C54522","#594445"]);
             var province_color = d3.scaleOrdinal()
-                                .range(['#ed657f','#2d2d2d','#353880','#e57b3f','#32846e','#be1224','#5865b1','#289ac7','#f7b527','#cacdea','#ec2f20','#81c3aa']);
+                                .range(['#FF7043','#FFC107','#CDDC39','#8BC34A','#4CAF50','#009688','#00BCD4','#03A9F4','#3F51B5','#673AB7','#E91E63','#F44336']);
                                 var data = [['green',5],['white',5],['yellow',5],['wulong',5],['red',4],['black',5]];
             var name_data = [['西湖龙井',1],['碧螺春',1],['黄山毛峰',1],['玉露',1],['滇青',1],
                             ['白毫银针',1],['白牡丹',1],['寿眉',1],['贡眉',1],['黄山白茶',1],
@@ -1012,38 +1038,44 @@ export default {
 
             var name_data_center_angle=[];
             var province_name_center_angle=[];
-            
+
 
 
             var margin = {top: 0, right:  0, bottom:  0, left: 0},
                 width = this.windowWidth - margin.right - margin.left,
                 height = this.windowHeight - margin.top - margin.bottom;
 
-            var province_geo_scale = 300/396.5;
-            
+            // var province_geo_scale = 300/396.5;
+
             if(width < height){
+                var size = width;
                 var radius = width/2-80;
             }else{
+                var size = height;
                 var radius = height/2 - 80;
             }
-            
-            // console.log(radius);
+
+            var radius = height/2 - 80;
 
             var cover_alpha = 0.3
 
-            
-            var scale_rad_max = 0.24/396.5;
-            var scale_rad_min = 0.185/396.5;
+            // 线条粗细缩放因子
+            var line_scale = radius*(1/397.5);
 
-            var rad_line_max = scale_rad_max*radius,
-                rad_line_min = scale_rad_min*radius,
+
+
+            var scale_rad_max = 0.320;
+            var scale_rad_min = 0.255;
+
+            var rad_line_max = scale_rad_max,
+                rad_line_min = scale_rad_min,
                 pi2 = Math.PI*2;
 
             var basewidth = 1600;
             var mouse_over_in_action = false;
             var province_click_current = -1;
             var name_click_current = -1;
-  
+
             var size_factor = this.windowWidth/basewidth;
 
 
@@ -1057,29 +1089,34 @@ export default {
             var container = d3.select("#chart");
             var canvas = container.append("canvas").attr("id", "canvas-target")
                                 .attr('class','canvas-target')
-                                .attr('style','position:absolute;top:0;left: 50%;transform: translateX(-50%);');
+                                .attr('style','position:absolute;top:0;');
             var ctx = canvas.node().getContext("2d");
             canvas
-                .attr('width', 2* width)
-                .attr('height', 2* height)
-                .style('width', width + "px")
-                .style('height', height + "px");
-            ctx.scale(2, 2);
+                .attr('width', size)
+                .attr('height', size)
+                .style('width', size + "px")
+                .style('height', size + "px");
+            ctx.scale(1, 1);
 
-            ctx.translate(width/2,height/2);
+            ctx.translate(size/2,size/2);
             //canvas设置
             ctx.globalCompositeOperation = "multiply";
             ctx.lineCap = "round";
 
-            
-            
+            // 将地图放进去
+            container.append('div')
+                .attr('id','province')
+                .attr('style','width: 32vh;height: 32vh;z-index: 999;position:absolute;top:clac(50% - 16vh);')
+
+
+
             var arc = d3.arc()
                         .outerRadius( radius - 10)
                         .innerRadius( radius - 20)
                         .cornerRadius(5)
 
             // var name_label_group = chart.append("g").attr('class','name-group')
-            
+
             var name_label_arc = d3.arc()
                             .outerRadius(radius - 26 )
                             .innerRadius(radius - 42)
@@ -1089,12 +1126,12 @@ export default {
                             .outerRadius(0.5*radius)
                             .innerRadius(0.5*radius-10)
                             .cornerRadius(5)
-                            
+
 
             var pie = d3.pie()
                         .sort(null)
                         .padAngle(0.01)
-                        .value(function(d) { 
+                        .value(function(d) {
                         return d[1]; });
 
             var name_pie = d3.pie()
@@ -1114,18 +1151,18 @@ export default {
             var svg = container.append("svg")
                         .attr('id','main-svg')
                         .attr('class','main-svg')
-                        .attr('style','position:absolute;top:0;left: 50%;transform: translateX(-50%);')
-                        .attr("width",width)
-                        .attr("height",height)
+                        .attr('style','position:absolute;top:0;')
+                        .attr("width",size)
+                        .attr("height",size)
                         .append("g")
                         .attr('id','outer-ring')
-                        .attr("transform","translate("+ width/2 +"," + height/2 +")");
+                        .attr("transform","translate("+ size/2 +"," + size/2 +")");
 
             var inner_ring = d3.select('#main-svg')
                             .append('g')
                             .attr('id','inner-ring')
-                            .attr("transform","translate("+ width/2 +"," + height/2 +")");
-     
+                            .attr("transform","translate("+ size/2 +"," + size/2 +")");
+
             var g = svg.selectAll('.arc')
                             .data(pie(data))
                             .enter().append('g')
@@ -1146,7 +1183,7 @@ export default {
                 .style('fill',function(d){
                     return color(d.data[0]);
                 })
-            
+
             name_g.append('path')
                 .attr('d',name_label_arc)
                 .attr('class', 'name-pie')
@@ -1187,7 +1224,7 @@ export default {
                     var centerAngle = (d.startAngle+d.endAngle)/2
                     var finalAngle = centerAngle
                     // let deg = 90-(d.endAngle*180)/(2*Math.PI)-(d.startAngle*180)/(2*Math.PI)+6
-                    
+
                     return "rotate(" +(finalAngle * 180 / Math.PI - 90)+")"+
                         "translate("+(radius-42)+")"
                     }
@@ -1198,7 +1235,7 @@ export default {
                 .style('fill',function(d){
                     return province_color(d.index);
                 })
-            
+
             province_name_g.append('text')
                 .attr('class','province-label')
                 .attr('id',function (d, i) {  return "province-label-" + i; })
@@ -1214,7 +1251,7 @@ export default {
                         "translate("+(0.5*radius+5)+")"
                         + (finalAngle > 0 & finalAngle < Math.PI ? "" : "rotate(180)")
                 })
-                
+
                 .attr("text-anchor", (d) => (d.endAngle + d.startAngle)/2 > Math.PI
                     ? "end"
                     : null)
@@ -1236,7 +1273,57 @@ export default {
                     return "rotate(" +(finalAngle * 180 / Math.PI - 90)+")"+"translate("+(0.5*radius+25)+")"
                     }
                 );
-            
+
+            // province_name_g.append('svg')
+            //     .attr('class','province-label-circle')
+            //     .attr('id',function(d,i) { return 'province-label-circle' + i })
+            //     .attr('t','1711706083507')
+            //     .attr('fill',function(d,i){ return province_color(i)})
+            //     .attr('stroke','white')
+            //     .attr('stroke-width','2')
+            //     .attr('viewBox','-1024 -1024 1024 1024')
+            //     // .attr('width','1024')
+            //     // .attr('height','1024')
+            //     // .attr('version','1.1')
+            //     // .attr('xmlns','http://www.w3.org/2000/svg')
+            //     // .attr('p-id','1625')
+            //     .attr('width','20')
+            //     .attr('height','20')
+            //     .append('path')
+            //     .attr('d','M232.8576 317.8496C186.368 792.9856 560.7424 804.4544 825.344 678.912c0 0-50.3808-601.7024-592.4864-361.0624z')
+            //     // .attr('fill','#80A4FF')
+            //     // .attr('p-id','1626')
+            //     .attr('transform',function(d, i){
+            //         var centerAngle = (d.startAngle+d.endAngle)/2
+            //         var finalAngle = centerAngle
+            //         return "rotate(" +(finalAngle * 180 / Math.PI - 90)+")"+"translate("+(0)+")"
+            //     }
+            //     );
+
+            // province_name_g.append('g')
+            //     // .attr('version','1.1')
+            //     // .attr('width',0.5*radius)
+            //     // .attr('height',0.5*radius)
+            //     // .attr('viewBox','0 0 2000 2000')
+            //     // .attr('transform','scale(0.02)')
+            //     .append('path')
+            //     .attr('d','M232.8576 317.8496C186.368 792.9856 560.7424 804.4544 825.344 678.912c0 0-50.3808-601.7024-592.4864-361.0624z')
+            //     .attr('class','province-label-circle')
+            //     .attr('id',function(d,i) { return 'province-label-circle' + i })
+            //     .attr('r',5)
+            //     .attr('fill',function(d,i){ return province_color(i)})
+            //     .attr('stroke','white')
+            //     .attr('stroke-width','2')
+            //     .attr('transform',function(d, i){
+            //         var centerAngle = (d.startAngle+d.endAngle)/2
+            //         var finalAngle = centerAngle
+            //         return "rotate(" +(finalAngle * 180 / Math.PI - 90)+")"
+            //         }
+            //     );
+
+
+{/* <svg t="1711706083507" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1625" width="20" height="20"><path d="M232.8576 317.8496C186.368 792.9856 560.7424 804.4544 825.344 678.912c0 0-50.3808-601.7024-592.4864-361.0624z" fill="#80A4FF" p-id="1626"></path></svg> */}
+
             var cover_data=[
                 [{
                     source_a:0,
@@ -1375,7 +1462,7 @@ export default {
                     target_a:19,
                     strokeStyle:province_color(8)
                 }],
-                
+
                 [{
                     source_a:9,
                     target_a:27,
@@ -1397,7 +1484,7 @@ export default {
 
             // console.log(name_data_center_angle)
             // console.log(province_name_center_angle)
-            
+
             // 画出线条
             var line = d3.lineRadial()
             .angle(function(d) {  return d.angle; })
@@ -1413,16 +1500,16 @@ export default {
                 for (var i = 0; i < data.length; i++) {
                     var d = data[i];
                     var line_data = [];
-                    
+
                     // 首先，函数提取出当前元素的一些信息，如source_a和source_r表示线条的起始角度和半径，target_a表示线条的目标角度，target_r表示线条的目标半径。
                     var source_a = province_name_center_angle[d[0].source_a],
                         source_r = 0.5*radius+25;
                     var target_a = name_data_center_angle[d[0].target_a],
                         target_r = radius-42;
-                    
+
                     // console.log(source_a,target_r)
 
-                    
+
                     // 接下来，根据起始角度和目标角度的差值，确定线条的走向和弧度大小。根据差值的不同情况，确定了线条的走向（顺时针或逆时针）和弧度大小。
                     //Figure out some variable that will determine the path points to create
                     if (target_a - source_a < -Math.PI) {
@@ -1453,7 +1540,7 @@ export default {
                     var scale_rad_curve = d3.scaleLinear()
                         .domain([0, 1])
                         .range(range);
-                    var rad_curve_line = scale_rad_curve(da) * width;
+                    var rad_curve_line = scale_rad_curve(da) * size;
 
 
                     // 然后，稍微偏移起始点和结束点的角度，以使线条有一定的曲线效果。
@@ -1464,7 +1551,7 @@ export default {
                         .range(range);
                     var start_angle = source_a + angle_sign * scale_angle_start_offset(da) * Math.PI;
 
-                
+
                     //Slightly offset the last point on the curve from the target
                     var range = type === "character" ? [0, 0.02] : [0.0, 0.07];
                     var scale_angle_end_offset = d3.scaleLinear()
@@ -1503,7 +1590,7 @@ export default {
                     var sign = side === "cw" ? 1 : -1;
                     if(n >= 1) {
                         for (var j = 0; j < n; j++) {
-                            curve_angle += (sign * step) % pi2; 
+                            curve_angle += (sign * step) % pi2;
                             line_data.push({
                                 angle: curve_angle,
                                 radius: rad_curve_line
@@ -1527,14 +1614,14 @@ export default {
                     ctx.beginPath();
                     line(line_data);
                     ctx.strokeStyle = d[0].strokeStyle;
-                    ctx.lineWidth = 3;
-                    ctx.stroke(); 
-                
+                    ctx.lineWidth = 3*line_scale;
+                    ctx.stroke();
+
 
                 }//for
 
                 ctx.globalAlpha = 0.3;
-                ctx.lineWidth = 3;
+                ctx.lineWidth = 3*line_scale;
 
             }//function create_lines
 
@@ -1543,12 +1630,12 @@ export default {
             var hover_province_arc = d3.arc()
                 .outerRadius(0.5*radius+30)
                 .innerRadius(0.5*radius-10)
-                
+
 
             var hover_province_pie = d3.pie()
                 .sort(null)
                 .padAngle(0)
-                .value(function(d) { 
+                .value(function(d) {
                 return d[1]; });
 
             var hover_province_arcs = hover_province_pie(province_name);
@@ -1569,12 +1656,12 @@ export default {
                 .on('mouseover',mouse_over_province)
                 .on('mouseout',mouse_out)
 
-            
+
             d3.selectAll('.name-pie')
                 .on('mouseover',mouse_over_name)
                 .on('mouseout',mouse_out)
                 .on('click',mouse_click_name)
-            
+
             function mouse_click_province(d,i){
                 d.stopPropagation();
                 name_click_current = -1;
@@ -1605,9 +1692,9 @@ export default {
                     create_lines("character", cover_data );
                     province_click_current = -1;
                 }
-                
 
-                
+
+
             }
 
             function clear_outer_ring(){
@@ -1618,8 +1705,8 @@ export default {
                     d3.select('#name-label-circle-'+i)
                         .style('fill','#00000014')
                 }
-            } 
-            
+            }
+
             function mouse_over_name(d,i){
                 d.stopPropagation();
                 // console.log(i.index);
@@ -1656,7 +1743,7 @@ export default {
                         .style('fill',line_data[0][0].strokeStyle)
                     return;
                 }
-                
+
 
                 // 如果上次选了省份，移除后应该仍然显示省份的茶叶数据
                 if(province_click_current != -1){
@@ -1684,7 +1771,7 @@ export default {
                         .style('fill',line_color)
                     d3.select('#name-label-circle-'+target_index)
                         .style('fill',line_color)
-                    
+
                     // console.log(el)
                 }
             }
@@ -1694,7 +1781,7 @@ export default {
                 d.stopPropagation();
                 // ctx.clearRect(-width / 2, -height / 2, width, height);
                 // clear_outer_ring();
-                
+
                 // var line_data = cover_data.filter(function(c){ return c[0].target_a === i.index})
                 // var province_index = line_data[0][0].source_a;
                 // // console.log(province_index)
@@ -1714,7 +1801,7 @@ export default {
                         .style('fill',line_data[0][0].strokeStyle)
                     d3.select('#name-label-circle-'+i.index)
                         .style('fill',line_data[0][0].strokeStyle)
-                    
+
                     _this.current = name_click_current;
                     _this.visible = true;
 
@@ -1722,7 +1809,7 @@ export default {
 
 
                     // _this.$emit('customEvent', name_click_current);
-                
+
                 }else{
                     name_click_current = -1;
                     d3.select('#name-pie-'+i.index)
@@ -1733,7 +1820,7 @@ export default {
                     // _this.$emit('customEvent', -1);
                 }
 
-                // console.log('点击了茶index:'+i.index);  
+                // console.log('点击了茶index:'+i.index);
             }
 
             function mouse_over_province(d,i){
@@ -1769,7 +1856,7 @@ export default {
             //         dy: 50
             //     }
             // ];
-            
+
 
             // var makeAnnotations = d3_annotation.annotation()
             //     .annotations(annotations);
@@ -1777,20 +1864,21 @@ export default {
             // var annotation_group = svg.append("g").attr("class", "annotation-group");
 
             // annotation_group.call(makeAnnotations);
-                    
+
 
         },
     },
     created(){
-      
+
     },
     beforeDestroy() {
         d3.select("#chart").selectAll("*").remove();
     },
 
+
   };
-            
-        
+
+
 </script>
 
 <style scoped>
@@ -1848,6 +1936,13 @@ export default {
         display: flex;
         justify-content: center;
         align-items: flex-end;
+    }
+
+    .note{
+        font-size: 8px;
+        color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
     }
 
 </style>
