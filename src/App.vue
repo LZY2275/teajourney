@@ -19,7 +19,7 @@
           <t-anchor-item href="#taste" title="品茶"></t-anchor-item>
           </t-anchor>
         </div> -->
-        
+
         <div class="nav">
           <p class="nav-title">{{ title[current] }}</p>
           <t-divider></t-divider>
@@ -41,7 +41,7 @@
           <!-- <TeaInfoView :data="customEventData"></TeaInfoView> -->
         </div>
       </div>
-      
+
       <!-- 右侧内容区 -->
       <div class="content-view" id="content-view" style="overflow-x: hidden;" >
         <section id="plant" class="section-first-3" style="position: relative;">
@@ -67,6 +67,9 @@
         </section>
       </div>
     </div>
+    <div style="width: 100vw">
+      <AboutView></AboutView>
+    </div>
 
   </div>
 </template>
@@ -79,6 +82,7 @@ import ProduceView from './views/ProduceView.vue';
 import SaleView from './views/SaleView.vue';
 import TasteView from './views/TasteView.vue';
 import TeaInfoView from './views/TeaInfoView.vue';
+import AboutView from './views/AboutView.vue';
 
   export default {
     components:{
@@ -88,7 +92,8 @@ import TeaInfoView from './views/TeaInfoView.vue';
         SaleView,
         TasteView,
         TeaInfoView,
-        ProduceView
+        ProduceView,
+        AboutView,
     },
     data() {
       return {
@@ -103,10 +108,10 @@ import TeaInfoView from './views/TeaInfoView.vue';
       };
     },
     mounted() {
-      
+
     },
     beforeDestroy() {
-      
+
     },
     methods: {
       // handleClick({ e, href, title }) {
@@ -204,9 +209,9 @@ import TeaInfoView from './views/TeaInfoView.vue';
 </script>
 
 <!-- <style rel="stylesheet/scss" lang="scss">
- 
+
   @import url("./assets/font/font.css");
- 
+
   body{
     font-family:HYRunYuan-65W
   }
@@ -218,10 +223,10 @@ import TeaInfoView from './views/TeaInfoView.vue';
   padding: 0;
 }
 
-@font-face {  
-  font-family: "HYRunYuan-65W";  
-  src: url("./assets/font/HYRunYuan-65W.ttf") format("truetype"), 
-} 
+@font-face {
+  font-family: "HYRunYuan-65W";
+  src: url("./assets/font/HYRunYuan-65W.ttf") format("truetype"),
+}
 
 #app {
   font-family:Avenir, Helvetica, Arial, sans-serif;
