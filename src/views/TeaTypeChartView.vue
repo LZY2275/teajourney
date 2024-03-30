@@ -1,5 +1,5 @@
 <template>
-  
+
   <div>
     <t-guide
       :current.sync="sale_guide_current"
@@ -7,11 +7,16 @@
     />
     <!-- 标题区域 -->
     <div style="padding:0 10px;display: flex;">
+      <div style="position: absolute;height: calc(32vh + 65px);width: calc(60vw - 124px);">
+        <div style="position: absolute;bottom: 0;right: 0px;">
+          <p class="note">The Chart is inspired by <t-link underline theme="primary">[2]</t-link></p>
+        </div>
+      </div>
       <div style="width: 50%; display: flex;">
         <p class="title">茶品产销丝绸图</p>
         <div style="margin-left: 12px;display: flex;align-items: center;"><HelpCircleIcon size="20" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/></div>
       </div>
-      
+
       <div style="width: 50%;justify-content: right;display: flex;">
         <template><t-tabs :defaultValue="defaultValue" @change="selectTabs">
             <t-tab-panel :value="1" label="产量(万吨)">
@@ -23,7 +28,7 @@
             <t-tab-panel :value="2" label="内销额(亿元)">
               <!-- <p style="margin: 20px">选项卡2内容区</p> -->
             </t-tab-panel>
-            
+
           </t-tabs></template>
       </div>
   </div>
@@ -35,12 +40,12 @@
       </div>
 
     </div>
-    
+
   </div>
 
 
 </template>
-  
+
 <script>
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
@@ -88,7 +93,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
         productionData:[
           {
-            year:2018, 
+            year:2018,
             range:320,
             danwei:"万吨",
             data:[
@@ -101,7 +106,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2019, 
+            year:2019,
             data:[
               {type:0, value:177.28},
               {type:1, value:4.96},
@@ -112,7 +117,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2020, 
+            year:2020,
             data:[
               {type:0, value:184.27},
               {type:1, value:7.35},
@@ -123,7 +128,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2021, 
+            year:2021,
             data:[
               {type:0, value:184.94},
               {type:1, value:8.19},
@@ -134,7 +139,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2022, 
+            year:2022,
             data:[
               {type:0, value:185.38},
               {type:1, value:9.45},
@@ -148,7 +153,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
         domesticSalesData:[
           // {
-          //   year:2018, 
+          //   year:2018,
           //   range:3500,
           //   danwei:"亿元",
           //   data:[
@@ -161,7 +166,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           //   ]
           // },
           {
-            year:2019, 
+            year:2019,
             range:3500,
             danwei:"亿元",
             data:[
@@ -174,7 +179,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2020, 
+            year:2020,
             data:[
               {type:0, value:1699.2},
               {type:1, value:89.5},
@@ -185,7 +190,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2021, 
+            year:2021,
             data:[
               {type:0, value:1994.3},
               {type:1, value:91.4},
@@ -196,7 +201,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2022, 
+            year:2022,
             data:[
               {type:0, value:2110.45},
               {type:1, value:100.53},
@@ -210,7 +215,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
         domesticWeightData:[
         {
-            year:2018, 
+            year:2018,
             range:250,
             danwei:"万吨",
             data:[
@@ -223,7 +228,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2019, 
+            year:2019,
             data:[
               {type:0, value:121.42},
               {type:1, value:4.22},
@@ -234,7 +239,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2020, 
+            year:2020,
             data:[
               {type:0, value:127.91},
               {type:1, value:6.25},
@@ -245,7 +250,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2021, 
+            year:2021,
             data:[
               {type:0, value:130.92},
               {type:1, value:7.05},
@@ -256,7 +261,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             ]
           },
           {
-            year:2022, 
+            year:2022,
             data:[
               {type:0, value:131.10},
               {type:1, value:8.13},
@@ -322,7 +327,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                     <b>${d.teatype}</b>
               </span>
             </div>`
-            
+
           })
 
 
@@ -352,14 +357,14 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             d3.select('#circle_sel_'+i)
               .attr('r',5)
           })
-          
+
 
           d3.select('#select_all').on("click",function(d,i){
             d.stopPropagation();
             showAllLegend();
           })
 
-          
+
           var that = this
 
           function showAllLegend(){
@@ -391,14 +396,14 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 console.log("first click")
                 that.first_click = false
                 d3.selectAll(".circle_sel").style("fill-opacity", 0.1) //所有的公司图例变暗
-                
+
                 hiddenChart();
 
                 element.style("fill-opacity", 1.0) //选中的公司图例变亮
                 node_sel.style("fill-opacity", 1)
                 link_sel.style("visibility", "visible")
                 link_sel.style("fill-opacity", 0.1)
-                
+
             }
             else if (opacity == 1 ) {
                 d3.selectAll(".circle_sel").style("fill-opacity", 0.1) //所有的公司图例变暗
@@ -424,13 +429,13 @@ echarts.use([SVGRenderer, CanvasRenderer]);
       drawSlik(_data,value){
         d3.select('#silkchart').selectAll('*').remove();
 
- 
+
         var padding = { top: 10, right: 20, bottom: 15, left: 20 };
 
         const container = d3.select('#silkchart-container');
         const width = container.node().getBoundingClientRect().width - padding.left - padding.right;
         const height = container.node().getBoundingClientRect().height - padding.top - padding.bottom;
-        
+
         var colors = ["#D0DC89","#D9D9D9","#E9CB6A","#EC8924","#C54522","#594445"];
         // console.log(width,height);
 
@@ -459,9 +464,9 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             .paddingOuter(0.2)
         }
 
-        
 
-        var xAxis = d3.axisBottom(xScale) 
+
+        var xAxis = d3.axisBottom(xScale)
 
         // 定义y轴的线性比例尺
         var yScale = d3.scaleLinear()
@@ -499,11 +504,11 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           var temp = [] //存储堆叠后的高度
           var temp_val = [] //存储每一个单独的高度
           var val = 0
-          for(var n = 0; n < 6; n++){ 
+          for(var n = 0; n < 6; n++){
               val = yScale(0) - yScale(_data[m].data[n].value) //计算每一个对应的高度
               temp_val.push(val)  //存储每一个高度
           }
-          for(var n = 0; n < 6; n++){ 
+          for(var n = 0; n < 6; n++){
               if(n == 0){
                 temp.push(temp_val[n])
               }
@@ -511,13 +516,13 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 var sum = 0
                 for(var x = n; x >=0; x--){
                   sum += temp_val[x]
-                }  
+                }
                   temp.push(sum)
               }
           }
           stackheight.push(temp)
         }
-        
+
         // console.log(stackheight);
 
         //创建对象
@@ -535,8 +540,8 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           o.source = source;
           o.target = target;
           return o;
-        } 
-        
+        }
+
         var link_list = []
 
         // 画出矩形图
@@ -547,7 +552,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 if(_data[j].data[i].type == _data[j + 1].data[k].type){
                   temp_loc = k
                 }
-              } 
+              }
               var temp1 = _data[j].data[i] //source所在的矩形
               var temp2 = _data[j + 1].data[temp_loc] //target所在的矩形
               //console.log(temp)
@@ -556,7 +561,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               var link = Link(creatlink1, creatlink2)
               // console.log('link',link);
               link_list.push(link)
-              
+
           }
         }
 
@@ -577,9 +582,9 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             .attr("class", d => "node_" + d.type)
             .attr("legend", d => d.type)
             .attr("x", (d,i) => {
-              return xScale(_data[j].year) 
+              return xScale(_data[j].year)
             })
-            .attr("y", (d, i) => {   
+            .attr("y", (d, i) => {
               return yScale(0) - stackheight[j][i]
             })
             .attr("height", (d, i) => {
@@ -588,7 +593,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             .attr("width", (d, i) => {
               return xScale.bandwidth()
             })
-            .attr("fill", (d, i) =>{ 
+            .attr("fill", (d, i) =>{
               if(d.type == 0)
                 return colors[0]
               if(d.type == 1)
@@ -606,7 +611,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             // .style("stroke-width", 0.1)
             .attr("transform", "translate(" + 0 + "," + padding.top + ")")
             .style("fill-opacity", 1) //控制透明度，1表示不透明
-            .on('mouseover',function(d, i){   
+            .on('mouseover',function(d, i){
               var tea_type = ''
               if(i.type == 0){
                 tea_type = '绿茶'
@@ -625,11 +630,11 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               }
               if(i.type == 5){
                 tea_type = '黑茶'
-              }   
+              }
                 tooltip.call(callout, tea_type+': '+i.value+_data[0].danwei)
 
-            }).on('mouseout',function(d,i){                   
-                tooltip.call(callout, null)               
+            }).on('mouseout',function(d,i){
+                tooltip.call(callout, null)
             });
           //提示框出现
         function callout(g, value, font_size) {
@@ -688,11 +693,11 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               .attr("x1", (d,i) => {
                       return xScale(_data[j].year) - 1
               })
-              .attr("y1", (d, i) => {   
+              .attr("y1", (d, i) => {
                       return yScale(0) - stackheight[j][i]
               })
               .attr("x2", (d, i) => xScale(_data[j].year) - 1 + xScale.bandwidth() + 2)
-              .attr("y2", (d, i) => {   
+              .attr("y2", (d, i) => {
                       return yScale(0) - stackheight[j][i]
               })
               .style("stroke", "white")
@@ -720,8 +725,8 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               "C" + cx + "," + (d.y2+d.h2) + " " + cx + "," + (d.y1+d.h1) + " " + (d.x1+d.w1) + "," + (d.y1+d.h1)
               "L" + (d.x1+d.w1) + "," + d.y1;
           }
-          
-          
+
+
           link_list.forEach((d, i) => {
               //console.log(d)
               d.x1 = d.source.year
@@ -745,7 +750,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               .attr("d", d => link_path(d))
               .attr("visibility", "visible")
               .attr("transform", "translate(" + 0 + "," + padding.top + ")")
-              .attr("fill", (d, i) =>{ 
+              .attr("fill", (d, i) =>{
                 //console.log(globledata[j][count++])
                   if(d.source.type == 0)
                     return colors[0]
@@ -761,7 +766,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                     return colors[5]
               })
               .style("fill-opacity", 0.05)
-              .style("stroke", (d, i) =>{ 
+              .style("stroke", (d, i) =>{
                 //console.log(globledata[j][count++])
                   if(d.source.type == 0)
                     return colors[0]

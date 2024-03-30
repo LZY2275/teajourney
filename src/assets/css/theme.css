@@ -464,3 +464,10 @@
     --td-comp-margin-xxxxl: var(--td-size-12);
   /* end 尺寸配置 */
 }
+
+.note{
+  font-size: 8px;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}

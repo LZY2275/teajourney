@@ -17,7 +17,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                  
+
                     margin-top: 2vh; /* Top spacing */
                     margin-bottom: 2vh; /* Bottom spacing */
                   }">
@@ -40,16 +40,16 @@
                 <p class="NewlyTea">闻</p>
               <p class="Caption3">将茶汤倒入茶海，闻盖碗中茶叶香气，评鉴茶叶香气和杂味。</p>
             </t-card>
-            
+
             <t-card class="card-left card-first-2">
-             
+
                 <img src="../assets/img/method2.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">观</p>
               <p class="Caption3">从玻璃茶海观茶汤色色泽、清亮度、有无沉淀、有无漂浮。</p>
             </t-card>
             <t-card class="card-left">
-            
+
                 <img src="../assets/img/method3.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">饮</p>
@@ -75,16 +75,16 @@
                 <p class="NewlyTea">看干茶</p>
               <p class="Caption3">看干茶的色泽、质地、匀齐度、紧结度、显毫状况。</p>
             </t-card>
-            
+
             <t-card class="card-left card-first-2">
-             
+
                 <img src="../assets/img/method5.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">看茶汤色泽</p>
               <p class="Caption3">观茶茶汤的色泽，主要看鲜亮度、透析度、有无杂质、有无浑浊。</p>
             </t-card>
             <t-card class="card-left">
-            
+
                 <img src="../assets/img/method6.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">看茶底</p>
@@ -111,16 +111,16 @@
                 <p class="NewlyTea">干闻（干茶）</p>
               <p class="Caption3">该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道。</p>
             </t-card>
-            
+
             <t-card class="card-left card-first-2">
-             
+
                 <img src="../assets/img/method8.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">热闻（冲泡后）</p>
               <p class="Caption3">在茶温度较高时闻香。闻香形式：盖碗缝隙、盖香、茶香、公道杯香。</p>
             </t-card>
             <t-card class="card-left">
-            
+
                 <img src="../assets/img/method9.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">冷闻（器皿及茶底）</p>
@@ -147,16 +147,16 @@
                 <p class="NewlyTea">滋味</p>
               <p class="Caption3">让茶汤在口腔内流动，与舌部充分接触，细品茶味是浓烈鲜爽、甜爽，还是苦涩、淡薄。</p>
             </t-card>
-            
+
             <t-card class="card-left card-first-2">
-             
+
                 <img src="../assets/img/method11.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">甘醇度</p>
               <p class="Caption3">厚：代表茶浸出物多，丰富、耐泡；细腻度、油润度：又厚又油润喝起来就不会烫刺喉咙。</p>
             </t-card>
             <t-card class="card-left">
-            
+
                 <img src="../assets/img/method12.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
               <p class="NewlyTea">回味</p>
@@ -207,7 +207,7 @@
                     <div><img src="../assets/img/feeling4.jpg" ></div>
                     <div class="item-title">板栗香</div>
                     <div class="item-note" style="margin-top:8px;">似栗子炒熟时发出的香气。高山优质茶的香型。</div>
-                  </div>       
+                  </div>
                 </div>
                   <div class="three-padding"></div>
                   <div style="display: flex;">
@@ -233,7 +233,7 @@
                     <div><img src="../assets/img/feeling8.jpg" ></div>
                     <div class="item-title">火香</div>
                     <div class="item-note" style="margin-top:8px;">茶叶在干燥时温度比较高，在精制时适度焙火而来。</div>
-                  </div>       
+                  </div>
                 </div>
                   <div class="three-padding"></div>
                 </div>
@@ -263,7 +263,7 @@
                     <div><img src="../assets/img/feeling12.jpg" ></div>
                     <div class="item-title">参香</div>
                     <div class="item-note" style="margin-top:8px;">木质化香气，陈年老茶居多。</div>
-                  </div>       
+                  </div>
                 </div>
                   <div class="three-padding"></div>
                   <div style="display: flex;">
@@ -289,7 +289,7 @@
                     <div><img src="../assets/img/feeling15.jpg" ></div>
                     <div class="item-title">麦香</div>
                     <div class="item-note" style="margin-top:8px;">经过麦香香精的注入或者与麦香干燥花朵混合加工而成的香气。</div>
-                  </div>       
+                  </div>
                 </div>
                   <div class="three-padding"></div>
                 </div>
@@ -454,7 +454,7 @@
         <div style="height:18%;margin-top: 2vh;">
           <p class="Feeling">新式茶饮</p>
           <p class="FeelingSub">NEW-STYLE TEA DRINKS</p>
- 
+
         <template>
           <div :style="{ width: '100%' }">
             <!-- 换成轮播图 -----lzy修改 -->
@@ -542,7 +542,7 @@
               </t-swiper-item>
             </t-swiper>
           </div>
-          
+
         </template>
       </div>
       </div>
@@ -556,7 +556,7 @@
     </div>
 
     <!-- 汤色 -->
-    <div style="padding:26px 45px 214px 68px">
+    <div style="padding:26px 45px 26px 68px">
       <t-card style="border: 0;background: rgba(252, 249, 232, 1);">
         <div style="display: flex;">
 
@@ -682,6 +682,10 @@
           </div>
         </div>
       </t-card>
+      <div style="display: flex;margin-top: 12px" class="note">
+        <div style="flex-grow: 1"></div>
+        <div class="note">The page is inspired by <t-link href="https://www.zcool.com.cn/work/ZNTg5NDc4NzI=.html" target="_blank" underline theme="primary">About Puer Infographic Design</t-link></div>
+      </div>
     </div>
 
 
@@ -772,9 +776,9 @@ export default {
 </script>
 
 <style scoped>
-/* @font-face {  
-font-family: "HanaMinA";  
-src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"), 
+/* @font-face {
+font-family: "HanaMinA";
+src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }  */
 .global1 {
   /* width: calc(100vw - 300px); */
@@ -1014,7 +1018,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .section {
   flex: 1;
   background-color: rgba(255, 249, 232, 1);
-  margin-bottom: 2vh; 
+  margin-bottom: 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1056,10 +1060,10 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .card-left{
   flex: 1;
   height: 290px;
-  border: 0; 
+  border: 0;
   display: flex;
-  flex-direction: column; 
-  background: rgb(255, 254, 242, 1);           
+  flex-direction: column;
+  background: rgb(255, 254, 242, 1);
 }
 
 .card-first-2{

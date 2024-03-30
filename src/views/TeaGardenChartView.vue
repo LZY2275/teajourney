@@ -1,5 +1,10 @@
 <template>
     <div class="tea-province">
+      <div style="position: absolute;height: calc(32vh + 65px);width: calc(32vh + 106px);">
+        <div style="position: absolute;bottom: 0;right: 0px;">
+          <p class="note">The Chart is inspired by <t-link underline theme="primary">[1]</t-link></p>
+        </div>
+      </div>
       <div class="title">
         <p>{{ title }}</p>
       </div>
@@ -8,11 +13,11 @@
       </div>
     </div>
 </template>
-  
+
 <script>
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
-  
+
   echarts.use([SVGRenderer, CanvasRenderer]);
 
   export default {
@@ -22,10 +27,10 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
         title:'茶园面积图',
         //cell_ratio : 0.026836,
       };
-    },    
+    },
     mounted() {
       this.createPie();
-    },    
+    },
     methods:{
       createPie(){
         let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
@@ -64,7 +69,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
           // // selectedMode: false
           // },
           radar: {
-            radius: '40%', 
+            radius: '40%',
             // shape: 'circle',
             indicator: [
               { name: '2022年', max: 760 },
@@ -126,66 +131,66 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 show: false,
               },
               data: [
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '粤' ,
                   itemStyle: {
-                    color: '#81C3AA',
+                    color: '#F44336',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '皖' ,
                   itemStyle: {
-                    color: '#ED657F',
+                    color: '#FF7043',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '湘' ,
                   itemStyle: {
-                    color: '#2D2D2D',
+                    color: '#FFC107',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '浙' ,
                   itemStyle: {
-                    color: '#353880',
+                    color: '#CDDC39',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '黔' ,
                   itemStyle: {
-                    color: '#E57B3F',
+                    color: '#8BC34A',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '滇' ,
                   itemStyle: {
-                    color: '#32846E',
+                    color: '#4CAF50',
                   },
                   label: {
                     show: true,
@@ -235,65 +240,65 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 show: false,
               },
               data: [
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '桂' ,
                   itemStyle: {
-                    color: '#BE1224',
+                    color: '#009688',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '苏' ,
                   itemStyle: {
-                    color: '#5865B1',
+                    color: '#00BCD4',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '川' ,
                   itemStyle: {
-                    color: '#289AC7',
+                    color: '#03A9F4',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '闽' ,
                   itemStyle: {
-                    color: '#F7B527',
+                    color: '#3F51B5',
                   },
                   label: {
                     show: true,
                     position: 'left',
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '陕' ,
                   itemStyle: {
-                    color: '#CACDEA',
+                    color: '#673AB7',
                   },
                   label: {
                     show: true,
                   }
                 },
-                { 
-                  value: 1, 
+                {
+                  value: 1,
                   name: '鄂' ,
                   itemStyle: {
-                    color: '#EC2F20',
+                    color: '#E91E63',
                   },
                   label: {
                     show: true,
@@ -336,22 +341,22 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 borderWidth: 5
               },
               data: [
-                { 
-                  value: 10, 
+                {
+                  value: 10,
                   name: '平均数' ,
                   itemStyle: {
                     color: 'rgba(50,132,110,0.9)',
                   },
                 },
-                { 
-                  value: 10, 
+                {
+                  value: 10,
                   name: '中位数' ,
                   itemStyle: {
                     color: 'rgba(50,132,110,0.7)',
                   },
                 },
-                { 
-                  value: 10, 
+                {
+                  value: 10,
                   name: '方差' ,
                   itemStyle: {
                     color: 'rgba(50,132,110,0.5)',
@@ -600,7 +605,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               }
-  
+
             }
           }
         });
@@ -615,7 +620,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 
 <style scoped>
   .pie{
-    width: 100%; 
+    width: 100%;
     height: 32vh;
   }
   .title{

@@ -1,5 +1,11 @@
 <template>
   <div class="container">
+    <div style="position: absolute;right:20px;height:100vh;width:176px;">
+      <div style="position: absolute;bottom: 40px;display: flex;">
+        <span class="note">The chart is inspired by</span>
+        <t-link underline href="https://www.xiaohongshu.com/explore/64d456a4000000000103f7b0" theme="primary" target="_blank"> 观茶</t-link>
+      </div>
+    </div>
 
     <div class="top-section">
       <!--左上区域-->
@@ -91,6 +97,9 @@
       </div>
       <!--右上区域-->
       <div class="right-panel">
+        <div style="position: absolute;height: 30vh;width: 308px;right:20px;">
+          <div style="position: absolute; bottom: -16px;" class='note'>The chart is inspired by <t-link underline theme="primary" href="https://www.xiaohongshu.com/explore/63863e490000000022039f0f" target="_blank">Those Things About Tea</t-link></div>
+        </div>
         <div style="height: 30vh;display: flex;">
           <!-- 标题区域 -->
           <div class="right-title-container">
@@ -124,45 +133,45 @@
                   <p class="type-text">{{ item.percentage_text }}</p>
                 </div>
               </div>
-                
+
             </div>
           </div>
         </div>
-        
+
 
       </div>
     </div>
 
-    
+
             <!-- 步骤条 -->
       <div style="width: calc(100vw - 350px); display: flex;justify-content: center;">
         <div style="width: calc(100vw - 460px);"   :class="{ 'last-step': showImage6 }">
           <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
-          <template>
-            <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-              <t-step-item title="采青" content="收集茶叶原料">
-              </t-step-item>
-              <t-step-item title="杀青" content="保留颜色香气">
-                <template slot="extra" v-if="current === 1">
-                   
-                </template>
-              </t-step-item>
-              <t-step-item title="揉捻" content="形成特定形状">
-                <template slot="extra" v-if="current === 2">
-     
-                </template>
-              </t-step-item>
-              <t-step-item title="烘青" content="高温稳定品质">
-                <template slot="extra" v-if="current === 3">
-                </template>
-              </t-step-item>
-              <t-step-item title="干燥" content="完全除去水分">
-                <template slot="extra" v-if="current === 4">
-                </template>
-              </t-step-item>
-            </t-steps>
-          </template>
-        </div>
+            <template>
+              <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
+                <t-step-item title="采青" content="收集茶叶原料">
+                </t-step-item>
+                <t-step-item title="杀青" content="保留颜色香气">
+                  <template slot="extra" v-if="current === 1">
+
+                  </template>
+                </t-step-item>
+                <t-step-item title="揉捻" content="形成特定形状">
+                  <template slot="extra" v-if="current === 2">
+
+                  </template>
+                </t-step-item>
+                <t-step-item title="烘青" content="高温稳定品质">
+                  <template slot="extra" v-if="current === 3">
+                  </template>
+                </t-step-item>
+                <t-step-item title="干燥" content="完全除去水分">
+                  <template slot="extra" v-if="current === 4">
+                  </template>
+                </t-step-item>
+              </t-steps>
+            </template>
+          </div>
         <div v-if="showImage2" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
@@ -173,7 +182,7 @@
               </t-step-item>
               <t-step-item title="晾干" content="自然风干茶叶">
                 <template slot="extra" v-if="current === 1">
-                
+
                 </template>
               </t-step-item>
               <t-step-item title="干燥" content="完全除去水分">
@@ -192,12 +201,12 @@
               </t-step-item>
               <t-step-item title="萎凋" content="失水软化叶片">
                 <template slot="extra" v-if="current === 1">
-                   
+
                 </template>
               </t-step-item>
               <t-step-item title="杀青" content="保留颜色香气">
                 <template slot="extra" v-if="current === 2">
-                   
+
                 </template>
               </t-step-item>
               <t-step-item title="烘青" content="高温稳定品质">
@@ -222,7 +231,7 @@
               </t-step-item>
               <t-step-item title="摇青" content="破碎叶缘释汁液">
                 <template slot="extra" v-if="current === 1">
-           
+
                 </template>
               </t-step-item>
               <t-step-item title="杀青" content="保留颜色香气">
@@ -251,12 +260,12 @@
               </t-step-item>
               <t-step-item title="萎凋" content="失水软化叶片">
                 <template slot="extra" v-if="current === 1">
-                   
+
                 </template>
               </t-step-item>
               <t-step-item title="揉捻" content="形成特定形状">
                 <template slot="extra" v-if="current === 2">
-                   
+
                 </template>
               </t-step-item>
               <t-step-item title="氧化发酵" content="空气中发酵茶叶">
@@ -280,7 +289,7 @@
               </t-step-item>
               <t-step-item title="萎凋" content="失水软化叶片">
                 <template slot="extra" v-if="current === 1">
-      
+
                 </template>
               </t-step-item>
               <t-step-item title="杀青" content="保留颜色香气">
@@ -313,7 +322,6 @@
 
     <!--底部区域-->
     <div class="bottom-section">
-
       <!--第一部分-->
       <div class="image-with-circles-container">
 
@@ -1687,7 +1695,7 @@ export default {
 }
 
 </script>
-  
+
 <style>
 .circle {
   fill: aqua
@@ -1873,7 +1881,7 @@ export default {
   border-radius: 8px;
   width: 16px;
   height: calc(100% - 48px);
-  background: linear-gradient(to bottom, #00A870, var(--td-brand-color-6));  
+  background: linear-gradient(to bottom, #00A870, var(--td-brand-color-6));
 }
 
 .chart-item-container{

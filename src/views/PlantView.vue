@@ -1938,11 +1938,6 @@ export default {
         align-items: flex-end;
     }
 
-    .note{
-        font-size: 8px;
-        color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-    }
+
 
 </style>
