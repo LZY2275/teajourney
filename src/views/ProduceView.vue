@@ -338,7 +338,7 @@
             <circle cx="50%" cy="90%" r="15" fill="#D0DC89CC" opacity="0.7" stroke-opacity="1" stroke="#D0DC89"
               stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/producetea13.jpg" alt="Image 1" @click="showGraph(1)">
+          <img class="image" src="../assets/img/producetea13.png" alt="Image 1" @click="showGraph(1)">
         </div>
         <div class="text-container">
           <p class="slanted-text">西湖龙井</p>
@@ -365,7 +365,7 @@
             <circle cx="50%" cy="90%" r="15" fill="#D9D9D9CC" opacity="0.7" stroke-opacity="1" stroke="#D9D9D9"
               stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/producetea14.jpg" alt="Image 2" @click="showGraph(2)">
+          <img class="image" src="../assets/img/producetea14.png" alt="Image 2" @click="showGraph(2)">
         </div>
         <div class="text-container">
           <p class="slanted-text">白毫银针</p>
@@ -392,7 +392,7 @@
             <circle cx="50%" cy="90%" r="15" fill="#E9CB6ACC" opacity="0.7" stroke-opacity="1" stroke="#E9CB6A"
               stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/producetea15.jpg" alt="Image 3" @click="showGraph(3)">
+          <img class="image" src="../assets/img/producetea15.png" alt="Image 3" @click="showGraph(3)">
         </div>
         <div class="text-container">
           <p class="slanted-text">海马宫茶</p>
@@ -419,7 +419,7 @@
             <circle cx="50%" cy="90%" r="15" fill="#ECB924CC" opacity="0.7" stroke-opacity="1" stroke="#ECB924"
               stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/producetea16.jpg" alt="Image 4" @click="showGraph(4)">
+          <img class="image" src="../assets/img/producetea16.png" alt="Image 4" @click="showGraph(4)">
         </div>
         <div class="text-container">
           <p class="slanted-text">铁观音</p>
@@ -446,7 +446,7 @@
             <circle cx="50%" cy="90%" r="15" fill="#C54522CC" opacity="0.7" stroke-opacity="1" stroke="#C54522"
               stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/producetea17.jpg" alt="Image 5" @click="showGraph(5)">
+          <img class="image" src="../assets/img/producetea17.png" alt="Image 5" @click="showGraph(5)">
         </div>
         <div class="text-container">
           <p class="slanted-text">坦洋工夫</p>
@@ -473,7 +473,7 @@
             <circle cx="50%" cy="90%" r="15" fill="#594445CC" opacity="0.7" stroke-opacity="1" stroke="#594445"
               stroke-width="3" />
           </svg>
-          <img class="image" src="../assets/img/producetea18.jpg" alt="Image 6" @click="showGraph(6)">
+          <img class="image" src="../assets/img/producetea18.png" alt="Image 6" @click="showGraph(6)">
         </div>
         <div class="text-container">
           <p class="slanted-text">安化黑茶</p>
@@ -495,51 +495,51 @@
       <div style="height: 10%; display: flex;">
 
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea1.jpg" alt="Image 1" class="bottom-image">
+          <img src="../assets/img/producetea1.png" alt="Image 1" class="bottom-image">
           <p class="text">采青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea2.jpg" alt="Image 2" class="bottom-image">
+          <img src="../assets/img/producetea2.png" alt="Image 2" class="bottom-image">
           <p class="text">萎凋</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea3.jpg" alt="Image 3" class="bottom-image">
+          <img src="../assets/img/producetea3.png" alt="Image 3" class="bottom-image">
           <p class="text">摇青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea4.jpg" alt="Image 4" class="bottom-image">
+          <img src="../assets/img/producetea4.png" alt="Image 4" class="bottom-image">
           <p class="text">杀青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea5.jpg" alt="Image 5" class="bottom-image">
+          <img src="../assets/img/producetea5.png" alt="Image 5" class="bottom-image">
           <p class="text">揉捻</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea6.jpg" alt="Image 6" class="bottom-image">
+          <img src="../assets/img/producetea6.png" alt="Image 6" class="bottom-image">
           <p class="text">氧化发酵</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea7.jpg" alt="Image 7" class="bottom-image">
+          <img src="../assets/img/producetea7.png" alt="Image 7" class="bottom-image">
           <p class="text">晒青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea8.jpg" alt="Image 8" class="bottom-image">
+          <img src="../assets/img/producetea8.png" alt="Image 8" class="bottom-image">
           <p class="text">渥堆</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea9.jpg" alt="Image 9" class="bottom-image">
+          <img src="../assets/img/producetea9.png" alt="Image 9" class="bottom-image">
           <p class="text">晾干</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea10.jpg" alt="Image 10" class="bottom-image">
+          <img src="../assets/img/producetea10.png" alt="Image 10" class="bottom-image">
           <p class="text">闷黄</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea11.jpg" alt="Image 11" class="bottom-image">
+          <img src="../assets/img/producetea11.png" alt="Image 11" class="bottom-image">
           <p class="text">烘青</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
-          <img src="../assets/img/producetea12.jpg" alt="Image 12" class="bottom-image">
+          <img src="../assets/img/producetea12.png" alt="Image 12" class="bottom-image">
           <p class="text">干燥</p>
         </div>
       </div>
@@ -568,37 +568,37 @@ export default {
       showImage6: false,
       fermentation_data:[
         {
-          img:require('../assets/img/producetea13.jpg'),
+          img:require('../assets/img/producetea13.png'),
           type:'绿茶发酵',
           percentage:2.5,
           percentage_text:'0%~5%'
         },
         {
-          img:require('../assets/img/producetea14.jpg'),
+          img:require('../assets/img/producetea14.png'),
           type:'白茶发酵',
           percentage:7.5,
           percentage_text:'0%~10%'
         },
         {
-          img:require('../assets/img/producetea15.jpg'),
+          img:require('../assets/img/producetea15.png'),
           type:'黄茶发酵',
           percentage:15,
           percentage_text:'10%~20%'
         },
         {
-          img:require('../assets/img/producetea16.jpg'),
+          img:require('../assets/img/producetea16.png'),
           type:'乌龙茶发酵',
           percentage:50,
           percentage_text:'30%~60%'
         },
         {
-          img:require('../assets/img/producetea17.jpg'),
+          img:require('../assets/img/producetea17.png'),
           type:'红茶发酵',
           percentage:85,
           percentage_text:'80%~90%'
         },
         {
-          img:require('../assets/img/producetea18.jpg'),
+          img:require('../assets/img/producetea18.png'),
           type:'黑茶发酵',
           percentage:95,
           percentage_text:'85%~100%'
