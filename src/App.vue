@@ -44,10 +44,15 @@
 
       <!-- 右侧内容区 -->
       <div class="content-view" id="content-view" style="overflow-x: hidden;" >
-        <section id="plant" class="section-first-3" style="position: relative;">
+        <section id="plant" class="section-first-3-add" style="position: relative;">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <!-- <PlantView @customEvent="handleCustomEvent"></PlantView> -->
           <PlantView></PlantView>
+        </section>
+        <section id="plant" class="section-second-3-add" style="position: relative;">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
+          <!-- <PlantView @customEvent="handleCustomEvent"></PlantView> -->
+        <PlaceView></PlaceView>
         </section>
         <section id="pick" class="section-first-3">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
@@ -83,7 +88,7 @@ import SaleView from './views/SaleView.vue';
 import TasteView from './views/TasteView.vue';
 import TeaInfoView from './views/TeaInfoView.vue';
 import AboutView from './views/AboutView.vue';
-
+import PlaceView from './views/PlaceView.vue';
   export default {
     components:{
         HomeView,
@@ -94,6 +99,7 @@ import AboutView from './views/AboutView.vue';
         TeaInfoView,
         ProduceView,
         AboutView,
+        PlaceView
     },
     data() {
       return {
@@ -129,15 +135,15 @@ import AboutView from './views/AboutView.vue';
         let clientHeight = window.innerHeight;
         this.clientHeight = clientHeight
         // console.log(scrollTop,clientHeight);
-        if(scrollTop >= clientHeight-300 && scrollTop < 2*clientHeight-300){
+        if(scrollTop >= 2*clientHeight-300 && scrollTop < 3*clientHeight-300){
           this.current=0;
-        }else if(scrollTop >= 2*clientHeight-300 && scrollTop < 3*clientHeight-300){
-          this.current=1
         }else if(scrollTop >= 3*clientHeight-300 && scrollTop < 4*clientHeight-300){
-          this.current=2;
+          this.current=1
         }else if(scrollTop >= 4*clientHeight-300 && scrollTop < 5*clientHeight-300){
+          this.current=2;
+        }else if(scrollTop >= 5*clientHeight-300 && scrollTop < 6*clientHeight-300){
           this.current=3;
-        }else if(scrollTop >= 5*clientHeight-300){
+        }else if(scrollTop >= 6*clientHeight-300){
           this.current=4;
         }
       },
@@ -147,16 +153,16 @@ import AboutView from './views/AboutView.vue';
             this.targetHeight= this.clientHeight  //这里将第一步获取到的滚轮高度取整
             break;
           case 1: //区域二
-            this.targetHeight= 2*this.clientHeight
-            break;
-          case 2: //区域三
             this.targetHeight= 3*this.clientHeight
             break;
-          case 3: //区域四
+          case 2: //区域三
             this.targetHeight= 4*this.clientHeight
             break;
-          case 4: //区域五
+          case 3: //区域四
             this.targetHeight= 5*this.clientHeight
+            break;
+          case 4: //区域五
+            this.targetHeight= 6*this.clientHeight
             break;
           default: //默认：区域一
             this.targetHeight= this.clientHeight
@@ -267,7 +273,29 @@ import AboutView from './views/AboutView.vue';
     /* 放在子元素上，和上面那个父元素一伙的 */
     scroll-snap-align: center;
   }
-
+  /*添加产地*/ 
+.section-first-3-add{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
+    width: 100%;
+    height: 100vh;
+    /* 放在子元素上，和上面那个父元素一伙的 */
+    scroll-snap-align: center;
+}
+.section-second-3-add{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
+    width: 100%;
+    height: 100vh;
+    /* 放在子元素上，和上面那个父元素一伙的 */
+    scroll-snap-align: center;
+}
 .section4{
   display: flex;
   flex-direction: column;

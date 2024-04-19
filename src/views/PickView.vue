@@ -980,7 +980,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
   }
 
   .note-container{
-    padding:12px 24px;
+    padding:90px 24px;
     display:flex;
     align-items:center;
     /* background-color: var(--td-bg-color-container); */
