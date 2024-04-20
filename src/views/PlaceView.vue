@@ -117,7 +117,6 @@ import * as echarts from "echarts/core";
 import "../assets/js/china.js";
 import chinaMap from '@/assets/json/china.json'
 import { HelpCircleIcon } from "tdesign-icons-vue";
-import $ from 'jquery'
 Vue.prototype.echarts = echarts;
 export default {
     data() {

@@ -9,10 +9,10 @@
         <template>
           <t-tabs :defaultValue="1" @change="selectTab">
             <!-- 默认插槽 和 具名插槽（panel）都是用来渲染面板内容 -->
-            <t-tab-panel :value="1" label="产量（吨）">
+            <t-tab-panel :value="1" label="产量（吨）" >
 
             </t-tab-panel>
-            <t-tab-panel :value="2" label="产值（亿元）">
+            <t-tab-panel :value="2" label="产值（亿元）" >
 
             </t-tab-panel>
 
@@ -20,6 +20,7 @@
         </template>
 
       </div>
+
     </div>
 
     <component :is="selectedTab === 1 ? 'a1' : 'a2'"></component>
@@ -46,9 +47,10 @@ export default {
   methods: {
     selectTab(tabNumber) {
       this.selectedTab = tabNumber;
-      console.log(tabNumber)
     },
-
+    handleTabClick(value) {
+      this.selectedTab = value;
+    }
   },
 
 };

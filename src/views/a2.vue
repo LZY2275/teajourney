@@ -3,33 +3,239 @@
 
     <div style="width:21% ;">
 
-<div class="left-content">
-  <p class="text top-left"><br>观察右图可知，各个省份的产值<br>在2018—2022这个时间段内很接近，<br>但各省份之间的产值却存在差异，<br>比如贵州、四川和福建的产值较多，<br></p>
-  <p class="text bottom-right">
-    而江苏、广东和广西省的产值较少。<br>产值最高的贵州省，在2022年达到<br>最高值498亿元，<br>产值最少的江苏省，在2018年达到<br>最低值26.22亿元。<br> &nbsp;</p>
-</div>
+      <div class="left-content">
+        <p class="text top-left"><br>观察右图可知，各个省份的产值<br>在2018—2022这个时间段内很接近，<br>但各省份之间的产值却存在差异，<br>比如贵州、四川和福建的产值较多，<br>
+        </p>
+        <p class="text bottom-right">
+          而江苏、广东和广西省的产值较少。<br>产值最高的贵州省，在2022年达到<br>最高值498亿元，<br>产值最少的江苏省，在2018年达到<br>最低值26.22亿元。<br> &nbsp;</p>
+      </div>
+      <canvas ref="lineChart" width="450" height="300" style="margin-top: -7vh;"></canvas>
 
-<div class="images">
-  <img src="https://img2.baidu.com/it/u=3042460666,1236321128&fm=253&fmt=auto&app=138&f=JPEG?w=743&h=500"
-    alt="Image 1">
-  <img src="https://img2.baidu.com/it/u=597352536,2233489645&fm=253&fmt=auto&app=138&f=JPEG?w=743&h=500"
-    alt="Image 2">
-</div>
-
-</div>
+    </div>
     <div class="line-chart-container">
       <div class="line-chart"></div>
       <div class="tooltip" style="display: none;"></div>
     </div>
   </div>
 </template>
-    
+
 <script>
 import * as d3 from 'd3';
+import Chart from 'chart.js/auto';
+import { EventBus } from '../EventBus.js';
 export default {
-
+  data() {
+    return {
+      value: '',
+      lineChart: null,
+      guangdongData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Guangdong Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [44.34, 105, 153.79, 156.8, 179.13]
+        }]
+      },
+      anhuiData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Anhui Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [118.02, 145.5, 146.17, 175.73, 182.6]
+        }]
+      },
+      hunanData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Hunan Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [186.17, 146.85, 158.27, 171.57, 1770.1]
+        }]
+      },
+      zhejiangData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Zhejiang Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [206.25, 224.74, 238.6, 259.14, 264]
+        }]
+      },
+      guizhouData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Guizhou Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [281, 321.86, 405.84, 414.6, 498]
+        }]
+      },
+      yunnanData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Yunnan Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [164.61, 198.17, 204.85, 202.12, 232.21]
+        }]
+      },
+      guangxiData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Guangxi Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [56.97, 68.33, 82.76, 98.3, 124.66]
+        }]
+      },
+      jiangsuData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Jiangsu Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [26.22, 27.66, 29.24, 33.09, 32.74]
+        }]
+      },
+      sichuanData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Sichuan Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [246.04, 279.69, 285.07, 335, 367.19]
+        }]
+      },
+      fujianData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Fujian Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [257.36, 297.27, 290.42, 298.12, 309.58]
+        }]
+      },
+      shanxiData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Shanxi Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [140.55, 162.96, 163.21, 196.32, 212.65]
+        }]
+      },
+      hubeiData: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [{
+          label: 'Hubei Data',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1,
+          data: [145.96, 157.49, 188, 221.91, 217.29]
+        }]
+      }
+    }
+  },
+  created() {
+    if (EventBus) {
+      EventBus.$on('message-received', (message) => {
+        this.value = message
+        console.log(this.value);
+      });
+    }
+  },
+  watch: {
+    value(newValue) {
+      this.renderLineChart(newValue);
+    }
+  },
   methods: {
-
+    renderLineChart(newValue) {
+      let chartData = null;
+      if (newValue === '粤') {
+        chartData = this.guangdongData;
+        chartData.datasets[0].label = '广东省近几年产值（亿元）';
+      }
+      if (newValue === '皖') {
+        chartData = this.anhuiData;
+        chartData.datasets[0].label = '安徽省近几年产值（亿元）';
+      }
+      if (newValue === '湘') {
+        chartData = this.hunanData;
+        chartData.datasets[0].label = '湖南省近几年产值（亿元）';
+      }
+      if (newValue === '浙') {
+        chartData = this.zhejiangData;
+        chartData.datasets[0].label = '浙江省近几年产值（亿元）';
+      }
+      if (newValue === '黔') {
+        chartData = this.guizhouData;
+        chartData.datasets[0].label = '贵州省近几年产值（亿元）';
+      }
+      if (newValue === '滇') {
+        chartData = this.yunnanData;
+        chartData.datasets[0].label = '云南省近几年产值（亿元）';
+      }
+      if (newValue === '桂') {
+        chartData = this.guangxiData;
+        chartData.datasets[0].label = '广西省近几年产值（亿元）';
+      }
+      if (newValue === '苏') {
+        chartData = this.jiangsuData;
+        chartData.datasets[0].label = '江苏省近几年产值（亿元）';
+      }
+      if (newValue === '川') {
+        chartData = this.sichuanData;
+        chartData.datasets[0].label = '四川省近几年产值（亿元）';
+      }
+      if (newValue === '闽') {
+        chartData = this.fujianData;
+        chartData.datasets[0].label = '福建省近几年产值（亿元）';
+      }
+      if (newValue === '陕') {
+        chartData = this.shanxiData;
+        chartData.datasets[0].label = '陕西省近几年产值（亿元）';
+      }
+      if (newValue === '鄂') {
+        chartData = this.hubeiData;
+        chartData.datasets[0].label = '湖北省近几年产值（亿元）';
+      }
+      if (this.lineChart) {
+        // 如果图表已经存在，则销毁之前的图表
+        this.lineChart.destroy();
+      }
+      this.lineChart = new Chart(this.$refs.lineChart.getContext('2d'), {
+        type: 'line',
+        data: chartData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          plugins: {
+            tooltip: {
+              intersect: false, // 设置为false以在x轴方向上悬停时显示标签
+              mode: 'index' // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
+            }
+          }
+        }
+      });
+    },
     drawLineChart() {
 
       // 数据：12个省份和5个年份的示例数据
@@ -76,7 +282,7 @@ export default {
         .call(d3.axisBottom(xScale))
         .selectAll("text") // 选择所有的文本标签
         .attr("dy", "3.5em") // 调整垂直偏移 
-        .style('font-size','12px')
+        .style('font-size', '12px')
 
       svg.select('.x-axis path').attr('display', 'none');  // 隐藏横轴的线
       svg.selectAll('.tick line').attr('display', 'none'); // 隐藏刻度线
@@ -204,7 +410,7 @@ export default {
 
         newCircleGroup.append('circle')
           .attr('r', (d) => d.radius)
-          .style('fill', circleColor+'80')
+          .style('fill', circleColor + '80')
           .style('stroke', circleColor)  // 设置边界颜色
           .style('stroke-width', 2) // 设置边界宽度
           .style('cursor', 'pointer') // 设置鼠标指针样式为可点击
@@ -214,7 +420,7 @@ export default {
               .transition()
               .duration(200)
               .attr('r', (d) => d.radius + 2)
-              .style('fill', d3.rgb(circleColor+'80').brighter(0.5));
+              .style('fill', d3.rgb(circleColor + '80').brighter(0.5));
           })
           .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
@@ -234,7 +440,7 @@ export default {
               .transition()
               .duration(200)
               .attr('r', (d) => d.radius)
-              .style('fill', circleColor+'80');
+              .style('fill', circleColor + '80');
           });
       }
       window.addEventListener('resize', () => {
@@ -305,10 +511,10 @@ export default {
   }
 };
 </script>
-    
-    
-    
-      
+
+
+
+
 <style scoped>
 .line-chart-container {
   float: right;
@@ -370,13 +576,14 @@ export default {
 .text::after {
   content: '';
   position: absolute;
-  background-color:#c5bc3b;
+  background-color: #c5bc3b;
   /* 设置拐角线的颜色 */
-  border: 1px solid #c5bc3b; /* 使用 border 属性并设置宽度和颜色 */
+  border: 1px solid #c5bc3b;
+  /* 使用 border 属性并设置宽度和颜色 */
 }
 
 .text.top-left::before {
-  
+
   width: 1px;
   /* 设置竖线的宽度 */
   height: 20%;
@@ -427,6 +634,7 @@ export default {
   transition: transform 0.3s, box-shadow 0.3s;
   /* 添加过渡效果 */
 }
+
 .images img:hover {
   transform: scale(1.1);
   /* 图片放大 */
