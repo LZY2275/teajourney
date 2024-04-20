@@ -40,13 +40,13 @@
         <t-guide :current.sync="guide_current" :steps="steps" @change="handleChange" @finish="handleFinish"
             @skip="handleFinish" />
 
-        <div style="top: 20px; right: 20px; z-index:99 ">
+        <div style="top: 20px; right: 20px; z-index:99;position:absolute ">
             <t-popup content="第一次使用？" placement="left">
                 <HelpCircleIcon size="24" style="color: var(--td-brand-color-4)" @click="handle_guide_click" />
             </t-popup>
         </div>
 
-        <div style="bottom: 20px; right: 20px; z-index:99 ">
+        <div style="bottom: 20px; right: 20px; z-index:99;position:absolute ">
             <p class="note">The chart is inspired by <t-link theme="primary" underline
                     href="https://cardcaptorsakura.visualcinnamon.com/" target="_blank">
                     <link-icon slot="prefix-icon"></link-icon>
