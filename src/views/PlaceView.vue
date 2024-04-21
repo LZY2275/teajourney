@@ -88,7 +88,7 @@
             </div> -->
         </div>
 
-        <div style="position: absolute;bottom: 10px;right: 10px;">
+        <div style="position: absolute;bottom: 10px;right: 10px;z-index: 100;">
             <p class="title-sub">主要产区种植面积</p>
             <div id="line-chart" class="line"></div>
         </div>
