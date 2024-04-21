@@ -17,7 +17,7 @@
 <script>
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
-
+import { EventBus } from '../EventBus.js';
   echarts.use([SVGRenderer, CanvasRenderer]);
 
   export default {
@@ -484,7 +484,8 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
           if (params.componentType === 'series') {
             if (params.seriesType === 'pie' && params.name) {
               // Update the data for the radar chart based on the clicked pie chart data
-              if (params.name === '粤') {
+              if (params.name === '粤') {    
+                EventBus.$emit('message-received', '粤');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[0];
                 let avg = 113.93;
@@ -495,6 +496,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '皖') {
+                EventBus.$emit('message-received', '皖');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[1];
                 let avg = 284.87;
@@ -505,6 +507,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '湘') {
+                EventBus.$emit('message-received', '湘');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[2];
                 let avg = 280.52;
@@ -515,6 +518,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '浙') {
+                EventBus.$emit('message-received', '浙');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[3];
                 let avg = 306.11;
@@ -525,6 +529,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '黔') {
+                EventBus.$emit('message-received', '黔');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[4];
                 let avg = 704.46;
@@ -535,6 +540,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '滇') {
+                EventBus.$emit('message-received', '滇');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[5];
                 let avg = 710.72;
@@ -545,6 +551,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '桂') {
+                EventBus.$emit('message-received', '桂');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[6];
                 let avg = 128.72;
@@ -555,6 +562,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '苏') {
+                EventBus.$emit('message-received', '苏');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[7];
                 let avg = 50.955;
@@ -565,6 +573,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '川') {
+                EventBus.$emit('message-received', '川');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[8];
                 let avg = 581.52;
@@ -575,6 +584,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '闽') {
+                EventBus.$emit('message-received', '闽');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[9];
                 let avg = 333.46;
@@ -585,6 +595,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '陕') {
+                EventBus.$emit('message-received', '陕');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[10];
                 let avg = 224.96;
@@ -595,6 +606,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
               } else if (params.name === '鄂') {
+                EventBus.$emit('message-received', '鄂');  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[11];
                 let avg = 512.15;
@@ -632,4 +644,4 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
     padding: 0 10px;
     margin-left: 10px;
   }
-</style>
+</style>../EventBus.js
