@@ -13,7 +13,9 @@ window.$ = $
 // 引入组件库的少量全局样式变量
 import 'tdesign-vue/es/style/index.css';
 import './assets/css/theme.css';
-
+import VueTypedJs from 'vue-typed-js';
+ 
+Vue.use(VueTypedJs);
 // import './assets/css/fy.css'
 
 Vue.use(TDesign);
