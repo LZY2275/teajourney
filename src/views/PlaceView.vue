@@ -87,10 +87,12 @@
                 </div>
                 <-->
                 <!--折线图-->
-                <p class="title">主要产区种植面积</p>
+                <div style="position: absolute;bottom: 10px;right: 20px;z-index: 100;">
+                <p class="title-sub">主要产区种植面积</p>
                 <div style="width:25vw;height: 30vh; position: relative;z-index: 1;"> 
                 <canvas ref="lineChart"></canvas>
             </div>
+        </div>
             </div>
             <!--六个图标-->
             <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
