@@ -12,7 +12,7 @@
                     </p>
                 </div>
             </div>
-            <div style="display: flex;align-items: center;">
+            <div style="display: flex;align-items: center;margin-right: 12px;">
                 <t-radio-group variant="primary-filled" default-value="1" @change="onChangeChart">
                     <t-radio-button value="1">上古先秦</t-radio-button>
                     <t-radio-button value="2">魏晋南北朝</t-radio-button>
