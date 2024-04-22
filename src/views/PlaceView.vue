@@ -85,9 +85,12 @@
                         云南省的普洱茶、广西的六堡茶和湖南的安化黑茶等地区，都位于中国南方，气候湿润，雨量充沛，阳光充足，这些条件有利于茶树的生长
                     </p>
                 </div>
-                <!--左下角折线图-->
+                <-->
+                <!--折线图-->
                 <p class="title">主要产区种植面积</p>
-
+                <div style="width:25vw;height: 30vh; position: relative;z-index: 1;"> 
+                <canvas ref="lineChart"></canvas>
+            </div>
             </div>
             <!--六个图标-->
             <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
@@ -138,7 +141,9 @@
             <!--中国地图-->
             <div style="flex: 1;">
                 <div id="china-map" style="height: 100vh;width: 100%;position: relative;top: -80px;left: -160px;"></div>
+
             </div>
+
 
         </div>
 
