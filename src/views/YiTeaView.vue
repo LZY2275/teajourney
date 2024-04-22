@@ -6,13 +6,14 @@
             <t-divider layout="vertical" style="height:90%"></t-divider>
             <div style="flex:1 ;height: 136px;white-space: normal;padding: 0 36px 0 0;text-align: left;display: flex;align-items: center">
                 <div>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{ current_title }}</p>
                     <p class="textsub" >
-                        伴随着中国政府扩大内需促进经济增长的「四万亿投资」政策落地实施，中国茶叶经济凭借这股强劲的东风在国际市场的舞台上又一次迎来了其历史高光时刻，并在新一代「年轻茶人」的不断创新下，以中国茶文化为核心的「概念商品」在一定程度上影响了世界潮流文化的走向。
+                        {{ current_description }}
                     </p>
                 </div>
             </div>
             <div style="display: flex;align-items: center;">
-                <t-radio-group variant="primary-filled" default-value="1" >
+                <t-radio-group variant="primary-filled" default-value="1" @change="onChangeChart">
                     <t-radio-button value="1">上古先秦</t-radio-button>
                     <t-radio-button value="2">魏晋南北朝</t-radio-button>
                     <t-radio-button value="3">隋唐</t-radio-button>
@@ -78,8 +79,12 @@ export default{
                 },
                 tooltip: {
                     formatter: function(params) {
-                        return params.data[4];
-                    }
+                        return '公元'+params.data[6]+'年:'+params.data[4];
+                    },
+                    // trigger: 'axis',
+                    // position: function (pt) {
+                    // return [pt[0], '10%'];
+                    // }
                 },
                 toolbox: {
                   feature: {
@@ -171,31 +176,23 @@ export default{
             ],
             tea_history_data: [],
             color_ever_50_year:["#D0DC89", "#D9D9D9", "#E9CB6A", "#EC8924", "#C54522"],
-            line_data:[]
+            line_data:[],
+            is_data_loaded:false,
+            current_chart:1,
+            current_description:'鼠标悬浮或点击图表散点查看详细历史事件；右侧选项卡可以切换图表~',
+            current_title:'Tips：'
+
         }
     },
 
     async mounted(){
         // 初始化csv文件
         await this.readFile()
-
         // console.log(this.line_data);
-
-        // 初始化图表
-        let myChart = echarts.init(document.getElementById('yitea-chart'));
-
-        this.options.series[0].data = this.tea_history_data[0]
-        this.options.series[1].markLine.data = this.line_data[0]
-
-        this.options.xAxis.min = this.x_range[0][0]
-        this.options.xAxis.max = this.x_range[0][1]
-
-        myChart.setOption(this.options)
-        window.addEventListener('resize', throttle(this.handleResize, 200)); //监听窗口大小改变
     },
     methods:{
         handleResize(){
-            console.log('yitea-resize');
+            // console.log('yitea-resize');
         },
 
         // 读取文件的总入口
@@ -213,8 +210,6 @@ export default{
                 await this.readCSV(filePath[i])
             }
 
-
-
         },
 
         // 读取csv文件
@@ -230,6 +225,10 @@ export default{
                     this.tea_history_data.push(processed_data)
                     var line_data = this.generateLineData(processed_data)
                     this.line_data.push(line_data)
+                    // this.options.series[0].data = this.tea_history_data[0]
+                    // this.options.series[1].markLine.data = this.line_data[0]
+                    // console.log(this.options);
+                    this.is_data_loaded = true
                 }
                 // this.data = parseCsv(response.data);
             })
@@ -262,7 +261,7 @@ export default{
 
 
                 // 取num的十位数,比如1652，取5，22，取2，1，取0
-                let num_shiweishu = Math.floor(num / 100)
+                let num_shiweishu = Math.floor(num / 10)
                 // 取num_shiweishu的个位数
                 num_shiweishu = Math.abs(num_shiweishu % 10)
 
@@ -272,7 +271,8 @@ export default{
 
 
                 temp_line[0] = num_shi
-                temp_line.splice(1, 0, num_ge,num_shi_str,color_arr[num_shiweishu % 5])
+                temp_line.splice(1, 0, Math.abs(num_ge),num_shi_str,color_arr[num_shiweishu % 5])
+                temp_line.push(num)
                 // temp_line.splice(2, 0, num_shi_str)
                 // temp_line.splice(3, 0, this.color_ever_50_year[num_shiweishu % 5])
                 // console.log(temp_line)
@@ -283,22 +283,27 @@ export default{
         },
 
         generateLineData(processed_data){
+
             var data  = processed_data
             var line_data = []
             var set = new Set()
             for (let i = 0; i < data.length; i++) {
                 // console.log(i);
                 // console.log(data[i]);
-
+                let min = 10
                 // 找到需要显示的线条的x坐标值，x坐标不能重复
                 let x = data[i][0]
+                let x_height = data[i][1]
+                if(min>x_height){
+                    min = x_height
+                }
                 // 判断集合是否包含x
                 if (set.has(x)) {
                     continue
                 }else{
                     set.add(x)
                     let temp_line = [
-                        { coord: [x, 0], symbol: 'none' },
+                        { coord: [x, min], symbol: 'none' },
                         { coord: [x, 10], symbol: 'none',},
                     ]
                     line_data.push(temp_line)
@@ -308,6 +313,50 @@ export default{
             return line_data
         },
 
+        async initChart(){
+            // 初始化图表
+            let myChart = echarts.init(document.getElementById('yitea-chart'));
+
+            this.options.series[0].data = this.tea_history_data[0]
+            this.options.series[1].markLine.data = this.line_data[0]
+
+            this.options.xAxis.min = this.x_range[0][0]
+            this.options.xAxis.max = this.x_range[0][1]
+
+            // console.log(this.options);
+            myChart.setOption(this.options)
+            myChart.on('click', (params) => {
+                this.onClickSeries(params)
+                // console.log(params.data) // 点击散点时触发事件，打印点击的散点数据
+            })
+            window.addEventListener('resize', throttle(this.handleResize, 200)); //监听窗口大小改变
+        },
+
+        onClickSeries(params){
+            this.current_description = params.data[5]
+            this.current_title = params.data[4]
+        },
+
+        onChangeChart(e){
+            e = Number(e)
+            this.options.series[0].data = this.tea_history_data[e-1]
+            this.options.series[1].markLine.data = this.line_data[e-1]
+            this.options.xAxis.min = this.x_range[e-1][0]
+            this.options.xAxis.max = this.x_range[e-1][1]
+            let myChart = echarts.init(document.getElementById('yitea-chart'));
+            myChart.setOption(this.options)
+        }
+
+    },
+    watch:{
+        line_data: {
+            handler(){
+                if(this.is_data_loaded){
+                    this.initChart();
+                }
+            },
+            deep: true
+        }
     }
 }
 
