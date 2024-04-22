@@ -32,6 +32,9 @@ import Vue from 'vue';
 import * as echarts from "echarts/core";
 Vue.prototype.echarts = echarts;
 import axios from 'axios';
+import { throttle } from 'lodash';
+import { line } from 'd3';
+
 // import data1 from '@/assets/csv/1.csv'
 
 export default{
@@ -78,6 +81,13 @@ export default{
                         return params.data[4];
                     }
                 },
+                toolbox: {
+                  feature: {
+                    dataZoom: {
+                      yAxisIndex: 'none'
+                    },
+                  }
+                },
                 series: [
                     // 散点图
                     {
@@ -86,7 +96,7 @@ export default{
                         data: [
                             [1650, 0, '50', '#D0DC89','茶的最早发现','详细内容'],
                             [1650, 1, '51', '#D0DC89','茶的最早发现','详细内容'],
-                            [1660, 5, '85', '#D9D9D9','【茶的最早发现】','详细内容'],
+                            [1660, 5, '65', '#D9D9D9','【茶的最早发现】','详细内容'],
                             [1670, 6, '76', '#E9CB6A','【茶的最早发现】','详细内容'],
                             [1670, 7, '77', '#E9CB6A','【茶的最早发现】','详细内容'],
                             [1670, 8, '78', '#E9CB6A','【茶的最早发现】','详细内容'],
@@ -136,7 +146,16 @@ export default{
                                 {
                                 coord: [1650, 10],
                                 symbol: 'none',
-                                lineStyle: { type: 'solid', color: '#b7b5a6' }
+                                // lineStyle: { type: 'solid', color: '#b7b5a6' }
+                                },
+                            ],
+                            [
+                            {
+                                coord: [1660, 0], symbol: 'none' },
+                                {
+                                coord: [1660, 10],
+                                symbol: 'none',
+                                // lineStyle: { type: 'solid', color: '#b7b5a6' }
                                 }
                             ]
                             ],
@@ -147,18 +166,32 @@ export default{
                     }
                 ]
             },
+            x_range:[
+                [-2700,211],[222,589],[581,907],[960,1368],[1368,1644],[1645,1911],[1912,2024]
+            ],
             tea_history_data: [],
-            color_ever_50_year:["#D0DC89", "#D9D9D9", "#E9CB6A", "#EC8924", "#C54522"]
+            color_ever_50_year:["#D0DC89", "#D9D9D9", "#E9CB6A", "#EC8924", "#C54522"],
+            line_data:[]
         }
     },
-    mounted(){
+
+    async mounted(){
         // 初始化csv文件
-        this.readFile()
+        await this.readFile()
+
+        // console.log(this.line_data);
 
         // 初始化图表
         let myChart = echarts.init(document.getElementById('yitea-chart'));
+
+        this.options.series[0].data = this.tea_history_data[0]
+        this.options.series[1].markLine.data = this.line_data[0]
+
+        this.options.xAxis.min = this.x_range[0][0]
+        this.options.xAxis.max = this.x_range[0][1]
+
         myChart.setOption(this.options)
-        window.addEventListener('resize', this.handleResize); //监听窗口大小改变
+        window.addEventListener('resize', throttle(this.handleResize, 200)); //监听窗口大小改变
     },
     methods:{
         handleResize(){
@@ -180,10 +213,30 @@ export default{
                 await this.readCSV(filePath[i])
             }
 
-            console.log(this.tea_history_data);
+
 
         },
 
+        // 读取csv文件
+        async readCSV(filePath){
+            axios.get(filePath)  // 注意路径根据实际情况进行调整
+            .then(response => {
+                // var ret = d3dsv.csvParse(response.data)
+                // console.log(ret);
+                var response_data = response.data
+                var processed_data = this.convertResponse(response_data)
+                // console.log(processed_data);
+                if (processed_data.length > 0) {
+                    this.tea_history_data.push(processed_data)
+                    var line_data = this.generateLineData(processed_data)
+                    this.line_data.push(line_data)
+                }
+                // this.data = parseCsv(response.data);
+            })
+            .catch(error => {
+                console.error('error while reading .csv file',error);
+            });
+        },
 
         // 将转换成需要的格式
         convertResponse(response_data){
@@ -229,24 +282,32 @@ export default{
             return lines
         },
 
-        // 读取csv文件
-        async readCSV(filePath){
-            axios.get(filePath)  // 注意路径根据实际情况进行调整
-            .then(response => {
-                // var ret = d3dsv.csvParse(response.data)
-                // console.log(ret);
-                var response_data = response.data
-                var processed_data = this.convertResponse(response_data)
-                // console.log(processed_data);
-                if (processed_data.length > 0) {
-                    this.tea_history_data.push(processed_data)
+        generateLineData(processed_data){
+            var data  = processed_data
+            var line_data = []
+            var set = new Set()
+            for (let i = 0; i < data.length; i++) {
+                // console.log(i);
+                // console.log(data[i]);
+
+                // 找到需要显示的线条的x坐标值，x坐标不能重复
+                let x = data[i][0]
+                // 判断集合是否包含x
+                if (set.has(x)) {
+                    continue
+                }else{
+                    set.add(x)
+                    let temp_line = [
+                        { coord: [x, 0], symbol: 'none' },
+                        { coord: [x, 10], symbol: 'none',},
+                    ]
+                    line_data.push(temp_line)
                 }
-                // this.data = parseCsv(response.data);
-            })
-            .catch(error => {
-                console.error('读取csv文件有问题',error);
-            });
-        }
+            }
+            // console.log(line_data);
+            return line_data
+        },
+
     }
 }
 
