@@ -85,15 +85,15 @@
                         云南省的普洱茶、广西的六堡茶和湖南的安化黑茶等地区，都位于中国南方，气候湿润，雨量充沛，阳光充足，这些条件有利于茶树的生长
                     </p>
                 </div>
-            </div> -->
+                <-->
+                <!--折线图-->
+                <div style="position: absolute;bottom: 10px;right: 20px;z-index: 100;">
+                <p class="title-sub">主要产区种植面积</p>
+                <div style="width:25vw;height: 30vh; position: relative;z-index: 1;"> 
+                <canvas ref="lineChart"></canvas>
+            </div>
         </div>
-
-        <div style="position: absolute;bottom: 10px;right: 10px;z-index: 100;">
-            <p class="title-sub">主要产区种植面积</p>
-            <div id="line-chart" class="line"></div>
-        </div>
-
-        <div style=" height: calc(100vh - 136px);width: calc(100vw - 300px);">
+            </div>
             <!--六个图标-->
             <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
                 <div style="display: flex; align-items: center; cursor: pointer;" @click="highlightProvince('绿茶')">
@@ -143,10 +143,12 @@
             <!--中国地图-->
             <div style="flex: 1;">
                 <div id="china-map" style="height: 100vh;width: 100%;position: relative;top: -80px;left: -160px;"></div>
+
             </div>
 
+
         </div>
-    </div>
+
 
 </template>
 
@@ -154,6 +156,7 @@
 import Vue from 'vue';
 import * as d3 from 'd3';
 import * as echarts from "echarts/core";
+import Chart from 'chart.js/auto';
 import "../assets/js/china.js";
 import chinaMap from '@/assets/json/china.json'
 import { HelpCircleIcon } from "tdesign-icons-vue";
@@ -167,225 +170,189 @@ export default {
             oolong: false,
             RedTea: false,
             BlackTea: false,
+            guangdongData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Guangdong Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [96459, 103496, 116000, 108443.04, 148000]
+                }]
+            },
+            anhuiData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Anhui Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [134922, 137094, 138900, 142413, 154100]
+                }]
+            },
+            hunanData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Hunan Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [213626, 223111, 240826, 250253, 247542]
+                }]
+            },
+            zhejiangData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Zhejiang Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [186000, 181096, 188100, 195300, 193500]
+                }]
+            },
+            guizhouData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Guizhou Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [199327, 286046, 385636, 345017, 344857]
+                }]
+            },
+            yunnanData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Yunnan Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [398100, 399957, 408824, 380023, 432904.09]
+                }]
+            },
+            guangxiData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Guangxi Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [73000, 88312, 84696, 102800, 130300]
+                }]
+            },
+            jiangsuData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Jiangsu Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [14558, 15352, 12000, 10703, 10400]
+                }]
+            },
+            sichuanData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Sichuan Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [295000, 300951, 315343, 350000, 366292.67]
+                }]
+            },
+            fujianData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Fujian Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [401620, 412000, 418131, 450469.83, 459674.38]
+                }]
+            },
+            shanxiData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Shanxi Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [73547, 91683, 92996, 97297.16, 119689.49]
+                }]
+            },
+            hubeiData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Hubei Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [314453, 335400, 350571, 384000, 314515.25]
+                }]
+            },
+            jiangxiData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Jiangxi Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [171.3, 164.85, 169, 171.8, 175.7]
+                }]
+            },
+            shandongData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Shandong Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [33, 35.6, 39, 40.83, 40.51]
+                }]
+            },
+            henanData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Henan Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [174.5, 174.5, 205.2, 175.11, 208.6]
+                }]
+            },
+            hainanData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Hainan Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [3.6, 3.62, 3.32, 3.56, 3.35]
+                }]
+            },
+            chongqingData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Chongqing Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [67.3, 70.28, 78.2, 85.2, 84.62]
+                }]
+            },
+            gansuData: {
+                labels: ['2018', '2019', '2020', '2021', '2022'],
+                datasets: [{
+                    label: 'Gansu Data',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    data: [17.2, 18.19, 17.92, 18, 17.4]
+                }]
+            },
         }
     },
     mounted() {
-        let myChart = echarts.init(document.getElementById('line-chart'));
-        myChart.setOption({
-
-            tooltip: {
-                trigger: 'axis',
-                formatter: function (params) {
-                    var tooltipHtml = params[0].axisValueLabel + '<br/>';
-                    params.forEach(function (item) {
-                        var value;
-                        if (item.value === 93) {
-                            value = item.value.toFixed(3);
-                        }
-                        else if (item.seriesName === '江苏') {
-                            value = item.value.toFixed(3); // 对于江苏省显示小数点后三位
-                        } else {
-                            value = item.value.toFixed(2); // 其他省份显示小数点后两位
-                        }
-                        tooltipHtml += '<span style="display:inline-block;margin-right:5px;border-radius:50%;width:8px;height:8px;background-color:' + item.color + '"></span>' +
-                            item.seriesName + ': ' + value + '万亩' + '<br/>';
-                    });
-                    return tooltipHtml;
-                }
-            },
-            legend: {
-                data: ['四川', '贵州', '广西', '湖南', '湖北', '陕西', '河南',
-                    '安徽', '江苏', '江西', '福建', '浙江', '云南', '广东']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['2018', '2019', '2020', '2021', '2022', '2023']
-            },
-            yAxis: {
-                type: 'value',
-                min: 0,
-                max: 800
-            },
-            series: [
-                {
-                    name: '四川',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#28a745'
-                    },
-                    itemStyle: {
-                        color: '#28a745'
-                    },
-                    data: [545.10, 575.00, 586.00, 596.20, 605.38, 598.00]
-                },
-                {
-                    name: '贵州',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#87ceeb'
-                    },
-                    itemStyle: {
-                        color: '#87ceeb'
-                    },
-                    data: [684.30, 698.70, 716.31, 714.60, 708.34, 700.00]
-                },
-                {
-                    name: '广西',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#ba68c8'
-                    },
-                    itemStyle: {
-                        color: '#ba68c8'
-                    },
-                    data: [115.60, 115.60, 118.23, 142.44, 151.73, 155.20]
-                },
-                {
-                    name: '湖南',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#fd7e14'
-                    },
-                    itemStyle: {
-                        color: '#fd7e14'
-                    },
-                    data: [253.30, 266.30, 274.00, 298.10, 310.82, 330.00]
-                },
-                {
-                    name: '湖北',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#ffc107'
-                    },
-                    itemStyle: {
-                        color: '#ffc107'
-                    },
-                    data: [449.00, 495.00, 513.71, 545.01, 558.03, 564.00]
-                },
-                {
-                    name: '陕西',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#ff69b4'
-                    },
-                    itemStyle: {
-                        color: '#ff69b4'
-                    },
-                    data: [207.00, 215.40, 233.00, 233.66, 235.73, 250.59]
-                },
-                {
-                    name: '河南',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#17a2b8'
-                    },
-                    itemStyle: {
-                        color: '#17a2b8'
-                    },
-                    data: [174.50, 174.50, 205.20, 208.60, 175.11, 215.00]
-                },
-                {
-                    name: '安徽',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#adb5bd'
-                    },
-                    itemStyle: {
-                        color: '#adb5bd'
-                    },
-                    data: [254.50, 280.30, 286.32, 295.73, 307.52, 320.00]
-                },
-                {
-                    name: '江苏',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#a52a2a'
-                    },
-                    itemStyle: {
-                        color: '#a52a2a'
-                    },
-                    data: [50.600, 50.800, 50.800, 51.450, 51.000, 49.260]
-                },
-                {
-                    name: '江西',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#dc3545'
-                    },
-                    itemStyle: {
-                        color: '#dc3545'
-                    },
-                    data: [171.30, 164.90, 169.00, 171.80, 175.70, 185.00]
-                },
-                {
-                    name: '福建',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#6f42c1'
-                    },
-                    itemStyle: {
-                        color: '#6f42c1'
-                    },
-                    data: [310.80, 327.80, 335.40, 341.22, 352.05, 368.00]
-                },
-                {
-                    name: '浙江',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#8b0000'
-                    },
-                    itemStyle: {
-                        color: '#8b0000'
-                    },
-                    data: [298.80, 306.00, 307.50, 307.70, 310.50, 311.70]
-                },
-                {
-                    name: '云南',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#f8de7e'
-                    },
-                    itemStyle: {
-                        color: '#f8de7e'
-                    },
-                    data: [666.80, 699.90, 709.70, 720.25, 756.92, 770.27]
-                },
-                {
-                    name: '广东',
-                    type: 'line',
-
-                    lineStyle: {
-                        color: '#e667af'
-                    },
-                    itemStyle: {
-                        color: '#e667af'
-                    },
-                    data: [93.000, 100.10, 104.08, 123.13, 149.30, 149.52]
-                }
-            ]
-
-        })
         echarts.registerMap('china', { geoJSON: chinaMap })
         this.initChinaMap()
         window.addEventListener('resize', this.handleResize); //监听窗口大小改变
@@ -393,10 +360,123 @@ export default {
         // this.createPieChart();
         // this.createProvinceChart(0);
     },
+
     methods: {
         initChinaMap() {
             this.myChart = echarts.init(document.getElementById('china-map'))
             this.updateMapOption()
+            //点击省份显示相应的折线图
+            this.myChart.on('click', (params) => {
+    var provinceName = params.name; // 获取点击的省份名称
+    if(provinceName === '北京' || provinceName === '天津' ||provinceName === '河北'||provinceName === '山西'||provinceName === '内蒙古'||provinceName === '辽宁'
+    ||provinceName === '吉林'||provinceName === '黑龙江'||provinceName === '上海'||provinceName === '西藏'||provinceName === '青海'
+    ||provinceName === '宁夏'||provinceName === '新疆'||provinceName === '台湾'||provinceName === '南海诸岛')
+    {
+        alert('该地区不是主要产地。主要产地：广东、安徽、湖南、浙江、贵州、云南、广西、江苏、四川、福建、陕西、湖北、江西、山东、河南、海南、重庆、甘肃。');  
+    }
+    else
+    {
+        this.renderLineChart(provinceName); 
+    }
+    
+});
+
+        },
+        renderLineChart(newValue) {
+            let chartData = null;
+            if (newValue === '广东') {
+                chartData = this.guangdongData;
+                chartData.datasets[0].label = '广东省近几年产地（万亩）';
+            }
+            if (newValue === '安徽') {
+                chartData = this.anhuiData;
+                chartData.datasets[0].label = '安徽省近几年产地（万亩）';
+            }
+            if (newValue === '湖南') {
+                chartData = this.hunanData;
+                chartData.datasets[0].label = '湖南省近几年产地（万亩）';
+            }
+            if (newValue === '浙江') {
+                chartData = this.zhejiangData;
+                chartData.datasets[0].label = '浙江省近几年产地（万亩）';
+            }
+            if (newValue === '贵州') {
+                chartData = this.guizhouData;
+                chartData.datasets[0].label = '贵州省近几年产地（万亩）';
+            }
+            if (newValue === '云南') {
+                chartData = this.yunnanData;
+                chartData.datasets[0].label = '云南省近几年产地（万亩）';
+            }
+            if (newValue === '广西') {
+                chartData = this.guangxiData;
+                chartData.datasets[0].label = '广西省近几年产地（万亩）';
+            }
+            if (newValue === '江苏') {
+                chartData = this.jiangsuData;
+                chartData.datasets[0].label = '江苏省近几年产地（万亩）';
+            }
+            if (newValue === '四川') {
+                chartData = this.sichuanData;
+                chartData.datasets[0].label = '四川省近几年产地（万亩）';
+            }
+            if (newValue === '福建') {
+                chartData = this.fujianData;
+                chartData.datasets[0].label = '福建省近几年产地（万亩）';
+            }
+            if (newValue === '陕西') {
+                chartData = this.shanxiData;
+                chartData.datasets[0].label = '陕西省近几年产地（万亩）';
+            }
+            if (newValue === '湖北') {
+                chartData = this.hubeiData;
+                chartData.datasets[0].label = '湖北省近几年产地（万亩）';
+            }
+            if (newValue === '江西') {
+                chartData = this.jiangxiData;
+                chartData.datasets[0].label = '江西省近几年产地（万亩）';
+            }
+            if (newValue === '山东') {
+                chartData = this.shandongData;
+                chartData.datasets[0].label = '山东省近几年产地（万亩）';
+            }
+            if (newValue === '河南') {
+                chartData = this.henanData;
+                chartData.datasets[0].label = '河南省近几年产地（万亩）';
+            }
+            if (newValue === '海南') {
+                chartData = this.hainanData;
+                chartData.datasets[0].label = '海南省近几年产地（万亩）';
+            }
+            if (newValue === '重庆') {
+                chartData = this.chongqingData;
+                chartData.datasets[0].label = '重庆近几年产地（万亩）';
+            }
+            if (newValue === '甘肃') {
+                chartData = this.gansuData;
+                chartData.datasets[0].label = '甘肃省近几年产地（万亩）';
+            }
+            if (this.lineChart) {
+                // 如果图表已经存在，则销毁之前的图表
+                this.lineChart.destroy();
+            }
+            this.lineChart = new Chart(this.$refs.lineChart.getContext('2d'), {
+                type: 'line',
+                data: chartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            intersect: false, // 设置为false以在x轴方向上悬停时显示标签
+                            mode: 'index' // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
+                        }
+                    }
+                }
+            });
         },
         updateMapOption() {
             const option = {
@@ -405,11 +485,13 @@ export default {
                         name: '中国',
                         type: 'map',
                         mapType: 'china',
-                        selectedMode: 'none', // 取消点击效果
-                        roam: false, // 禁止缩放和平移
                         label: {
                             emphasis: {
-                                show: false
+                                show: true, // 在鼠标悬停时显示标签
+                                formatter: '{b}', // 标签内容为省份名称
+                                color: 'black', // 标签文字颜色
+                                fontSize: 14, // 标签文字大小
+                                fontWeight: 'bold' // 标签文字加粗
                             }
                         },
                         itemStyle: {
@@ -437,12 +519,8 @@ export default {
                                 borderWidth: 0.5 // 地图区域的边框宽度
 
                             },
-                            emphasis: {
-                                areaColor: '#d2efe3', // 设置鼠标悬浮时的颜色
-                            }
                         },
-                        hoverLink: false, // 禁用悬停链接
-                        data: []
+                       
                     }
                 ]
             };
@@ -476,6 +554,7 @@ export default {
                 };
             });
             this.myChart.setOption(option);
+
         },
         highlightProvince(teaType) {
             if (teaType === '绿茶') {
@@ -721,6 +800,7 @@ export default {
                 this.myChart.setOption(option)
             }
         },
+
     },
 }
 </script>
