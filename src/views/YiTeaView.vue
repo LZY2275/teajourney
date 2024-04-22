@@ -367,7 +367,7 @@ export default{
     height: 100vh;
 }
 .chart-container{
-    height: calc(100vh - 136px);
+    height: calc(100vh - 148px);
     width: 100%;
 }
 .title{

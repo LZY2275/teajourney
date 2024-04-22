@@ -2,6 +2,15 @@
 
     <!--产地-->
     <div style="background-color: #FFFEF2;z-index: 1;width: calc(100vw - 300px); height: 100vh;position: absolute;">
+        <t-dialog
+            theme="info"
+            header="提示"
+            body="由于该省份不是主要产茶省份，暂无数据！"
+            :visible.sync="visible"
+            :onClose="close1"
+            @confirm="onConfirm"
+            :cancelBtn="null"
+            />
         <!-- 上方标题区域 -->
         <div style="display: flex;height:136px;">
             <div class="title" style="width: 200px;white-space: nowrap;">中国茶叶产地</div>
@@ -87,12 +96,13 @@
                 </div>
                 <-->
                 <!--折线图-->
-                <div style="position: absolute;bottom: 10px;right: 20px;z-index: 100;">
-                <p class="title-sub">主要产区种植面积</p>
-                <div style="width:25vw;height: 30vh; position: relative;z-index: 1;"> 
-                <canvas ref="lineChart"></canvas>
-            </div>
-        </div>
+                <div style="position: absolute;bottom: 10px;right: 30px;z-index: 100;">
+                    <p class="title-sub">主要产区种植面积</p>
+                    <div style=" position: relative;z-index: 1;">
+                        <div v-show="currentProvince == ''" class="empty-box">Tips:<br>点击省份查看省份种植面积变化折线图。<br>点击右上角的茶类别切换视图~</div>
+                        <canvas ref="lineChart" width="360" height="340" ></canvas>
+                    </div>
+                </div>
             </div>
             <!--六个图标-->
             <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
@@ -170,6 +180,8 @@ export default {
             oolong: false,
             RedTea: false,
             BlackTea: false,
+            visible:false,
+            currentProvince:'',
             guangdongData: {
                 labels: ['2018', '2019', '2020', '2021', '2022'],
                 datasets: [{
@@ -351,6 +363,7 @@ export default {
                 }]
             },
         }
+
     },
     mounted() {
         echarts.registerMap('china', { geoJSON: chinaMap })
@@ -362,24 +375,29 @@ export default {
     },
 
     methods: {
+        onConfirm(){
+            this.visible = false
+        },
         initChinaMap() {
             this.myChart = echarts.init(document.getElementById('china-map'))
             this.updateMapOption()
             //点击省份显示相应的折线图
             this.myChart.on('click', (params) => {
-    var provinceName = params.name; // 获取点击的省份名称
-    if(provinceName === '北京' || provinceName === '天津' ||provinceName === '河北'||provinceName === '山西'||provinceName === '内蒙古'||provinceName === '辽宁'
-    ||provinceName === '吉林'||provinceName === '黑龙江'||provinceName === '上海'||provinceName === '西藏'||provinceName === '青海'
-    ||provinceName === '宁夏'||provinceName === '新疆'||provinceName === '台湾'||provinceName === '南海诸岛')
-    {
-        alert('该地区不是主要产地。主要产地：广东、安徽、湖南、浙江、贵州、云南、广西、江苏、四川、福建、陕西、湖北、江西、山东、河南、海南、重庆、甘肃。');  
-    }
-    else
-    {
-        this.renderLineChart(provinceName); 
-    }
-    
-});
+                var provinceName = params.name; // 获取点击的省份名称
+                if(provinceName === '北京' || provinceName === '天津' ||provinceName === '河北'||provinceName === '山西'||provinceName === '内蒙古'||provinceName === '辽宁'
+                ||provinceName === '吉林'||provinceName === '黑龙江'||provinceName === '上海'||provinceName === '西藏'||provinceName === '青海'
+                ||provinceName === '宁夏'||provinceName === '新疆'||provinceName === '台湾'||provinceName === '南海诸岛')
+                {
+                    this.visible = true;
+
+                }
+                else
+                {
+                    this.currentProvince=provinceName
+                    this.renderLineChart(provinceName);
+                }
+
+            });
 
         },
         renderLineChart(newValue) {
@@ -489,11 +507,13 @@ export default {
                             emphasis: {
                                 show: true, // 在鼠标悬停时显示标签
                                 formatter: '{b}', // 标签内容为省份名称
-                                color: 'black', // 标签文字颜色
+                                color: 'white', // 标签文字颜色
                                 fontSize: 14, // 标签文字大小
-                                fontWeight: 'bold' // 标签文字加粗
+                                fontWeight: 'bold', // 标签文字加粗
+
                             }
                         },
+
                         itemStyle: {
                             normal: {
                                 areaColor: "#e9f7f0",
@@ -519,8 +539,27 @@ export default {
                                 borderWidth: 0.5 // 地图区域的边框宽度
 
                             },
+                            emphasis: {
+                                areaColor: {
+                                type: 'linear', // 设置渐变色
+                                x: 0,
+                                y: 0,
+                                x2: 0.5,
+                                y2: 1,
+                                colorStops: [
+                                    {
+                                        offset: 0,
+                                        color: '#5eb139' // 起始颜色
+                                    },
+                                    {
+                                        offset: 1,
+                                        color: '#2d8241' // 结束颜色
+                                    }
+                                ]
+                            }
+                            },
                         },
-                       
+
                     }
                 ]
             };
@@ -836,8 +875,8 @@ export default {
 
 .line {
     margin-top: 2vh;
-    width: 380px;
-    height: 320px;
+    width: 320px;
+    height: 380px;
 }
 
 .title{
@@ -866,5 +905,14 @@ export default {
   .label-container{
     display: flex; align-items: center; cursor: pointer;
     margin-top: 6px;
+  }
+  .empty-box{
+    color:var(--td-brand-color-6);font-size: small; width: 360px;height: 320px;background-color: var(--td-brand-color-1);position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: 20px;
+
   }
 </style>
