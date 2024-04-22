@@ -1,5 +1,6 @@
 <template>
   <div class="global" >
+    <IntroOverlay></IntroOverlay>
     <div style="padding-top: 5.17578vh;padding-left: 5.347vw;display: flex;">
       <div style="display: flex;">
         <div class="top">
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+import IntroOverlay from './IntroOverlay.vue';
 
 export default {
   name: 'HomeView',
@@ -44,7 +46,9 @@ export default {
       titleen:'Tea Journey',
     };
   },
-
+  components:{
+    IntroOverlay
+  }
 }
 </script>
 

@@ -34,6 +34,7 @@
               <t-step-item title="制茶" content="蒸青是主流" />
               <t-step-item title="销茶" content="茶香弥漫市" />
               <t-step-item title="品茶" content="圭璧无纤瑕" />
+              <t-step-item title="忆茶" content="古韵千年传" />
             </t-steps>
           </template>
         </div>
@@ -70,6 +71,10 @@
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <TasteView></TasteView>
         </section>
+        <section id="huiyi" class="section4">
+          <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
+          <YiTeaView></YiTeaView>
+        </section>
       </div>
     </div>
     <div style="width: 100vw">
@@ -89,6 +94,7 @@ import TasteView from './views/TasteView.vue';
 import TeaInfoView from './views/TeaInfoView.vue';
 import AboutView from './views/AboutView.vue';
 import PlaceView from './views/PlaceView.vue';
+import YiTeaView from './views/YiTeaView.vue'
   export default {
     components:{
         HomeView,
@@ -99,12 +105,13 @@ import PlaceView from './views/PlaceView.vue';
         TeaInfoView,
         ProduceView,
         AboutView,
-        PlaceView
+        PlaceView,
+        YiTeaView
     },
     data() {
       return {
         current:0,
-        title:['种茶','采茶','制茶','销茶','品茶'],
+        title:['种茶','采茶','制茶','销茶','品茶','忆茶'],
         scrollHeight:0, //当前滚轮高度
         metaHeight:15,  //最小滚动距离
         metaTime: 10,   //最小执行时间
@@ -143,8 +150,10 @@ import PlaceView from './views/PlaceView.vue';
           this.current=2;
         }else if(scrollTop >= 5*clientHeight-300 && scrollTop < 6*clientHeight-300){
           this.current=3;
-        }else if(scrollTop >= 6*clientHeight-300){
+        }else if(scrollTop >= 6*clientHeight-300 && scrollTop < 8*clientHeight+600){
           this.current=4;
+        }else if(scrollTop >= 8*clientHeight+600){
+          this.current=5;
         }
       },
       toArea(index) { // 这里的index是左侧导航栏传的参数，是不同区域设定好的索引值
@@ -273,7 +282,7 @@ import PlaceView from './views/PlaceView.vue';
     /* 放在子元素上，和上面那个父元素一伙的 */
     scroll-snap-align: center;
   }
-  /*添加产地*/ 
+  /*添加产地*/
 .section-first-3-add{
     display: flex;
     flex-direction: column;
