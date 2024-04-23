@@ -1,5 +1,22 @@
 <template>
   <div id="app">
+    <!-- 常驻聊天框按钮 -->
+    <div style="position: fixed;bottom: 80px; z-index: 999;">
+      <!-- <t-button theme="primary" size="large" variant="base"><t-icon name="chat"></t-icon></t-button>
+       -->
+       <t-sticky-tool
+          @click="handleClickSticky"
+        >
+          <t-sticky-item
+            label="chat"
+            :icon="renderChatIcon"
+            trigger="click"
+            :popup="renderPopup"
+            :popup-props="{ overlayInnerStyle: { padding: '4px',} }"
+            >
+          </t-sticky-item>
+        </t-sticky-tool>
+    </div>
     <!-- 首页 -->
     <div style="width: 99vw;height: 100vh;background: linear-gradient(180deg, rgba(20, 81, 82, 1) 0%, rgba(218, 231, 182, 1) 100%);">
       <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views 高度为100vh-->
@@ -94,7 +111,10 @@ import TasteView from './views/TasteView.vue';
 import TeaInfoView from './views/TeaInfoView.vue';
 import AboutView from './views/AboutView.vue';
 import PlaceView from './views/PlaceView.vue';
-import YiTeaView from './views/YiTeaView.vue'
+import YiTeaView from './views/YiTeaView.vue';
+import ChatView from './views/ChatView.vue';
+
+import { ChatIcon} from 'tdesign-icons-vue';
   export default {
     components:{
         HomeView,
@@ -106,7 +126,8 @@ import YiTeaView from './views/YiTeaView.vue'
         ProduceView,
         AboutView,
         PlaceView,
-        YiTeaView
+        YiTeaView,
+        ChatView
     },
     data() {
       return {
@@ -131,6 +152,16 @@ import YiTeaView from './views/YiTeaView.vue'
       //   e.preventDefault();
       //   console.log('click', href, title);
       // },
+      renderChatIcon() {
+        return <ChatIcon />;
+      },
+      renderPopup(){
+        // return <img alt="TDesign Logo" width="120" height="120" src="https://tdesign.gtimg.com/site/site.jpg" />;
+        return <ChatView />;
+      },
+      handleClickSticky(e){
+        console.log(e);
+      },
       onChangeSteps(e){
         this.current=e;
         this.toArea(e);

@@ -41,7 +41,8 @@ import { line } from 'd3';
 export default{
     data(){
         return{
-            options:{
+            options:
+                {
                 xAxis: {
                     type: 'value',
                     min: 1650, // 设置 x 轴的最小值
@@ -136,7 +137,8 @@ export default{
                             return params.data[3]; // 设置散点的颜色为数据中的第四个值
                             },
                             borderColor: 'white',
-                            borderWidth: 2
+                            borderWidth: 2,
+
                         }
                     },
                     // 线条
@@ -170,7 +172,8 @@ export default{
                         }
                     }
                 ]
-            },
+                },
+
             x_range:[
                 [-2700,211],[222,589],[581,907],[960,1368],[1368,1644],[1645,1911],[1912,2024]
             ],
@@ -193,6 +196,7 @@ export default{
     methods:{
         handleResize(){
             // console.log('yitea-resize');
+
         },
 
         // 读取文件的总入口
@@ -323,7 +327,15 @@ export default{
             this.options.xAxis.min = this.x_range[0][0]
             this.options.xAxis.max = this.x_range[0][1]
 
+            // let optionIndex = 0;
+            // option = this.options[optionIndex];
+            // setInterval(function () {
+            //     optionIndex = (optionIndex + 1) % options.length;
+            //     myChart.setOption(this.options[optionIndex]);
+            // }, 700);
+
             // console.log(this.options);
+
             myChart.setOption(this.options)
             myChart.on('click', (params) => {
                 this.onClickSeries(params)
