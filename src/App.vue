@@ -12,7 +12,7 @@
             :icon="renderChatIcon"
             trigger="click"
             :popup="renderPopup"
-            :popup-props="{ overlayInnerStyle: { padding: '4px',} }"
+            :popup-props="{ overlayInnerStyle: { padding: '4px', position: 'relative', bottom: '20px'} }"
             >
           </t-sticky-item>
         </t-sticky-tool>
