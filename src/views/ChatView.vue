@@ -55,6 +55,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 
 export default{
     data(){
@@ -85,10 +87,51 @@ export default{
             avatarList:[
                 <div><t-avatar>User</t-avatar></div>,
                 <div><t-avatar>小灵</t-avatar></div>
-            ]
+            ],
+            controller_async :null
         }
     },
     methods:{
+        async getResponseFromQingyunkeAPI(msg){
+            var author = '小灵'
+            var avatar = this.avatarList[1]
+            // 先给用户一个正在加载的动画,并且可以取消
+            var response_loading = <div><t-loading text="加载中..." size="small"></t-loading></div>
+            let new_response = this.createMessage(avatar,author,response_loading)
+            this.messageList.push(new_response)
+
+
+            this.controller_async = new AbortController();
+            var controller = this.controller_async;
+            var signal = controller.signal;
+
+            var that = this
+
+            axios.get('/api/api.php?key=free&appid=0&msg='+msg,{signal})
+            .then((response)=>{
+                if (response.status == 200){
+                    let response_str = response.data.content
+                    var response_div = function(){
+                        return <vue-typed-js strings={[response_str]} loop={false} startDelay={0} typeSpeed={100} contentType={'html'} showCursor={false} ><span class="typing"></span></vue-typed-js>
+                    }
+
+                    new_response.content = response_div
+                    that.messageList.pop()
+                    that.messageList.push(new_response)
+                    that.isgenerating=false
+                }
+                else{
+                    var length = this.messageList.length
+                    that.messageList[length-1].content = '请求失败，请重试。'
+                    that.isgenerating=false
+                }
+            })
+            .catch((error)=>{
+                console.log('error:',error)
+                return null
+            })
+        },
+
         async sendMessage(){
             if (this.inputvalue == ''){
                 return
@@ -97,11 +140,13 @@ export default{
             var avatar = this.avatarList[0]
             let new_message = this.createMessage(avatar,author,this.inputvalue);
             this.messageList.push(new_message)
+            var message = this.inputvalue
+
             this.inputvalue = ''
 
             this.isgenerating=true
 
-            await this.getResponseFromAPI()
+            await this.getResponseFromAPI(message)
         },
 
         getTimeString(){
@@ -130,35 +175,32 @@ export default{
 
         onClickCancel(){
             // console.log('cancel');
-            clearTimeout(this.timeoutID)
+            // clearTimeout(this.timeoutID)
+            this.controller_async.abort()
             var length = this.messageList.length
             this.messageList[length-1].content = '已取消生成。'
             this.isgenerating=false
         },
 
-        async getResponseFromAPI(){
-            // 模拟5秒后得到返回
-            var that = this
-            var author = '小灵'
-            var avatar = this.avatarList[1]
-            // 先给用户一个正在加载的动画,并且可以取消
-            var response_loading = <div><t-loading text="加载中..." size="small"></t-loading></div>
-            let new_response = this.createMessage(avatar,author,response_loading)
-            this.messageList.push(new_response)
+        async getResponseFromAPI(msg){
 
-            this.timeoutID = setTimeout(function() {
-                // console.log("5 秒后执行");
-                // 获取到最后一个message,更改content
-                let response = '这是返回文字。'
-                var response_div = function(){
-                    return <vue-typed-js strings={[response]} loop={false} startDelay={0} typeSpeed={100} contentType={'html'} showCursor={false} ><span class="typing"></span></vue-typed-js>
-                }
 
-                new_response.content = response_div
-                that.messageList.pop()
-                that.messageList.push(new_response)
-                that.isgenerating=false
-            }, 5000);
+            await this.getResponseFromQingyunkeAPI(msg)
+
+            // 模拟过程
+            // this.timeoutID = setTimeout(function() {
+            //     // console.log("5 秒后执行");
+            //     // 获取到最后一个message,更改content
+            //     let response = '这是返回文字。'
+            //     var response_div = function(){
+            //         return <vue-typed-js strings={[response]} loop={false} startDelay={0} typeSpeed={100} contentType={'html'} showCursor={false} ><span class="typing"></span></vue-typed-js>
+            //     }
+
+            //     new_response.content = response_div
+            //     that.messageList.pop()
+            //     that.messageList.push(new_response)
+            //     that.isgenerating=false
+            // }, 5000);
         }
     }
 }

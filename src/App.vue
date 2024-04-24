@@ -8,7 +8,7 @@
           @click="handleClickSticky"
         >
           <t-sticky-item
-            label="chat"
+            label="聊天"
             :icon="renderChatIcon"
             trigger="click"
             :popup="renderPopup"
@@ -158,9 +158,6 @@ import { ChatIcon} from 'tdesign-icons-vue';
       renderPopup(){
         // return <img alt="TDesign Logo" width="120" height="120" src="https://tdesign.gtimg.com/site/site.jpg" />;
         return <ChatView />;
-      },
-      handleClickSticky(e){
-        console.log(e);
       },
       onChangeSteps(e){
         this.current=e;
