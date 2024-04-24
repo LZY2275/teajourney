@@ -562,9 +562,9 @@
         因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。</p>
 </div>
 
-    <div ref="main" style="width: 70vw; height: 70vh;margin-left: -15vw;"></div>
+    <div ref="main" style="width: 60vw; height: 60vh;margin-left: -8vw;margin-top: -6vh;"></div>
 
-  <div v-for="(item, index) in items" v-if="item.isTrue" :key="index" style="margin-left: -18vw;">
+  <div v-for="(item, index) in items" v-if="item.isTrue" :key="index" style="margin-left: -12vw">
     <img :src="item.imageSrc" style="width: 100px; height: 100px; border-radius: 50%;margin-top: 2vh;">
     <p class="BrightGreen">{{ item.title }}</p>
     <p class="Caption7">{{ item.description }}</p>
@@ -592,7 +592,7 @@ export default {
     return {
       items: [
       { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: '艳绿', description: '“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉' },
+      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
       { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: '黄绿', description: '“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
       { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: '浅黄', description: '“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。' },
       { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: '金黄', description: '“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。' },
@@ -604,6 +604,10 @@ export default {
       { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。' },
       { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
     ],
+    lastHighlightedIndex:'',
+    clickedIndex: -1, // 记录点击的索引
+    currentIndex: 0, // 当前显示的索引
+      timer: null, // 定时器
       new_style_drinks: [
         {
           name: "茉莉奶绿",
@@ -685,14 +689,10 @@ export default {
               borderColor: '#fff',
               borderWidth: 2
             },
-            label: {
-              show: false,
-              position: 'center'
-            },
             emphasis: {
               label: {
                 show: true,
-                fontSize: 40,
+                fontSize: 20,
                 fontWeight: 'bold',
                 color: 'rgba(50, 132, 110, 1)',
               }
@@ -701,26 +701,85 @@ export default {
               show: false
             },
             data: [
-              { value: 1, name: '艳绿',image:'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg'},
-              { value: 1, name: '绿黄',image:'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg' },
-              { value: 1, name: '黄绿',image:'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg' },
-              { value: 1, name: '浅黄',image:'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg' },
-              { value: 1, name: '金黄',image:'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg' },
-              { value: 1, name: '橙黄',image:'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg' },
-              { value: 1, name: '橙红',image:'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg' },
-              { value: 1, name: '红汤',image:'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg' },
-              { value: 1, name: '凝乳',image:'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg' },
-              { value: 1, name: '明亮',image:'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg' },
-              { value: 1, name: '浑浊',image:'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg' },
-              { value: 1, name: '昏暗',image:'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg' }
+              { value: 1, name: '艳绿',image:'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg',itemStyle: { color: '#E4FC04' }},
+              { value: 1, name: '绿黄',image:'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg',itemStyle: { color: '#FFFF71' } },
+              { value: 1, name: '黄绿',image:'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg',itemStyle: { color: '#CF7E07' } },
+              { value: 1, name: '浅黄',image:'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg',itemStyle: { color: '#FDD631' } },
+              { value: 1, name: '金黄',image:'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg',itemStyle: { color: '#F3C007' } },
+              { value: 1, name: '橙黄',image:'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg',itemStyle: { color: '#F67B00' } },
+              { value: 1, name: '橙红',image:'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg',itemStyle: { color: '#DE6F00' } },
+              { value: 1, name: '红汤',image:'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg',itemStyle: { color: '#FE3000' } },
+              { value: 1, name: '凝乳',image:'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg',itemStyle: { color: '#7E1800' } },
+              { value: 1, name: '明亮',image:'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg',itemStyle: { color: '#FFFF99' } },
+              { value: 1, name: '浑浊',image:'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg',itemStyle: { color: '#703800' } },
+              { value: 1, name: '昏暗',image:'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg',itemStyle: { color: '#502800' } }
             ]
           }
         ]
       },
     }
   },
-  
+  methods: {
+  // 点击事件处理函数
+  handleClick(index) {
+    // 清除定时器
+    this.clearTimer();
+    // 切换显示项
+    this.items.forEach(item => item.isTrue = false);
+    this.items[index].isTrue = true;
+         // 更新点击的索引
+         this.clickedIndex = index;
+    // 启动定时器
+    this.startTimer();
+  },
+  // 启动定时器
+  startTimer() {
+    this.timer = setInterval(() => {
+      // 切换到下一个项
+      this.nextItem();
+    }, 5000); // 切换间隔时间，单位毫秒
+  },
+  // 清除定时器
+  clearTimer() {
+    clearInterval(this.timer);
+  },
+  // 切换到下一个项
+  nextItem() {
+    // 获取图表容器
+    const chartDom = this.$refs.main;
+    // 初始化 echarts 实例
+    this.myChart = echarts.init(chartDom);
+    // 先取消上一个高亮项的高亮效果
+    if (this.lastHighlightedIndex !== undefined) {
+        this.myChart.dispatchAction({
+            type: 'downplay',
+            dataIndex: this.lastHighlightedIndex
+        });
+    }
+    this.items.forEach(item => item.isTrue = false);
+    // 计算下一个项的索引
+    if (this.clickedIndex !== -1) {
+      this.currentIndex = (this.clickedIndex + 1) % this.items.length;
+    } else {
+      this.currentIndex = (this.currentIndex + 1) % this.items.length;
+    }
+    this.items[this.currentIndex].isTrue = true;
+    this.myChart.dispatchAction({
+        type: 'highlight', // 触发高亮效果，实现放大过渡
+        dataIndex: this.currentIndex // 要高亮的数据索引
+    });
+    // 将当前索引设为上一个高亮项的索引
+    this.lastHighlightedIndex = this.currentIndex;
+    
+  },
+},
+  destroyed() {
+    // 在组件销毁时清除定时器
+    this.clearTimer();
+  },
   mounted() {
+    // 启动定时器
+    this.startTimer();
     // 获取图表容器
     const chartDom = this.$refs.main;
     // 初始化 echarts 实例
@@ -728,6 +787,11 @@ export default {
     // 渲染图表
     this.myChart.setOption(this.option);
     this.myChart.on('click', (params) => {
+
+      // 获取点击的数据索引
+  var dataIndex = params.dataIndex;
+  // 调用 handleClick 方法处理点击事件
+  this.handleClick(dataIndex);
     if (params.componentType === 'series') {
         if (params.seriesType === 'pie') {
             if (params.data.name === '艳绿') {
@@ -1110,6 +1174,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .BrightGreen {
+  margin-top: 2vh;
   width: 50px;
   height: 22px;
   font-size: 16px;
@@ -1164,7 +1229,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 .Caption7 {
   text-indent: 2em;
-  width: 300px;
+  width: 320px;
   height: 43px;
   font-size: 14px;
   font-weight: 500;
@@ -1184,6 +1249,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
     background-color: rgba(255, 249, 232, 1); /* 设置背景颜色 */
 margin-left: 4.3vw;
 margin-top: 4vh;
+height: 48vh;
     width:91%;
     display: flex;
 }

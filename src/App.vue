@@ -178,12 +178,10 @@ import { ChatIcon} from 'tdesign-icons-vue';
           this.current=2;
         }else if(scrollTop >= 5*clientHeight-300 && scrollTop < 6*clientHeight-300){
           this.current=3;
-        }else if(scrollTop >= 6*clientHeight-300 && scrollTop < 7*clientHeight-300){
+        }else if(scrollTop >= 6*clientHeight-300 && scrollTop < 8.5*clientHeight-300){
           this.current=4;
-        }else if(scrollTop >= 7*clientHeight-300 && scrollTop < 9*clientHeight+600){
+        }else if(scrollTop >= 8.5*clientHeight+600){
           this.current=5;
-        }else if(scrollTop >= 10*clientHeight+600){
-          this.current=6;
         }
       },
       toArea(index) { // 这里的index是左侧导航栏传的参数，是不同区域设定好的索引值
@@ -204,7 +202,7 @@ import { ChatIcon} from 'tdesign-icons-vue';
             this.targetHeight= 6*this.clientHeight
             break;
           case 5: //区域六
-            this.targetHeight= 10.4*this.clientHeight
+            this.targetHeight= 10*this.clientHeight
             break;
           default: //默认：区域一
             this.targetHeight= this.clientHeight
