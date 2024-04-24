@@ -34,9 +34,16 @@
         <div class="input-box-container">
             <!-- 上方工具栏区域 -->
             <div class="input-toolbox-container">
-                <t-popup content="清除对话内容" >
-                    <t-icon name="clear" size="16" @click="clearMessage" style="cursor: pointer;"></t-icon>
-                </t-popup>
+                <div style="display: flex;align-items: center;height: 23.33px;">
+                    <t-popup content="清除对话内容">
+                        <t-icon name="clear" size="16" @click="clearMessage" style="cursor: pointer;"></t-icon>
+                    </t-popup>
+                </div>
+                <div style="display: flex;">
+                    <div class="input-yuxian-container">你是谁？</div>
+                    <div class="input-yuxian-container">帮我推荐一款茶叶</div>
+                </div>
+
             </div>
             <!-- 输入框和发送区域 -->
             <div style="display: flex;">
@@ -245,6 +252,12 @@ export default{
 .input-toolbox-container{
     display: flex;
     margin-bottom: 8px;
+}
+.input-yuxian-container{
+    padding: 0 12px;
+    border-radius: 80px;
+    border: 1px solid var(--td-gray-color-3);
+    margin-left: 8px
 }
 .stop-generating-container{
     display: flex;
