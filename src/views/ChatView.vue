@@ -7,6 +7,13 @@
         </div>
         <!-- 主要聊天内容区域 -->
         <div class="message-container">
+            <!-- 若没有消息默认显示内容 -->
+            <div v-if="messageList.length == 0" class="default-container">
+                <div style="text-align: center;">
+                    <t-icon name="gesture-ranslation-1" size="40" color="var(--td-brand-color-4)"></t-icon>
+                    <div class="title-sub">你好！我能为你做些什么？</div>
+                </div>
+            </div>
             <div class="message-item" v-for="item,index in messageList" :key="index">
                 <t-comment
                 :author="item.author"
@@ -76,8 +83,8 @@ export default{
             ],
             timeoutID:null,
             avatarList:[
-                <div><t-avatar image="https://tdesign.gtimg.com/site/avatar.jpg" /></div>,
-                <div><t-avatar image="https://tdesign.gtimg.com/site/avatar.jpg" /></div>
+                <div><t-avatar>User</t-avatar></div>,
+                <div><t-avatar>小灵</t-avatar></div>
             ]
         }
     },
@@ -202,6 +209,13 @@ export default{
     justify-content: center;
     align-items: center;
     height: 40px;
+}
+.default-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>
