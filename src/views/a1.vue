@@ -9,7 +9,7 @@
         <p class="text bottom-right">
           而江苏、陕西和广西省的产量较少。<br>产量最高的福建省，在2022年达到<br>最高值459674.38吨，<br>产量最少的江苏省，在2022年达到<br>最低值10400吨。<br> &nbsp;</p>
       </div>
-
+      <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>点击“茶园面积图”中的省份查看近几年的产量产销变化图。<br>点击右上角的产量产值以实现数据切换~</div>
       <canvas ref="lineChart" width="450" height="300" style="margin-top: -7vh;"></canvas>
 
     </div>
@@ -29,6 +29,7 @@ import * as d3 from 'd3';
 export default {
   data() {
     return {
+      currentProvince:'',
       value: '',
       lineChart: null,
       guangdongData: {
@@ -172,50 +173,62 @@ export default {
       if (newValue === '粤') {
         chartData = this.guangdongData;
         chartData.datasets[0].label = '广东省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '皖') {
         chartData = this.anhuiData;
         chartData.datasets[0].label = '安徽省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '湘') {
         chartData = this.hunanData;
         chartData.datasets[0].label = '湖南省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '浙') {
         chartData = this.zhejiangData;
         chartData.datasets[0].label = '浙江省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '黔') {
         chartData = this.guizhouData;
         chartData.datasets[0].label = '贵州省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '滇') {
         chartData = this.yunnanData;
         chartData.datasets[0].label = '云南省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '桂') {
         chartData = this.guangxiData;
         chartData.datasets[0].label = '广西省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '苏') {
         chartData = this.jiangsuData;
         chartData.datasets[0].label = '江苏省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '川') {
         chartData = this.sichuanData;
         chartData.datasets[0].label = '四川省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '闽') {
         chartData = this.fujianData;
         chartData.datasets[0].label = '福建省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '陕') {
         chartData = this.shanxiData;
         chartData.datasets[0].label = '陕西省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (newValue === '鄂') {
         chartData = this.hubeiData;
         chartData.datasets[0].label = '湖北省近几年产量（吨）';
+        this.currentProvince = newValue;
       }
       if (this.lineChart) {
         // 如果图表已经存在，则销毁之前的图表
@@ -652,4 +665,18 @@ export default {
   cursor: pointer;
   /* 鼠标悬停时显示手型 */
 }
-</style>../EventBus.js
+.empty-box{
+    color:var(--td-brand-color-6);
+    font-size: small; 
+    width: 15vw;
+    height: 20vh;
+    background-color: var(--td-brand-color-1);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: -12vh;
+
+  }
+</style>

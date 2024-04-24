@@ -100,7 +100,7 @@
                     <p class="title-sub">主要产区种植面积</p>
                     <div style=" position: relative;z-index: 1;">
                         <div v-show="currentProvince == ''" class="empty-box">Tips:<br>点击省份查看省份种植面积变化折线图。<br>点击右上角的茶类别切换视图~</div>
-                        <canvas ref="lineChart" width="360" height="340" ></canvas>
+                        <canvas ref="lineChart" width="360" height="280" ></canvas>
                     </div>
                 </div>
             </div>
@@ -871,6 +871,7 @@ export default {
     font-size: 18px;
     font-weight: bold;
     color: var(--td-brand-color-6);
+
 }
 
 .line {
@@ -907,12 +908,17 @@ export default {
     margin-top: 6px;
   }
   .empty-box{
-    color:var(--td-brand-color-6);font-size: small; width: 360px;height: 320px;background-color: var(--td-brand-color-1);position: absolute;
+    color:var(--td-brand-color-6);
+    font-size: small;
+     width: 23vw;
+     height: 40vh;
+     background-color: var(--td-brand-color-1);
+     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    margin-top: 20px;
+
 
   }
 </style>
