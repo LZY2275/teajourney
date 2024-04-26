@@ -8,7 +8,7 @@
           @click="handleClickSticky"
         >
           <t-sticky-item
-            label="聊天"
+            :label="$t('聊天')"
             :icon="renderChatIcon"
             trigger="click"
             :popup="renderPopup"
@@ -115,7 +115,9 @@ import PlaceView from './views/PlaceView.vue';
 import YiTeaView from './views/YiTeaView.vue';
 import ChatView from './views/ChatView.vue';
 
-import { ChatIcon} from 'tdesign-icons-vue';
+
+import { ChatIcon ,EarthIcon} from 'tdesign-icons-vue';
+import { log } from '@antv/g2plot/lib/utils';
   export default {
     components:{
         HomeView,
@@ -130,10 +132,14 @@ import { ChatIcon} from 'tdesign-icons-vue';
         YiTeaView,
         ChatView
     },
+    computed:{
+      title(){
+        return [this.$t('种茶'),this.$t('采茶'),this.$t('制茶'),this.$t('销茶'),this.$t('品茶'),this.$t('忆茶')];
+      }
+    },
     data() {
       return {
         current:0,
-        title:[this.$t('种茶'),this.$t('采茶'),this.$t('制茶'),this.$t('销茶'),this.$t('品茶'),this.$t('忆茶')],
         scrollHeight:0, //当前滚轮高度
         metaHeight:15,  //最小滚动距离
         metaTime: 10,   //最小执行时间
@@ -153,12 +159,28 @@ import { ChatIcon} from 'tdesign-icons-vue';
       //   e.preventDefault();
       //   console.log('click', href, title);
       // },
+
+
       renderChatIcon() {
         return <ChatIcon />;
+      },
+      renderLangIcon(){
+        return <EarthIcon />
       },
       renderPopup(){
         // return <img alt="TDesign Logo" width="120" height="120" src="https://tdesign.gtimg.com/site/site.jpg" />;
         return <ChatView />;
+      },
+      handleClickSticky(e,item){
+        //var lang = this.$i18n.locale;
+        //if (lang == 'en'){
+        //  localStorage.setItem("language", 'ch');
+        //  this.$i18n.locale = 'ch'
+        //}else{
+        //  localStorage.setItem("language", 'en');
+        //  this.$i18n.locale = 'en'
+        //}
+        //this.$forceUpdate()
       },
       onChangeSteps(e){
         this.current=e;
@@ -252,7 +274,7 @@ import { ChatIcon} from 'tdesign-icons-vue';
       window.addEventListener('scroll', this.handleScroll);
       let clientHeight = window.innerHeight;
       this.clientHeight = clientHeight
-    }
+    },
 
   };
 </script>

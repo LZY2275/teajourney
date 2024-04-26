@@ -6,10 +6,11 @@ import en from '@/lang/en.js'
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-    locale: 'en',
+    //locale: localStorage.getItem('language') || 'zh',
+    locale: 'zh',
     messages: {
-        "zh": zh,
-        "en": en
+        "zh": {...zh},
+        "en": {...en}
     }
 })
 
