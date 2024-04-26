@@ -96,13 +96,15 @@
                 </div>
                 <-->
                 <!--折线图-->
-                <div style="position: absolute;bottom: 10px;right: 30px;z-index: 100;">
+                <div style="margin-top: 65vh;">
                     <p class="title-sub">主要产区种植面积</p>
                     <div style=" position: relative;z-index: 1;">
                         <div v-show="currentProvince == ''" class="empty-box">Tips:<br>点击省份查看省份种植面积变化折线图。<br>点击右上角的茶类别切换视图~</div>
-                        <canvas ref="lineChart" width="360" height="280" ></canvas>
                     </div>
+                    <canvas ref="lineChart" style="margin-right: 2vw"></canvas>
                 </div>
+
+
             </div>
             <!--六个图标-->
             <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
@@ -478,6 +480,11 @@ export default {
                 // 如果图表已经存在，则销毁之前的图表
                 this.lineChart.destroy();
             }
+            // 获取 canvas 元素
+    const canvas = this.$refs.lineChart;
+    // 设置 canvas 的宽高
+    canvas.width = 22 * window.innerWidth / 100; // 根据视口宽度计算宽度
+    canvas.height = 30 * window.innerHeight / 100; // 根据视口高度计算高度
             this.lineChart = new Chart(this.$refs.lineChart.getContext('2d'), {
                 type: 'line',
                 data: chartData,
@@ -857,6 +864,7 @@ export default {
     text-indent:2em;
     line-height:17px;
     font-size:14px;
+    width: 42vw;
 }
 
 .textsubtitle{
@@ -871,7 +879,7 @@ export default {
     font-size: 18px;
     font-weight: bold;
     color: var(--td-brand-color-6);
-
+    margin-left: -2vw;
 }
 
 .line {
@@ -908,17 +916,16 @@ export default {
     margin-top: 6px;
   }
   .empty-box{
+    margin-left: -0vw;
     color:var(--td-brand-color-6);
     font-size: small;
-     width: 23vw;
-     height: 40vh;
+     width: 80%;
+     height: 28vh;
      background-color: var(--td-brand-color-1);
      position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-
-
   }
 </style>
