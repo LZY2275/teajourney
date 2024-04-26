@@ -34,9 +34,43 @@
         <div class="input-box-container">
             <!-- 上方工具栏区域 -->
             <div class="input-toolbox-container">
-                <t-popup content="清除对话内容" >
-                    <t-icon name="clear" size="16" @click="clearMessage" style="cursor: pointer;"></t-icon>
-                </t-popup>
+                <div style="display: flex;align-items: center;height: 23.33px;">
+                    <t-popup content="清除对话内容">
+                        <t-icon name="clear" size="16" @click="clearMessage" style="cursor: pointer;"></t-icon>
+                    </t-popup>
+                </div>
+                <div style="display: flex;align-items: center;height: 23.33px;">
+                    <t-popup content="前一页">
+                        <t-icon name="chevron-left" size="16" @click="current = current - 1 < 0 ? 1 : current - 1" style="cursor: pointer;"></t-icon>
+                    </t-popup>
+                </div>
+                <div style="height: 23.33px;flex: 1;">
+                    <t-swiper :current="current" :navigation="{ showSlideBtn:'never' }" :autoplay="false" :loop="true">
+                        <t-swiper-item>
+                            <div style="display: flex;">
+                                <div class="input-yuxian-container">你是谁</div>
+                                <div class="input-yuxian-container">六大茶类</div>
+                            </div>
+                        </t-swiper-item>
+                        <t-swiper-item>
+                            <div style="display: flex;">
+                                <div class="input-yuxian-container">红茶</div>
+                                <div class="input-yuxian-container">帮我推荐一款茶叶</div>
+                            </div>
+                        </t-swiper-item>
+                        <t-swiper-item>
+                            <div style="display: flex;">
+                                <div class="input-yuxian-container">绿茶</div>
+                                <div class="input-yuxian-container">波士顿倾茶事件</div>
+                            </div>
+                        </t-swiper-item>
+                    </t-swiper>
+                </div>
+                <div style="display: flex;align-items: center;height: 23.33px;">
+                    <t-popup content="后一页">
+                        <t-icon name="chevron-right" size="16" @click="current = current + 1 > yuxianMax-1 ? 0 : current + 1" style="cursor: pointer;"></t-icon>
+                    </t-popup>
+                </div>
             </div>
             <!-- 输入框和发送区域 -->
             <div style="display: flex;">
@@ -63,6 +97,8 @@ export default{
         return{
             inputvalue:'',
             isgenerating:false,
+            current:0,
+            yuxianMax:3, //最大预先定义好的输入为n页
             messageList:[
                 // {
                 //     avatar:"https://tdesign.gtimg.com/site/avatar.jpg",
@@ -201,6 +237,28 @@ export default{
             //     that.messageList.push(new_response)
             //     that.isgenerating=false
             // }, 5000);
+        },
+
+        handlePrevious(){
+            // console.log('previous');
+            var current_page = this.current
+            if (current_page = 0){
+                current_page = this.yuxianMax-1
+            }else{
+                current_page = current_page-1
+            }
+            this.current = current_page
+        },
+
+        handleNext(){
+            // console.log('next');
+            var current_page = this.current
+            if (current_page = this.yuxianMax-1){
+                current_page = 0
+            }else{
+                current_page = current_page+1
+            }
+            this.current = current_page
         }
     }
 }
@@ -229,7 +287,7 @@ export default{
 }
 
 .message-container{
-    height: calc(100% - 140px);
+    height: calc(100% - 148px);
     overflow-y: auto;
     background-color: var(--td-gray-color-1)
 }
@@ -245,6 +303,13 @@ export default{
 .input-toolbox-container{
     display: flex;
     margin-bottom: 8px;
+}
+.input-yuxian-container{
+    padding: 0 12px;
+    border-radius: 80px;
+    border: 1px solid var(--td-gray-color-3);
+    margin-left: 8px;
+    cursor: pointer;
 }
 .stop-generating-container{
     display: flex;

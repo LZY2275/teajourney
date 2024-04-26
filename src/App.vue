@@ -45,13 +45,14 @@
                       separator="dashed"
                       layout="vertical"
                       theme="dot"
-                      @change="onChangeSteps">
-              <t-step-item title="种茶" content="春风吹绿苗" />
-              <t-step-item title="采茶" content="晨朝掇灵芽" />
-              <t-step-item title="制茶" content="蒸青是主流" />
-              <t-step-item title="销茶" content="茶香弥漫市" />
-              <t-step-item title="品茶" content="圭璧无纤瑕" />
-              <t-step-item title="忆茶" content="古韵千年传" />
+                      @change="onChangeSteps"
+                      style="text-align: left">
+              <t-step-item :title="$t('种茶')" :content="$t('春风吹绿苗')" />
+              <t-step-item :title="$t('采茶')" :content="$t('晨朝掇灵芽')" />
+              <t-step-item :title="$t('制茶')" :content="$t('蒸青是主流')" />
+              <t-step-item :title="$t('销茶')" :content="$t('茶香弥漫市')" />
+              <t-step-item :title="$t('品茶')" :content="$t('圭璧无纤瑕')" />
+              <t-step-item :title="$t('忆茶')" :content="$t('古韵千年传')" />
             </t-steps>
           </template>
         </div>
@@ -132,7 +133,7 @@ import { ChatIcon} from 'tdesign-icons-vue';
     data() {
       return {
         current:0,
-        title:['种茶','采茶','制茶','销茶','品茶','忆茶'],
+        title:[this.$t('种茶'),this.$t('采茶'),this.$t('制茶'),this.$t('销茶'),this.$t('品茶'),this.$t('忆茶')],
         scrollHeight:0, //当前滚轮高度
         metaHeight:15,  //最小滚动距离
         metaTime: 10,   //最小执行时间
