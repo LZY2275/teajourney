@@ -5,16 +5,18 @@ import store from './store'
 import TDesign from 'tdesign-vue';
 import * as echarts from 'echarts'; //引入echarts
 import $ from 'jquery';
+import i18n from './lang/index.js';
 
 
 window.jQuery = $
 window.$ = $
 
+
 // 引入组件库的少量全局样式变量
 import 'tdesign-vue/es/style/index.css';
 import './assets/css/theme.css';
 import VueTypedJs from 'vue-typed-js';
- 
+
 Vue.use(VueTypedJs);
 // import './assets/css/fy.css'
 
@@ -28,5 +30,6 @@ Vue.prototype.$echarts = echarts
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
