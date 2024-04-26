@@ -42,6 +42,7 @@ export default{
     "六堡茶":"Liubao",
     "泾阳茯砖茶":"Jingyang Fuzhuan",
     "千两茶":"Qianliang",
+    "坦洋工夫":"Panyong congou",
 
     "皖":"Anhui",
     "湘":"Hunan",
@@ -260,7 +261,77 @@ export default{
     "完成": "Finish",
 
     "切换语言":"Language",
-    "聊天":"Chat"
+    "聊天":"Chat",
+
+    "茶叶的发酵实际上是茶叶细胞中茶多酚和多酚氧化酶相互作用的过程。发酵的程度不同，影响了茶叶的颜色、味道、香气和汤色等特征，从而将茶叶分为六大类。":
+    "The fermentation of tea is actually the interaction between tea polyphenols and polyphenol oxidase in tea cells. The degree of fermentation affects the color, taste, aroma and soup color of tea, thus dividing tea into six categories.",
+    '低':'Low',
+    '高':'High',
+    "绿茶发酵":"Green tea fermentation",
+    "白茶发酵":"White tea fermentation",
+    "黄茶发酵":"Yellow tea fermentation",
+    "乌龙茶发酵":"Oolong tea fermentation",
+    "红茶发酵":"Black tea fermentation",
+    "黑茶发酵":"Dark tea fermentation",
+
+    "采青":"Tea harvesting",
+    "萎凋":"Withering",
+    "摇青":"Shake fixation",
+    "杀青":"Fixation",
+    "揉捻":"Rolling",
+    "氧化发酵":"Oxidation & fermentation",
+    "晒青":"Sun fixation",
+    "渥堆":"Piling",
+    "晾干":"Wind drying",
+    "闷黄":"Yellowing",
+    "烘青":"Hot air fixation",
+    "干燥":"Drying",
+
+    "收集茶叶原料":"Collect tea raw materials",
+    "失水软化叶片":"Dehydration and softening of leaves",
+    "保留颜色香气":"Retain color and aroma",
+    "形成特定形状":"Form a specific shape",
+    "自然晾干茶叶":"Naturally air dry tea leaves",
+    "完全除去水分":"Completely remove moisture",
+    "高温稳定品质":"Stabilize quality through high temperature",
+    "自然风干茶叶":"Naturally air dry tea leaves",
+    "破碎叶缘释汁液":"Crush the leaf to release juice",
+    "空气中发酵茶叶":"Ferment tea leaves in the air",
+
+    "在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。":"In spring or early summer, the leaves are the most tender and green, making it the best time to pick. Hand-picking is usually chosen to ensure the most tender tea leaves are picked.",
+    "将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。":"The harvested tea leaves are subjected to high temperature treatment to prevent the activity of enzymes in the leaves and retain the color, aroma and nutritional components of the tea leaves.",
+    "经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。":"After fixation, the tea leaves are rolled to help the tea leaves maintain a specific shape and release the aroma of the tea leaves.",
+    "揉捻后的茶叶会经过烘干处理，高温稳定茶叶的品质，确保茶叶不会变质。":"After rolling, the tea leaves are dried to stabilize the quality of the tea leaves at high temperature and ensure that the tea leaves do not deteriorate.",
+    "最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。":"Finally, the tea leaves are dried to ensure that the moisture content of the tea leaves reaches the appropriate level, making it easy to store for a long time and maintain the quality and taste of the tea leaves.",
+
+    "与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。":"Similar to the production process of other teas, the production of white tea also begins with harvesting. When harvesting white tea, young green tea buds and leaves are usually selected as raw materials.",
+    "采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。":"The harvested tea leaves are dried. This step does not involve high temperature treatment or fixation, but allows the tea leaves to dry naturally in the sun or in a well-ventilated environment, gradually losing moisture.",
+    "在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。":"After drying, the tea leaves go through the final drying stage. This step helps to ensure that the moisture content of the tea leaves reaches the appropriate level for storage and to maintain their quality.",
+
+    "和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。":"Like other teas, the production of yellow tea begins with harvesting. Young green tea buds and leaves are usually selected as raw materials when harvesting.",
+    "采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。":"The harvested tea leaves go through a special withering process. Unlike other teas, the withering stage of yellow tea is longer, allowing the tea leaves to gradually lose moisture and soften.",
+    "经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。":"After withering, the tea leaves are fixed, and the fixation at this stage is relatively gentle, unlike green tea, which is high temperature treated. Fixation helps to retain the color and aroma of the tea leaves.",
+    "杀青后，茶叶经过烘焙处理，这个步骤有助于进一步固定茶叶的香气和品质。":"After fixation, the tea leaves are baked, which helps to further fix the aroma and quality of the tea leaves.",
+    "最后，茶叶会进行处理，确保茶叶中的水分达到适当的水平，以便长期储存，并保持其品质和口感。":"Finally, the tea leaves are processed to ensure that the moisture content of the tea leaves reaches the appropriate level for long-term storage and to maintain their quality and taste.",
+
+    "茶叶制作始于采摘。在制作时，通常选择嫩绿的茶芽和嫩叶作为原料。":"Tea production begins with harvesting. When making tea, young green tea buds and leaves are usually selected as raw materials.",
+    "在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。":"After harvesting, the tea leaves go through a shaking or gentle rolling process, which helps to crush the leaf edge and release the juice.",
+    "接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。":"The next step is fixation, which prevents the tea leaves from fermenting and retains the color and aroma of the tea leaves. This step usually involves high temperature treatment.",
+    "杀青后的茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。":"After fixation, the tea leaves are rolled, which helps to form a specific shape of the tea leaves and release the aroma of the tea leaves.",
+    "最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。":"Finally, the tea leaves are dried to ensure that the moisture content of the tea leaves reaches the appropriate level for long-term storage and to maintain the quality and taste of the tea leaves.",
+
+    "茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。":"Tea production begins with harvesting. Young green tea buds and leaves are usually selected as raw materials when making black tea.",
+    "采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。":"The harvested tea leaves go through a withering process, allowing the tea leaves to gradually lose moisture and soften. This process helps to change the chemical composition of the tea leaves.",
+    "茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。":"The tea leaves are rolled to help release the juice inside the leaves and form a specific shape.",
+    "接下来的关键步骤是氧化发酵。茶叶被散放在适当的环境中，让其在空气中发酵，氧化过程赋予了红茶独特的色泽和口感。":"The next key step is oxidative fermentation. The tea leaves are scattered in the appropriate environment and allowed to ferment in the air, a process of oxidation that gives black tea its unique color and taste.",
+    "最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。":"Finally, the tea is dried to ensure that the moisture content of the tea reaches the appropriate level for long-term storage and to maintain its quality and taste.",
+
+    "黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。":"The making of dark tea begins with picking. Usually green tea buds and young leaves are chosen as raw materials for making dark tea.",
+    "采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。":"After being picked, the leaves undergo a withering process that causes them to lose moisture and become soft. This process helps to change the chemical composition of the tea.",
+    "接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。":"The next step is fixation, a relatively gentle process that helps preserve the color and aroma of the tea.",
+    "经过杀青后，茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。":"After fixation, the tea leaves are rolled, which helps to form the tea's specific shape and release its aroma.",
+    "黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。":"The unique feature of dark tea making is the process of Browning. The tea leaves are then spread out and exposed to the sun in the proper environment to allow further fermentation and oxidation.",
+    "最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。":"Finally, the tea is dried to ensure that the moisture content of the tea reaches the appropriate level for long-term storage and to maintain its quality and taste.",
 
 
 }
