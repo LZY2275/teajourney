@@ -555,22 +555,22 @@
 
     <!-- 汤色 -->
     <div class="card">
-      <div  style="margin-left: 2vw;">
-    <p class="Colour">汤色</p>
-    <p class="ColourSub">COLOR OF TEA</p>
-    <p class="Caption6">由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。
-        因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。</p>
-</div>
+      <div style="margin-left: 2vw;">
+        <p class="Colour">汤色</p>
+        <p class="ColourSub">COLOR OF TEA</p>
+        <p class="Caption6">由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。
+          因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。</p>
+      </div>
 
-    <div ref="main" style="width: 70vw; height: 70vh;margin-left: -15vw;"></div>
+      <div ref="main" style="width: 60vw; height: 60vh;margin-left: -8vw;margin-top: -6vh;"></div>
 
-  <div v-for="(item, index) in items" v-if="item.isTrue" :key="index" style="margin-left: -18vw;">
-    <img :src="item.imageSrc" style="width: 100px; height: 100px; border-radius: 50%;margin-top: 2vh;">
-    <p class="BrightGreen">{{ item.title }}</p>
-    <p class="Caption7">{{ item.description }}</p>
-</div>
+      <div v-for="(item, index) in items" v-if="item.isTrue" :key="index" style="margin-left: -12vw">
+        <img :src="item.imageSrc" style="width: 100px; height: 100px; border-radius: 50%;margin-top: 2vh;">
+        <p class="BrightGreen">{{ item.title }}</p>
+        <p class="Caption7">{{ item.description }}</p>
+      </div>
 
-  </div>
+    </div>
 
   </div>
 </template>
@@ -591,19 +591,23 @@ export default {
   data() {
     return {
       items: [
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: '艳绿', description: '“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: '黄绿', description: '“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: '浅黄', description: '“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: '金黄', description: '“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: '橙黄', description: '“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: '红汤', description: '“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。' },
-      { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
-    ],
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: '艳绿', description: '“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: '黄绿', description: '“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: '浅黄', description: '“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: '金黄', description: '“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: '橙黄', description: '“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: '红汤', description: '“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
+      ],
+      lastHighlightedIndex: '',
+      clickedIndex: -1, // 记录点击的索引
+      currentIndex: 0, // 当前显示的索引
+      timer: null, // 定时器
       new_style_drinks: [
         {
           name: "茉莉奶绿",
@@ -669,12 +673,12 @@ export default {
       myChart: null, // 用于存储 echarts 实例
       option: {
         tooltip: {
-    trigger: 'item',
-    formatter: function(params) {
-      return `<img class="custom-tooltip-image" src="${params.data.image}" style="width:100px;height:100px;">`;
-    }
-  },
-  
+          trigger: 'item',
+          formatter: function (params) {
+            return `<img class="custom-tooltip-image" src="${params.data.image}" style="width:100px;height:100px;">`;
+          }
+        },
+
         series: [
           {
             type: 'pie',
@@ -685,14 +689,10 @@ export default {
               borderColor: '#fff',
               borderWidth: 2
             },
-            label: {
-              show: false,
-              position: 'center'
-            },
             emphasis: {
               label: {
                 show: true,
-                fontSize: 40,
+                fontSize: 20,
                 fontWeight: 'bold',
                 color: 'rgba(50, 132, 110, 1)',
               }
@@ -701,26 +701,85 @@ export default {
               show: false
             },
             data: [
-              { value: 1, name: '艳绿',image:'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg'},
-              { value: 1, name: '绿黄',image:'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg' },
-              { value: 1, name: '黄绿',image:'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg' },
-              { value: 1, name: '浅黄',image:'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg' },
-              { value: 1, name: '金黄',image:'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg' },
-              { value: 1, name: '橙黄',image:'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg' },
-              { value: 1, name: '橙红',image:'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg' },
-              { value: 1, name: '红汤',image:'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg' },
-              { value: 1, name: '凝乳',image:'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg' },
-              { value: 1, name: '明亮',image:'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg' },
-              { value: 1, name: '浑浊',image:'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg' },
-              { value: 1, name: '昏暗',image:'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg' }
+              { value: 1, name: '艳绿', image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', itemStyle: { color: '#E4FC04' } },
+              { value: 1, name: '绿黄', image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: '#FFFF71' } },
+              { value: 1, name: '黄绿', image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: '#CF7E07' } },
+              { value: 1, name: '浅黄', image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: '#FDD631' } },
+              { value: 1, name: '金黄', image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: '#F3C007' } },
+              { value: 1, name: '橙黄', image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: '#F67B00' } },
+              { value: 1, name: '橙红', image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: '#DE6F00' } },
+              { value: 1, name: '红汤', image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: '#FE3000' } },
+              { value: 1, name: '凝乳', image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: '#7E1800' } },
+              { value: 1, name: '明亮', image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: '#FFFF99' } },
+              { value: 1, name: '浑浊', image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: '#703800' } },
+              { value: 1, name: '昏暗', image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: '#502800' } }
             ]
           }
         ]
       },
     }
   },
-  
+  methods: {
+    // 点击事件处理函数
+    handleClick(index) {
+      // 清除定时器
+      this.clearTimer();
+      // 切换显示项
+      this.items.forEach(item => item.isTrue = false);
+      this.items[index].isTrue = true;
+      // 更新点击的索引
+      this.clickedIndex = index;
+      // 启动定时器
+      this.startTimer();
+    },
+    // 启动定时器
+    startTimer() {
+      this.timer = setInterval(() => {
+        // 切换到下一个项
+        this.nextItem();
+      }, 5000); // 切换间隔时间，单位毫秒
+    },
+    // 清除定时器
+    clearTimer() {
+      clearInterval(this.timer);
+    },
+    // 切换到下一个项
+    nextItem() {
+      // 获取图表容器
+      const chartDom = this.$refs.main;
+      // 初始化 echarts 实例
+      this.myChart = echarts.init(chartDom);
+      // 先取消上一个高亮项的高亮效果
+      if (this.lastHighlightedIndex !== undefined) {
+        this.myChart.dispatchAction({
+          type: 'downplay',
+          dataIndex: this.lastHighlightedIndex
+        });
+      }
+      this.items.forEach(item => item.isTrue = false);
+      // 计算下一个项的索引
+      if (this.clickedIndex !== -1) {
+        this.currentIndex = (this.clickedIndex + 1) % this.items.length;
+      } else {
+        this.currentIndex = (this.currentIndex + 1) % this.items.length;
+      }
+      this.items[this.currentIndex].isTrue = true;
+      this.myChart.dispatchAction({
+        type: 'highlight', // 触发高亮效果，实现放大过渡
+        dataIndex: this.currentIndex // 要高亮的数据索引
+      });
+      // 将当前索引设为上一个高亮项的索引
+      this.lastHighlightedIndex = this.currentIndex;
+
+    },
+  },
+  destroyed() {
+    // 在组件销毁时清除定时器
+    this.clearTimer();
+  },
   mounted() {
+    // 启动定时器
+    this.startTimer();
     // 获取图表容器
     const chartDom = this.$refs.main;
     // 初始化 echarts 实例
@@ -728,149 +787,168 @@ export default {
     // 渲染图表
     this.myChart.setOption(this.option);
     this.myChart.on('click', (params) => {
-    if (params.componentType === 'series') {
+
+      // 获取点击的数据索引
+      var dataIndex = params.dataIndex;
+      this.currentIndex = dataIndex;
+      // 先取消上一个高亮项的高亮效果
+      if (this.lastHighlightedIndex !== undefined) {
+        this.myChart.dispatchAction({
+          type: 'downplay',
+          dataIndex: this.lastHighlightedIndex
+        });
+      }
+      this.items[this.currentIndex].isTrue = true;
+      this.myChart.dispatchAction({
+        type: 'highlight', // 触发高亮效果，实现放大过渡
+        dataIndex: this.currentIndex // 要高亮的数据索引
+      });
+      this.lastHighlightedIndex = this.currentIndex;
+      // 调用 handleClick 方法处理点击事件
+      this.handleClick(dataIndex);
+      if (params.componentType === 'series') {
         if (params.seriesType === 'pie') {
-            if (params.data.name === '艳绿') {
-              this.items[0].isTrue = true
-              for(let i=1;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          if (params.data.name === '艳绿') {
+            this.items[0].isTrue = true
+            for (let i = 1; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '绿黄') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = true
-              for(let i=2;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '绿黄') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = true
+            for (let i = 2; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '黄绿') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = true
-              for(let i=3;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '黄绿') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = true
+            for (let i = 3; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '浅黄') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = true
-              for(let i=4;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '浅黄') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = true
+            for (let i = 4; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '金黄') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = true
-              for(let i=5;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '金黄') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = true
+            for (let i = 5; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '橙黄') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = true
-              for(let i=6;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '橙黄') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = true
+            for (let i = 6; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '橙红') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = false
-              this.items[6].isTrue = true
-              for(let i=7;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '橙红') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = false
+            this.items[6].isTrue = true
+            for (let i = 7; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '红汤') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = false
-              this.items[6].isTrue = false
-              this.items[7].isTrue = true
-              for(let i=8;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '红汤') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = false
+            this.items[6].isTrue = false
+            this.items[7].isTrue = true
+            for (let i = 8; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '凝乳') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = false
-              this.items[6].isTrue = false
-              this.items[7].isTrue = false
-              this.items[8].isTrue = true
-              for(let i=9;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '凝乳') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = false
+            this.items[6].isTrue = false
+            this.items[7].isTrue = false
+            this.items[8].isTrue = true
+            for (let i = 9; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '明亮') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = false
-              this.items[6].isTrue = false
-              this.items[7].isTrue = false
-              this.items[8].isTrue = false
-              this.items[9].isTrue = true
-              for(let i=10;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '明亮') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = false
+            this.items[6].isTrue = false
+            this.items[7].isTrue = false
+            this.items[8].isTrue = false
+            this.items[9].isTrue = true
+            for (let i = 10; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '浑浊') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = false
-              this.items[6].isTrue = false
-              this.items[7].isTrue = false
-              this.items[8].isTrue = false
-              this.items[9].isTrue = false
-              this.items[10].isTrue = true
-              for(let i=11;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '浑浊') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = false
+            this.items[6].isTrue = false
+            this.items[7].isTrue = false
+            this.items[8].isTrue = false
+            this.items[9].isTrue = false
+            this.items[10].isTrue = true
+            for (let i = 11; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
-            if (params.data.name === '昏暗') {
-              this.items[0].isTrue = false
-              this.items[1].isTrue = false
-              this.items[2].isTrue = false
-              this.items[3].isTrue = false
-              this.items[4].isTrue = false
-              this.items[5].isTrue = false
-              this.items[6].isTrue = false
-              this.items[7].isTrue = false
-              this.items[8].isTrue = false
-              this.items[9].isTrue = false
-              this.items[10].isTrue = false
-              this.items[11].isTrue = true
-              for(let i=12;i<this.items.length;i++){
-                this.items[i].isTrue = false
-              }
+          }
+          if (params.data.name === '昏暗') {
+            this.items[0].isTrue = false
+            this.items[1].isTrue = false
+            this.items[2].isTrue = false
+            this.items[3].isTrue = false
+            this.items[4].isTrue = false
+            this.items[5].isTrue = false
+            this.items[6].isTrue = false
+            this.items[7].isTrue = false
+            this.items[8].isTrue = false
+            this.items[9].isTrue = false
+            this.items[10].isTrue = false
+            this.items[11].isTrue = true
+            for (let i = 12; i < this.items.length; i++) {
+              this.items[i].isTrue = false
             }
+          }
         }
-    }
-});
+      }
+    });
 
 
   }
@@ -1074,6 +1152,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   justify-content: center;
   border: 0px;
 }
+
 .Colour {
   margin-top: 10px;
   font-size: 18px;
@@ -1110,6 +1189,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .BrightGreen {
+  margin-top: 2vh;
   width: 50px;
   height: 22px;
   font-size: 16px;
@@ -1120,6 +1200,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   text-align: left;
   vertical-align: middle;
 }
+
 /* ——————————————————————————————————lzy写的样式从这里开始———————————————————————————————————— */
 .four-container {
   margin-top: 10px;
@@ -1162,9 +1243,10 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 .card-first-2 {
   margin-right: 1vw;
 }
+
 .Caption7 {
   text-indent: 2em;
-  width: 300px;
+  width: 320px;
   height: 43px;
   font-size: 14px;
   font-weight: 500;
@@ -1173,20 +1255,23 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   text-align: left;
   vertical-align: middle;
 }
+
 /* —————————————————————————————————xhc补充汤色的样式从这里开始———————————————————————————————————— */
 .custom-tooltip-image {
-    position: absolute;
-    transform: translate(-50%, 50%); /* 将图片位置移动到tooltip的右上方 */
-    width: 100px;
-    height: 100px;
+  position: absolute;
+  transform: translate(-50%, 50%);
+  /* 将图片位置移动到tooltip的右上方 */
+  width: 100px;
+  height: 100px;
 }
+
 .card {
-    background-color: rgba(255, 249, 232, 1); /* 设置背景颜色 */
-margin-left: 4.3vw;
-margin-top: 4vh;
-    width:91%;
-    display: flex;
+  background-color: rgba(255, 249, 232, 1);
+  /* 设置背景颜色 */
+  margin-left: 4.3vw;
+  margin-top: 4vh;
+  height: 48vh;
+  width: 91%;
+  display: flex;
 }
-
-
 </style>

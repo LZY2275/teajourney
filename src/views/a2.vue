@@ -669,6 +669,6 @@ export default {
     justify-content: center;
     border-radius: 8px;
     margin-top: -12vh;
-
+    margin-left: 0.55vw;
   }
 </style>
