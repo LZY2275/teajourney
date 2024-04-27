@@ -101,7 +101,7 @@
                     <div style=" position: relative;z-index: 1;">
                         <div v-show="currentProvince == ''" class="empty-box">Tips:<br>点击省份查看省份种植面积变化折线图。<br>点击右上角的茶类别切换视图~</div>
                     </div>
-                    <canvas ref="lineChart" style="margin-right: 2vw"></canvas>
+                    <canvas ref="lineChart" style="margin-right: 2vw;z-index: 99;position: relative;;"></canvas>
                 </div>
 
 
@@ -154,7 +154,7 @@
             </div>
             <!--中国地图-->
             <div style="flex: 1;">
-                <div id="china-map" style="height: 100vh;width: 100%;position: relative;top: -80px;left: -160px;"></div>
+                <div id="china-map" style="height: 100vh;width: 100%;position: relative;top: -80px;left: -160px;z-index: 1;"></div>
 
             </div>
 
@@ -879,7 +879,7 @@ export default {
     font-size: 18px;
     font-weight: bold;
     color: var(--td-brand-color-6);
-    margin-left: -2vw;
+    margin-left: -4vw;
 }
 
 .line {
@@ -916,10 +916,10 @@ export default {
     margin-top: 6px;
   }
   .empty-box{
-    margin-left: -0vw;
+    margin-left: -2vw;
     color:var(--td-brand-color-6);
     font-size: small;
-     width: 80%;
+     width: 100%;
      height: 28vh;
      background-color: var(--td-brand-color-1);
      position: absolute;
