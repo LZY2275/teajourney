@@ -144,7 +144,7 @@
 
 
             <!-- 步骤条 -->
-      <div style="width: calc(100vw - 350px); display: flex;justify-content: center;">
+      <div style="width: calc(100vw - 350px); display: flex;justify-content: center;position: relative;top: 24px;">
         <div style="width: calc(100vw - 460px);"   :class="{ 'last-step': showImage6 }">
           <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
             <template>
@@ -152,23 +152,13 @@
                 <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
                 </t-step-item>
                 <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
-                  <template slot="extra" v-if="current === 1">
-
-                  </template>
                 </t-step-item>
                 <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
-                  <template slot="extra" v-if="current === 2">
-
-                  </template>
                 </t-step-item>
-                <t-step-item :title="$t('烘青')" :content="$t('高温稳定品质')">
-                  <template slot="extra" v-if="current === 3">
-                  </template>
+                <t-step-item :title="$t('烘青')" :content="$t('高温稳定品质')" >
                 </t-step-item>
                 <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
-                  <template slot="extra" v-if="current === 4">
-                  </template>
-                </t-step-item>
+                  </t-step-item>
               </t-steps>
             </template>
           </div>
