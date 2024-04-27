@@ -14,79 +14,79 @@
         <!-- 说明文字 -->
         <div style="background-color:var(--td-bg-color-container);height: 30vh;width: calc(100% - 24px);">
           <div v-if="showImage1" style="height: 50%;">
-        <p class="caption">绿茶制作流程</p>
+        <p class="caption">{{$t('绿茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
           <ul class="sub-caption">
-            <li><strong>采青：</strong> 在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。</li>
-            <li><strong>杀青：</strong> 将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。</li>
-            <li><strong>揉捻：</strong> 经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。</li>
-            <li><strong>烘青：</strong> 揉捻后的茶叶会经过烘干处理，高温稳定茶叶的品质，确保茶叶不会变质。</li>
-            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。</li>
+            <li><strong>{{$t('采青')}}：</strong> {{$t('在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。')}}</li>
+            <li><strong>{{$t('杀青')}}：</strong> {{$t('将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。')}}</li>
+            <li><strong>{{$t('揉捻')}}：</strong> {{$t('经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。')}}</li>
+            <li><strong>{{$t('烘青')}}：</strong> {{$t('揉捻后的茶叶会经过烘干处理，高温稳定茶叶的品质，确保茶叶不会变质。')}}</li>
+            <li><strong>{{$t('干燥')}}：</strong> {{$t('最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。')}}</li>
           </ul>
         </div>
         </div>
         <div v-if="showImage2" style="height: 50%;">
-        <p class="caption">白茶制作流程</p>
+        <p class="caption">{{$t('白茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
           <ul class="sub-caption">
-            <li><strong>采青：</strong> 与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。</li>
-            <li><strong>晾干：</strong> 采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。</li>
-            <li><strong>干燥：</strong> 在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。</li>
+            <li><strong>{{$t('采青')}}：</strong> {{$t('与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。')}}</li>
+            <li><strong>{{$t('晾干')}}：</strong> {{$t('采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。')}}</li>
+            <li><strong>{{$t('干燥')}}：</strong> {{$t('在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。')}}</li>
           </ul>
         </div>
         </div>
         <div v-if="showImage3" style="height: 50%;">
-        <p class="caption">黄茶制作流程</p>
+        <p class="caption">{{$t('黄茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
           <ul class="sub-caption">
-            <li><strong>采青：</strong> 和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。</li>
-            <li><strong>萎凋：</strong> 采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。</li>
-            <li><strong>杀青：</strong> 经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。</li>
-            <li><strong>烘青：</strong> 杀青后，茶叶经过烘焙处理，这个步骤有助于进一步固定茶叶的香气和品质。</li>
-            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，以便长期储存，并保持其品质和口感。</li>
+            <li><strong>{{$t('采青')}}：</strong> {{$t("和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。")}}</li>
+            <li><strong>{{$t('萎凋')}}：</strong> {{$t("采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。")}}</li>
+            <li><strong>{{$t('杀青')}}：</strong> {{$t("经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。")}}</li>
+            <li><strong>{{$t('烘青')}}：</strong> {{$t("杀青后，茶叶经过烘焙处理，这个步骤有助于进一步固定茶叶的香气和品质。")}}</li>
+            <li><strong>{{$t('干燥')}}：</strong> {{$t("最后，茶叶会进行处理，确保茶叶中的水分达到适当的水平，以便长期储存，并保持其品质和口感。")}}</li>
           </ul>
         </div>
         </div>
         <div v-if="showImage4" style="height: 50%;">
-        <p class="caption">青茶制作流程</p>
+        <p class="caption">{{$t('乌龙茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
           <ul class="sub-caption">
-            <li><strong>采青：</strong> 茶叶制作始于采摘。在制作青茶时，通常选择嫩绿的茶芽和嫩叶作为原料。</li>
-            <li><strong>摇青：</strong> 在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。</li>
-            <li><strong>杀青：</strong> 接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。</li>
-            <li><strong>揉捻：</strong> 杀青后的茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。</li>
-            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。</li>
+            <li><strong>{{$t('采青')}}：</strong> {{$t("茶叶制作始于采摘。在制作时，通常选择嫩绿的茶芽和嫩叶作为原料。")}}</li>
+            <li><strong>{{$t('摇青')}}：</strong> {{$t("在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。")}}</li>
+            <li><strong>{{$t('杀青')}}：</strong> {{$t("接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。")}}</li>
+            <li><strong>{{$t('揉捻')}}：</strong> {{$t("杀青后的茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。")}}</li>
+            <li><strong>{{$t('干燥')}}：</strong> {{$t("最后，茶叶会进行干燥处理，确保茶叶中的水分达到适当的水平，便于长期储存，并保持茶叶的品质和口感。")}}</li>
           </ul>
         </div>
         </div>
         <div v-if="showImage5" style="height: 50%;">
-        <p class="caption">红茶制作流程</p>
+        <p class="caption">{{$t('红茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
           <ul class="sub-caption">
-            <li><strong>采青：</strong> 茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。</li>
-            <li><strong>萎凋：</strong> 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。</li>
-            <li><strong>揉捻：</strong> 茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。</li>
-            <li><strong>氧化发酵：</strong> 接下来的关键步骤是氧化发酵。茶叶被散放在适当的环境中，让其在空气中发酵，氧化过程赋予了红茶独特的色泽和口感。</li>
-            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。</li>
+            <li><strong>{{$t('采青')}}：</strong> {{$t("茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。")}}</li>
+            <li><strong>{{$t('萎凋')}}：</strong> {{$t("采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。")}}</li>
+            <li><strong>{{$t('揉捻')}}：</strong> {{$t("茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。")}}</li>
+            <li><strong>{{$t('氧化发酵')}}：</strong> {{$t("接下来的关键步骤是氧化发酵。茶叶被散放在适当的环境中，让其在空气中发酵，氧化过程赋予了红茶独特的色泽和口感。")}}</li>
+            <li><strong>{{$t('干燥')}}：</strong> {{$t("最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。")}}</li>
           </ul>
         </div>
         </div>
         <div v-if="showImage6" style="height: 50%;">
-        <p class="caption">黑茶制作流程</p>
+        <p class="caption">{{$t('黑茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
           <ul class="sub-caption">
-            <li><strong>采青：</strong> 黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。</li>
-            <li><strong>萎凋：</strong> 采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。</li>
-            <li><strong>杀青：</strong> 接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。</li>
-            <li><strong>揉捻：</strong> 经过杀青后，茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。</li>
-            <li><strong>晒青：</strong> 黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。</li>
-            <li><strong>干燥：</strong> 最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。</li>
+            <li><strong>{{$t('采青')}}：</strong> {{$t("黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。")}}</li>
+            <li><strong>{{$t('萎凋')}}：</strong> {{$t("采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。")}}</li>
+            <li><strong>{{$t('杀青')}}：</strong> {{$t("接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。")}}</li>
+            <li><strong>{{$t('揉捻')}}：</strong> {{$t("经过杀青后，茶叶会进行揉捻，这有助于形成茶叶特定的形状并释放茶叶的香气。")}}</li>
+            <li><strong>{{$t('晒青')}}：</strong> {{$t("黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。")}}</li>
+            <li><strong>{{$t('干燥')}}：</strong> {{$t("最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。")}}</li>
           </ul>
         </div>
         </div>
@@ -106,16 +106,16 @@
             <p class="caption" style="padding:0;">发酵工艺</p>
             <p class="sub-title" style="padding: 0;line-height: 12px;margin-top: 4px;">FERMENTATION TECHNOLOGY</p>
             <div class="sub-caption" style="padding: 0;padding-top: 12px;text-indent: 2em;max-height:20vh;">
-              茶叶的发酵实际上是茶叶细胞中茶多酚和多酚氧化酶相互作用的过程。发酵的程度不同，影响了茶叶的颜色、味道、香气和汤色等特征，从而将茶叶分为六大类。
+              {{$t('茶叶的发酵实际上是茶叶细胞中茶多酚和多酚氧化酶相互作用的过程。发酵的程度不同，影响了茶叶的颜色、味道、香气和汤色等特征，从而将茶叶分为六大类。')}}
             </div>
           </div>
           <!-- 图表区域 -->
           <div class="right-chart-container" style="display:flex;">
             <!-- 左边的图例区域 -->
             <div class="fermentation-legend-container">
-              <p>低</p>
+              <p>{{$t('低')}}</p>
               <div class="fermentation-legend"></div>
-              <p>高</p>
+              <p>{{$t('高')}}</p>
             </div>
             <!-- 右边的主体区域 -->
             <div class="chart-containter">
@@ -149,23 +149,23 @@
           <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
             <template>
               <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-                <t-step-item title="采青" content="收集茶叶原料">
+                <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
                 </t-step-item>
-                <t-step-item title="杀青" content="保留颜色香气">
+                <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
                   <template slot="extra" v-if="current === 1">
 
                   </template>
                 </t-step-item>
-                <t-step-item title="揉捻" content="形成特定形状">
+                <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
                   <template slot="extra" v-if="current === 2">
 
                   </template>
                 </t-step-item>
-                <t-step-item title="烘青" content="高温稳定品质">
+                <t-step-item :title="$t('烘青')" :content="$t('高温稳定品质')">
                   <template slot="extra" v-if="current === 3">
                   </template>
                 </t-step-item>
-                <t-step-item title="干燥" content="完全除去水分">
+                <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
                   <template slot="extra" v-if="current === 4">
                   </template>
                 </t-step-item>
@@ -175,17 +175,17 @@
         <div v-if="showImage2" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-              <t-step-item title="采青" content="收集茶叶原料">
+              <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
                 <template slot="extra" v-if="current === 0">
 
                 </template>
               </t-step-item>
-              <t-step-item title="晾干" content="自然风干茶叶">
+              <t-step-item :title="$t('晾干')" :content="$t('自然风干茶叶')">
                 <template slot="extra" v-if="current === 1">
 
                 </template>
               </t-step-item>
-              <t-step-item title="干燥" content="完全除去水分">
+              <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
@@ -197,23 +197,23 @@
         <div v-if="showImage3" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-              <t-step-item title="采青" content="收集茶叶原料">
+              <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
               </t-step-item>
-              <t-step-item title="萎凋" content="失水软化叶片">
+              <t-step-item :title="$t('萎凋')" :content="$t('失水软化叶片')">
                 <template slot="extra" v-if="current === 1">
 
                 </template>
               </t-step-item>
-              <t-step-item title="杀青" content="保留颜色香气">
+              <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
               </t-step-item>
-              <t-step-item title="烘青" content="高温稳定品质">
+              <t-step-item :title="$t('烘青')" :content="$t('高温稳定品质')">
                 <template slot="extra" v-if="current === 3">
                 </template>
               </t-step-item>
-              <t-step-item title="干燥" content="完全除去水分">
+              <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
                 <template slot="extra" v-if="current === 4">
                 </template>
               </t-step-item>
@@ -224,27 +224,27 @@
         <div v-if="showImage4" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-              <t-step-item title="采青" content="收集茶叶原料">
+              <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
                 <template slot="extra" v-if="current === 0">
 
                 </template>
               </t-step-item>
-              <t-step-item title="摇青" content="破碎叶缘释汁液">
+              <t-step-item :title="$t('摇青')" :content="$t('破碎叶缘释汁液')">
                 <template slot="extra" v-if="current === 1">
 
                 </template>
               </t-step-item>
-              <t-step-item title="杀青" content="保留颜色香气">
+              <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
               </t-step-item>
-              <t-step-item title="揉捻" content="形成特定形状">
+              <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
               </t-step-item>.
-              <t-step-item title="干燥" content="完全除去水分">
+              <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
@@ -256,23 +256,23 @@
         <div v-if="showImage5" style="height: 50%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-              <t-step-item title="采青" content="收集茶叶原料">
+              <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
               </t-step-item>
-              <t-step-item title="萎凋" content="失水软化叶片">
+              <t-step-item :title="$t('萎凋')" :content="$t('失水软化叶片')">
                 <template slot="extra" v-if="current === 1">
 
                 </template>
               </t-step-item>
-              <t-step-item title="揉捻" content="形成特定形状">
+              <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
               </t-step-item>
-              <t-step-item title="氧化发酵" content="空气中发酵茶叶">
+              <t-step-item :title="$t('氧化发酵')" :content="$t('空气中发酵茶叶')">
                 <template slot="extra" v-if="current === 3">
                 </template>
               </t-step-item>
-              <t-step-item title="干燥" content="完全除去水分">
+              <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
                 <template slot="extra" v-if="current === 4">
                 </template>
               </t-step-item>
@@ -283,31 +283,31 @@
         <div v-if="showImage6" style="height: 50%;width: 106%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
-              <t-step-item title="采青" content="收集茶叶原料">
+              <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
                 <template slot="extra" >
                 </template>
               </t-step-item>
-              <t-step-item title="萎凋" content="失水软化叶片">
+              <t-step-item :title="$t('萎凋')" :content="$t('失水软化叶片')">
                 <template slot="extra" v-if="current === 1">
 
                 </template>
               </t-step-item>
-              <t-step-item title="杀青" content="保留颜色香气">
+              <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
                 <template slot="extra" v-if="current === 2">
 
                 </template>
               </t-step-item>
-              <t-step-item title="揉捻" content="形成特定形状">
+              <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
                 <template slot="extra" v-if="current === 3">
 
                 </template>
               </t-step-item>
-              <t-step-item title="晒青" content="自然晾干茶叶">
+              <t-step-item :title="$t('晒青')" :content="$t('自然晾干茶叶')">
                 <template slot="extra" v-if="current === 4">
 
                 </template>
               </t-step-item>
-              <t-step-item title="干燥" content="完全除去水分">
+              <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
                 <template slot="extra" v-if="current === 5">
 
                 </template>
@@ -341,14 +341,14 @@
           <img class="image" src="../assets/img/producetea13.png" alt="Image 1" @click="showGraph(1)">
         </div>
         <div class="text-container">
-          <p class="slanted-text">西湖龙井</p>
-          <p class="slanted-text">碧螺春</p>
-          <p class="slanted-text">黄山毛峰</p>
-          <p class="slanted-text">玉露</p>
-          <p class="slanted-text">滇青</p>
+          <p class="slanted-text">{{$t('西湖龙井')}}</p>
+          <p class="slanted-text">{{$t('碧螺春')}}</p>
+          <p class="slanted-text">{{$t('黄山毛峰')}}</p>
+          <p class="slanted-text">{{$t('玉露')}}</p>
+          <p class="slanted-text">{{$t('滇青')}}</p>
           <p
-            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            绿茶
+            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-size: 20px;">
+            {{$t('绿茶')}}
           </p>
         </div>
 
@@ -368,14 +368,14 @@
           <img class="image" src="../assets/img/producetea14.png" alt="Image 2" @click="showGraph(2)">
         </div>
         <div class="text-container">
-          <p class="slanted-text">白毫银针</p>
-          <p class="slanted-text">白牡丹</p>
-          <p class="slanted-text">寿眉</p>
-          <p class="slanted-text">贡眉</p>
-          <p class="slanted-text">黄山白茶</p>
+          <p class="slanted-text">{{$t('白毫银针')}}</p>
+          <p class="slanted-text">{{$t('白牡丹')}}</p>
+          <p class="slanted-text">{{$t('寿眉')}}</p>
+          <p class="slanted-text">{{$t('贡眉')}}</p>
+          <p class="slanted-text">{{$t('黄山白茶')}}</p>
           <p
-            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            白茶
+            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-size: 20px;">
+            {{$t('白茶')}}
           </p>
         </div>
 
@@ -395,14 +395,14 @@
           <img class="image" src="../assets/img/producetea15.png" alt="Image 3" @click="showGraph(3)">
         </div>
         <div class="text-container">
-          <p class="slanted-text">海马宫茶</p>
-          <p class="slanted-text">蒙顶黄芽</p>
-          <p class="slanted-text">霍山黄芽</p>
-          <p class="slanted-text">广东大叶青</p>
-          <p class="slanted-text">北港毛尖</p>
+          <p class="slanted-text">{{$t('海马宫茶')}}</p>
+          <p class="slanted-text">{{$t('蒙顶黄芽')}}</p>
+          <p class="slanted-text">{{$t('霍山黄芽')}}</p>
+          <p class="slanted-text">{{$t('广东大叶青')}}</p>
+          <p class="slanted-text">{{$t('北港毛尖')}}</p>
           <p
-            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            黄茶
+            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-size: 20px;">
+            {{$t('黄茶')}}
           </p>
         </div>
 
@@ -422,14 +422,14 @@
           <img class="image" src="../assets/img/producetea16.png" alt="Image 4" @click="showGraph(4)">
         </div>
         <div class="text-container">
-          <p class="slanted-text">铁观音</p>
-          <p class="slanted-text">大红袍</p>
-          <p class="slanted-text">肉桂</p>
-          <p class="slanted-text">水仙</p>
-          <p class="slanted-text">北斗</p>
+          <p class="slanted-text">{{$t('铁观音')}}</p>
+          <p class="slanted-text">{{$t('大红袍')}}</p>
+          <p class="slanted-text">{{$t('肉桂')}}</p>
+          <p class="slanted-text">{{$t('水仙')}}</p>
+          <p class="slanted-text">{{$t('北斗')}}</p>
           <p
-            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            乌龙茶
+            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-size: 20px;">
+            {{$t('乌龙茶')}}
           </p>
         </div>
 
@@ -449,14 +449,14 @@
           <img class="image" src="../assets/img/producetea17.png" alt="Image 5" @click="showGraph(5)">
         </div>
         <div class="text-container">
-          <p class="slanted-text">坦洋工夫</p>
-          <p class="slanted-text">祁门红茶</p>
-          <p class="slanted-text">滇红</p>
-          <p class="slanted-text">正山小种</p>
-          <p class="slanted-text">金骏眉</p>
+          <p class="slanted-text">{{$t('坦洋工夫')}}</p>
+          <p class="slanted-text">{{$t('祁门红茶')}}</p>
+          <p class="slanted-text">{{$t('滇红')}}</p>
+          <p class="slanted-text">{{$t('正山小种')}}</p>
+          <p class="slanted-text">{{$t('金骏眉')}}</p>
           <p
-            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            红茶
+            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-size: 20px;">
+            {{$t('红茶')}}
           </p>
         </div>
 
@@ -476,14 +476,14 @@
           <img class="image" src="../assets/img/producetea18.png" alt="Image 6" @click="showGraph(6)">
         </div>
         <div class="text-container">
-          <p class="slanted-text">安化黑茶</p>
-          <p class="slanted-text">普洱茶</p>
-          <p class="slanted-text">六堡茶</p>
-          <p class="slanted-text">泾阳茯砖茶</p>
-          <p class="slanted-text">千两茶</p>
+          <p class="slanted-text">{{$t('安化黑茶')}}</p>
+          <p class="slanted-text">{{$t('普洱茶')}}</p>
+          <p class="slanted-text">{{$t('六堡茶')}}</p>
+          <p class="slanted-text">{{$t('泾阳茯砖茶')}}</p>
+          <p class="slanted-text">{{$t('千两茶')}}</p>
           <p
-            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-family: serif;font-weight: bold;font-size: 20px;">
-            黑茶
+            style=" right: 20%;top: 115%;width:100%;display: block;position: absolute;font-size: 20px;">
+            {{$t('黑茶')}}
           </p>
         </div>
       </div>
@@ -496,51 +496,51 @@
 
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea1.png" alt="Image 1" class="bottom-image">
-          <p class="text">采青</p>
+          <p class="text">{{$t('采青')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea2.png" alt="Image 2" class="bottom-image">
-          <p class="text">萎凋</p>
+          <p class="text">{{$t('萎凋')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea3.png" alt="Image 3" class="bottom-image">
-          <p class="text">摇青</p>
+          <p class="text">{{$t('摇青')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea4.png" alt="Image 4" class="bottom-image">
-          <p class="text">杀青</p>
+          <p class="text">{{$t('杀青')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea5.png" alt="Image 5" class="bottom-image">
-          <p class="text">揉捻</p>
+          <p class="text">{{$t('揉捻')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea6.png" alt="Image 6" class="bottom-image">
-          <p class="text">氧化发酵</p>
+          <p class="text">{{$t('氧化发酵')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea7.png" alt="Image 7" class="bottom-image">
-          <p class="text">晒青</p>
+          <p class="text">{{$t('晒青')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea8.png" alt="Image 8" class="bottom-image">
-          <p class="text">渥堆</p>
+          <p class="text">{{$t('渥堆')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea9.png" alt="Image 9" class="bottom-image">
-          <p class="text">晾干</p>
+          <p class="text">{{$t('晾干')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea10.png" alt="Image 10" class="bottom-image">
-          <p class="text">闷黄</p>
+          <p class="text">{{$t('闷黄')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea11.png" alt="Image 11" class="bottom-image">
-          <p class="text">烘青</p>
+          <p class="text">{{$t('烘青')}}</p>
         </div>
         <div style="flex: 1; box-sizing: border-box;">
           <img src="../assets/img/producetea12.png" alt="Image 12" class="bottom-image">
-          <p class="text">干燥</p>
+          <p class="text">{{$t('干燥')}}</p>
         </div>
       </div>
 
@@ -566,45 +566,51 @@ export default {
       showImage4: false,
       showImage5: false,
       showImage6: false,
-      fermentation_data:[
+
+    };
+  },
+  computed:{
+    fermentation_data(){
+      return [
         {
           img:require('../assets/img/producetea13.png'),
-          type:'绿茶发酵',
+          type:this.$t('绿茶发酵'),
           percentage:2.5,
           percentage_text:'0%~5%'
         },
         {
           img:require('../assets/img/producetea14.png'),
-          type:'白茶发酵',
+          type:this.$t('白茶发酵'),
           percentage:7.5,
           percentage_text:'0%~10%'
         },
         {
           img:require('../assets/img/producetea15.png'),
-          type:'黄茶发酵',
+          type:this.$t('黄茶发酵'),
           percentage:15,
           percentage_text:'10%~20%'
         },
         {
           img:require('../assets/img/producetea16.png'),
-          type:'乌龙茶发酵',
+          type:this.$t('乌龙茶发酵'),
           percentage:50,
           percentage_text:'30%~60%'
         },
         {
           img:require('../assets/img/producetea17.png'),
-          type:'红茶发酵',
+          type:this.$t('红茶发酵'),
           percentage:85,
           percentage_text:'80%~90%'
         },
         {
           img:require('../assets/img/producetea18.png'),
-          type:'黑茶发酵',
+          type:this.$t('黑茶发酵'),
           percentage:95,
           percentage_text:'85%~100%'
         },
       ]
-    };
+    }
+
   },
   mounted() {
     this.initGraph1()
@@ -1762,8 +1768,7 @@ export default {
 }
 
 .text {
-  font-size: 16px;
-  font-family: serif;
+  font-size: 14px;
 }
 
 .bottom-image {
@@ -1829,7 +1834,7 @@ export default {
   font-weight: 500;
   line-height: 1.5em;
   color: rgba(50, 132, 110, 0.5);
-  max-height:calc(30vh - 70px);
+  max-height:calc(30vh - 90px);
   overflow:auto;
 }
 

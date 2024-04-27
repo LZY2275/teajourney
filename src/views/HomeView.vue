@@ -1,7 +1,7 @@
 <template>
   <div class="global" >
     <IntroOverlay></IntroOverlay>
-    <div style="padding-top: 5.17578vh;padding-left: 5.347vw;display: flex;">
+    <div style="padding:5.17578vh 5.347vw 0 5.347vw;display: flex;align-items: center;">
       <div style="display: flex;">
         <div class="top">
           <p>{{ top_text1 }}</p>
@@ -10,7 +10,14 @@
           <p>{{ top_text2 }}</p>
         </div>
       </div>
-      <div style="display: flex;margin-left: 59.26vw;">
+      <div style="flex:1"></div>
+      <div style="margin-right: 25px;">
+        <t-popup :content="$t('切换语言')">
+          <t-icon name="earth" color="white" size="24" style="cursor: pointer;" @click="switchLanguage">
+          </t-icon>
+        </t-popup>
+      </div>
+      <div style="display: flex;">
         <div class="top">
           <p>{{ top_text3 }}</p>
         </div>
@@ -46,6 +53,18 @@ export default {
       titleen:'Tea Journey',
     };
   },
+  methods:{
+    switchLanguage(){
+      var curr_language = this.$i18n.locale
+      console.log('cur:',curr_language);
+      if(curr_language == 'en'){
+        this.$i18n.locale = 'zh'
+      }else if (curr_language == 'zh'){
+        this.$i18n.locale = 'en'
+      }
+      console.log(this.$i18n.locale);
+    },
+  },
   components:{
     IntroOverlay
   }
@@ -53,10 +72,10 @@ export default {
 </script>
 
 <style scoped>
-  @font-face {  
-    font-family: "HanaMinA";  
-    src: url("../../public/HanaMinA.ttf") format("truetype"), 
-  } 
+  @font-face {
+    font-family: "HanaMinA";
+    src: url("../../public/HanaMinA.ttf") format("truetype"),
+  }
   .top{
     font-size: 16px;
     font-weight: 700;

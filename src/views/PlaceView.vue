@@ -2,59 +2,53 @@
 
     <!--产地-->
     <div style="background-color: #FFFEF2;z-index: 1;width: calc(100vw - 300px); height: 100vh;position: absolute;">
-        <t-dialog
+        <!-- <t-dialog
             theme="info"
-            header="提示"
-            body="由于该省份不是主要产茶省份，暂无数据！"
+            :header="$t('提示')"
+            :body="$t('由于该省份不是主要产茶省份，暂无数据！')"
             :visible.sync="visible"
             :onClose="close1"
             @confirm="onConfirm"
             :cancelBtn="null"
-            />
+        /> -->
         <!-- 上方标题区域 -->
         <div style="display: flex;height:136px;">
-            <div class="title" style="width: 200px;white-space: nowrap;">中国茶叶产地</div>
+            <div class="title" style="white-space: nowrap;">{{$t("中国茶叶产地")}}</div>
             <t-divider layout="vertical" style="height:90%"></t-divider>
             <div style="width:calc(100vw - 500px) ;height: 136px;white-space: normal;padding: 0 36px 0 0;text-align: left;display: flex;align-items: center">
                 <div class="card-container" v-show="GreenTea">
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">绿茶产地：</p>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{$t('绿茶产地')}}：</p>
                     <p class="textsub" >
-                        绿茶在中国有许多主要产地，其中之一是浙江省的西湖龙井茶产区。西湖龙井茶产区位于浙江省杭州市西湖区，是中国绿茶的代表产地之一。这里的茶园环境优美，地理位置独特，享有得天独厚的自然条件。
-                        除此之外，西湖龙井茶产区还因其悠久的茶史和精湛的制茶工艺而闻名。当地的茶农们世代相传着制茶的技艺，他们手工采摘、炒制的技艺独具匠心，使得西湖龙井茶具有独特的清香和口感，倍受国内外茶客的喜爱。这种传统的制茶工艺也被列为中国非物质文化遗产，体现了中国茶文化的深厚底蕴和博大精深。
+                        {{$t('绿茶在中国有许多主要产地，其中之一是浙江省的西湖龙井茶产区。西湖龙井茶产区位于浙江省杭州市西湖区，是中国绿茶的代表产地之一。这里的茶园环境优美，地理位置独特，享有得天独厚的自然条件。除此之外，西湖龙井茶产区还因其悠久的茶史和精湛的制茶工艺而闻名。当地的茶农们世代相传着制茶的技艺，他们手工采摘、炒制的技艺独具匠心，使得西湖龙井茶具有独特的清香和口感，倍受国内外茶客的喜爱。这种传统的制茶工艺也被列为中国非物质文化遗产，体现了中国茶文化的深厚底蕴和博大精深。')}}
                     </p>
                 </div>
                 <div class="card-container" v-show="WhiteTea">
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">白茶产地：</p>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{$t('白茶产地')}}：</p>
                     <p class="textsub">
-                        福建省福州市和南平市以及江西省赣州市等地，是中国白茶的主要产区。白茶以嫩芽为原料，制作工艺简单，历史悠久，被誉为"茶中贵妃"。福建省福州市的白茶种植历史悠久，其产的白茶具有独特的香气和口感，是著名的白茶产地之一。
-                        这些地区的白茶还因其丰富的品种而备受推崇。白茶的制作工艺简单，但由于生长环境和采摘工艺的不同，不同地区的白茶呈现出各具特色的口感和香气。福建省福州市的白茶种植历史悠久，其主要品种包括白牡丹、白毫银针等，每一种都有其独特的风味和品质特点。这些品种不仅受到国内茶客的喜爱，也在国际茶市场上享有盛名，成为中国茶文化的重要代表之一。
+                        {{$t('福建省福州市和南平市以及江西省赣州市等地，是中国白茶的主要产区。白茶以嫩芽为原料，制作工艺简单，历史悠久，被誉为“茶中贵妃”。福建省福州市的白茶种植历史悠久，其产的白茶具有独特的香气和口感，是著名的白茶产地之一。这些地区的白茶还因其丰富的品种而备受推崇。白茶的制作工艺简单，但由于生长环境和采摘工艺的不同，不同地区的白茶呈现出各具特色的口感和香气。福建省福州市的白茶种植历史悠久，其主要品种包括白牡丹、白毫银针等，每一种都有其独特的风味和品质特点。这些品种不仅受到国内茶客的喜爱，也在国际茶市场上享有盛名，成为中国茶文化的重要代表之一。')}}
                     </p>
                 </div>
                 <div class="card-container" v-show="YellowTea">
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">黄茶产地：</p>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{$t('黄茶产地')}}：</p>
                     <p class="textsub" >
-                        安徽省的歙县、黄山市、屯溪市等地是黄茶的主要产区之一。黄茶制作工艺独特，包括晾青、杀青、拼配、炒青等多个环节，其中以晾青最为特殊，是黄茶与其他茶类的显著区别。黄茶具有独特的香气和口感，被誉为"中华名茶"之一。
-                        这些地区的丰富降水量、充足的日照以及独特的土壤成分为黄茶的生长提供了良好的条件，使得所产的黄茶香气浓郁、口感鲜爽</p>
+                        {{$t('安徽省的歙县、黄山市、屯溪市等地是黄茶的主要产区之一。黄茶制作工艺独特，包括晾青、杀青、拼配、炒青等多个环节，其中以晾青最为特殊，是黄茶与其他茶类的显著区别。黄茶具有独特的香气和口感，被誉为“中华名茶”之一。这些地区的丰富降水量、充足的日照以及独特的土壤成分为黄茶的生长提供了良好的条件，使得所产的黄茶香气浓郁、口感鲜爽')}}</p>
                 </div>
                 <div class="card-container" v-show="oolong">
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">乌龙茶产地：</p>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{$t('乌龙茶产地')}}：</p>
                     <p class="textsub" >
-                        福建省的武夷山、安溪、南安等地是乌龙茶的著名产区之一。乌龙茶是一种半发酵茶，制作工艺介于绿茶和红茶之间，具有独特的清香和鲜爽口感。乌龙茶口感鲜爽，香气芬芳，被誉为"茶中王者"，深受茶叶爱好者的喜爱。
-                        这些地区地形多样，气候适宜，海拔高低起伏，雨量充沛，土壤肥沃，为乌龙茶的生长提供了得天独厚的条件
+                        {{$t('福建省的武夷山、安溪、南安等地是乌龙茶的著名产区之一。乌龙茶是一种半发酵茶，制作工艺介于绿茶和红茶之间，具有独特的清香和鲜爽口感。乌龙茶口感鲜爽，香气芬芳，被誉为“茶中王者”，深受茶叶爱好者的喜爱。这些地区地形多样，气候适宜，海拔高低起伏，雨量充沛，土壤肥沃，为乌龙茶的生长提供了得天独厚的条件')}}
                     </p>
                 </div>
                 <div class="card-container" v-show="RedTea">
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">红茶产地：</p>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{$t('红茶产地')}}：</p>
                     <p class="textsub" >
-                        红茶主要产地包括福建、云南、湖南、江西等地。福建省的红茶制作工艺精湛，尤以福州、武夷山、安溪、南平等地最为著名。云南省的滇红茶以其丰富的花香和鲜爽的口感而闻名，湖南的祁阳红茶具有独特的甜香和鲜爽的口感，江西的红茶以其浓厚的香气和醇和的口感而受到广泛欢迎。
-                        福建、云南、湖南、江西等地区的多样地形、丰富降水和充足日照，为茶树的生长提供了理想的生态环境
+                        {{$t('红茶主要产地包括福建、云南、湖南、江西等地。福建省的红茶制作工艺精湛，尤以福州、武夷山、安溪、南平等地最为著名。云南省的滇红茶以其丰富的花香和鲜爽的口感而闻名，湖南的祁阳红茶具有独特的甜香和鲜爽的口感，江西的红茶以其浓厚的香气和醇和的口感而受到广泛欢迎。福建、云南、湖南、江西等地区的多样地形、丰富降水和充足日照，为茶树的生长提供了理想的生态环境')}}
                     </p>
                 </div>
                 <div class="card-container"  v-show="BlackTea">
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">黑茶产地：</p>
+                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{$t('黑茶产地')}}：</p>
                     <p class="textsub">
-                        云南省的普洱茶是最为著名的黑茶之一，其制作工艺历史悠久，具有独特的陈香和醇厚口感。广西的六堡茶和湖南的安化黑茶也是知名的黑茶品种，它们的口感丰富深邃，带有特有的陈香和木香味。黑茶的制作工艺独特，使得茶叶呈现出深红至黑褐色的色泽，香气独特，口感浓郁醇厚。
-                        云南省的普洱茶、广西的六堡茶和湖南的安化黑茶等地区，都位于中国南方，气候湿润，雨量充沛，阳光充足，这些条件有利于茶树的生长
+                        {{$t('云南省的普洱茶是最为著名的黑茶之一，其制作工艺历史悠久，具有独特的陈香和醇厚口感。广西的六堡茶和湖南的安化黑茶也是知名的黑茶品种，它们的口感丰富深邃，带有特有的陈香和木香味。黑茶的制作工艺独特，使得茶叶呈现出深红至黑褐色的色泽，香气独特，口感浓郁醇厚。云南省的普洱茶、广西的六堡茶和湖南的安化黑茶等地区，都位于中国南方，气候湿润，雨量充沛，阳光充足，这些条件有利于茶树的生长')}}
                     </p>
                 </div>
             </div>
@@ -95,71 +89,70 @@
                     </p>
                 </div>
                 <-->
-                <!--折线图-->
-                <div style="margin-top: 65vh;">
-                    <p class="title-sub">主要产区种植面积</p>
-                    <div style=" position: relative;z-index: 1;">
-                        <div v-show="currentProvince == ''" class="empty-box">Tips:<br>点击省份查看省份种植面积变化折线图。<br>点击右上角的茶类别切换视图~</div>
-                    </div>
-                    <canvas ref="lineChart" style="margin-right: 2vw;z-index: 99;position: relative;;"></canvas>
-                </div>
-
-
-            </div>
-            <!--六个图标-->
-            <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
-                <div style="display: flex; align-items: center; cursor: pointer;" @click="highlightProvince('绿茶')">
-                    <img src="../assets/img/producetea13.jpg" alt="" style="width: 36px; height: 36px; margin-left: 10px;">
-                    <div class="tea-type-text">绿茶</div>
-                </div>
-                <div class="label-container"
-                    @click="highlightProvince('白茶')">
-                    <img src="../assets/img/producetea14.jpg" alt=""
-                        style="width: 36px; height: 36px; margin-left: 10px;">
-                    <div class="tea-type-text">
-                        白茶</div>
-                </div>
-                <div class="label-container"
-                    @click="highlightProvince('黄茶')">
-                    <img src="../assets/img/producetea15.jpg" alt=""
-                        style="width: 36px; height: 36px; margin-left: 10px;">
-                    <div
-                    class="tea-type-text">
-                        黄茶</div>
-                </div>
-                <div class="label-container"
-                    @click="highlightProvince('乌龙茶')">
-                    <img src="../assets/img/producetea16.jpg" alt=""
-                        style="width: 36px; height: 36px; margin-left: 10px;">
-                    <div
-                    class="tea-type-text">
-                        乌龙茶</div>
-                </div>
-                <div class="label-container"
-                    @click="highlightProvince('红茶')">
-                    <img src="../assets/img/producetea17.jpg" alt=""
-                        style="width: 36px; height: 36px; margin-left: 10px;">
-                    <div
-                    class="tea-type-text">
-                        红茶</div>
-                </div>
-                <div class="label-container"
-                    @click="highlightProvince('黑茶')">
-                    <img src="../assets/img/producetea18.jpg" alt=""
-                        style="width: 36px; height: 36px; margin-left: 10px;">
-                    <div
-                    class="tea-type-text">
-                        黑茶</div>
-                </div>
-            </div>
-            <!--中国地图-->
-            <div style="flex: 1;">
-                <div id="china-map" style="height: 100vh;width: 100%;position: relative;top: -80px;left: -160px;z-index: 1;"></div>
-
-            </div>
-
 
         </div>
+
+        <!--折线图-->
+        <div style="position: absolute;right: 74px;bottom: 17px;">
+            <p class="title-sub">{{$t('主要产区种植面积')}}</p>
+            <div style=" position: relative;z-index: 1;">
+                <div v-if="currentProvince == ''" class="empty-box">Tips:<br>{{$t('点击省份查看省份种植面积变化折线图。')}}<br>{{$t('点击右上角的茶类别切换视图')}}~</div>
+            </div>
+            <canvas id="lineChart" ref="lineChart" style="width: 35vh;height: 35vh;"></canvas>
+        </div>
+
+        <!--六个图标-->
+        <div style="padding: 10px;position: absolute;z-index: 99;right: 32px;">
+            <div style="display: flex; align-items: center; cursor: pointer;" @click="highlightProvince('绿茶')">
+                <img src="../assets/img/producetea13.jpg" alt="" style="width: 36px; height: 36px; margin-left: 10px;">
+                <div class="tea-type-text">{{$t('绿茶')}}</div>
+            </div>
+            <div class="label-container"
+                @click="highlightProvince('白茶')">
+                <img src="../assets/img/producetea14.jpg" alt=""
+                    style="width: 36px; height: 36px; margin-left: 10px;">
+                <div class="tea-type-text">
+                    {{$t('白茶')}}</div>
+            </div>
+            <div class="label-container"
+                @click="highlightProvince('黄茶')">
+                <img src="../assets/img/producetea15.jpg" alt=""
+                    style="width: 36px; height: 36px; margin-left: 10px;">
+                <div
+                class="tea-type-text">
+                    {{$t('黄茶')}}</div>
+            </div>
+            <div class="label-container"
+                @click="highlightProvince('乌龙茶')">
+                <img src="../assets/img/producetea16.jpg" alt=""
+                    style="width: 36px; height: 36px; margin-left: 10px;">
+                <div
+                class="tea-type-text">
+                    {{$t('乌龙茶')}}</div>
+            </div>
+            <div class="label-container"
+                @click="highlightProvince('红茶')">
+                <img src="../assets/img/producetea17.jpg" alt=""
+                    style="width: 36px; height: 36px; margin-left: 10px;">
+                <div
+                class="tea-type-text">
+                    {{$t('红茶')}}</div>
+            </div>
+            <div class="label-container"
+                @click="highlightProvince('黑茶')">
+                <img src="../assets/img/producetea18.jpg" alt=""
+                    style="width: 36px; height: 36px; margin-left: 10px;">
+                <div
+                class="tea-type-text">
+                    {{$t('黑茶')}}</div>
+            </div>
+        </div>
+
+        <!--中国地图-->
+        <div style="flex: 1;">
+            <div id="china-map"  style="height: 100vh;width: 100%;position: absolute;top: 60px;left: -157px;"></div>
+        </div>
+    </div>
 
 
 </template>
@@ -169,6 +162,7 @@ import Vue from 'vue';
 import * as d3 from 'd3';
 import * as echarts from "echarts/core";
 import Chart from 'chart.js/auto';
+import { MessagePlugin } from 'tdesign-vue';
 import "../assets/js/china.js";
 import chinaMap from '@/assets/json/china.json'
 import { HelpCircleIcon } from "tdesign-icons-vue";
@@ -176,6 +170,8 @@ Vue.prototype.echarts = echarts;
 export default {
     data() {
         return {
+            window_width:0,
+            window_height:0,
             GreenTea: true,
             WhiteTea: false,
             YellowTea: false,
@@ -183,6 +179,8 @@ export default {
             RedTea: false,
             BlackTea: false,
             visible:false,
+            myChart:null,
+            map_options:[],
             currentProvince:'',
             guangdongData: {
                 labels: ['2018', '2019', '2020', '2021', '2022'],
@@ -364,10 +362,13 @@ export default {
                     data: [17.2, 18.19, 17.92, 18, 17.4]
                 }]
             },
+
+            canvas :null,
         }
 
     },
     mounted() {
+        this.canvas = this.$refs.lineChart
         echarts.registerMap('china', { geoJSON: chinaMap })
         this.initChinaMap()
         window.addEventListener('resize', this.handleResize); //监听窗口大小改变
@@ -380,6 +381,18 @@ export default {
         onConfirm(){
             this.visible = false
         },
+        handleResize(){
+            // this.updateMapOption()
+            this.myChart.resize();
+            console.log(this.currentProvince);
+            if(this.currentProvince != ''){
+                this.renderLineChart(this.currentProvince)
+            }
+
+            this.window_width = window.innerWidth;
+            this.window_height = window.innerHeight;
+            // console.log(this.window_width,this.window_height);
+        },
         initChinaMap() {
             this.myChart = echarts.init(document.getElementById('china-map'))
             this.updateMapOption()
@@ -390,7 +403,8 @@ export default {
                 ||provinceName === '吉林'||provinceName === '黑龙江'||provinceName === '上海'||provinceName === '西藏'||provinceName === '青海'
                 ||provinceName === '宁夏'||provinceName === '新疆'||provinceName === '台湾'||provinceName === '南海诸岛')
                 {
-                    this.visible = true;
+                    // this.visible = true;
+                    MessagePlugin.info(this.$t('由于该省份不是主要产茶省份，暂无数据！'));
 
                 }
                 else
@@ -481,11 +495,13 @@ export default {
                 this.lineChart.destroy();
             }
             // 获取 canvas 元素
-    const canvas = this.$refs.lineChart;
-    // 设置 canvas 的宽高
-    canvas.width = 22 * window.innerWidth / 100; // 根据视口宽度计算宽度
-    canvas.height = 30 * window.innerHeight / 100; // 根据视口高度计算高度
-            this.lineChart = new Chart(this.$refs.lineChart.getContext('2d'), {
+            // const canvas = this.$refs.lineChart;
+            var canvas_el = document.getElementById('lineChart')
+            // console.log("windowHeight",this.window_height);
+            // 设置 canvas 的宽高
+            // canvas.width = this.window_height * 0.35; // 根据视口宽度计算宽度
+            // canvas.height = this.window_height * 0.35; // 根据视口高度计算高度
+            this.lineChart = new Chart(canvas_el.getContext('2d'), {
                 type: 'line',
                 data: chartData,
                 options: {
@@ -504,7 +520,7 @@ export default {
             });
         },
         updateMapOption() {
-            const option = {
+            var option = {
                 series: [
                     {
                         name: '中国',
@@ -570,7 +586,7 @@ export default {
                     }
                 ]
             };
-            const highlightedProvinces = ['河南', '贵州', '江西', '安徽', '浙江', '江苏', '四川', '陕西', '湖南', '湖北', '广西', '福建'];
+            var highlightedProvinces = ['河南', '贵州', '江西', '安徽', '浙江', '江苏', '四川', '陕西', '湖南', '湖北', '广西', '福建'];
             option.series[0].data = highlightedProvinces.map(province => {
                 return {
                     name: province,
@@ -599,6 +615,7 @@ export default {
                     }
                 };
             });
+            this.map_options = option
             this.myChart.setOption(option);
 
         },
@@ -864,7 +881,6 @@ export default {
     text-indent:2em;
     line-height:17px;
     font-size:14px;
-    width: 42vw;
 }
 
 .textsubtitle{
@@ -879,7 +895,6 @@ export default {
     font-size: 18px;
     font-weight: bold;
     color: var(--td-brand-color-6);
-    margin-left: -4vw;
 }
 
 .line {
@@ -916,13 +931,12 @@ export default {
     margin-top: 6px;
   }
   .empty-box{
-    margin-left: -2vw;
     color:var(--td-brand-color-6);
     font-size: small;
-     width: 100%;
-     height: 28vh;
-     background-color: var(--td-brand-color-1);
-     position: absolute;
+    width: 35vh;
+    height: 35vh;
+    background-color: var(--td-brand-color-1);
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
