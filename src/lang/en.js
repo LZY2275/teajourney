@@ -358,7 +358,15 @@ export default{
     '由于该省份不是主要产茶省份，暂无数据！':'As this province is not a major tea producing province, there is no data!',
     "主要产区种植面积":"Planting area in major producing areas",
     "点击省份查看省份种植面积变化折线图。":"Click on the province to view the line chart of planting area change in the province.",
-    "点击右上角的茶类别切换视图":"Click on the tea category in the top right corner to switch to the view"
+    "点击右上角的茶类别切换视图":"Click on the tea category in the top right corner to switch to the view",
 
+    "2022年":"2022",
+    "2021年":"2021",
+    "2020年":"2020",
+    "2019年":"2019",
+    "2018年":"2018",
 
+    "平均数":"Average",
+    "中位数":"Median",
+    "方差":"Variance",
 }
