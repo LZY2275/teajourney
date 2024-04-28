@@ -425,7 +425,7 @@ export default{
 
     "平均数":"Average",
     "中位数":"Median",
-"方差":"Variance",
+    "方差":"Variance",
 
 
     "鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。":"When the temperature of the tea soup drops below 45°C, take 10ml-15ml and put it into your mouth, let the tea soup contact all parts of the mouth, and then swallow it slowly.",
@@ -616,5 +616,5 @@ export default{
     "熟果香":"Ripe fruit aroma",
     "烤番薯香":"Roasted sweet potato",
     "陈香":"Chen Xiang",
-
 }
+
