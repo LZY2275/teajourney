@@ -31,7 +31,8 @@
                   <p class="Three">{{ $t('评茶方式') }}</p>
                   <p class="ThreeSub">TEAWARE EVALUATOION</p>
                 </div>
-                <p class="Caption2">{{ $t('评茶是一种传统的中国茶文化活动，通常由茶艺师或茶叶爱好者主持。在评茶过程中，参与者会品尝不同种类的茶叶，并对其外形、香气、滋味、汤色等方面进行评价。') }}
+                <p class="Caption2">{{ $t('评茶是一种传统的中国茶文化活动，通常由茶艺师或茶叶爱好者主持。在评茶过程中，参与者会品尝不同种类的茶叶，并对其外形、香气、滋味、汤色等方面进行评价。')
+                  }}
                 </p>
               </div>
               <div style="display: flex; width: 100%;">
@@ -331,25 +332,25 @@
                     <div class="four-container">
                       <div><img :src="new_style_drinks[0].image_path"></div>
                       <div class="item-title">{{ $t(new_style_drinks[0].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[0].note) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[0].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[1].image_path"></div>
                       <div class="item-title">{{ $t(new_style_drinks[1].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[1].note) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[1].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[2].image_path"></div>
                       <div class="item-title">{{ $t(new_style_drinks[2].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[2].note) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[2].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[3].image_path"></div>
                       <div class="item-title">{{ $t(new_style_drinks[3].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[3].note) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[3].note) }}</div>
                     </div>
                   </div>
                 </t-swiper-item>
@@ -357,26 +358,26 @@
                   <div style="margin-top:3vh;width: 100%;display: flex;">
                     <div class="four-container">
                       <div><img :src="new_style_drinks[4].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[4].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[4].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[4].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[4].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[5].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[5].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[5].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[5].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[5].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[6].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[6].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[6].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[6].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[6].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[7].image_path"></div>
-                      <div class="item-title">{{ $t( new_style_drinks[7].name )}}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[7].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[7].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[7].note) }}</div>
                     </div>
                   </div>
                 </t-swiper-item>
@@ -384,26 +385,26 @@
                   <div style="margin-top:3vh;width: 100%;display: flex;">
                     <div class="four-container">
                       <div><img :src="new_style_drinks[8].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[8].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[8].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[8].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[8].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[9].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[9].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[9].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[9].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[9].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[10].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[10].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[10].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[10].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[10].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[11].image_path"></div>
-                      <div class="item-title">{{  $t(new_style_drinks[11].name) }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[11].note) }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[11].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{ $t(new_style_drinks[11].note) }}</div>
                     </div>
                   </div>
                 </t-swiper-item>
@@ -427,7 +428,8 @@
       <div style="margin-left: 2vw;margin-top: 12px">
         <p class="Colour">汤色</p>
         <p class="ColourSub">COLOR OF TEA</p>
-        <p class="Caption6">{{ $t('由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。') }}
+        <p class="Caption6">{{ $t('由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。')
+          }}
         </p>
       </div>
 
@@ -457,8 +459,8 @@ export default {
     TeaFragranceView
   },
 
-  computed:{
-    option(){
+  computed: {
+    option() {
       return {
         tooltip: {
           trigger: 'item',
@@ -489,154 +491,199 @@ export default {
               show: false
             },
             data: [
-            { value: 1, name: this.$t('明亮'), image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: {
-                    type: 'linear',
-                    x: this.angle[0].x,
-                    y:  this.angle[0].y,
-                    x2:  this.angle[0].x2,
-                    y2:  this.angle[0].y2,
-                    colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#eae5a4' },
-                        { offset: 1, color: '#e1d461' },
-                    ]
-                  }, } },
-              { value: 1, name: this.$t('艳绿'), image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg',
-                itemStyle: {
+              {
+                value: 1, name: this.$t('明亮'), image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: {
                   color: {
                     type: 'linear',
-                    x: this.angle[1].x,
-                    y:  this.angle[1].y,
-                    x2:  this.angle[1].x2,
-                    y2:  this.angle[1].y2,
+                    x: this.angle[0].x,
+                    y: this.angle[0].y,
+                    x2: this.angle[0].x2,
+                    y2: this.angle[0].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#e1d461' },
-                        { offset: 1, color: '#edd163' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#eae5a4' },
+                      { offset: 1, color: '#e1d461' },
                     ]
                   },
                 }
               },
-              { value: 1, name: this.$t('绿黄'), image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: {
+              {
+                value: 1, name: this.$t('艳绿'), image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg',
+                itemStyle: {
+                  color: {
+                    type: 'linear',
+                    x: this.angle[1].x,
+                    y: this.angle[1].y,
+                    x2: this.angle[1].x2,
+                    y2: this.angle[1].y2,
+                    colorStops: [
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#e1d461' },
+                      { offset: 1, color: '#edd163' },
+                    ]
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('绿黄'), image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[2].x,
-                    y:  this.angle[2].y,
-                    x2:  this.angle[2].x2,
-                    y2:  this.angle[2].y2,
+                    y: this.angle[2].y,
+                    x2: this.angle[2].x2,
+                    y2: this.angle[2].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#edd163' },
-                        { offset: 0.5, color: '#cb6d05' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#edd163' },
+                      { offset: 0.5, color: '#cb6d05' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('黄绿'), image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('黄绿'), image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[3].x,
-                    y:  this.angle[3].y,
-                    x2:  this.angle[3].x2,
-                    y2:  this.angle[3].y2,
+                    y: this.angle[3].y,
+                    x2: this.angle[3].x2,
+                    y2: this.angle[3].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#cb6d05' },
-                        { offset: 1, color: '#ecbf53' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#cb6d05' },
+                      { offset: 1, color: '#ecbf53' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('浅黄'), image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('浅黄'), image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[4].x,
-                    y:  this.angle[4].y,
-                    x2:  this.angle[4].x2,
-                    y2:  this.angle[4].y2,
+                    y: this.angle[4].y,
+                    x2: this.angle[4].x2,
+                    y2: this.angle[4].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#ecbf53' },
-                        { offset: 1, color: '#efad02' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#ecbf53' },
+                      { offset: 1, color: '#efad02' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('金黄'), image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('金黄'), image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[5].x,
-                    y:  this.angle[5].y,
-                    x2:  this.angle[5].x2,
-                    y2:  this.angle[5].y2,
+                    y: this.angle[5].y,
+                    x2: this.angle[5].x2,
+                    y2: this.angle[5].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#efad02' },
-                        { offset: 1, color: '#eb8205' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#efad02' },
+                      { offset: 1, color: '#eb8205' },
                     ]
-                  }, } },
-              { value: 1, name:this.$t('橙黄'), image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('橙黄'), image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[6].x,
-                    y:  this.angle[6].y,
-                    x2:  this.angle[6].x2,
-                    y2:  this.angle[6].y2,
+                    y: this.angle[6].y,
+                    x2: this.angle[6].x2,
+                    y2: this.angle[6].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#eb8205' },
-                        { offset: 1, color: '#ed7107' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#eb8205' },
+                      { offset: 1, color: '#ed7107' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('橙红'), image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('橙红'), image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[7].x,
-                    y:  this.angle[7].y,
-                    x2:  this.angle[7].x2,
-                    y2:  this.angle[7].y2,
+                    y: this.angle[7].y,
+                    x2: this.angle[7].x2,
+                    y2: this.angle[7].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#ed7107' },
-                        { offset: 1, color: '#eb4f06' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#ed7107' },
+                      { offset: 1, color: '#eb4f06' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('红汤'), image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('红汤'), image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[8].x,
-                    y:  this.angle[8].y,
-                    x2:  this.angle[8].x2,
-                    y2:  this.angle[8].y2,
+                    y: this.angle[8].y,
+                    x2: this.angle[8].x2,
+                    y2: this.angle[8].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#eb4f06' },
-                        { offset: 1, color: '#b44b02' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#eb4f06' },
+                      { offset: 1, color: '#b44b02' },
                     ]
-                  }, } },
-                  { value: 1, name: this.$t('浑浊'), image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('浑浊'), image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[9].x,
-                    y:  this.angle[9].y,
-                    x2:  this.angle[9].x2,
-                    y2:  this.angle[9].y2,
+                    y: this.angle[9].y,
+                    x2: this.angle[9].x2,
+                    y2: this.angle[9].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#b44b02' },
-                        { offset: 1, color: '#901505' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#b44b02' },
+                      { offset: 1, color: '#901505' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('凝乳'), image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('凝乳'), image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[10].x,
-                    y:  this.angle[10].y,
-                    x2:  this.angle[10].x2,
-                    y2:  this.angle[10].y2,
+                    y: this.angle[10].y,
+                    x2: this.angle[10].x2,
+                    y2: this.angle[10].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0, color: '#901505' },
-                        { offset: 1, color: '#802011' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0, color: '#901505' },
+                      { offset: 1, color: '#802011' },
                     ]
-                  }, } },
-              { value: 1, name: this.$t('昏暗'), image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: {
+                  },
+                }
+              },
+              {
+                value: 1, name: this.$t('昏暗'), image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: {
+                  color: {
                     type: 'linear',
                     x: this.angle[11].x,
-                    y:  this.angle[11].y,
-                    x2:  this.angle[11].x2,
-                    y2:  this.angle[11].y2,
+                    y: this.angle[11].y,
+                    x2: this.angle[11].x2,
+                    y2: this.angle[11].y2,
                     colorStops: [
-                        // !! 在此添加想要的渐变过程色 !!
-                        { offset: 0.5, color: '#802011' },
-                        { offset: 1, color: '#eae5a4' },
+                      // !! 在此添加想要的渐变过程色 !!
+                      { offset: 0.5, color: '#802011' },
+                      { offset: 1, color: '#eae5a4' },
                     ]
-                  }, } }
+                  },
+                }
+              }
             ]
           }
         ]
@@ -653,11 +700,11 @@ export default {
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: '浅黄', description: '“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: '金黄', description: '“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: '橙黄', description: '“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。'},
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: '红汤', description: '“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。'},
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。'},
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
       ],
       lastHighlightedIndex: '',
@@ -671,58 +718,58 @@ export default {
           image_path: require('../assets/img/newtea1.jpg')
         },
         {
-          name:  '铁观音奶冻',
-          note:  '铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味。',
+          name: '铁观音奶冻',
+          note: '铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味。',
           image_path: require('../assets/img/newtea2.jpg')
         },
         {
-          name:  '黄金椰椰乌龙',
-          note:  '岩韵奇兰奶茶底蕴含绵远花香与豆香，入喉茶味香醇，加入Q弹椰果为茶香增添了无限玩味。',
+          name: '黄金椰椰乌龙',
+          note: '岩韵奇兰奶茶底蕴含绵远花香与豆香，入喉茶味香醇，加入Q弹椰果为茶香增添了无限玩味。',
           image_path: require('../assets/img/newtea3.jpg')
         },
         {
-          name:  '桂花酒酿奶绿',
-          note:  '精选一年一季的优质五常糯米搭配桂林金桂，酿出微醺甜润，融入七窖茉莉茶底，口感更轻盈。',
+          name: '桂花酒酿奶绿',
+          note: '精选一年一季的优质五常糯米搭配桂林金桂，酿出微醺甜润，融入七窖茉莉茶底，口感更轻盈。',
           image_path: require('../assets/img/newtea4.jpg')
         },
         {
-          name:  '芝芝绿妍茶后',
-          note:  '2012年首创第一杯芝士茶。定制绿茶底，融入真牛乳。',
+          name: '芝芝绿妍茶后',
+          note: '2012年首创第一杯芝士茶。定制绿茶底，融入真牛乳。',
           image_path: require('../assets/img/newtea5.jpg')
         },
         {
-          name:  '青稞牛乳茶',
-          note:  '经典嫣红牛乳茶加入软糯有嚼劲的青稞，入口奶香、茶香醇醇鲜明，还带有淡淡自然青稞麦香。',
+          name: '青稞牛乳茶',
+          note: '经典嫣红牛乳茶加入软糯有嚼劲的青稞，入口奶香、茶香醇醇鲜明，还带有淡淡自然青稞麦香。',
           image_path: require('../assets/img/newtea6.jpg')
         },
         {
-          name:  '超清爽柠打绿',
-          note:  '优选新鲜柠檬，每日鲜切暴打，融合甄选茶园定制绿茶汤，酸甜沁爽。',
+          name: '超清爽柠打绿',
+          note: '优选新鲜柠檬，每日鲜切暴打，融合甄选茶园定制绿茶汤，酸甜沁爽。',
           image_path: require('../assets/img/newtea7.jpg')
         },
         {
-          name:  '青提柠绿茶',
-          note:  '优选阳光玫瑰青提，颗颗精细去皮，加入暴打新鲜柠檬，融合绿茶底。',
+          name: '青提柠绿茶',
+          note: '优选阳光玫瑰青提，颗颗精细去皮，加入暴打新鲜柠檬，融合绿茶底。',
           image_path: require('../assets/img/newtea8.jpg')
         },
         {
-          name:  '米布丁珍珠大红袍',
-          note:  '大师定制武夷山大红袍，13道工序传承东方岩韵，花香焙火香浑然天成。',
+          name: '米布丁珍珠大红袍',
+          note: '大师定制武夷山大红袍，13道工序传承东方岩韵，花香焙火香浑然天成。',
           image_path: require('../assets/img/newtea9.jpg')
         },
         {
-          name:  '碧螺知春拿铁',
-          note:  '优选碧螺知春茶底，呈现花香蜜韵。',
+          name: '碧螺知春拿铁',
+          note: '优选碧螺知春茶底，呈现花香蜜韵。',
           image_path: require('../assets/img/newtea10.jpg')
         },
         {
-          name:  '茉莉海盐拿铁',
-          note:  '源自广西横州双瓣茉莉，六窨一提工艺，香气升级。',
+          name: '茉莉海盐拿铁',
+          note: '源自广西横州双瓣茉莉，六窨一提工艺，香气升级。',
           image_path: require('../assets/img/newtea11.jpg')
         },
         {
-          name:  '葡萄碎玉',
-          note:  '铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口。',
+          name: '葡萄碎玉',
+          note: '铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口。',
           image_path: require('../assets/img/newtea12.jpg')
         },
       ],
@@ -731,14 +778,14 @@ export default {
     }
   },
   methods: {
-    handleResize(){
-                // 获取图表容器
-    const chartDom = this.$refs.main;
-    // 初始化 echarts 实例
-    this.myChart = echarts.init(chartDom);
-    // 渲染图表
-    this.myChart.setOption(this.option);
-        },
+    handleResize() {
+      // 获取图表容器
+      const chartDom = this.$refs.main;
+      // 初始化 echarts 实例
+      this.myChart = echarts.init(chartDom);
+      // 渲染图表
+      this.myChart.setOption(this.option);
+    },
     // 点击事件处理函数
     handleClick(index) {
       // 清除定时器
@@ -801,17 +848,17 @@ export default {
      * @returns 四个坐标 x,y,x2,y2
      */
     getCoordinates(startArc, endArc) {
-        const posi = [
-            Math.sin(startArc),
-            -Math.cos(startArc),
-            Math.sin(endArc),
-            -Math.cos(endArc)
-        ]
-        // console.log(posi);
-        const dx = posi[2] - posi[0]
-        const dy = posi[3] - posi[1]
+      const posi = [
+        Math.sin(startArc),
+        -Math.cos(startArc),
+        Math.sin(endArc),
+        -Math.cos(endArc)
+      ]
+      // console.log(posi);
+      const dx = posi[2] - posi[0]
+      const dy = posi[3] - posi[1]
 
-        return this.getLocation(dx, dy)
+      return this.getLocation(dx, dy)
     },
 
     getLocation(dx, dy) {
@@ -823,10 +870,10 @@ export default {
       const sign2 = dx > 0 ? 1 : -1
       const sign = directSign ? sign1 * sign2 : sign2
 
-      const group1 = [ 0.5 - sign * t / 2, 0.5 + sign * t / 2]
+      const group1 = [0.5 - sign * t / 2, 0.5 + sign * t / 2]
       const group2 = sign > 0 ? [0, 1] : [1, 0]
       const group = [...group1, ...group2]
-      const keys = directSign ? ['x', 'x2', 'y', 'y2'] : ['y', 'y2', 'x', 'x2' ]
+      const keys = directSign ? ['x', 'x2', 'y', 'y2'] : ['y', 'y2', 'x', 'x2']
       let res = {}
       keys.forEach((k, idx) => {
         res[k] = group[idx]
@@ -834,27 +881,27 @@ export default {
       return res
     },
 
-    compute_angle(){
-      var angle=[[0,Math.PI/6],[Math.PI/6,2*Math.PI/6],[2*Math.PI/6,3*Math.PI/6],[3*Math.PI/6,4*Math.PI/6],[4*Math.PI/6,5*Math.PI/6],[5*Math.PI/6,6*Math.PI/6],[6*Math.PI/6,7*Math.PI/6],[7*Math.PI/6,8*Math.PI/6],[8*Math.PI/6,9*Math.PI/6],[9*Math.PI/6,10*Math.PI/6],[10*Math.PI/6,11*Math.PI/6],[11*Math.PI/6,12*Math.PI/6]]
+    compute_angle() {
+      var angle = [[0, Math.PI / 6], [Math.PI / 6, 2 * Math.PI / 6], [2 * Math.PI / 6, 3 * Math.PI / 6], [3 * Math.PI / 6, 4 * Math.PI / 6], [4 * Math.PI / 6, 5 * Math.PI / 6], [5 * Math.PI / 6, 6 * Math.PI / 6], [6 * Math.PI / 6, 7 * Math.PI / 6], [7 * Math.PI / 6, 8 * Math.PI / 6], [8 * Math.PI / 6, 9 * Math.PI / 6], [9 * Math.PI / 6, 10 * Math.PI / 6], [10 * Math.PI / 6, 11 * Math.PI / 6], [11 * Math.PI / 6, 12 * Math.PI / 6]]
       var zuobiao_res = []
-      for (let i = 0;i<12;i++){
-        var result = this.getCoordinates(angle[i][0],angle[i][1])
+      for (let i = 0; i < 12; i++) {
+        var result = this.getCoordinates(angle[i][0], angle[i][1])
         zuobiao_res.push(result)
       }
       console.log(zuobiao_res);
       this.angle = zuobiao_res
     }
   },
-  watch:{
-        //监听语言是否变化，若变化调用createPieChart()
-        '$i18n.locale': {
-            handler() {
-                // 处理语言变化的逻辑
-                this.handleResize()
-            },
-            immediate: true // 立即执行一次回调函数
-        }
-    },
+  watch: {
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize()
+      },
+      immediate: true // 立即执行一次回调函数
+    }
+  },
   destroyed() {
     // 在组件销毁时清除定时器
     this.clearTimer();

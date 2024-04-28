@@ -1,70 +1,70 @@
 <template>
   <div>
     <div class="title">
-        <p>{{ title }}</p>
+      <p>{{ title }}</p>
     </div>
     <p class="sub-title" style="padding: 0;">TEA FRAGRANCE</p>
     <div class="content-container" style="margin-top: 12px;">
       <div class="note-container">
-        <p>{{$t('截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。')}}</p>
-        <p>{{$t('普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。')}}</p>
+        <p>{{ $t('截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。') }}</p>
+        <p>{{ $t('普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。') }}</p>
       </div>
       <div class="chart-container">
         <div class="fragrance" id="fragrance"></div>
       </div>
     </div>
-    
+
   </div>
 </template>
-  
+
 <script>
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
-  
-  echarts.use([SVGRenderer, CanvasRenderer]);
 
-  export default {
-    name:'TeaFragranceView',
-    data() {
-      return {
-       title: '茶韵山峦'
-      };
-    },
-    watch:{
-        //监听语言是否变化，若变化调用createPieChart()
-        '$i18n.locale': {
-            handler() {
-                // 处理语言变化的逻辑
-                this.handleResize()
-            },
-            immediate: true // 立即执行一次回调函数
-        }
-    },
-    mounted() {
+echarts.use([SVGRenderer, CanvasRenderer]);
 
-      this.createFragrance();
-    },  
-    methods: {
-      handleResize(){
-        let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
-
-        this.createFragrance();
+export default {
+  name: 'TeaFragranceView',
+  data() {
+    return {
+      title: '茶韵山峦'
+    };
+  },
+  watch: {
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize()
       },
-      createFragrance(){
-        let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
-
-        let option = {
-          tooltip: {
-    position: 'top',
-    formatter: (params) =>{
-        // params 是一个对象，包含悬浮的相关信息
-        var name = params.name; // 获取气泡的名称
-        var color = params.color; // 获取气泡的颜色
-
-        // 返回自定义的内容字符串
-        return '<span style="color:' + color + '">●</span> ' + this.$t(name);
+      immediate: true // 立即执行一次回调函数
     }
   },
+  mounted() {
+
+    this.createFragrance();
+  },
+  methods: {
+    handleResize() {
+      let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
+
+      this.createFragrance();
+    },
+    createFragrance() {
+      let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
+
+      let option = {
+        tooltip: {
+          position: 'top',
+          formatter: (params) => {
+            // params 是一个对象，包含悬浮的相关信息
+            var name = params.name; // 获取气泡的名称
+            var color = params.color; // 获取气泡的颜色
+
+            // 返回自定义的内容字符串
+            return '<span style="color:' + color + '">●</span> ' + this.$t(name);
+          }
+        },
         xAxis: {
           type: 'value',
           min: 0,
@@ -134,16 +134,16 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
             animation: true,
             data: [
               {
-                name:  '绿茶',
+                name: '绿茶',
                 symbolSize: [30, 80],
                 value: [3, 10.5],
                 itemStyle: {
                   color: '#D0DC89'
                 },
-    
+
               },
               {
-                name:  '西湖龙井',
+                name: '西湖龙井',
                 value: [4, 10],
                 symbolSize: [30, 75],
                 itemStyle: {
@@ -151,7 +151,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '黄山毛峰',
+                name: '黄山毛峰',
                 value: [5, 10.3],
                 symbolSize: [30, 75],
                 itemStyle: {
@@ -159,7 +159,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '碧螺春',
+                name: '碧螺春',
                 symbolSize: [30, 70],
                 value: [6, 10.3],
                 itemStyle: {
@@ -167,7 +167,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '滇青',
+                name: '滇青',
                 symbolSize: [30, 70],
                 value: [7, 10.75],
                 itemStyle: {
@@ -175,7 +175,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '玉露',
+                name: '玉露',
                 symbolSize: [30, 75],
                 value: [8, 10.9],
                 itemStyle: {
@@ -183,7 +183,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '黄茶',
+                name: '黄茶',
                 symbolSize: [30, 85],
                 value: [7, 8.85],
                 itemStyle: {
@@ -191,7 +191,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '霍山黄芽',
+                name: '霍山黄芽',
                 symbolSize: [30, 80],
                 value: [8, 9],
                 itemStyle: {
@@ -199,7 +199,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '蒙顶黄芽',
+                name: '蒙顶黄芽',
                 symbolSize: [30, 75],
                 value: [9, 8.7],
                 itemStyle: {
@@ -207,7 +207,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '广东大叶青',
+                name: '广东大叶青',
                 symbolSize: [30, 90],
                 value: [10, 8],
                 itemStyle: {
@@ -215,7 +215,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '海马宫茶',
+                name: '海马宫茶',
                 symbolSize: [30, 75],
                 value: [11, 8.3],
                 itemStyle: {
@@ -223,7 +223,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '北港毛尖',
+                name: '北港毛尖',
                 symbolSize: [30, 75],
                 value: [12, 8.5],
                 itemStyle: {
@@ -231,7 +231,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '白茶',
+                name: '白茶',
                 symbolSize: [30, 85],
                 value: [10, 10],
                 itemStyle: {
@@ -239,7 +239,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '白毫银针',
+                name: '白毫银针',
                 symbolSize: [30, 85],
                 value: [11, 10],
                 itemStyle: {
@@ -247,7 +247,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '白牡丹',
+                name: '白牡丹',
                 symbolSize: [30, 60],
                 value: [12, 11],
                 itemStyle: {
@@ -255,7 +255,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '寿眉',
+                name: '寿眉',
                 symbolSize: [30, 60],
                 value: [12, 9.8],
                 itemStyle: {
@@ -263,7 +263,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '贡眉',
+                name: '贡眉',
                 symbolSize: [30, 70],
                 value: [13, 9.8],
                 itemStyle: {
@@ -271,7 +271,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '黄山白茶',
+                name: '黄山白茶',
                 symbolSize: [30, 75],
                 value: [14, 10.2],
                 itemStyle: {
@@ -279,7 +279,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '乌龙茶',
+                name: '乌龙茶',
                 symbolSize: [30, 120],
                 value: [7.5, 5.2],
                 itemStyle: {
@@ -287,7 +287,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '铁观音',
+                name: '铁观音',
                 symbolSize: [30, 75],
                 value: [8.5, 4.8],
                 itemStyle: {
@@ -295,7 +295,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '北斗',
+                name: '北斗',
                 symbolSize: [30, 80],
                 value: [9.5, 5.5],
                 itemStyle: {
@@ -303,7 +303,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '水仙',
+                name: '水仙',
                 symbolSize: [30, 85],
                 value: [10.5, 5.1],
                 itemStyle: {
@@ -311,7 +311,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '肉桂',
+                name: '肉桂',
                 symbolSize: [30, 70],
                 value: [11.5, 6.1],
                 itemStyle: {
@@ -319,7 +319,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '大红袍',
+                name: '大红袍',
                 symbolSize: [30, 70],
                 value: [11.5, 4.75],
                 itemStyle: {
@@ -327,7 +327,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '红茶',
+                name: '红茶',
                 symbolSize: [30, 110],
                 value: [3, 2.5],
                 itemStyle: {
@@ -335,7 +335,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '祁门红茶',
+                name: '祁门红茶',
                 symbolSize: [30, 80],
                 value: [5, 3],
                 itemStyle: {
@@ -343,7 +343,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '滇红',
+                name: '滇红',
                 symbolSize: [30, 70],
                 value: [6, 3.25],
                 itemStyle: {
@@ -351,7 +351,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '金骏眉',
+                name: '金骏眉',
                 symbolSize: [30, 70],
                 value: [6, 1.9],
                 itemStyle: {
@@ -359,7 +359,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '正山小种',
+                name: '正山小种',
                 symbolSize: [30, 75],
                 value: [4, 2.25],
                 itemStyle: {
@@ -367,7 +367,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '黑茶',
+                name: '黑茶',
                 symbolSize: [30, 80],
                 value: [8, 0.75],
                 itemStyle: {
@@ -375,7 +375,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '六堡茶',
+                name: '六堡茶',
                 symbolSize: [30, 75],
                 value: [10, 0.9],
                 itemStyle: {
@@ -383,7 +383,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '普洱茶',
+                name: '普洱茶',
                 symbolSize: [30, 90],
                 value: [9, 0.9],
                 itemStyle: {
@@ -391,7 +391,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '泾阳茯砖茶',
+                name: '泾阳茯砖茶',
                 symbolSize: [30, 90],
                 value: [13, 1],
                 itemStyle: {
@@ -399,7 +399,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '安化黑茶',
+                name: '安化黑茶',
                 symbolSize: [30, 85],
                 value: [11, 1.5],
                 itemStyle: {
@@ -407,7 +407,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 }
               },
               {
-                name:  '千两茶',
+                name: '千两茶',
                 symbolSize: [30, 80],
                 value: [12, 1.25],
                 itemStyle: {
@@ -438,21 +438,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { valueDim: 'y' },
                   {
                     yAxis: 1,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#D5A9A0'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#D5A9A0'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('陈香')
                   }
@@ -461,21 +461,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '2' },
                   {
                     yAxis: 1,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#D7B1A0'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      },  
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#D7B1A0'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('火香')
                   }
@@ -484,21 +484,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '3' },
                   {
                     yAxis: 2,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#D5B195'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#D5B195'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('烤番薯香')
                   }
@@ -507,21 +507,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '4' },
                   {
                     yAxis: 3,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#DFBA9D'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#DFBA9D'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('蜜香')
                   }
@@ -530,21 +530,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '5' },
                   {
                     yAxis: 4,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#E0BA93'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#E0BA93'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('熟果香')
                   }
@@ -553,21 +553,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '6' },
                   {
                     yAxis: 5,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#E6BC92'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#E6BC92'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('果香')
                   }
@@ -576,21 +576,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '7' },
                   {
                     yAxis: 6,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#ECCE9C'  
-                        }, {  
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#ECCE9C'
+                        }, {
                           offset: 1, color: '#FFF9E8'
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('花果香')
                   }
@@ -599,21 +599,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '8' },
                   {
                     yAxis: 7,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#EFD3A2'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8'  
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#EFD3A2'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('桂花香')
                   }
@@ -622,21 +622,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '9' },
                   {
                     yAxis: 8,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#E2C694' 
-                        }, {  
-                          offset: 1, color: '#FFF9E8'  
-                        }],  
-                      },   
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#E2C694'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
                     name: this.$t('兰花香')
                   }
@@ -645,21 +645,21 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '10' },
                   {
                     yAxis: 9,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#C1B688' 
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      },  
-                      opacity: 1 
-                    }, 
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#C1B688'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+                    },
                     name: this.$t('板栗香')
                   }
                 ],
@@ -667,20 +667,20 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '11' },
                   {
                     yAxis: 10,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#9EA184' 
-                        }, {  
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#9EA184'
+                        }, {
                           offset: 1, color: '#FFF9E8'
-                        }],  
-                      },  
-                      opacity: 1 
+                        }],
+                      },
+                      opacity: 1
                     },
                     name: this.$t('清香')
                   }
@@ -689,20 +689,20 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { yAxis: '12' },
                   {
                     yAxis: 11,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
                           offset: 0, color: '#879078'
-                        }, {  
+                        }, {
                           offset: 1, color: '#FFF9E8'
-                        }],  
-                      }, 
-                      opacity: 1 
+                        }],
+                      },
+                      opacity: 1
                     },
                     name: this.$t('青草气')
                   },
@@ -714,36 +714,37 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
         ]
       };
 
-        myChart.setOption(option);
+      myChart.setOption(option);
 
-        //屏幕自适应
-        window.addEventListener('resize', function (){
-          myChart.resize();
-        });
-      }
-    },
-  
-  };
+      //屏幕自适应
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    }
+  },
+
+};
 </script>
-  
-<style scoped>
-  .fragrance{
-    width: 120%;
-    height: 780px;
-    margin-left: -50px;
-    margin-top: -50px;
-    /* background-color: #000000; */
-  }
-  .title{
-    text-align: left;
-    font-size: 18px;
-    /* font-weight: bold; */
-    color: var(--td-brand-color-6);
-    line-height: 26.06px;
-    
-  }
 
-  .sub-title {
+<style scoped>
+.fragrance {
+  width: 120%;
+  height: 780px;
+  margin-left: -50px;
+  margin-top: -50px;
+  /* background-color: #000000; */
+}
+
+.title {
+  text-align: left;
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: var(--td-brand-color-6);
+  line-height: 26.06px;
+
+}
+
+.sub-title {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0px;
@@ -753,11 +754,11 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
   vertical-align: middle;
 }
 
-.note-container{
+.note-container {
   padding: 16px 24px;
 }
 
-.note-container p{
+.note-container p {
   text-align: left;
   text-indent: 2em;
   font-size: 14px;
@@ -766,11 +767,11 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
   color: rgba(50, 132, 110, 0.5);
 }
 
-.content-container{
+.content-container {
   background-color: var(--td-bg-color-container);
 }
 
-.chart-container{
+.chart-container {
   padding: 0 24px;
 }
 </style>
