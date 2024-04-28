@@ -7,11 +7,6 @@
     />
     <!-- 标题区域 -->
     <div style="padding:0 10px;display: flex;">
-      <div style="position: absolute;height: calc(32vh + 65px);width: calc(60vw - 124px);">
-        <div style="position: absolute;bottom: 0;right: 0px;">
-          <p class="note">The Chart is inspired by <t-link underline theme="primary">[2]</t-link></p>
-        </div>
-      </div>
       <div style="width: 50%; display: flex;">
         <p class="title">茶品产销丝绸图</p>
         <div style="margin-left: 12px;display: flex;align-items: center;"><HelpCircleIcon size="20" style="color: var(--td-brand-color-4)" @click="handle_guide_click"/></div>
@@ -39,6 +34,13 @@
         <div id="silkchart" style="width: 100%;height: 100%;"></div>
       </div>
 
+    </div>
+
+    <div style="display: flex;
+    justify-content: right;
+    position: relative;
+    bottom: 12px;">
+      <p class="note">The Chart is inspired by <t-link underline theme="primary">[2]</t-link></p>
     </div>
 
   </div>
@@ -332,6 +334,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
 
           const _this = this
+
           d3.selectAll(".circle_sel").on("click", function(d,i) {
             // console.log("click",i)
             d.stopPropagation();
@@ -342,6 +345,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             // // _this.$emit('getcompanyall', "noreset")
           })
           .on('mouseover',function(d){
+            // console.log('over');
             d.stopPropagation();
             var element = d3.select(this)
             let i = element.attr("company") //获取点击的矩形的标签

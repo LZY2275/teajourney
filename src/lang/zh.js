@@ -337,7 +337,7 @@ export default{
     "主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。":"The main picking seasons are spring, summer, and autumn, and winter is mainly reserved for the restoration and maintenance of tea trees.",
     "其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。":"Among them, spring tea is harvested from March to May; Summer tea is harvested from May to July; Autumn tea is harvested from August to October; Winter tea is harvested in late October. Due to different types of tea, the requirements for the tenderness of tea raw materials vary, so the picking time may also vary. Relatively tender tea leaves are mostly spring tea and autumn tea; Coarse tea leaves are mostly summer tea and autumn tea.",
     "开始采摘时间":"Start",
-    "结束采摘时间":"End",    
+    "结束采摘时间":"End",
     "提示":"Notation",
     "由于该省份不是主要产茶省份，暂无数据！":"As this province is not a major tea producing province, there is no data.",
 
@@ -416,7 +416,7 @@ export default{
     "湖北":"Hubei",
     "云南":"Yunnan",
     "广东":"Guangdong",
-    
+
     "2022年":"2022",
     "2021年":"2021",
     "2020年":"2020",
@@ -425,7 +425,7 @@ export default{
 
     "平均数":"Average",
     "中位数":"Median",
-"方差":"Variance",
+    "方差":"Variance",
 
     "鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。":"鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。",
     "评茶方式":"评茶方式",
