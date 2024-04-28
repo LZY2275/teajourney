@@ -604,5 +604,16 @@ export default{
     "熟果香":"Ripe fruit aroma",
     "烤番薯香":"Roasted sweet potato",
     "陈香":"Chen Xiang",
+    
+    "2022年":"2022",
+    "2021年":"2021",
+    "2020年":"2020",
+    "2019年":"2019",
+    "2018年":"2018",
+
+    "平均数":"Average",
+    "中位数":"Median",
+    "方差":"Variance",
+
 
 }   
