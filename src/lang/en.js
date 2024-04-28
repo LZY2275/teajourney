@@ -333,6 +333,11 @@ export default{
     "黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。":"The unique feature of dark tea making is the process of Browning. The tea leaves are then spread out and exposed to the sun in the proper environment to allow further fermentation and oxidation.",
     "最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。":"Finally, the tea is dried to ensure that the moisture content of the tea reaches the appropriate level for long-term storage and to maintain its quality and taste.",
 
+    "茶叶，其实是一年四季皆可采摘制作的。":"Tea can actually be picked and made all year round.",
+    "主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。":"The main picking seasons are spring, summer, and autumn, and winter is mainly reserved for the restoration and maintenance of tea trees.",
+    "其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。":"Among them, spring tea is harvested from March to May; Summer tea is harvested from May to July; Autumn tea is harvested from August to October; Winter tea is harvested in late October. Due to different types of tea, the requirements for the tenderness of tea raw materials vary, so the picking time may also vary. Relatively tender tea leaves are mostly spring tea and autumn tea; Coarse tea leaves are mostly summer tea and autumn tea.",
+    "开始采摘时间":"Start",
+    "结束采摘时间":"End",    
     "提示":"Notation",
     "由于该省份不是主要产茶省份，暂无数据！":"As this province is not a major tea producing province, there is no data.",
 
@@ -411,6 +416,16 @@ export default{
     "湖北":"Hubei",
     "云南":"Yunnan",
     "广东":"Guangdong",
+    
+    "2022年":"2022",
+    "2021年":"2021",
+    "2020年":"2020",
+    "2019年":"2019",
+    "2018年":"2018",
+
+    "平均数":"Average",
+    "中位数":"Median",
+"方差":"Variance",
 
 
     "鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。":"When the temperature of the tea soup drops below 45°C, take 10ml-15ml and put it into your mouth, let the tea soup contact all parts of the mouth, and then swallow it slowly.",
@@ -565,7 +580,6 @@ export default{
     "味觉":"Taste",
     "空":"NULL",
 
-
     "茉莉奶绿":"Jasmine milk green",
     "七窖茉莉香气馥郁端正，制成奶茶清甜怡人，浓郁奶香和茉莉花香经唇入喉，淡雅香气经久留存。":"The aroma of Qijiao jasmine is fragrant and upright, making the milk tea sweet and pleasant. The rich milk fragrance and jasmine flower fragrance pass through the lips and enter the throat, and the elegant fragrance remains for a long time.",
     "铁观音奶冻":"Tieguanyin Milk Jelly",
@@ -591,10 +605,8 @@ export default{
     "葡萄碎玉":"grape broken jade",
     "铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口。":"When Tieguanyin meets the seasonal grapes, the kings meet. The sweet and smooth tea aroma blends into the fresh and sweet taste of the grapes.",
 
-
     "截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。":"Up to now, more than 700 tea aromatic substances have been confirmed, but there are only about dozens of core components. The table below lists some of the main ingredients for reference.",
     "普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。":"Generally speaking, tea with a low degree of fermentation and low heating has a lower boiling point and a higher aroma type. On the other hand, tea with a high degree of fermentation and high heating has a higher boiling point and a higher aroma type. . In addition, due to the unique fermentation principle of dark tea, it usually has the characteristics of aging.",
-
 
     "青草气":"Green grass",
     "兰花香":"Orchid fragrance",
@@ -604,16 +616,5 @@ export default{
     "熟果香":"Ripe fruit aroma",
     "烤番薯香":"Roasted sweet potato",
     "陈香":"Chen Xiang",
-    
-    "2022年":"2022",
-    "2021年":"2021",
-    "2020年":"2020",
-    "2019年":"2019",
-    "2018年":"2018",
 
-    "平均数":"Average",
-    "中位数":"Median",
-    "方差":"Variance",
-
-
-}   
+}
