@@ -409,8 +409,9 @@ export default {
                         roam: false, // 禁止缩放和平移
                         label: {
                             emphasis: {
-                                show: false
-                            }
+                                show: false,
+                                color:"#000"
+                            },
                         },
                         itemStyle: {
                             normal: {
@@ -418,7 +419,7 @@ export default {
                                 borderColor: '#DEFF9B', // 设置地图边界线颜色
 
                             },
-                            emphasis: {} // 清除鼠标悬停效果
+                            emphasis: { show:false} // 清除鼠标悬停效果
                         },
                         hoverLink: false, // 禁用悬停链接
                         data: []
@@ -1357,7 +1358,11 @@ export default {
                                 ]
                             },// 地图区域的颜色
                             borderColor: '#ffecb2', // 地图区域的边框颜色
-                            borderWidth: 0.5 // 地图区域的边框宽度
+                            borderWidth: 0.5, // 地图区域的边框宽度
+
+                        },
+                        tooltip:{
+                                show: false,
                         },
                         emphasis: {  // 高亮状态下的样式
                             itemStyle: {
@@ -1379,10 +1384,16 @@ export default {
                                     ]
                                 },// 地图区域的颜色
                                 borderColor: '#ffecb2', // 地图区域的边框颜色
-                                borderWidth: 0.5 // 地图区域的边框宽度
-                            }
+                                borderWidth: 0.5, // 地图区域的边框宽度
+                            },
+                            label:{
+                                show:false
+                            },
+                            tooltip:{
+                                show: false,
+                            },
+                        },
 
-                        }
                     },
                     series: [
                         {
@@ -1404,6 +1415,9 @@ export default {
                             itemStyle: {
                                 borderColor: '#ffffff', // 设置描边颜色
                                 borderWidth: 2 // 设置描边宽度
+                            },
+                            tooltip:{
+                                show:true
                             },
 
                             symbolSize: 10,
@@ -1429,7 +1443,9 @@ export default {
                                 borderColor: '#ffffff', // 设置描边颜色
                                 borderWidth: 2 // 设置描边宽度
                             },
-
+                            tooltip:{
+                                show:true
+                            },
                             symbolSize: 10,
 
                         },
@@ -1453,7 +1469,9 @@ export default {
                                 borderColor: '#ffffff', // 设置描边颜色
                                 borderWidth: 2 // 设置描边宽度
                             },
-
+                            tooltip:{
+                                show:true
+                            },
                             symbolSize: 10,
 
                         },
@@ -1477,7 +1495,9 @@ export default {
                                 borderColor: '#ffffff', // 设置描边颜色
                                 borderWidth: 2 // 设置描边宽度
                             },
-
+                            tooltip:{
+                                show:true
+                            },
                             symbolSize: 10,
 
                         },
@@ -1501,7 +1521,9 @@ export default {
                                 borderColor: '#ffffff', // 设置描边颜色
                                 borderWidth: 2 // 设置描边宽度
                             },
-
+                            tooltip:{
+                                show:true
+                            },
                             symbolSize: 10,
 
                         },
@@ -1525,7 +1547,9 @@ export default {
                                 borderColor: '#ffffff', // 设置描边颜色
                                 borderWidth: 2 // 设置描边宽度
                             },
-
+                            tooltip:{
+                                show:true
+                            },
                             symbolSize: 10,
                         },
 

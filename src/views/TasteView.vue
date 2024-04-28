@@ -314,154 +314,6 @@
             </t-swiper>
           </div>
         </template>
-
-        <!-- <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字1</p>
-            <p class="Caption4">这是说明文字2</p>
-            <p class="Caption4">这是说明文字3</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字4</p>
-          </div>
-        </div>
-        <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字5</p>
-            <p class="Caption4">这是说明文字6</p>
-            <p class="Caption4">这是说明文字7</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字8</p>
-          </div>
-        </div>
-        <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字9</p>
-            <p class="Caption4">这是说明文字10</p>
-            <p class="Caption4">这是说明文字11</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字12</p>
-          </div>
-        </div>
-        <div style="margin-top:3vh;">
-          <div style="display: flex;">
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1; margin-right: 10%;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-            <t-card style="flex: 1;height:13.215vh;border:0px;background: rgba(245, 244, 222, 1)">
-
-            </t-card>
-          </div>
-
-          <div style="display: flex;">
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p class="Taste">口感</p>
-            <p
-              style="
-              margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 1em;font-weight: 500;line-height: 14.06px;color: rgba(50, 132, 110, 1);">
-              口感</p>
-          </div>
-
-          <div style="display: flex;margin-bottom: 2vh;">
-            <p class="Caption4">这是说明文字13</p>
-            <p class="Caption4">这是说明文字14</p>
-            <p class="Caption4">这是说明文字15</p>
-            <p
-              style=" margin-top: 2vh;flex: 1;display: flex;flex-direction: column;justify-content: center;font-size: 0.8em;font-weight: 400;line-height: 14.06px;letter-spacing: 1px;color: rgba(50, 132, 110, 0.5);">
-              这是说明文字16</p>
-          </div>
-        </div> -->
-
-
-        <!-- 这里放一个茶香图 -->
-        <!-- calc(100% - 50px - 46.375px - 18vh - 40vh - 6vh - 52px - 6vh - 2.4em - 3vh - 46.375px) -->
         <div style="width: 100%;height: 48%; margin-top: 36px;">
           <TeaFragranceView></TeaFragranceView>
         </div>
@@ -572,7 +424,7 @@
 
     <!-- 汤色 -->
     <div class="card">
-      <div style="margin-left: 2vw;">
+      <div style="margin-left: 2vw;margin-top: 12px">
         <p class="Colour">汤色</p>
         <p class="ColourSub">COLOR OF TEA</p>
         <p class="Caption6">{{ $t('由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。') }}
@@ -603,6 +455,193 @@ export default {
   components: {
     SankeyView,
     TeaFragranceView
+  },
+
+  computed:{
+    option(){
+      return {
+        tooltip: {
+          trigger: 'item',
+          formatter: function (params) {
+            return `<img class="custom-tooltip-image" src="${params.data.image}" style="width:100px;height:100px;">`;
+          }
+        },
+
+        series: [
+          {
+            type: 'pie',
+            radius: ['60%', '70%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              // borderRadius: 0,
+              // borderColor: '#fff',
+              // borderWidth: 0
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: 'rgba(50, 132, 110, 1)',
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: [
+            { value: 1, name: '明亮', image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[0].x,
+                    y:  this.angle[0].y,
+                    x2:  this.angle[0].x2,
+                    y2:  this.angle[0].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#eae5a4' },
+                        { offset: 1, color: '#e1d461' },
+                    ]
+                  }, } },
+              { value: 1, name: '艳绿', image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg',
+                itemStyle: {
+                  color: {
+                    type: 'linear',
+                    x: this.angle[1].x,
+                    y:  this.angle[1].y,
+                    x2:  this.angle[1].x2,
+                    y2:  this.angle[1].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#e1d461' },
+                        { offset: 1, color: '#edd163' },
+                    ]
+                  },
+                }
+              },
+              { value: 1, name: '绿黄', image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[2].x,
+                    y:  this.angle[2].y,
+                    x2:  this.angle[2].x2,
+                    y2:  this.angle[2].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#edd163' },
+                        { offset: 0.5, color: '#cb6d05' },
+                    ]
+                  }, } },
+              { value: 1, name: '黄绿', image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[3].x,
+                    y:  this.angle[3].y,
+                    x2:  this.angle[3].x2,
+                    y2:  this.angle[3].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#cb6d05' },
+                        { offset: 1, color: '#ecbf53' },
+                    ]
+                  }, } },
+              { value: 1, name: '浅黄', image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[4].x,
+                    y:  this.angle[4].y,
+                    x2:  this.angle[4].x2,
+                    y2:  this.angle[4].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#ecbf53' },
+                        { offset: 1, color: '#efad02' },
+                    ]
+                  }, } },
+              { value: 1, name: '金黄', image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[5].x,
+                    y:  this.angle[5].y,
+                    x2:  this.angle[5].x2,
+                    y2:  this.angle[5].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#efad02' },
+                        { offset: 1, color: '#eb8205' },
+                    ]
+                  }, } },
+              { value: 1, name: '橙黄', image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[6].x,
+                    y:  this.angle[6].y,
+                    x2:  this.angle[6].x2,
+                    y2:  this.angle[6].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#eb8205' },
+                        { offset: 1, color: '#ed7107' },
+                    ]
+                  }, } },
+              { value: 1, name: '橙红', image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[7].x,
+                    y:  this.angle[7].y,
+                    x2:  this.angle[7].x2,
+                    y2:  this.angle[7].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#ed7107' },
+                        { offset: 1, color: '#eb4f06' },
+                    ]
+                  }, } },
+              { value: 1, name: '红汤', image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[8].x,
+                    y:  this.angle[8].y,
+                    x2:  this.angle[8].x2,
+                    y2:  this.angle[8].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#eb4f06' },
+                        { offset: 1, color: '#b44b02' },
+                    ]
+                  }, } },
+                  { value: 1, name: '浑浊', image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[9].x,
+                    y:  this.angle[9].y,
+                    x2:  this.angle[9].x2,
+                    y2:  this.angle[9].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#b44b02' },
+                        { offset: 1, color: '#901505' },
+                    ]
+                  }, } },
+              { value: 1, name: '凝乳', image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[10].x,
+                    y:  this.angle[10].y,
+                    x2:  this.angle[10].x2,
+                    y2:  this.angle[10].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0, color: '#901505' },
+                        { offset: 1, color: '#802011' },
+                    ]
+                  }, } },
+              { value: 1, name: '昏暗', image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: {
+                    type: 'linear',
+                    x: this.angle[11].x,
+                    y:  this.angle[11].y,
+                    x2:  this.angle[11].x2,
+                    y2:  this.angle[11].y2,
+                    colorStops: [
+                        // !! 在此添加想要的渐变过程色 !!
+                        { offset: 0.5, color: '#802011' },
+                        { offset: 1, color: '#eae5a4' },
+                    ]
+                  }, } }
+            ]
+          }
+        ]
+      };
+    }
   },
 
   data() {
@@ -688,52 +727,7 @@ export default {
         },
       ],
       myChart: null, // 用于存储 echarts 实例
-      option: {
-        tooltip: {
-          trigger: 'item',
-          formatter: function (params) {
-            return `<img class="custom-tooltip-image" src="${params.data.image}" style="width:100px;height:100px;">`;
-          }
-        },
-
-        series: [
-          {
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            itemStyle: {
-              borderRadius: 10,
-              borderColor: '#fff',
-              borderWidth: 2
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 20,
-                fontWeight: 'bold',
-                color: 'rgba(50, 132, 110, 1)',
-              }
-            },
-            labelLine: {
-              show: false
-            },
-            data: [
-              { value: 1, name: this.$t('艳绿'), image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', itemStyle: { color: '#E4FC04' } },
-              { value: 1, name: this.$t('绿黄'), image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: '#FFFF71' } },
-              { value: 1, name: this.$t('黄绿'), image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: '#CF7E07' } },
-              { value: 1, name: this.$t('浅黄'), image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: '#FDD631' } },
-              { value: 1, name: this.$t('金黄'), image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: '#F3C007' } },
-              { value: 1, name: this.$t('橙黄'), image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: '#F67B00' } },
-              { value: 1, name: this.$t('橙红'), image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: '#DE6F00' } },
-              { value: 1, name: this.$t('红汤'), image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: '#FE3000' } },
-              { value: 1, name: this.$t('凝乳'), image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: '#7E1800' } },
-              { value: 1, name: this.$t('明亮'), image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: '#FFFF99' } },
-              { value: 1, name: this.$t('浑浊'), image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: '#703800' } },
-              { value: 1, name: this.$t('昏暗'), image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: '#502800' } }
-            ]
-          }
-        ]
-      },
+      angle: [],
     }
   },
   methods: {
@@ -789,12 +783,68 @@ export default {
       this.lastHighlightedIndex = this.currentIndex;
 
     },
+
+    /**
+     * 线性渐变起止方向的计算方法
+     *
+     *
+     * @param {*} startArc 开始角度
+     * @param {*} endArc 结束角度
+     * @returns 四个坐标 x,y,x2,y2
+     */
+    getCoordinates(startArc, endArc) {
+        const posi = [
+            Math.sin(startArc),
+            -Math.cos(startArc),
+            Math.sin(endArc),
+            -Math.cos(endArc)
+        ]
+        // console.log(posi);
+        const dx = posi[2] - posi[0]
+        const dy = posi[3] - posi[1]
+
+        return this.getLocation(dx, dy)
+    },
+
+    getLocation(dx, dy) {
+      const tanV = dx / dy
+      const directSign = Math.abs(tanV) < 1
+      const t = directSign ? tanV : 1 / tanV
+
+      const sign1 = t > 0 ? 1 : -1
+      const sign2 = dx > 0 ? 1 : -1
+      const sign = directSign ? sign1 * sign2 : sign2
+
+      const group1 = [ 0.5 - sign * t / 2, 0.5 + sign * t / 2]
+      const group2 = sign > 0 ? [0, 1] : [1, 0]
+      const group = [...group1, ...group2]
+      const keys = directSign ? ['x', 'x2', 'y', 'y2'] : ['y', 'y2', 'x', 'x2' ]
+      let res = {}
+      keys.forEach((k, idx) => {
+        res[k] = group[idx]
+      })
+      return res
+    },
+
+    compute_angle(){
+      var angle=[[0,Math.PI/6],[Math.PI/6,2*Math.PI/6],[2*Math.PI/6,3*Math.PI/6],[3*Math.PI/6,4*Math.PI/6],[4*Math.PI/6,5*Math.PI/6],[5*Math.PI/6,6*Math.PI/6],[6*Math.PI/6,7*Math.PI/6],[7*Math.PI/6,8*Math.PI/6],[8*Math.PI/6,9*Math.PI/6],[9*Math.PI/6,10*Math.PI/6],[10*Math.PI/6,11*Math.PI/6],[11*Math.PI/6,12*Math.PI/6]]
+      var zuobiao_res = []
+      for (let i = 0;i<12;i++){
+        var result = this.getCoordinates(angle[i][0],angle[i][1])
+        zuobiao_res.push(result)
+      }
+      console.log(zuobiao_res);
+      this.angle = zuobiao_res
+    }
   },
   destroyed() {
     // 在组件销毁时清除定时器
     this.clearTimer();
   },
   mounted() {
+    // 计算角度
+    this.compute_angle()
+
     // 启动定时器
     this.startTimer();
     // 获取图表容器
