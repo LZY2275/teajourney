@@ -93,7 +93,7 @@
         </div>
 
         <!--折线图-->
-        <div style="position: absolute;right: 74px;bottom: 17px;">
+        <div style="position: absolute;right: 74px;bottom: 17px;z-index: 10;">
             <p class="title-sub">{{$t('主要产区种植面积')}}</p>
             <div style=" position: relative;z-index: 1;">
                 <div v-if="currentProvince == ''" class="empty-box">Tips:<br>{{$t('点击省份查看省份种植面积变化折线图。')}}<br>{{$t('点击右上角的茶类别切换视图')}}~</div>
@@ -168,6 +168,11 @@ import chinaMap from '@/assets/json/china.json'
 import { HelpCircleIcon } from "tdesign-icons-vue";
 Vue.prototype.echarts = echarts;
 export default {
+    computed:{
+        highlightedProvinces(){
+            return [this.$t('河南'), this.$t('贵州'), this.$t('江西'), this.$t('安徽'), this.$t('浙江'), this.$t('江苏'), this.$t('四川'), this.$t('陕西'), this.$t('湖南'), this.$t('湖北'), this.$t('广西'), this.$t('福建')]
+        }
+    },
     data() {
         return {
             window_width:0,
@@ -420,75 +425,75 @@ export default {
             let chartData = null;
             if (newValue === '广东') {
                 chartData = this.guangdongData;
-                chartData.datasets[0].label = '广东省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('广东省近几年产地（万亩）');
             }
             if (newValue === '安徽') {
                 chartData = this.anhuiData;
-                chartData.datasets[0].label = '安徽省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('安徽省近几年产地（万亩）');
             }
             if (newValue === '湖南') {
                 chartData = this.hunanData;
-                chartData.datasets[0].label = '湖南省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('湖南省近几年产地（万亩）');
             }
             if (newValue === '浙江') {
                 chartData = this.zhejiangData;
-                chartData.datasets[0].label = '浙江省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('浙江省近几年产地（万亩）');
             }
             if (newValue === '贵州') {
                 chartData = this.guizhouData;
-                chartData.datasets[0].label = '贵州省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('贵州省近几年产地（万亩）');
             }
             if (newValue === '云南') {
                 chartData = this.yunnanData;
-                chartData.datasets[0].label = '云南省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('云南省近几年产地（万亩）');
             }
             if (newValue === '广西') {
                 chartData = this.guangxiData;
-                chartData.datasets[0].label = '广西省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('广西省近几年产地（万亩）');
             }
             if (newValue === '江苏') {
                 chartData = this.jiangsuData;
-                chartData.datasets[0].label = '江苏省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('江苏省近几年产地（万亩）');
             }
             if (newValue === '四川') {
                 chartData = this.sichuanData;
-                chartData.datasets[0].label = '四川省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('四川省近几年产地（万亩）');
             }
             if (newValue === '福建') {
                 chartData = this.fujianData;
-                chartData.datasets[0].label = '福建省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('福建省近几年产地（万亩）');
             }
             if (newValue === '陕西') {
                 chartData = this.shanxiData;
-                chartData.datasets[0].label = '陕西省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('陕西省近几年产地（万亩）');
             }
             if (newValue === '湖北') {
                 chartData = this.hubeiData;
-                chartData.datasets[0].label = '湖北省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('湖北省近几年产地（万亩）');
             }
             if (newValue === '江西') {
                 chartData = this.jiangxiData;
-                chartData.datasets[0].label = '江西省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('江西省近几年产地（万亩）');
             }
             if (newValue === '山东') {
                 chartData = this.shandongData;
-                chartData.datasets[0].label = '山东省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('山东省近几年产地（万亩）');
             }
             if (newValue === '河南') {
                 chartData = this.henanData;
-                chartData.datasets[0].label = '河南省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('河南省近几年产地（万亩）');
             }
             if (newValue === '海南') {
                 chartData = this.hainanData;
-                chartData.datasets[0].label = '海南省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('海南省近几年产地（万亩）');
             }
             if (newValue === '重庆') {
                 chartData = this.chongqingData;
-                chartData.datasets[0].label = '重庆近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('重庆近几年产地（万亩）');
             }
             if (newValue === '甘肃') {
                 chartData = this.gansuData;
-                chartData.datasets[0].label = '甘肃省近几年产地（万亩）';
+                chartData.datasets[0].label = this.$t('甘肃省近几年产地（万亩）');
             }
             if (this.lineChart) {
                 // 如果图表已经存在，则销毁之前的图表
@@ -520,6 +525,7 @@ export default {
             });
         },
         updateMapOption() {
+            var that = this
             var option = {
                 series: [
                     {
@@ -529,8 +535,11 @@ export default {
                         label: {
                             emphasis: {
                                 show: true, // 在鼠标悬停时显示标签
-                                formatter: '{b}', // 标签内容为省份名称
-                                color: 'white', // 标签文字颜色
+                                formatter: function(params){
+                                    var return_str = that.$t(params.name)
+                                    return return_str
+                                }, // 标签内容为省份名称
+                                color: 'Black', // 标签文字颜色
                                 fontSize: 14, // 标签文字大小
                                 fontWeight: 'bold', // 标签文字加粗
 
@@ -540,24 +549,6 @@ export default {
                         itemStyle: {
                             normal: {
                                 areaColor: "#e9f7f0",
-                                // areaColor: {
-                                //         type: 'linear', // 设置渐变色
-                                //         x: 0,
-                                //         y: 0,
-                                //         x2: 0.5,
-                                //         y2: 1,
-                                //         colorStops: [
-                                //             {
-                                //                 offset: 0,
-                                //                 color: 'rgba(255, 249, 232, 1)' // 起始颜色
-                                //             },
-                                //             {
-                                //                 offset: 1,
-                                //                 color: '#589d8810' // 结束颜色
-                                //             }
-                                //         ]
-                                //     },
-
                                 borderColor: '#589d88', // 地图区域的边框颜色
                                 borderWidth: 0.5 // 地图区域的边框宽度
 
@@ -586,10 +577,13 @@ export default {
                     }
                 ]
             };
-            var highlightedProvinces = ['河南', '贵州', '江西', '安徽', '浙江', '江苏', '四川', '陕西', '湖南', '湖北', '广西', '福建'];
+            // var highlightedProvinces = this.highlightedProvinces;
+            var highlightedProvinces = [['河南','Henan'], ['贵州','Guizhou'], ['江西','Jiangxi'], ['安徽','Anhui'], ['浙江','Zhejiang'], ['江苏','Jiangsu'], ['四川','Sichuan'], ['陕西','Shanxi'], ['湖南','Hunan'], ['湖北','Hubei'], ['广西','Guangxi'], ['福建','Fujian']]
+            var that = this
             option.series[0].data = highlightedProvinces.map(province => {
                 return {
-                    name: province,
+                    name: province[0],
+                    name1:province[1],
                     itemStyle: {areaColor:{
                                 type: 'linear', // 设置渐变色
                                 x: 0,
@@ -609,10 +603,33 @@ export default {
                             }, },
                     label: {
                         show: true, // 显示标签
-                        formatter: '{b}', // 标签内容为省份名称
+                        formatter: function(params){
+                            var locale = that.$i18n.locale
+                            // console.log(locale);
+                            if(locale == 'en'){
+                                return params.data.name1
+                            }else{
+                                return params.data.name
+                            }
+                        }, // 标签内容为省份名称
                         color: 'black', // 标签文字颜色
                         fontSize: 14, // 标签文字大小
-                    }
+                        emphasis: { // 鼠标悬浮样式
+                            fontSize: 16, // 字体大小
+                            color: '#000', // 字体颜色
+                            fontWeight: 'bold', // 字体加粗
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                // console.log(locale);
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
+                        }
+                    },
+
                 };
             });
             this.map_options = option
@@ -620,6 +637,7 @@ export default {
 
         },
         highlightProvince(teaType) {
+            var that = this
             if (teaType === '绿茶') {
                 this.GreenTea = true;
                 this.WhiteTea = false;
@@ -627,11 +645,12 @@ export default {
                 this.oolong = false;
                 this.RedTea = false;
                 this.BlackTea = false;
-                const highlightedProvinces = ['河南', '贵州', '江西', '安徽', '浙江', '江苏', '四川', '陕西', '湖南', '湖北', '广西', '福建'];
+                const highlightedProvinces = [['河南','Henan'], ['贵州','Guizhou'], ['江西','Jiangxi'], ['安徽','Anhui'], ['浙江','Zhejiang'], ['江苏','Jiangsu'], ['四川','Sichuan'], ['陕西','Shanxi'], ['湖南','Hunan'], ['湖北','Hubei'], ['广西','Guangxi'], ['福建','Fujian']];
                 const option = this.myChart.getOption();
                 option.series[0].data = highlightedProvinces.map(province => {
                     return {
-                        name: province,
+                        name: province[0],
+                        name1: province[1],
                         itemStyle: {
                             areaColor:{
                                 type: 'linear', // 设置渐变色
@@ -654,9 +673,30 @@ export default {
                         },
                         label: {
                             show: true, // 显示标签
-                            formatter: '{b}', // 标签内容为省份名称
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
                             color: 'black', // 标签文字颜色
                             fontSize: 14, // 标签文字大小
+                            emphasis: { // 鼠标悬浮样式
+                                fontSize: 16, // 字体大小
+                                color: '#000', // 字体颜色
+                                fontWeight: 'bold', // 字体加粗
+                                formatter: function(params){
+                                    var locale = that.$i18n.locale
+                                    // console.log(locale);
+                                    if(locale == 'en'){
+                                        return params.data.name1
+                                    }else{
+                                        return params.data.name
+                                    }
+                                },
+                            }
                         }
                     };
                 });
@@ -670,11 +710,12 @@ export default {
                 this.RedTea = false;
                 this.BlackTea = false;
                 // 根据需要高亮的省份名称，设置其区域样式为浅红色
-                const highlightedProvinces = ['福建', '浙江', '云南', '陕西', '贵州', '湖南', , '广东', '江西']
+                const highlightedProvinces = [['福建','Fujian'], ['浙江','Zhejiang'], ['云南','Yunnan'], ['陕西','Shanxi'], ['贵州','Guizhou'], ['湖南','Hunan'], ['广东','Guangdong'], ['江西','Jiangxi']]
                 const option = this.myChart.getOption()
                 option.series[0].data = highlightedProvinces.map(province => {
                     return {
-                        name: province,
+                        name: province[0],
+                        name1: province[1],
                         itemStyle: { areaColor:{
                                 type: 'linear', // 设置渐变色
                                 x: 0,
@@ -694,9 +735,30 @@ export default {
                             }, },
                         label: {
                             show: true, // 显示标签
-                            formatter: '{b}', // 标签内容为省份名称
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
                             color: 'black', // 标签文字颜色
                             fontSize: 14, // 标签文字大小
+                            emphasis: { // 鼠标悬浮样式
+                                fontSize: 16, // 字体大小
+                                color: '#000', // 字体颜色
+                                fontWeight: 'bold', // 字体加粗
+                                formatter: function(params){
+                                    var locale = that.$i18n.locale
+                                    // console.log(locale);
+                                    if(locale == 'en'){
+                                        return params.data.name1
+                                    }else{
+                                        return params.data.name
+                                    }
+                                },
+                            }
                         }
                     };
                 })
@@ -710,11 +772,12 @@ export default {
                 this.RedTea = false;
                 this.BlackTea = false;
                 // 根据需要高亮的省份名称，设置其区域样式为浅红色
-                const highlightedProvinces = ['湖南', '湖北', '四川', '安徽', '浙江', '广东']
+                const highlightedProvinces = [['湖南','Hunan'], ['湖北','Hubei'], ['四川','Sichuan'], ['安徽','Anhui'], ['浙江','Zhejiang'], ['广东','Guangdong']]
                 const option = this.myChart.getOption()
                 option.series[0].data = highlightedProvinces.map(province => {
                     return {
-                        name: province,
+                        name: province[0],
+                        name1: province[1],
                         itemStyle: { areaColor:{
                                 type: 'linear', // 设置渐变色
                                 x: 0,
@@ -734,9 +797,30 @@ export default {
                             }, },
                         label: {
                             show: true, // 显示标签
-                            formatter: '{b}', // 标签内容为省份名称
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
                             color: 'black', // 标签文字颜色
                             fontSize: 14, // 标签文字大小
+                            emphasis: { // 鼠标悬浮样式
+                                fontSize: 16, // 字体大小
+                                color: '#000', // 字体颜色
+                                fontWeight: 'bold', // 字体加粗
+                                formatter: function(params){
+                                    var locale = that.$i18n.locale
+                                    // console.log(locale);
+                                    if(locale == 'en'){
+                                        return params.data.name1
+                                    }else{
+                                        return params.data.name
+                                    }
+                                },
+                            }
                         }
                     };
                 })
@@ -750,11 +834,12 @@ export default {
                 this.RedTea = false;
                 this.BlackTea = false;
                 // 根据需要高亮的省份名称，设置其区域样式为浅红色
-                const highlightedProvinces = ['四川', '湖南', '台湾', '福建', '广东']
+                const highlightedProvinces = [['四川','Sichuan'], ['湖南','Hunan'], ['台湾','Taiwan'], ['福建','Fujian'], ['广东','Guangdong']]
                 const option = this.myChart.getOption()
                 option.series[0].data = highlightedProvinces.map(province => {
                     return {
-                        name: province,
+                        name: province[0],
+                        name1: province[1],
                         itemStyle: { areaColor:{
                                 type: 'linear', // 设置渐变色
                                 x: 0,
@@ -774,9 +859,30 @@ export default {
                             },},
                         label: {
                             show: true, // 显示标签
-                            formatter: '{b}', // 标签内容为省份名称
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
                             color: 'black', // 标签文字颜色
                             fontSize: 14, // 标签文字大小
+                            emphasis: { // 鼠标悬浮样式
+                                fontSize: 16, // 字体大小
+                                color: '#000', // 字体颜色
+                                fontWeight: 'bold', // 字体加粗
+                                formatter: function(params){
+                                    var locale = that.$i18n.locale
+                                    // console.log(locale);
+                                    if(locale == 'en'){
+                                        return params.data.name1
+                                    }else{
+                                        return params.data.name
+                                    }
+                                },
+                            }
                         }
                     };
                 })
@@ -790,11 +896,12 @@ export default {
                 this.RedTea = true;
                 this.BlackTea = false;
                 // 根据需要高亮的省份名称，设置其区域样式为浅红色
-                const highlightedProvinces = ['四川', '云南', '湖南', '湖北', '广西']
+                const highlightedProvinces = [['四川','Sichuan'], ['云南','Yunnan'], ['湖南','Hunan'], ['湖北','Hubei'], ['广西','Guangxi']]
                 const option = this.myChart.getOption()
                 option.series[0].data = highlightedProvinces.map(province => {
                     return {
-                        name: province,
+                        name: province[0],
+                        name1: province[1],
                         itemStyle: { areaColor:{
                                 type: 'linear', // 设置渐变色
                                 x: 0,
@@ -814,9 +921,30 @@ export default {
                             }, },
                         label: {
                             show: true, // 显示标签
-                            formatter: '{b}', // 标签内容为省份名称
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
                             color: 'black', // 标签文字颜色
                             fontSize: 14, // 标签文字大小
+                            emphasis: { // 鼠标悬浮样式
+                                fontSize: 16, // 字体大小
+                                color: '#000', // 字体颜色
+                                fontWeight: 'bold', // 字体加粗
+                                formatter: function(params){
+                                    var locale = that.$i18n.locale
+                                    // console.log(locale);
+                                    if(locale == 'en'){
+                                        return params.data.name1
+                                    }else{
+                                        return params.data.name
+                                    }
+                                },
+                            }
                         }
                     };
                 })
@@ -830,11 +958,12 @@ export default {
                 this.RedTea = false;
                 this.BlackTea = true;
                 // 根据需要高亮的省份名称，设置其区域样式为浅红色
-                const highlightedProvinces = ['四川', '云南', '贵州', '河南', '安徽', '浙江', '福建', '广东']
+                const highlightedProvinces = [['四川','Sichuan'], ['云南','Yunnan'], ['贵州','Guizhou'], ['河南','Henan'], ['安徽','Anhui'], ['浙江','Zhejiang'], ['福建','Fujian'], ['广东','Guangdong']]
                 const option = this.myChart.getOption()
                 option.series[0].data = highlightedProvinces.map(province => {
                     return {
-                        name: province,
+                        name: province[0],
+                        name1: province[1],
                         itemStyle: { areaColor:{
                                 type: 'linear', // 设置渐变色
                                 x: 0,
@@ -854,9 +983,30 @@ export default {
                             }, },
                         label: {
                             show: true, // 显示标签
-                            formatter: '{b}', // 标签内容为省份名称
+                            formatter: function(params){
+                                var locale = that.$i18n.locale
+                                if(locale == 'en'){
+                                    return params.data.name1
+                                }else{
+                                    return params.data.name
+                                }
+                            },
                             color: 'black', // 标签文字颜色
                             fontSize: 14, // 标签文字大小
+                            emphasis: { // 鼠标悬浮样式
+                                fontSize: 16, // 字体大小
+                                color: '#000', // 字体颜色
+                                fontWeight: 'bold', // 字体加粗
+                                formatter: function(params){
+                                    var locale = that.$i18n.locale
+                                    // console.log(locale);
+                                    if(locale == 'en'){
+                                        return params.data.name1
+                                    }else{
+                                        return params.data.name
+                                    }
+                                },
+                            }
                         }
                     };
                 })
@@ -865,6 +1015,16 @@ export default {
         },
 
     },
+    watch:{
+        //监听语言是否变化，若变化调用createPieChart()
+        '$i18n.locale': {
+            handler() {
+                // 处理语言变化的逻辑
+                this.handleResize()
+            },
+            immediate: true // 立即执行一次回调函数
+        }
+    }
 }
 </script>
 <style scoped>
