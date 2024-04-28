@@ -7,9 +7,9 @@
         <t-divider layout="vertical" style="height:90%"></t-divider>
         <div  class="note-container">
           <div>
-            <P class="note">茶叶，其实是一年四季皆可采摘制作的。</P>
-            <p class="note">主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。</p>
-            <p class="note">其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。</P></div>
+            <P class="note">{{ $t('茶叶，其实是一年四季皆可采摘制作的。') }}</P>
+            <p class="note">{{ $t('主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。') }}</p>
+            <p class="note">{{ $t('其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。') }}</P></div>
           </div>
       </div>
       
@@ -24,6 +24,7 @@
   import { color } from "d3";
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
+import $ from 'jquery';
 
 echarts.use([SVGRenderer, CanvasRenderer]);
 
@@ -38,6 +39,111 @@ echarts.use([SVGRenderer, CanvasRenderer]);
     mounted() {
       this.createCalendar();
       this.createGantt();
+    },
+    computed:{
+      dataAxis(){
+        return [this.$t('碧螺春'), this.$t('滇青'), this.$t('西湖龙井'), this.$t('玉露'), this.$t('黄山毛峰'), this.$t('白毫银针'), this.$t('白牡丹'), this.$t('黄山白茶'), this.$t('贡眉'), this.$t('寿眉'), this.$t('蒙顶黄芽'), this.$t('霍山黄芽'), this.$t('广东大叶青'), this.$t('海马宫茶'), this.$t('北港毛尖'), this.$t('铁观音'), this.$t('北斗'), this.$t('水仙'), this.$t('肉桂'), this.$t('大红袍'), this.$t('祁门红茶'), this.$t('滇红'), this.$t('金骏眉'), this.$t('正山小种'), this.$t('六堡茶'), this.$t('普洱茶'), this.$t('泾阳茯砖茶'), this.$t('安化黑茶'), this.$t('千两茶')];
+      },
+      graphData(){
+        return [
+          ['2022-02-15', 1],
+          ['2022-03-10', 200],
+          ['2022-03-12', 279],
+          ['2022-03-14', 847],
+          ['2022-03-15', 241],
+          ['2022-03-18', 411],
+          ['2022-03-19', 985],
+          ['2022-03-20', 985],
+          ['2022-03-21', 985],
+          ['2022-03-24', 985],
+          ['2022-03-25', 985],
+          ['2022-04-01', 985],
+          ['2022-04-04', 985],
+          ['2022-04-05', 985],
+          ['2022-04-07', 985],
+          ['2022-04-08', 985],
+          ['2022-04-09', 985],
+          ['2022-04-10', 985],
+          ['2022-04-11', 985],
+          ['2022-04-12', 985],
+          ['2022-04-15', 985],
+          ['2022-04-16', 985],
+          ['2022-04-18', 985],
+          ['2022-04-19', 985],
+          ['2022-04-20', 985],
+          ['2022-04-24', 985],
+          ['2022-04-27', 985],
+          ['2022-04-28', 985],
+          ['2022-05-01', 985],
+          ['2022-05-02', 985],
+          ['2022-05-06', 985],
+          ['2022-05-07', 985],
+          ['2022-05-08', 985],
+          ['2022-05-10', 985],
+          ['2022-05-14', 985],
+          ['2022-05-15', 985],
+          ['2022-05-25', 985],
+          ['2022-05-30', 985],
+          ['2022-06-10', 985],
+          ['2022-07-16', 985],
+          ['2022-08-24', 985],
+          ['2022-10-05', 985],
+          ['2022-10-15', 985],
+          ['2022-11-05', 985],
+          ['2022-11-12', 985],
+          ['2022-11-15', 985]
+        ];
+      },
+      textData(){
+        return [
+          ['2022-02-15', this.$t('六堡茶')],
+          ['2022-03-10', this.$t('普洱茶'), this.$t('白毫银针')],
+          ['2022-03-12', this.$t('碧螺春')],
+          ['2022-03-14', this.$t('蒙顶黄芽')],
+          ['2022-03-15', this.$t('滇青'), this.$t('祁门红茶'), this.$t('霍山黄芽')],
+          ['2022-03-18', this.$t('西湖龙井'), this.$t('白毫银针')],
+          ['2022-03-19', this.$t('玉露')],
+          ['2022-03-20', this.$t('白牡丹'), this.$t('滇红')],
+          ['2022-03-21', this.$t('黄山白茶')],
+          ['2022-03-24', this.$t('黄山毛峰')],
+          ['2022-03-25', this.$t('广东大叶青')],
+          ['2022-04-01', this.$t('贡眉')],
+          ['2022-04-04', this.$t('海马宫茶')],
+          ['2022-04-05', this.$t('寿眉'), this.$t('白牡丹')],
+          ['2022-04-07', this.$t('碧螺春')],
+          ['2022-04-08', this.$t('黄山白茶')],
+          ['2022-04-09', this.$t('北港毛尖')],
+          ['2022-04-10', this.$t('金骏眉')],
+          ['2022-04-11', this.$t('霍山黄芽')],
+          ['2022-04-12', this.$t('蒙顶黄芽')],
+          ['2022-04-15', this.$t('滇青'), this.$t('黄山毛峰')],
+          ['2022-04-16', this.$t('泾阳茯砖茶')],
+          ['2022-04-18', this.$t('正山小种'), this.$t('西湖龙井')],
+          ['2022-04-19', this.$t('玉露')],
+          ['2022-04-20', this.$t('安华黑茶'), this.$t('北港毛尖')],
+          ['2022-04-24', this.$t('铁观音')],
+          ['2022-04-27', this.$t('水仙'), this.$t('北斗')],
+          ['2022-04-28', this.$t('寿眉')],
+          ['2022-05-01', this.$t('大红袍'), this.$t('肉桂')],
+          ['2022-05-02', this.$t('北斗')],
+          ['2022-05-06', this.$t('海马宫茶')],
+          ['2022-05-07', this.$t('泾阳茯砖茶'), this.$t('水仙')],
+          ['2022-05-08', this.$t('肉桂')],
+          ['2022-05-10', this.$t('祁门红茶')],
+          ['2022-05-14', this.$t('铁观音')],
+          ['2022-05-15', this.$t('广东大叶青'), this.$t('大红袍')],
+          ['2022-05-25', this.$t('六堡茶'), this.$t('金骏眉')],
+          ['2022-05-30', this.$t('正山小种')],
+          ['2022-06-10', this.$t('安化黑茶')],
+          ['2022-07-16', this.$t('千两茶')],
+          ['2022-08-24', this.$t('千两茶')],
+          ['2022-10-05', this.$t('铁观音')],
+          ['2022-10-15', this.$t('贡眉')],
+          ['2022-11-05', this.$t('铁观音')],
+          ['2022-11-12', this.$t('滇红')],
+          ['2022-11-15', this.$t('普洱茶')]
+        ];
+      }
     },
 
     methods: {
@@ -172,102 +278,8 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           {name: '2022-11-15', value: 0, begin: '无', end: '普洱茶'},
 
         ];
-        const graphData = [
-          ['2022-02-15', 1],
-          ['2022-03-10', 200],
-          ['2022-03-12', 279],
-          ['2022-03-14', 847],
-          ['2022-03-15', 241],
-          ['2022-03-18', 411],
-          ['2022-03-19', 985],
-          ['2022-03-20', 985],
-          ['2022-03-21', 985],
-          ['2022-03-24', 985],
-          ['2022-03-25', 985],
-          ['2022-04-01', 985],
-          ['2022-04-04', 985],
-          ['2022-04-05', 985],
-          ['2022-04-07', 985],
-          ['2022-04-08', 985],
-          ['2022-04-09', 985],
-          ['2022-04-10', 985],
-          ['2022-04-11', 985],
-          ['2022-04-12', 985],
-          ['2022-04-15', 985],
-          ['2022-04-16', 985],
-          ['2022-04-18', 985],
-          ['2022-04-19', 985],
-          ['2022-04-20', 985],
-          ['2022-04-24', 985],
-          ['2022-04-27', 985],
-          ['2022-04-28', 985],
-          ['2022-05-01', 985],
-          ['2022-05-02', 985],
-          ['2022-05-06', 985],
-          ['2022-05-07', 985],
-          ['2022-05-08', 985],
-          ['2022-05-10', 985],
-          ['2022-05-14', 985],
-          ['2022-05-15', 985],
-          ['2022-05-25', 985],
-          ['2022-05-30', 985],
-          ['2022-06-10', 985],
-          ['2022-07-16', 985],
-          ['2022-08-24', 985],
-          ['2022-10-05', 985],
-          ['2022-10-15', 985],
-          ['2022-11-05', 985],
-          ['2022-11-12', 985],
-          ['2022-11-15', 985]
-        ];
-        const textData = [
-          ['2022-02-15', '六堡茶'],
-          ['2022-03-10', '普洱茶', '白毫银针'],
-          ['2022-03-12', '碧螺春'],
-          ['2022-03-14', '蒙顶黄芽'],
-          ['2022-03-15', '滇青', '祁门红茶', '霍山黄芽'],
-          ['2022-03-18', '西湖龙井', '白毫银针'],
-          ['2022-03-19', '玉露'],
-          ['2022-03-20', '白牡丹', '滇红'],
-          ['2022-03-21', '黄山白茶'],
-          ['2022-03-24', '黄山毛峰'],
-          ['2022-03-25', '广东大叶青'],
-          ['2022-04-01', '贡眉'],
-          ['2022-04-04', '海马宫茶'],
-          ['2022-04-05', '寿眉', '白牡丹'],
-          ['2022-04-07', '碧螺春'],
-          ['2022-04-08', '黄山白茶'],
-          ['2022-04-09', '北港毛尖'],
-          ['2022-04-10', '金骏眉'],
-          ['2022-04-11', '霍山黄芽'],
-          ['2022-04-12', '蒙顶黄芽'],
-          ['2022-04-15', '滇青', '黄山毛峰'],
-          ['2022-04-16', '泾阳茯砖茶'],
-          ['2022-04-18', '正山小种', '西湖龙井'],
-          ['2022-04-19', '玉露'],
-          ['2022-04-20', '安华黑茶', '北港毛尖'],
-          ['2022-04-24', '铁观音'],
-          ['2022-04-27', '水仙', '北斗'],
-          ['2022-04-28', '寿眉'],
-          ['2022-05-01', '大红袍', '肉桂'],
-          ['2022-05-02', '北斗'],
-          ['2022-05-06', '海马宫茶'],
-          ['2022-05-07', '泾阳茯砖茶', '水仙'],
-          ['2022-05-08', '肉桂'],
-          ['2022-05-10', '祁门红茶'],
-          ['2022-05-14', '铁观音'],
-          ['2022-05-15', '广东大叶青', '大红袍'],
-          ['2022-05-25', '六堡茶', '金骏眉'],
-          ['2022-05-30', '正山小种'],
-          ['2022-06-10', '安化黑茶'],
-          ['2022-07-16', '千两茶'],
-          ['2022-08-24', '千两茶'],
-          ['2022-10-05', '铁观音'],
-          ['2022-10-15', '贡眉'],
-          ['2022-11-05', '铁观音'],
-          ['2022-11-12', '滇红'],
-          ['2022-11-15', '普洱茶']
-        ];
+        const graphData = this.graphData;
+        const textData = this.textData;
         const links = graphData.map(function (item, idx) {
           return {
             source: 0,
@@ -275,6 +287,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           };
         });
         links.pop();
+        var that = this;
         let option = {
           backgroundColor: 'rgba(0, 0, 0, 0)',
           tooltip: {
@@ -482,261 +495,261 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 formatter: function(params) {
                   let content = [];
                   if (params.data[0] == textData[0][0]) {
-                    content += '<div style="text-align: left;">' + textData[0][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[0][1])+ '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if(params.data[0] == textData[1][0]){
-                    content += '<div style="text-align: left;">' + textData[1][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0]+ '<br>';
-                    content += '<div style="text-align: left;">' + textData[1][2] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[1][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0]+ '<br>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[1][2]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[2][0]) {
-                    content += '<div style="text-align: left;">' + textData[2][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[2][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[3][0]) {
-                    content += '<div style="text-align: left;">' + textData[3][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[3][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[4][0]) {
-                    content += '<div style="text-align: left;">' + textData[4][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[4][2] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[4][3] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[4][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[4][2]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[4][3]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[5][0]) {
-                    content += '<div style="text-align: left;">' + textData[5][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[5][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[5][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[5][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[6][0]) {
-                    content += '<div style="text-align: left;">' + textData[6][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[6][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[7][0]) {
-                    content += '<div style="text-align: left;">' + textData[7][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[7][2] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[7][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[7][2]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[8][0]) {
-                    content += '<div style="text-align: left;">' + textData[8][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[8][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[9][0]) {
-                    content += '<div style="text-align: left;">' + textData[9][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[9][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[10][0]) {
-                    content += '<div style="text-align: left;">' + textData[10][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[10][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[11][0]) {
-                    content += '<div style="text-align: left;">' + textData[11][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[11][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[12][0]) {
-                    content += '<div style="text-align: left;">' + textData[12][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[12][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[13][0]) {
-                    content += '<div style="text-align: left;">' + textData[13][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[13][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[13][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[13][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[14][0]) {
-                    content += '<div style="text-align: left;">' + textData[14][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[14][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[15][0]) {
-                    content += '<div style="text-align: left;">' + textData[15][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[15][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[16][0]) {
-                    content += '<div style="text-align: left;">' + textData[16][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[16][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[17][0]) {
-                    content += '<div style="text-align: left;">' + textData[17][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[17][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[18][0]) {
-                    content += '<div style="text-align: left;">' + textData[18][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[18][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[19][0]) {
-                    content += '<div style="text-align: left;">' + textData[19][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[19][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[20][0]) {
-                    content += '<div style="text-align: left;">' + textData[20][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[20][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[20][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[20][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }             
                   else if (params.data[0] == textData[21][0]) {
-                    content += '<div style="text-align: left;">' + textData[21][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[21][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[22][0]) {
-                    content += '<div style="text-align: left;">' + textData[22][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[22][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[22][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[22][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[23][0]) {
-                    content += '<div style="text-align: left;">' + textData[23][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[23][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[24][0]) {
-                    content += '<div style="text-align: left;">' + textData[24][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[24][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[24][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[24][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[25][0]) {
-                    content += '<div style="text-align: left;">' + textData[25][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[25][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[26][0]) {
-                    content += '<div style="text-align: left;">' + textData[26][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[26][2] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[26][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[26][2]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[27][0]) {
-                    content += '<div style="text-align: left;">' + textData[27][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[27][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[28][0]) {
-                    content += '<div style="text-align: left;">' + textData[28][1] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[28][2] + '<br>';
-                    content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[28][1]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[28][2]) + '<br>';
+                    content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[29][0]) {
-                    content += '<div style="text-align: left;">' + textData[29][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[29][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[30][0]) {
-                    content += '<div style="text-align: left;">' + textData[30][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[30][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[31][0]) {
-                    content += '<div style="text-align: left;">' + textData[31][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[31][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[31][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[31][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[32][0]) {
-                    content += '<div style="text-align: left;">' + textData[32][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[32][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[33][0]) {
-                    content += '<div style="text-align: left;">' + textData[33][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[33][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[34][0]) {
-                    content += '<div style="text-align: left;">' + textData[34][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[34][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[35][0]) {
-                    content += '<div style="text-align: left;">' + textData[35][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[35][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[35][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[35][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[36][0]) {
-                    content += '<div style="text-align: left;">' + textData[36][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
-                    content += '<div style="text-align: left;">' + textData[36][2] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[36][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[36][2]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[37][0]) {
-                    content += '<div style="text-align: left;">' + textData[37][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[37][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[38][0]) {
-                    content += '<div style="text-align: left;">' + textData[38][1] + '<br>';
-                    content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[38][1]) + '<br>';
+                    content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[39][0]) {
-                    content += '<div style="text-align: left;">' + textData[39][1] + '<br>';
-                      content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[39][1]) + '<br>';
+                      content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[40][0]) {
-                    content += '<div style="text-align: left;">' + textData[40][1] + '<br>';
-                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[40][1]) + '<br>';
+                      content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[41][0]) {
-                    content += '<div style="text-align: left;">' + textData[41][1] + '<br>';
-                      content += "开始采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[41][1]) + '<br>';
+                      content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[42][0]) {
-                    content += '<div style="text-align: left;">' + textData[42][1] + '<br>';
-                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[42][1]) + '<br>';
+                      content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[43][0]) {
-                    content += '<div style="text-align: left;">' + textData[43][1] + '<br>';
-                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[43][1]) + '<br>';
+                      content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[44][0]) {
-                    content += '<div style="text-align: left;">' + textData[44][1] + '<br>';
-                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[44][1]) + '<br>';
+                      content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
                   else if (params.data[0] == textData[45][0]) {
-                    content += '<div style="text-align: left;">' + textData[45][1] + '<br>';
-                      content += "结束采摘时间" + ': ' + params.data[0] + '</div>';
+                    content += '<div style="text-align: left;">' + that.$t(textData[45][1]) + '<br>';
+                      content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
                   }
 
@@ -791,17 +804,18 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
       createGantt(){
         let progressChart = echarts.init(this.$refs.ganttChart, null, { renderer: 'svg' });
-        let dataAxis = ['碧螺春', '滇青', '西湖龙井', '玉露', '黄山毛峰', '白毫银针', '白牡丹', '黄山白茶', '贡眉', '寿眉', '蒙顶黄芽', '霍山黄芽', '广东大叶青', '海马宫茶', '北港毛尖', '铁观音', '北斗', '水仙', '肉桂', '大红袍', '祁门红茶', '滇红', '金骏眉', '正山小种', '六堡茶', '普洱茶', '泾阳茯砖茶', '安化黑茶', '千两茶'];
+        let dataAxis = this.dataAxis;
         let data = ['2022-04-07', '2022-04-15', '2022-04-18', '2022-04-19', '2022-04-15', '2022-03-18', '2022-04-05', '2022-04-08', '2022-10-15', '2022-04-28', '2022-04-12', '2022-04-11', '2022-05-15', '2022-05-06', '2022-04-20', '2022-05-14', '2022-05-02', '2022-05-07', '2022-05-08', '2022-05-15', '2022-05-10', '2022-11-12', '2022-05-25', '2022-05-30', '2022-05-25', '2022-11-15', '2022-05-07', '2022-06-10', '2022-08-24']; // 结束时间
+        var that = this;
         let option = {
           // 鼠标移入提示工具
           tooltip: {
             trigger: 'axis',
             formatter(params) {
               if (params[1].data && params[0].data) {
-                return `<div>开始采摘时间：${params[1].data}</div>` + `<div>结束采摘时间：${params[0].data}</div>`;
+                return `<div>`+ that.$t('开始采摘时间') + `：` + `${params[1].data}`+ `</div>` + `<div>` + that.$t('结束采摘时间') + `：` + `${params[0].data}` + `</div>`;
               }else if(params[1].data == '2022-10-05' && params[0].data){
-                return `<div>开始采摘时间：${params[1].data}/2022-10-05</div>` + `<div>结束采摘时间：${params[0].data}/2022-11-05</div>`;
+                return `<div>`+ that.$t('开始采摘时间') + `：` + `${params[1].data}/2022-10-05</div>`+ `</div>` + `<div>` + that.$t('结束采摘时间') + `：` + `${params[0].data}/2022-11-05` + `</div>`;
               } else {
                 return '';
               }
@@ -977,10 +991,11 @@ echarts.use([SVGRenderer, CanvasRenderer]);
     text-align: left;
     vertical-align: top;
     padding: 48px 0;
+    white-space: nowrap;
   }
 
   .note-container{
-    padding:90px 24px;
+    /* padding:90px 24px; */
     display:flex;
     align-items:center;
     /* background-color: var(--td-bg-color-container); */
