@@ -525,6 +525,7 @@ export default {
             });
         },
         updateMapOption() {
+            var that = this
             var option = {
                 series: [
                     {
@@ -534,8 +535,12 @@ export default {
                         label: {
                             emphasis: {
                                 show: true, // 在鼠标悬停时显示标签
-                                formatter: '{b}', // 标签内容为省份名称
-                                color: 'white', // 标签文字颜色
+                                formatter: function(params){
+                                    console.log(params);
+                                    var return_str = that.$t(params.name)
+                                    return return_str
+                                }, // 标签内容为省份名称
+                                color: 'Black', // 标签文字颜色
                                 fontSize: 14, // 标签文字大小
                                 fontWeight: 'bold', // 标签文字加粗
 
@@ -545,24 +550,6 @@ export default {
                         itemStyle: {
                             normal: {
                                 areaColor: "#e9f7f0",
-                                // areaColor: {
-                                //         type: 'linear', // 设置渐变色
-                                //         x: 0,
-                                //         y: 0,
-                                //         x2: 0.5,
-                                //         y2: 1,
-                                //         colorStops: [
-                                //             {
-                                //                 offset: 0,
-                                //                 color: 'rgba(255, 249, 232, 1)' // 起始颜色
-                                //             },
-                                //             {
-                                //                 offset: 1,
-                                //                 color: '#589d8810' // 结束颜色
-                                //             }
-                                //         ]
-                                //     },
-
                                 borderColor: '#589d88', // 地图区域的边框颜色
                                 borderWidth: 0.5 // 地图区域的边框宽度
 
