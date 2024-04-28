@@ -333,6 +333,11 @@ export default{
     "黑茶制作的独特之处在于晒青这个步骤。茶叶会被摊开并在适当的环境中暴晒，让茶叶进一步发酵和氧化。":"The unique feature of dark tea making is the process of Browning. The tea leaves are then spread out and exposed to the sun in the proper environment to allow further fermentation and oxidation.",
     "最后，茶叶会进行干燥处理，以确保茶叶的水分达到适当的水平，便于长期储存，并保持其品质和口感。":"Finally, the tea is dried to ensure that the moisture content of the tea reaches the appropriate level for long-term storage and to maintain its quality and taste.",
 
+    "茶叶，其实是一年四季皆可采摘制作的。":"Tea can actually be picked and made all year round.",
+    "主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。":"The main picking seasons are spring, summer, and autumn, and winter is mainly reserved for the restoration and maintenance of tea trees.",
+    "其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。":"Among them, spring tea is harvested from March to May; Summer tea is harvested from May to July; Autumn tea is harvested from August to October; Winter tea is harvested in late October. Due to different types of tea, the requirements for the tenderness of tea raw materials vary, so the picking time may also vary. Relatively tender tea leaves are mostly spring tea and autumn tea; Coarse tea leaves are mostly summer tea and autumn tea.",
+    "开始采摘时间":"Start",
+    "结束采摘时间":"End",    
     "提示":"Notation",
     "由于该省份不是主要产茶省份，暂无数据！":"As this province is not a major tea producing province, there is no data.",
 
