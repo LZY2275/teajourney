@@ -10,7 +10,7 @@
             <p class="EvaluationMethod">评鉴方法</p>
             <p class="Method">METHOD</p>
           </div>
-          <p class="Caption1">鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。</p>
+          <p class="Caption1">{{ $t('鉴别茶叶品质好坏，主要采用感官审评的方法，对茶叶的外形与内质进行评判。具体步骤主要分为闻、观、饮三步。') }}</p>
         </div>
 
         <div style=".container {
@@ -28,31 +28,32 @@
               style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh;background-color: var(--td-bg-color-container);; display: flex; flex-direction: column; align-items: center;">
               <div style="display: flex; width: 100%;margin-bottom: 2vh;">
                 <div style="flex: 1;">
-                  <p class="Three">评茶方式</p>
+                  <p class="Three">{{ $t('评茶方式') }}</p>
                   <p class="ThreeSub">TEAWARE EVALUATOION</p>
                 </div>
-                <p class="Caption2">评茶是一种传统的中国茶文化活动，通常由茶艺师或茶叶爱好者主持。在评茶过程中，参与者会品尝不同种类的茶叶，并对其外形、香气、滋味、汤色等方面进行评价。</p>
+                <p class="Caption2">{{ $t('评茶是一种传统的中国茶文化活动，通常由茶艺师或茶叶爱好者主持。在评茶过程中，参与者会品尝不同种类的茶叶，并对其外形、香气、滋味、汤色等方面进行评价。') }}
+                </p>
               </div>
               <div style="display: flex; width: 100%;">
                 <t-card class="card-left card-first-2">
                   <img src="../assets/img/method1.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-                  <p class="NewlyTea">闻</p>
-                  <p class="Caption3">将茶汤倒入茶海，闻盖碗中茶叶香气，评鉴茶叶香气和杂味。</p>
+                  <p class="NewlyTea">{{ $t('闻') }}</p>
+                  <p class="Caption3">{{ $t('将茶汤倒入茶海，闻盖碗中茶叶香气，评鉴茶叶香气和杂味。') }}</p>
                 </t-card>
 
                 <t-card class="card-left card-first-2">
 
                   <img src="../assets/img/method2.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">观</p>
-                  <p class="Caption3">从玻璃茶海观茶汤色色泽、清亮度、有无沉淀、有无漂浮。</p>
+                  <p class="NewlyTea">{{ $t('观') }}</p>
+                  <p class="Caption3">{{ $t('从玻璃茶海观茶汤色色泽、清亮度、有无沉淀、有无漂浮。') }}</p>
                 </t-card>
                 <t-card class="card-left">
 
                   <img src="../assets/img/method3.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">饮</p>
-                  <p class="Caption3">当茶汤温度降至45℃以下，取10ml-15ml含入口中，让茶汤接触口腔所有部位，之后缓慢吞下。</p>
+                  <p class="NewlyTea">{{ $t('饮') }}</p>
+                  <p class="Caption3">{{ $t('当茶汤温度降至45℃以下，取10ml-15ml含入口中，让茶汤接触口腔所有部位，之后缓慢吞下。') }}</p>
                 </t-card>
               </div>
             </t-card>
@@ -66,28 +67,28 @@
                   <p class="Three">三看</p>
                   <p class="ThreeSub">THREE LOOK</p>
                 </div>
-                <p class="Caption2">净、整、色</p>
+                <p class="Caption2">{{ $t('净、整、色') }}</p>
               </div>
               <div style="display: flex; width: 100%;">
                 <t-card class="card-left card-first-2">
                   <img src="../assets/img/method4.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-                  <p class="NewlyTea">看干茶</p>
-                  <p class="Caption3">看干茶的色泽、质地、匀齐度、紧结度、显毫状况。</p>
+                  <p class="NewlyTea">{{ $t('看干茶') }}</p>
+                  <p class="Caption3">{{ $t('看干茶的色泽、质地、匀齐度、紧结度、显毫状况。') }}</p>
                 </t-card>
 
                 <t-card class="card-left card-first-2">
 
                   <img src="../assets/img/method5.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">看茶汤色泽</p>
-                  <p class="Caption3">观茶茶汤的色泽，主要看鲜亮度、透析度、有无杂质、有无浑浊。</p>
+                  <p class="NewlyTea">{{ $t('看茶汤色泽') }}</p>
+                  <p class="Caption3">{{ $t('观茶茶汤的色泽，主要看鲜亮度、透析度、有无杂质、有无浑浊。') }}</p>
                 </t-card>
                 <t-card class="card-left">
 
                   <img src="../assets/img/method6.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">看茶底</p>
-                  <p class="Caption3">看展开后茶叶的细嫩、匀齐以及完整度，还要看是否存有焦斑、红筋、红梗等现象。</p>
+                  <p class="NewlyTea">{{ $t('看茶底') }}</p>
+                  <p class="Caption3">{{ $t('看展开后茶叶的细嫩、匀齐以及完整度，还要看是否存有焦斑、红筋、红梗等现象。') }}</p>
                 </t-card>
               </div>
             </t-card>
@@ -102,28 +103,28 @@
                   <p class="Three">三闻</p>
                   <p class="ThreeSub">THREE SMELL</p>
                 </div>
-                <p class="Caption2">干、热、冷。</p>
+                <p class="Caption2">{{ $t('干、热、冷') }}</p>
               </div>
               <div style="display: flex; width: 100%;">
                 <t-card class="card-left card-first-2">
                   <img src="../assets/img/method7.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-                  <p class="NewlyTea">干闻（干茶）</p>
-                  <p class="Caption3">该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道。</p>
+                  <p class="NewlyTea">{{ $t('干闻（干茶）') }}</p>
+                  <p class="Caption3">{{ $t('该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道。') }}</p>
                 </t-card>
 
                 <t-card class="card-left card-first-2">
 
                   <img src="../assets/img/method8.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">热闻（冲泡后）</p>
-                  <p class="Caption3">在茶温度较高时闻香。闻香形式：盖碗缝隙、盖香、茶香、公道杯香。</p>
+                  <p class="NewlyTea">{{ $t('热闻（冲泡后）') }}</p>
+                  <p class="Caption3">{{ $t('在茶温度较高时闻香。闻香形式：盖碗缝隙、盖香、茶香、公道杯香。') }}</p>
                 </t-card>
                 <t-card class="card-left">
 
                   <img src="../assets/img/method9.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">冷闻（器皿及茶底）</p>
-                  <p class="Caption3">温度降低后再闻茶盖或杯底留香，这时可闻到在高温时，因茶叶芬香物大量挥发而掩盖的其他香味。</p>
+                  <p class="NewlyTea">{{ $t('冷闻（器皿及茶底）') }}</p>
+                  <p class="Caption3">{{ $t('温度降低后再闻茶盖或杯底留香，这时可闻到在高温时，因茶叶芬香物大量挥发而掩盖的其他香味。') }}</p>
                 </t-card>
               </div>
             </t-card>
@@ -138,28 +139,28 @@
                   <p class="Three">三品</p>
                   <p class="ThreeSub">THREE SAMPLE</p>
                 </div>
-                <p class="Caption2">甘、润、韵。品茶方法：将茶汤含在嘴里，像含着一朵鲜花一样慢慢感受，细细品味，吞下去时还要注意感受茶汤过喉时是否爽滑。</p>
+                <p class="Caption2">{{ $t('甘、润、韵。品茶方法：将茶汤含在嘴里，像含着一朵鲜花一样慢慢感受，细细品味，吞下去时还要注意感受茶汤过喉时是否爽滑。') }}</p>
               </div>
               <div style="display: flex; width: 100%;">
                 <t-card class="card-left card-first-2">
                   <img src="../assets/img/method10.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
-                  <p class="NewlyTea">滋味</p>
-                  <p class="Caption3">让茶汤在口腔内流动，与舌部充分接触，细品茶味是浓烈鲜爽、甜爽，还是苦涩、淡薄。</p>
+                  <p class="NewlyTea">{{ $t('滋味') }}</p>
+                  <p class="Caption3">{{ $t('让茶汤在口腔内流动，与舌部充分接触，细品茶味是浓烈鲜爽、甜爽，还是苦涩、淡薄。') }}</p>
                 </t-card>
 
                 <t-card class="card-left card-first-2">
 
                   <img src="../assets/img/method11.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">甘醇度</p>
-                  <p class="Caption3">厚：代表茶浸出物多，丰富、耐泡；细腻度、油润度：又厚又油润喝起来就不会烫刺喉咙。</p>
+                  <p class="NewlyTea">{{ $t('甘醇度') }}</p>
+                  <p class="Caption3">{{ $t('厚：代表茶浸出物多，丰富、耐泡；细腻度、油润度：又厚又油润喝起来就不会烫刺喉咙。') }}</p>
                 </t-card>
                 <t-card class="card-left">
 
                   <img src="../assets/img/method12.jpg" style="width: 107px; height: 107px; border-radius: 50%;">
 
-                  <p class="NewlyTea">回味</p>
-                  <p class="Caption3">当茶汤温度降至45℃以下，取10ml-15ml含入口中，让茶汤接触口腔所有部位，之后缓慢吞下。</p>
+                  <p class="NewlyTea">{{ $t('回味') }}</p>
+                  <p class="Caption3">{{ $t('当茶汤温度降至45℃以下，取10ml-15ml含入口中，让茶汤接触口腔所有部位，之后缓慢吞下。') }}</p>
                 </t-card>
               </div>
             </t-card>
@@ -186,52 +187,60 @@
                   <div style="display: flex;">
                     <div class="four-container">
                       <div><img src="../assets/img/feeling1.jpg"></div>
-                      <div class="item-title">清香</div>
-                      <div class="item-note" style="margin-top:8px;">见于鲜叶嫩度在一芽二、三叶，制茶及时正常的绿茶等。</div>
+                      <div class="item-title">{{ $t('清香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('见于鲜叶嫩度在一芽二、三叶，制茶及时正常的绿茶等。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling2.jpg"></div>
-                      <div class="item-title">青草香</div>
-                      <div class="item-note" style="margin-top:8px;">野生茶具备的浓郁香味，用青草香来描述。</div>
+                      <div class="item-title">{{ $t('青草香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('野生茶具备的浓郁香味，用青草香来描述。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling3.jpg"></div>
-                      <div class="item-title">花香</div>
-                      <div class="item-note" style="margin-top:8px;">各种类似鲜花的香气，按花香青甜的不同，分为青花香和甜花香两种。</div>
+                      <div class="item-title">{{ $t('花香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('各种类似鲜花的香气，按花香青甜的不同，分为青花香和甜花香两种。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling4.jpg"></div>
-                      <div class="item-title">板栗香</div>
-                      <div class="item-note" style="margin-top:8px;">似栗子炒熟时发出的香气。高山优质茶的香型。</div>
+                      <div class="item-title">{{ $t('板栗香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('似栗子炒熟时发出的香气。高山优质茶的香型。') }}</div>
                     </div>
                   </div>
                   <div class="three-padding"></div>
                   <div style="display: flex;">
                     <div class="four-container">
                       <div><img src="../assets/img/feeling5.jpg"></div>
-                      <div class="item-title">兰香</div>
-                      <div class="item-note" style="margin-top:8px;">幽然之香，清爽幽雅，是最珍贵的茶香</div>
+                      <div class="item-title">{{ $t('兰香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('幽然之香，清爽幽雅，是最珍贵的茶香。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling6.jpg"></div>
-                      <div class="item-title">水果香</div>
-                      <div class="item-note" style="margin-top:8px;">类似各种水果香气，如雪梨香、佛手香、桔子香、李子香等等。</div>
+                      <div class="item-title">{{ $t('水果香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('类似各种水果香气，如雪梨香、佛手香、桔子香、李子香等等。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling7.jpg"></div>
-                      <div class="item-title">蜜香</div>
-                      <div class="item-note" style="margin-top:8px;">2~5年的茶都会呈现出的香味，即经过发酵一段时间的生饼。</div>
+                      <div class="item-title">{{ $t('蜜香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('2~5年的茶都会呈现出的香味，即经过发酵一段时间的生饼。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling8.jpg"></div>
-                      <div class="item-title">火香</div>
-                      <div class="item-note" style="margin-top:8px;">茶叶在干燥时温度比较高，在精制时适度焙火而来。</div>
+                      <div class="item-title">{{ $t('火香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('茶叶在干燥时温度比较高，在精制时适度焙火而来。') }}</div>
                     </div>
                   </div>
                   <div class="three-padding"></div>
@@ -242,52 +251,60 @@
                   <div style="display: flex;">
                     <div class="four-container">
                       <div><img src="../assets/img/feeling9.jpg"></div>
-                      <div class="item-title">檀香</div>
-                      <div class="item-note" style="margin-top:8px;">青壮叶生茶在一定时间的高温存储和退仓后，茶汤所产生的特有香气。</div>
+                      <div class="item-title">{{ $t('檀香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('青壮叶生茶在一定时间的高温存储和退仓后，茶汤所产生的特有香气。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling10.jpg"></div>
-                      <div class="item-title">药香</div>
-                      <div class="item-note" style="margin-top:8px;">在年份老的茶中会出现的香味，这种味道与熬中药的药汤外形和口感都接近。</div>
+                      <div class="item-title">{{ $t('药香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('在年份老的茶中出现的香味，与熬中药的药汤外形和口感都接近。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling11.jpg"></div>
-                      <div class="item-title">荷香</div>
-                      <div class="item-note" style="margin-top:8px;">茶叶经过适当度的陈化后发酵，去掉浓烈的青叶香，自然而留下淡淡的荷香。</div>
+                      <div class="item-title">{{ $t('荷香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('茶叶经过适当的陈化后发酵，去掉青叶香后留下了淡淡的荷香。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling12.jpg"></div>
-                      <div class="item-title">参香</div>
-                      <div class="item-note" style="margin-top:8px;">木质化香气，陈年老茶居多。</div>
+                      <div class="item-title">{{ $t('参香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('木质化香气，陈年老茶居多。') }}</div>
                     </div>
                   </div>
                   <div class="three-padding"></div>
                   <div style="display: flex;">
                     <div class="four-container">
                       <div><img src="../assets/img/feeling13.jpg"></div>
-                      <div class="item-title">枣香</div>
-                      <div class="item-note" style="margin-top:8px;">老白茶具有的像红枣般的香气。</div>
+                      <div class="item-title">{{ $t('枣香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('老白茶具有的像红枣般的香气。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling16.jpg"></div>
-                      <div class="item-title">菌花香</div>
-                      <div class="item-note" style="margin-top:8px;">部分有“金花”的黑茶特有的香气。</div>
+                      <div class="item-title">{{ $t('菌花香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('部分有“金花”的黑茶特有的香气。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling14.jpg"></div>
-                      <div class="item-title">日晒香</div>
-                      <div class="item-note" style="margin-top:8px;">白茶经过日晒产生的气味。</div>
+                      <div class="item-title">{{ $t('日晒香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('白茶经过日晒产生的气味。') }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img src="../assets/img/feeling15.jpg"></div>
-                      <div class="item-title">麦香</div>
-                      <div class="item-note" style="margin-top:8px;">经过麦香香精的注入或者与麦香干燥花朵混合加工而成的香气。</div>
+                      <div class="item-title">{{ $t('麦香') }}</div>
+                      <div class="item-note" style="margin-top:8px;overflow: auto;  height: 60px;">
+                        {{ $t('经过麦香香精的注入或者与麦香干燥花朵混合加工而成的香气。') }}</div>
                     </div>
                   </div>
                   <div class="three-padding"></div>
@@ -558,8 +575,8 @@
       <div style="margin-left: 2vw;">
         <p class="Colour">汤色</p>
         <p class="ColourSub">COLOR OF TEA</p>
-        <p class="Caption6">由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。
-          因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。</p>
+        <p class="Caption6">{{ $t('由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。') }}
+        </p>
       </div>
 
       <div ref="main" style="width: 60vw; height: 60vh;margin-left: -8vw;margin-top: -6vh;"></div>
@@ -580,7 +597,7 @@
 import SankeyView from '../views/SankeyView.vue';
 import TeaFragranceView from '../views/TeaFragranceView.vue'
 import * as echarts from 'echarts';
-
+import Vue from 'vue';
 export default {
   name: 'TasteView',
   components: {
@@ -591,18 +608,18 @@ export default {
   data() {
     return {
       items: [
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: '艳绿', description: '“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: '黄绿', description: '“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: '浅黄', description: '“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: '金黄', description: '“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: '橙黄', description: '“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: '红汤', description: '“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: this.$t('艳绿'), description: this.$t('“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: this.$t('绿黄'), description: this.$t('“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: this.$t('黄绿'), description: this.$t('“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: this.$t('浅黄'), description: this.$t('“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: this.$t('金黄'), description: this.$t('“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: this.$t('橙黄'), description: this.$t('“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: this.$t('橙红'), description: this.$t('“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: this.$t('红汤'), description: this.$t('“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: this.$t('凝乳'), description: this.$t('“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: this.$t('明亮'), description: this.$t('“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: this.$t('浑浊'), description: this.$t('“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: this.$t('昏暗'), description: this.$t('“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。') },
       ],
       lastHighlightedIndex: '',
       clickedIndex: -1, // 记录点击的索引
@@ -701,18 +718,18 @@ export default {
               show: false
             },
             data: [
-              { value: 1, name: '艳绿', image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', itemStyle: { color: '#E4FC04' } },
-              { value: 1, name: '绿黄', image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: '#FFFF71' } },
-              { value: 1, name: '黄绿', image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: '#CF7E07' } },
-              { value: 1, name: '浅黄', image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: '#FDD631' } },
-              { value: 1, name: '金黄', image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: '#F3C007' } },
-              { value: 1, name: '橙黄', image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: '#F67B00' } },
-              { value: 1, name: '橙红', image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: '#DE6F00' } },
-              { value: 1, name: '红汤', image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: '#FE3000' } },
-              { value: 1, name: '凝乳', image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: '#7E1800' } },
-              { value: 1, name: '明亮', image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: '#FFFF99' } },
-              { value: 1, name: '浑浊', image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: '#703800' } },
-              { value: 1, name: '昏暗', image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: '#502800' } }
+              { value: 1, name: this.$t('艳绿'), image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', itemStyle: { color: '#E4FC04' } },
+              { value: 1, name: this.$t('绿黄'), image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: '#FFFF71' } },
+              { value: 1, name: this.$t('黄绿'), image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: '#CF7E07' } },
+              { value: 1, name: this.$t('浅黄'), image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: '#FDD631' } },
+              { value: 1, name: this.$t('金黄'), image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: '#F3C007' } },
+              { value: 1, name: this.$t('橙黄'), image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: '#F67B00' } },
+              { value: 1, name: this.$t('橙红'), image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: '#DE6F00' } },
+              { value: 1, name: this.$t('红汤'), image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: '#FE3000' } },
+              { value: 1, name: this.$t('凝乳'), image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: '#7E1800' } },
+              { value: 1, name: this.$t('明亮'), image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: '#FFFF99' } },
+              { value: 1, name: this.$t('浑浊'), image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: '#703800' } },
+              { value: 1, name: this.$t('昏暗'), image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: '#502800' } }
             ]
           }
         ]
@@ -1056,6 +1073,8 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .Caption3 {
+  height: 100px;
+  overflow: auto;
   margin-top: 2vh;
   flex: 1;
   display: flex;
@@ -1069,7 +1088,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .Three {
-  width: 96px;
+  width: 180px;
   height: 22px;
   font-size: 18px;
   font-weight: 500;
@@ -1177,7 +1196,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 
 .Caption6 {
   text-indent: 2em;
-  width: 132px;
+  width: 170px;
   height: 43px;
   margin-top: 20px;
   font-size: 14px;
@@ -1190,7 +1209,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 
 .BrightGreen {
   margin-top: 2vh;
-  width: 50px;
+  width: 150px;
   height: 22px;
   font-size: 16px;
   font-weight: 500;
@@ -1246,7 +1265,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 
 .Caption7 {
   text-indent: 2em;
-  width: 320px;
+  width: 250px;
   height: 43px;
   font-size: 14px;
   font-weight: 500;

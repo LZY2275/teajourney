@@ -146,7 +146,7 @@
             <!-- 步骤条 -->
       <div style="width: calc(100vw - 350px); display: flex;justify-content: center;">
         <div style="width: calc(100vw - 460px);"   :class="{ 'last-step': showImage6 }">
-          <div v-if="showImage1" style="height: 50%;display: flex; justify-content: center; align-items: center; ">
+          <div v-if="showImage1" style="display: flex; justify-content: center; align-items: center; ">
             <template>
               <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
                 <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
@@ -172,7 +172,7 @@
               </t-steps>
             </template>
           </div>
-        <div v-if="showImage2" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+        <div v-if="showImage2" style=" display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
@@ -194,7 +194,7 @@
           </template>
 
         </div>
-        <div v-if="showImage3" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+        <div v-if="showImage3" style=" display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
@@ -221,7 +221,7 @@
           </template>
 
         </div>
-        <div v-if="showImage4" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+        <div v-if="showImage4" style=" display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
@@ -253,7 +253,7 @@
           </template>
 
         </div>
-        <div v-if="showImage5" style="height: 50%;display: flex; justify-content: center; align-items: center;">
+        <div v-if="showImage5" style=" display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
@@ -280,7 +280,7 @@
           </template>
 
         </div>
-        <div v-if="showImage6" style="height: 50%;width: 106%;display: flex; justify-content: center; align-items: center;">
+        <div v-if="showImage6" style=" width: 106%;display: flex; justify-content: center; align-items: center;">
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">

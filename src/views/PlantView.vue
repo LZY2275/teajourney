@@ -62,9 +62,6 @@
 
     </div>
 
-
-
-
 </template>
 
 <script>

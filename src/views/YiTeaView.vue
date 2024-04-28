@@ -137,7 +137,7 @@ export default {
                             },
                             borderColor: 'white',
                             borderWidth: 2,
-                            
+
                         }
                     },
                     // 线条
@@ -336,9 +336,6 @@ export default {
             // }, 700);
 
             // console.log(this.options);
-
-
-
             myChart.setOption(this.options)
             myChart.on('click', (params) => {
                 this.onClickSeries(params)
