@@ -318,7 +318,7 @@
           <TeaFragranceView></TeaFragranceView>
         </div>
 
-        <div style="height:18%;margin-top: 4vh;">
+        <div style="height:18%">
           <p class="Feeling">新式茶饮</p>
           <p class="FeelingSub">NEW-STYLE TEA DRINKS</p>
 
@@ -330,26 +330,26 @@
                   <div style="margin-top:3vh;width: 100%;display: flex;">
                     <div class="four-container">
                       <div><img :src="new_style_drinks[0].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[0].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[0].note }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[0].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[0].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[1].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[1].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[1].note }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[1].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[1].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[2].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[2].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[2].note }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[2].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[2].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[3].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[3].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[3].note }}</div>
+                      <div class="item-title">{{ $t(new_style_drinks[3].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[3].note) }}</div>
                     </div>
                   </div>
                 </t-swiper-item>
@@ -357,26 +357,26 @@
                   <div style="margin-top:3vh;width: 100%;display: flex;">
                     <div class="four-container">
                       <div><img :src="new_style_drinks[4].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[4].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[4].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[4].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[4].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[5].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[5].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[5].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[5].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[5].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[6].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[6].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[6].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[6].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[6].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[7].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[7].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[7].note }}</div>
+                      <div class="item-title">{{ $t( new_style_drinks[7].name )}}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[7].note) }}</div>
                     </div>
                   </div>
                 </t-swiper-item>
@@ -384,26 +384,26 @@
                   <div style="margin-top:3vh;width: 100%;display: flex;">
                     <div class="four-container">
                       <div><img :src="new_style_drinks[8].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[8].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[8].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[8].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[8].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[9].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[9].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[9].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[9].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[9].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[10].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[10].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[10].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[10].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[10].note) }}</div>
                     </div>
                     <div class="three-padding"></div>
                     <div class="four-container">
                       <div><img :src="new_style_drinks[11].image_path"></div>
-                      <div class="item-title">{{ new_style_drinks[11].name }}</div>
-                      <div class="item-note" style="margin-top:8px;">{{ new_style_drinks[11].note }}</div>
+                      <div class="item-title">{{  $t(new_style_drinks[11].name) }}</div>
+                      <div class="item-note" style="margin-top:8px;">{{  $t(new_style_drinks[11].note) }}</div>
                     </div>
                   </div>
                 </t-swiper-item>
@@ -435,8 +435,8 @@
 
       <div v-for="(item, index) in items" v-if="item.isTrue" :key="index" style="margin-left: -12vw">
         <img :src="item.imageSrc" style="width: 100px; height: 100px; border-radius: 50%;margin-top: 2vh;">
-        <p class="BrightGreen">{{ item.title }}</p>
-        <p class="Caption7">{{ item.description }}</p>
+        <p class="BrightGreen">{{ $t(item.title) }}</p>
+        <p class="Caption7">{{ $t(item.description) }}</p>
       </div>
 
     </div>
@@ -489,7 +489,7 @@ export default {
               show: false
             },
             data: [
-            { value: 1, name: '明亮', image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: {
+            { value: 1, name: this.$t('明亮'), image: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[0].x,
                     y:  this.angle[0].y,
@@ -501,7 +501,7 @@ export default {
                         { offset: 1, color: '#e1d461' },
                     ]
                   }, } },
-              { value: 1, name: '艳绿', image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg',
+              { value: 1, name: this.$t('艳绿'), image: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg',
                 itemStyle: {
                   color: {
                     type: 'linear',
@@ -517,7 +517,7 @@ export default {
                   },
                 }
               },
-              { value: 1, name: '绿黄', image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('绿黄'), image: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[2].x,
                     y:  this.angle[2].y,
@@ -529,7 +529,7 @@ export default {
                         { offset: 0.5, color: '#cb6d05' },
                     ]
                   }, } },
-              { value: 1, name: '黄绿', image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('黄绿'), image: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[3].x,
                     y:  this.angle[3].y,
@@ -541,7 +541,7 @@ export default {
                         { offset: 1, color: '#ecbf53' },
                     ]
                   }, } },
-              { value: 1, name: '浅黄', image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('浅黄'), image: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[4].x,
                     y:  this.angle[4].y,
@@ -553,7 +553,7 @@ export default {
                         { offset: 1, color: '#efad02' },
                     ]
                   }, } },
-              { value: 1, name: '金黄', image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('金黄'), image: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[5].x,
                     y:  this.angle[5].y,
@@ -565,7 +565,7 @@ export default {
                         { offset: 1, color: '#eb8205' },
                     ]
                   }, } },
-              { value: 1, name: '橙黄', image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: {
+              { value: 1, name:this.$t('橙黄'), image: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[6].x,
                     y:  this.angle[6].y,
@@ -577,7 +577,7 @@ export default {
                         { offset: 1, color: '#ed7107' },
                     ]
                   }, } },
-              { value: 1, name: '橙红', image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('橙红'), image: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[7].x,
                     y:  this.angle[7].y,
@@ -589,7 +589,7 @@ export default {
                         { offset: 1, color: '#eb4f06' },
                     ]
                   }, } },
-              { value: 1, name: '红汤', image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('红汤'), image: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[8].x,
                     y:  this.angle[8].y,
@@ -601,7 +601,7 @@ export default {
                         { offset: 1, color: '#b44b02' },
                     ]
                   }, } },
-                  { value: 1, name: '浑浊', image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: {
+                  { value: 1, name: this.$t('浑浊'), image: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[9].x,
                     y:  this.angle[9].y,
@@ -613,7 +613,7 @@ export default {
                         { offset: 1, color: '#901505' },
                     ]
                   }, } },
-              { value: 1, name: '凝乳', image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('凝乳'), image: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[10].x,
                     y:  this.angle[10].y,
@@ -625,7 +625,7 @@ export default {
                         { offset: 1, color: '#802011' },
                     ]
                   }, } },
-              { value: 1, name: '昏暗', image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: {
+              { value: 1, name: this.$t('昏暗'), image: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', itemStyle: { color: {
                     type: 'linear',
                     x: this.angle[11].x,
                     y:  this.angle[11].y,
@@ -647,18 +647,18 @@ export default {
   data() {
     return {
       items: [
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: this.$t('艳绿'), description: this.$t('“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: this.$t('绿黄'), description: this.$t('“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: this.$t('黄绿'), description: this.$t('“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: this.$t('浅黄'), description: this.$t('“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: this.$t('金黄'), description: this.$t('“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: this.$t('橙黄'), description: this.$t('“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: this.$t('橙红'), description: this.$t('“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: this.$t('红汤'), description: this.$t('“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: this.$t('凝乳'), description: this.$t('“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: this.$t('明亮'), description: this.$t('“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: this.$t('浑浊'), description: this.$t('“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。') },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: this.$t('昏暗'), description: this.$t('“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。') },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: '艳绿', description: '“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: '黄绿', description: '“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/DWt34RUVnrljNOx.jpg', title: '浅黄', description: '“浅黄”茶汤色泽呈现出柔和的黄色调，清澈透明，通常具有一定的清淡感和平和感，是一种较为温和的茶汤颜色。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Y3J6uHW1ePRN9Z7.jpg', title: '金黄', description: '“金黄”茶汤色泽呈现出鲜艳的金黄色调，色泽明亮而饱满，具有极高的透明度和光泽感，通常具有浓郁的香气和口感，是一种高档茶汤的典型特征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: '橙黄', description: '“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。'},
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: '红汤', description: '“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。'},
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。'},
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
       ],
       lastHighlightedIndex: '',
       clickedIndex: -1, // 记录点击的索引
@@ -666,63 +666,63 @@ export default {
       timer: null, // 定时器
       new_style_drinks: [
         {
-          name: "茉莉奶绿",
-          note: "七窖茉莉香气馥郁端正，制成奶茶清甜怡人，浓郁奶香和茉莉花香经唇入喉，淡雅香气经久留存",
+          name: '茉莉奶绿',
+          note: '七窖茉莉香气馥郁端正，制成奶茶清甜怡人，浓郁奶香和茉莉花香经唇入喉，淡雅香气经久留存。',
           image_path: require('../assets/img/newtea1.jpg')
         },
         {
-          name: "铁观音奶冻",
-          note: "铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味",
+          name:  '铁观音奶冻',
+          note:  '铁观音自带清雅兰香，搭配嫩滑奶冻，带来清爽又兼具浓郁奶香的丰富滋味。',
           image_path: require('../assets/img/newtea2.jpg')
         },
         {
-          name: "黄金椰椰乌龙",
-          note: "岩韵奇兰奶茶底蕴含绵远花香与豆香，入喉茶味香醇，加入Q弹椰果为茶香增添了无限玩味",
+          name:  '黄金椰椰乌龙',
+          note:  '岩韵奇兰奶茶底蕴含绵远花香与豆香，入喉茶味香醇，加入Q弹椰果为茶香增添了无限玩味。',
           image_path: require('../assets/img/newtea3.jpg')
         },
         {
-          name: "桂花酒酿奶绿",
-          note: "精选一年一季的优质五常糯米搭配桂林金桂，酿出微醺甜润，融入七窖茉莉茶底，口感更轻盈",
+          name:  '桂花酒酿奶绿',
+          note:  '精选一年一季的优质五常糯米搭配桂林金桂，酿出微醺甜润，融入七窖茉莉茶底，口感更轻盈。',
           image_path: require('../assets/img/newtea4.jpg')
         },
         {
-          name: "芝芝绿妍茶后",
-          note: "2012年首创第一杯芝士茶。定制绿茶底，融入真牛乳",
+          name:  '芝芝绿妍茶后',
+          note:  '2012年首创第一杯芝士茶。定制绿茶底，融入真牛乳。',
           image_path: require('../assets/img/newtea5.jpg')
         },
         {
-          name: "青稞牛乳茶",
-          note: "经典嫣红牛乳茶加入软糯有嚼劲的青稞，入口奶香、茶香醇醇鲜明，还带有淡淡自然青稞麦香",
+          name:  '青稞牛乳茶',
+          note:  '经典嫣红牛乳茶加入软糯有嚼劲的青稞，入口奶香、茶香醇醇鲜明，还带有淡淡自然青稞麦香。',
           image_path: require('../assets/img/newtea6.jpg')
         },
         {
-          name: "超清爽柠打绿",
-          note: "优选新鲜柠檬，每日鲜切暴打，融合甄选茶园定制绿茶汤，酸甜沁爽",
+          name:  '超清爽柠打绿',
+          note:  '优选新鲜柠檬，每日鲜切暴打，融合甄选茶园定制绿茶汤，酸甜沁爽。',
           image_path: require('../assets/img/newtea7.jpg')
         },
         {
-          name: "青提柠绿茶",
-          note: "优选阳光玫瑰青提，颗颗精细去皮，加入暴打新鲜柠檬，融合绿茶底",
+          name:  '青提柠绿茶',
+          note:  '优选阳光玫瑰青提，颗颗精细去皮，加入暴打新鲜柠檬，融合绿茶底。',
           image_path: require('../assets/img/newtea8.jpg')
         },
         {
-          name: "米布丁珍珠大红袍",
-          note: "大师定制武夷山大红袍，13道工序传承东方岩韵，花香焙火香浑然天成",
+          name:  '米布丁珍珠大红袍',
+          note:  '大师定制武夷山大红袍，13道工序传承东方岩韵，花香焙火香浑然天成。',
           image_path: require('../assets/img/newtea9.jpg')
         },
         {
-          name: "碧螺知春拿铁",
-          note: "优选碧螺知春茶底，呈现花香蜜韵",
+          name:  '碧螺知春拿铁',
+          note:  '优选碧螺知春茶底，呈现花香蜜韵。',
           image_path: require('../assets/img/newtea10.jpg')
         },
         {
-          name: "茉莉海盐拿铁",
-          note: "源自广西横州双瓣茉莉，六窨一提工艺，香气升级",
+          name:  '茉莉海盐拿铁',
+          note:  '源自广西横州双瓣茉莉，六窨一提工艺，香气升级。',
           image_path: require('../assets/img/newtea11.jpg')
         },
         {
-          name: "葡萄碎玉",
-          note: "铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口",
+          name:  '葡萄碎玉',
+          note:  '铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口。',
           image_path: require('../assets/img/newtea12.jpg')
         },
       ],
@@ -731,6 +731,14 @@ export default {
     }
   },
   methods: {
+    handleResize(){
+                // 获取图表容器
+    const chartDom = this.$refs.main;
+    // 初始化 echarts 实例
+    this.myChart = echarts.init(chartDom);
+    // 渲染图表
+    this.myChart.setOption(this.option);
+        },
     // 点击事件处理函数
     handleClick(index) {
       // 清除定时器
@@ -837,11 +845,23 @@ export default {
       this.angle = zuobiao_res
     }
   },
+  watch:{
+        //监听语言是否变化，若变化调用createPieChart()
+        '$i18n.locale': {
+            handler() {
+                // 处理语言变化的逻辑
+                this.handleResize()
+            },
+            immediate: true // 立即执行一次回调函数
+        }
+    },
   destroyed() {
     // 在组件销毁时清除定时器
     this.clearTimer();
   },
   mounted() {
+    window.addEventListener('resize', this.handleResize); //监听窗口大小改变
+
     // 计算角度
     this.compute_angle()
 
@@ -1293,6 +1313,8 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .item-note {
+  height: 8vh;
+  overflow: auto;
   font-size: 12px;
   font-weight: 500;
   line-height: 15px;
