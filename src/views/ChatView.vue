@@ -128,6 +128,52 @@ export default{
         }
     },
     methods:{
+        // async getResponseFromQingyunkeAPI(msg){
+        //     var author = '小灵'
+        //     var avatar = this.avatarList[1]
+        //     // 先给用户一个正在加载的动画,并且可以取消
+        //     var response_loading = <div><t-loading text="加载中..." size="small"></t-loading></div>
+        //     let new_response = this.createMessage(avatar,author,response_loading)
+        //     this.messageList.push(new_response)
+
+
+        //     this.controller_async = new AbortController();
+        //     var controller = this.controller_async;
+        //     var signal = controller.signal;
+
+        //     var that = this
+
+        //     axios.get('/api/api.php?key=free&appid=0&msg='+msg,{signal})
+        //     .then((response)=>{
+        //         if (response.status == 200){
+        //             let response_str = response.data.content
+        //             var response_div = function(){
+        //                 return <vue-typed-js strings={[response_str]} loop={false} startDelay={0} typeSpeed={100} contentType={'html'} showCursor={false} ><span class="typing"></span></vue-typed-js>
+        //             }
+
+        //             new_response.content = response_div
+        //             that.messageList.pop()
+        //             that.messageList.push(new_response)
+        //             that.isgenerating=false
+        //         }
+        //         else{
+        //             var length = this.messageList.length
+        //             that.messageList[length-1].content = '请求失败，请重试。'
+        //             that.isgenerating=false
+        //         }
+        //     })
+        //     .catch((error)=>{
+        //         console.log('error:',error)
+        //         return null
+        //     })
+        // },
+
+        // 将message中的所有\n转换成<br>
+        transferMeassage(message){
+            message = message.replace(/\n/g,'<br>')
+            return message
+        },
+
         async getResponseFromQingyunkeAPI(msg){
             var author = '小灵'
             var avatar = this.avatarList[1]
@@ -143,12 +189,15 @@ export default{
 
             var that = this
 
-            axios.get('/api/api.php?key=free&appid=0&msg='+msg,{signal})
+            axios.get('/api/api/getResponse?message='+msg,{signal})
             .then((response)=>{
+                // console.log('response:',response)
                 if (response.status == 200){
-                    let response_str = response.data.content
+                    let response_str = response.data.output.choices[0].message.content
+
+                    response_str = that.transferMeassage(response_str)
                     var response_div = function(){
-                        return <vue-typed-js strings={[response_str]} loop={false} startDelay={0} typeSpeed={100} contentType={'html'} showCursor={false} ><span class="typing"></span></vue-typed-js>
+                        return <vue-typed-js strings={[response_str]} loop={false} startDelay={0} typeSpeed={20} contentType={'html'} showCursor={false} ><span class="typing"></span></vue-typed-js>
                     }
 
                     new_response.content = response_div
@@ -167,6 +216,7 @@ export default{
                 return null
             })
         },
+
 
         async sendMessage(){
             if (this.inputvalue == ''){
@@ -207,6 +257,17 @@ export default{
         clearMessage(){
             // console.log('clear');
             this.messageList = []
+            var that = this
+            axios.get('/api/api/clearMessage')
+            .then((response)=>{
+                if (response.status == 200){
+                    console.log('clear message success')
+                    that.$message.info('清除上下文完成！');
+                }
+                else{
+                    console.log('clear message failed')
+                }
+            })
         },
 
         onClickCancel(){
@@ -260,6 +321,24 @@ export default{
             }
             this.current = current_page
         }
+    },
+    beforeDestroy(){
+        // clearTimeout(this.timeoutID)
+        this.controller_async.abort()
+        // 清除所有的message，包括后台清除
+        this.messageList = []
+        var that = this
+        axios.get('/api/api/clearMessage')
+        .then((response)=>{
+            if (response.status == 200){
+                console.log('clear message success')
+                that.$message.info('清除上下文完成！');
+            }
+            else{
+                console.log('clear message failed')
+            }
+        })
+
     }
 }
 
