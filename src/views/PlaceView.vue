@@ -536,7 +536,6 @@ export default {
                             emphasis: {
                                 show: true, // 在鼠标悬停时显示标签
                                 formatter: function(params){
-                                    console.log(params);
                                     var return_str = that.$t(params.name)
                                     return return_str
                                 }, // 标签内容为省份名称
@@ -606,7 +605,7 @@ export default {
                         show: true, // 显示标签
                         formatter: function(params){
                             var locale = that.$i18n.locale
-                            console.log(locale);
+                            // console.log(locale);
                             if(locale == 'en'){
                                 return params.data.name1
                             }else{
@@ -621,7 +620,7 @@ export default {
                             fontWeight: 'bold', // 字体加粗
                             formatter: function(params){
                                 var locale = that.$i18n.locale
-                                console.log(locale);
+                                // console.log(locale);
                                 if(locale == 'en'){
                                     return params.data.name1
                                 }else{
@@ -690,7 +689,7 @@ export default {
                                 fontWeight: 'bold', // 字体加粗
                                 formatter: function(params){
                                     var locale = that.$i18n.locale
-                                    console.log(locale);
+                                    // console.log(locale);
                                     if(locale == 'en'){
                                         return params.data.name1
                                     }else{
@@ -752,7 +751,7 @@ export default {
                                 fontWeight: 'bold', // 字体加粗
                                 formatter: function(params){
                                     var locale = that.$i18n.locale
-                                    console.log(locale);
+                                    // console.log(locale);
                                     if(locale == 'en'){
                                         return params.data.name1
                                     }else{
@@ -814,7 +813,7 @@ export default {
                                 fontWeight: 'bold', // 字体加粗
                                 formatter: function(params){
                                     var locale = that.$i18n.locale
-                                    console.log(locale);
+                                    // console.log(locale);
                                     if(locale == 'en'){
                                         return params.data.name1
                                     }else{
@@ -876,7 +875,7 @@ export default {
                                 fontWeight: 'bold', // 字体加粗
                                 formatter: function(params){
                                     var locale = that.$i18n.locale
-                                    console.log(locale);
+                                    // console.log(locale);
                                     if(locale == 'en'){
                                         return params.data.name1
                                     }else{
@@ -938,7 +937,7 @@ export default {
                                 fontWeight: 'bold', // 字体加粗
                                 formatter: function(params){
                                     var locale = that.$i18n.locale
-                                    console.log(locale);
+                                    // console.log(locale);
                                     if(locale == 'en'){
                                         return params.data.name1
                                     }else{
@@ -1000,7 +999,7 @@ export default {
                                 fontWeight: 'bold', // 字体加粗
                                 formatter: function(params){
                                     var locale = that.$i18n.locale
-                                    console.log(locale);
+                                    // console.log(locale);
                                     if(locale == 'en'){
                                         return params.data.name1
                                     }else{
