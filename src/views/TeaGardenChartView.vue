@@ -18,6 +18,7 @@
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 import { EventBus } from '../EventBus.js';
+import $ from 'jquery';
   echarts.use([SVGRenderer, CanvasRenderer]);
 
   export default {
@@ -28,28 +29,9 @@ import { EventBus } from '../EventBus.js';
         //cell_ratio : 0.026836,
       };
     },
-    mounted() {
-      this.createPie();
-    },
-    methods:{
-      createPie(){
-        let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
-        let myCharts = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
-        let radarData = [
-          [149.31, 123.13, 104.08, 100.12, 93.014],
-          [307.52, 295.73, 286.32, 280.25, 254.51],
-          [310.82, 298.13, 274.01, 266.31, 253.31],
-          [310.51, 307.71, 307.51, 306.01, 298.81],
-          [708.34, 714.61, 716.31, 698.71, 684.31],
-          [756.92, 720.25, 709.71, 699.91, 666.81],
-          [151.73, 142.44, 118.23, 115.61, 115.61],
-          [51.012, 51.454, 50.829, 50.843, 50.639],
-          [605.38, 596.21, 586.01, 575.01, 545.01],
-          [352.05, 341.22, 335.41, 327.81, 310.81],
-          [235.73, 233.66, 233.01, 215.41, 207.01],
-          [558.03, 545.01, 513.71, 495.01, 449.01]
-        ];
-        let option = {
+    computed:{
+      option(){
+        return {
           // title: {
           //   text: '茶园面积',
           //   left: '1%',
@@ -72,11 +54,11 @@ import { EventBus } from '../EventBus.js';
             radius: '40%',
             // shape: 'circle',
             indicator: [
-              { name: '2022年', max: 760 },
-              { name: '2021年', max: 760 },
-              { name: '2020年', max: 760 },
-              { name: '2019年', max: 760 },
-              { name: '2018年', max: 760 },
+              { name: this.$t('2022年'), max: 760 },
+              { name: this.$t('2021年'), max: 760 },
+              { name: this.$t('2020年'), max: 760 },
+              { name: this.$t('2019年'), max: 760 },
+              { name: this.$t('2018年'), max: 760 },
             ],
             axisName: {
               color: 'rgb(255, 255, 255)'
@@ -133,7 +115,7 @@ import { EventBus } from '../EventBus.js';
               data: [
                 {
                   value: 1,
-                  name: '粤' ,
+                  name: this.$t('粤') ,
                   itemStyle: {
                     color: '#F44336',
                   },
@@ -144,7 +126,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '皖' ,
+                  name: this.$t('皖') ,
                   itemStyle: {
                     color: '#FF7043',
                   },
@@ -155,7 +137,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '湘' ,
+                  name: this.$t('湘') ,
                   itemStyle: {
                     color: '#FFC107',
                   },
@@ -166,7 +148,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '浙' ,
+                  name: this.$t('浙') ,
                   itemStyle: {
                     color: '#CDDC39',
                   },
@@ -177,7 +159,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '黔' ,
+                  name: this.$t('黔') ,
                   itemStyle: {
                     color: '#8BC34A',
                   },
@@ -188,7 +170,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '滇' ,
+                  name: this.$t('滇') ,
                   itemStyle: {
                     color: '#4CAF50',
                   },
@@ -242,7 +224,7 @@ import { EventBus } from '../EventBus.js';
               data: [
                 {
                   value: 1,
-                  name: '桂' ,
+                  name: this.$t('桂') ,
                   itemStyle: {
                     color: '#009688',
                   },
@@ -253,7 +235,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '苏' ,
+                  name: this.$t('苏') ,
                   itemStyle: {
                     color: '#00BCD4',
                   },
@@ -264,7 +246,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '川' ,
+                  name: this.$t('川') ,
                   itemStyle: {
                     color: '#03A9F4',
                   },
@@ -275,7 +257,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '闽' ,
+                  name: this.$t('闽') ,
                   itemStyle: {
                     color: '#3F51B5',
                   },
@@ -286,7 +268,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '陕' ,
+                  name: this.$t('陕') ,
                   itemStyle: {
                     color: '#673AB7',
                   },
@@ -296,7 +278,7 @@ import { EventBus } from '../EventBus.js';
                 },
                 {
                   value: 1,
-                  name: '鄂' ,
+                  name: this.$t('鄂') ,
                   itemStyle: {
                     color: '#E91E63',
                   },
@@ -343,21 +325,21 @@ import { EventBus } from '../EventBus.js';
               data: [
                 {
                   value: 10,
-                  name: '平均数' ,
+                  name: this.$t('平均数') ,
                   itemStyle: {
                     color: 'rgba(50,132,110,0.9)',
                   },
                 },
                 {
                   value: 10,
-                  name: '中位数' ,
+                  name: this.$t('中位数') ,
                   itemStyle: {
                     color: 'rgba(50,132,110,0.7)',
                   },
                 },
                 {
                   value: 10,
-                  name: '方差' ,
+                  name: this.$t('方差') ,
                   itemStyle: {
                     color: 'rgba(50,132,110,0.5)',
                   },
@@ -478,14 +460,40 @@ import { EventBus } from '../EventBus.js';
             }
           ]
         };
+      }
+    },
+    mounted() {
+      this.createPie();
+    },
+    methods:{
+      createPie(){
+        let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
+        let myCharts = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
+        let radarData = [
+          [149.31, 123.13, 104.08, 100.12, 93.014],
+          [307.52, 295.73, 286.32, 280.25, 254.51],
+          [310.82, 298.13, 274.01, 266.31, 253.31],
+          [310.51, 307.71, 307.51, 306.01, 298.81],
+          [708.34, 714.61, 716.31, 698.71, 684.31],
+          [756.92, 720.25, 709.71, 699.91, 666.81],
+          [151.73, 142.44, 118.23, 115.61, 115.61],
+          [51.012, 51.454, 50.829, 50.843, 50.639],
+          [605.38, 596.21, 586.01, 575.01, 545.01],
+          [352.05, 341.22, 335.41, 327.81, 310.81],
+          [235.73, 233.66, 233.01, 215.41, 207.01],
+          [558.03, 545.01, 513.71, 495.01, 449.01]
+        ];
+        var that = this;
+        let option = this.option;
         myChart.setOption(option);
+        // myChart.getOption();
         // Define the event handler for the first pie chart
         myChart.on('click', function (params) {
           if (params.componentType === 'series') {
             if (params.seriesType === 'pie' && params.name) {
               // Update the data for the radar chart based on the clicked pie chart data
-              if (params.name === '粤') {    
-                EventBus.$emit('message-received', '粤');  
+              if (params.name === that.$t('粤')) {    
+                EventBus.$emit('message-received', that.$t('粤'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[0];
                 let avg = 113.93;

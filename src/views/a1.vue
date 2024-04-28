@@ -39,6 +39,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [96459, 103496, 116000, 108443.04, 148000]
         }]
       },
@@ -49,6 +50,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [134922, 137094, 138900, 142413, 154100]
         }]
       },
@@ -59,6 +61,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [213626, 223111, 240826, 250253, 247542]
         }]
       },
@@ -69,6 +72,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [186000, 181096, 188100, 195300, 193500]
         }]
       },
@@ -79,6 +83,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [199327, 286046, 385636, 345017, 344857]
         }]
       },
@@ -89,6 +94,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [398100, 399957, 408824, 380023, 432904.09]
         }]
       },
@@ -99,6 +105,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [73000, 88312, 84696, 102800, 130300]
         }]
       },
@@ -109,6 +116,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [14558, 15352, 12000, 10703, 10400]
         }]
       },
@@ -119,6 +127,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [295000, 300951, 315343, 350000, 366292.67]
         }]
       },
@@ -129,6 +138,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [401620, 412000, 418131, 450469.83, 459674.38]
         }]
       },
@@ -139,6 +149,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [73547, 91683, 92996, 97297.16, 119689.49]
         }]
       },
@@ -149,6 +160,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [314453, 335400, 350571, 384000, 314515.25]
         }]
       }
@@ -245,9 +257,22 @@ export default {
           },
           plugins: {
             tooltip: {
-              intersect: false, // 设置为false以在x轴方向上悬停时显示标签
-              mode: 'index' // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
-            }
+              intersect: true, // 设置为false以在x轴方向上悬停时显示标签
+              mode: 'index', // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
+              position: 'average',
+              xAlign: 'center',
+              yAlign: 'top',
+              backgroundColor: '#FFFFFF',
+              titleColor: '#000000',
+              bodyColor: '#000000',
+              borderWidth: 1,
+              borderColor: 'rgba(75, 192, 192, 1)'
+            },
+            legend:{
+              labels:{
+                boxWidth: 12
+              }
+            },
           }
         }
       });
