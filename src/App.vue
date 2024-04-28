@@ -225,7 +225,7 @@ import { log } from '@antv/g2plot/lib/utils';
             this.targetHeight= 6*this.clientHeight
             break;
           case 5: //区域六
-            this.targetHeight= 10*this.clientHeight
+            this.targetHeight= 9.5*this.clientHeight
             break;
           default: //默认：区域一
             this.targetHeight= this.clientHeight

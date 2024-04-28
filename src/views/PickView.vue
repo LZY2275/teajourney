@@ -40,6 +40,16 @@ echarts.use([SVGRenderer, CanvasRenderer]);
       this.createCalendar();
       this.createGantt();
     },
+    watch: {
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize()
+      },
+      immediate: true // 立即执行一次回调函数
+    }
+  },
     computed:{
       dataAxis(){
         return [this.$t('碧螺春'), this.$t('滇青'), this.$t('西湖龙井'), this.$t('玉露'), this.$t('黄山毛峰'), this.$t('白毫银针'), this.$t('白牡丹'), this.$t('黄山白茶'), this.$t('贡眉'), this.$t('寿眉'), this.$t('蒙顶黄芽'), this.$t('霍山黄芽'), this.$t('广东大叶青'), this.$t('海马宫茶'), this.$t('北港毛尖'), this.$t('铁观音'), this.$t('北斗'), this.$t('水仙'), this.$t('肉桂'), this.$t('大红袍'), this.$t('祁门红茶'), this.$t('滇红'), this.$t('金骏眉'), this.$t('正山小种'), this.$t('六堡茶'), this.$t('普洱茶'), this.$t('泾阳茯砖茶'), this.$t('安化黑茶'), this.$t('千两茶')];
@@ -147,6 +157,12 @@ echarts.use([SVGRenderer, CanvasRenderer]);
     },
 
     methods: {
+      handleResize(){
+        let myChart = this.$echarts.init(document.getElementById("calendar"), null, { renderer: 'svg' });
+        let progressChart = echarts.init(this.$refs.ganttChart, null, { renderer: 'svg' });
+        this.createCalendar();
+      this.createGantt();
+      },
       getVirtualData(year) {
         const date = +echarts.time.parse(year + '-01-01');
         const end = +echarts.time.parse(+year + 1 + '-01-01');
