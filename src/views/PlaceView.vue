@@ -98,7 +98,7 @@
             <div style=" position: relative;z-index: 1;">
                 <div v-if="currentProvince == ''" class="empty-box">Tips:<br>{{$t('点击省份查看省份种植面积变化折线图。')}}<br>{{$t('点击右上角的茶类别切换视图')}}~</div>
             </div>
-            <canvas id="lineChart" ref="lineChart" style="width: 35vh;height: 35vh;"></canvas>
+            <canvas id="lineChart" ref="lineChart" style="width: 35vh;height: 35vh;position: relative;z-index: 999;"></canvas>
         </div>
 
         <!--六个图标-->

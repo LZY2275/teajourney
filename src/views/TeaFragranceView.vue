@@ -1,43 +1,70 @@
 <template>
   <div>
     <div class="title">
-        <p>{{ title }}</p>
+      <p>{{ title }}</p>
     </div>
     <p class="sub-title" style="padding: 0;">TEA FRAGRANCE</p>
     <div class="content-container" style="margin-top: 12px;">
       <div class="note-container">
-        <p>截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。</p>
-        <p>普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。</p>
+        <p>{{ $t('截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。') }}</p>
+        <p>{{ $t('普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。') }}</p>
       </div>
       <div class="chart-container">
         <div class="fragrance" id="fragrance"></div>
       </div>
     </div>
-    
+
   </div>
 </template>
-  
+
 <script>
 import * as echarts from "echarts/core";
 import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
-  
-  echarts.use([SVGRenderer, CanvasRenderer]);
 
-  export default {
-    name:'TeaFragranceView',
-    data() {
-      return {
-       title: '茶韵山峦'
-      };
-    },
-    mounted() {
+echarts.use([SVGRenderer, CanvasRenderer]);
+
+export default {
+  name: 'TeaFragranceView',
+  data() {
+    return {
+      title: '茶韵山峦'
+    };
+  },
+  watch: {
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize()
+      },
+      immediate: true // 立即执行一次回调函数
+    }
+  },
+  mounted() {
+
+    this.createFragrance();
+  },
+  methods: {
+    handleResize() {
+      let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
+
       this.createFragrance();
-    },  
-    methods: {
-      createFragrance(){
-        let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
+    },
+    createFragrance() {
+      let myChart = this.$echarts.init(document.getElementById("fragrance"), null, { renderer: 'svg' });
 
-        let option = {
+      let option = {
+        tooltip: {
+          position: 'top',
+          formatter: (params) => {
+            // params 是一个对象，包含悬浮的相关信息
+            var name = params.name; // 获取气泡的名称
+            var color = params.color; // 获取气泡的颜色
+
+            // 返回自定义的内容字符串
+            return '<span style="color:' + color + '">●</span> ' + this.$t(name);
+          }
+        },
         xAxis: {
           type: 'value',
           min: 0,
@@ -112,7 +139,8 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                 value: [3, 10.5],
                 itemStyle: {
                   color: '#D0DC89'
-                }
+                },
+
               },
               {
                 name: '西湖龙井',
@@ -410,273 +438,273 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
                   { valueDim: 'y' },
                   {
                     yAxis: 1,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#D5A9A0'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#D5A9A0'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '陈香'
+                    name: this.$t('陈香')
                   }
                 ],
                 [
                   { yAxis: '2' },
                   {
                     yAxis: 1,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#D7B1A0'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      },  
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#D7B1A0'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '火香'
+                    name: this.$t('火香')
                   }
                 ],
                 [
                   { yAxis: '3' },
                   {
                     yAxis: 2,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#D5B195'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#D5B195'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '烤番薯香'
+                    name: this.$t('烤番薯香')
                   }
                 ],
                 [
                   { yAxis: '4' },
                   {
                     yAxis: 3,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#DFBA9D'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#DFBA9D'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '蜜香'
+                    name: this.$t('蜜香')
                   }
                 ],
                 [
                   { yAxis: '5' },
                   {
                     yAxis: 4,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#E0BA93'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#E0BA93'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '熟果香'
+                    name: this.$t('熟果香')
                   }
                 ],
                 [
                   { yAxis: '6' },
                   {
                     yAxis: 5,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#E6BC92'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#E6BC92'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '果香'
+                    name: this.$t('果香')
                   }
                 ],
                 [
                   { yAxis: '7' },
                   {
                     yAxis: 6,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#ECCE9C'  
-                        }, {  
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#ECCE9C'
+                        }, {
                           offset: 1, color: '#FFF9E8'
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '花果香'
+                    name: this.$t('花果香')
                   }
                 ],
                 [
                   { yAxis: '8' },
                   {
                     yAxis: 7,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#EFD3A2'  
-                        }, {  
-                          offset: 1, color: '#FFF9E8'  
-                        }],  
-                      }, 
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#EFD3A2'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '桂花香'
+                    name: this.$t('桂花香')
                   }
                 ],
                 [
                   { yAxis: '9' },
                   {
                     yAxis: 8,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#E2C694' 
-                        }, {  
-                          offset: 1, color: '#FFF9E8'  
-                        }],  
-                      },   
-                      opacity: 1 
-                      
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#E2C694'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+
                     },
-                    name: '兰花香'
+                    name: this.$t('兰花香')
                   }
                 ],
                 [
                   { yAxis: '10' },
                   {
                     yAxis: 9,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#C1B688' 
-                        }, {  
-                          offset: 1, color: '#FFF9E8' 
-                        }],  
-                      },  
-                      opacity: 1 
-                    }, 
-                    name: '板栗香'
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#C1B688'
+                        }, {
+                          offset: 1, color: '#FFF9E8'
+                        }],
+                      },
+                      opacity: 1
+                    },
+                    name: this.$t('板栗香')
                   }
                 ],
                 [
                   { yAxis: '11' },
                   {
                     yAxis: 10,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
-                          offset: 0, color: '#9EA184' 
-                        }, {  
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                          offset: 0, color: '#9EA184'
+                        }, {
                           offset: 1, color: '#FFF9E8'
-                        }],  
-                      },  
-                      opacity: 1 
+                        }],
+                      },
+                      opacity: 1
                     },
-                    name: '清香'
+                    name: this.$t('清香')
                   }
                 ],
                 [
                   { yAxis: '12' },
                   {
                     yAxis: 11,
-                    itemStyle: { 
-                      color: {  
-                        type: 'linear',  
-                        x: 0,  
-                        y: 0,  
-                        x2: 1,  
-                        y2: 0,  
-                        colorStops: [{  
+                    itemStyle: {
+                      color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
                           offset: 0, color: '#879078'
-                        }, {  
+                        }, {
                           offset: 1, color: '#FFF9E8'
-                        }],  
-                      }, 
-                      opacity: 1 
+                        }],
+                      },
+                      opacity: 1
                     },
-                    name: '青草气'
+                    name: this.$t('青草气')
                   },
                   { valueDim: 'y' }
                 ]
@@ -686,36 +714,37 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
         ]
       };
 
-        myChart.setOption(option);
+      myChart.setOption(option);
 
-        //屏幕自适应
-        window.addEventListener('resize', function (){
-          myChart.resize();
-        });
-      }
-    },
-  
-  };
+      //屏幕自适应
+      window.addEventListener('resize', function () {
+        myChart.resize();
+      });
+    }
+  },
+
+};
 </script>
-  
-<style scoped>
-  .fragrance{
-    width: 120%;
-    height: 780px;
-    margin-left: -50px;
-    margin-top: -50px;
-    /* background-color: #000000; */
-  }
-  .title{
-    text-align: left;
-    font-size: 18px;
-    /* font-weight: bold; */
-    color: var(--td-brand-color-6);
-    line-height: 26.06px;
-    
-  }
 
-  .sub-title {
+<style scoped>
+.fragrance {
+  width: 120%;
+  height: 780px;
+  margin-left: -50px;
+  margin-top: -50px;
+  /* background-color: #000000; */
+}
+
+.title {
+  text-align: left;
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: var(--td-brand-color-6);
+  line-height: 26.06px;
+
+}
+
+.sub-title {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0px;
@@ -725,11 +754,11 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
   vertical-align: middle;
 }
 
-.note-container{
+.note-container {
   padding: 16px 24px;
 }
 
-.note-container p{
+.note-container p {
   text-align: left;
   text-indent: 2em;
   font-size: 14px;
@@ -738,11 +767,11 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
   color: rgba(50, 132, 110, 0.5);
 }
 
-.content-container{
+.content-container {
   background-color: var(--td-bg-color-container);
 }
 
-.chart-container{
+.chart-container {
   padding: 0 24px;
 }
 </style>

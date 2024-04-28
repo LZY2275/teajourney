@@ -1,7 +1,7 @@
 var data = {
     nodes:[{
-        name:"糖类",
-        category:"糖类",
+        name:'糖类',
+        category:'糖类',
         color:'#bbbcac'
     },
     {
@@ -212,7 +212,7 @@ var data = {
 ],
     links:[
             {
-            source:"糖类",
+            source:'糖类',
             target:"糖",
             value:1
         },
@@ -497,5 +497,4 @@ var data = {
         },
     ]
 }
-
 export const sankey_data = data

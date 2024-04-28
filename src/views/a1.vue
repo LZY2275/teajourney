@@ -10,7 +10,7 @@
           而江苏、陕西和广西省的产量较少。<br>产量最高的福建省，在2022年达到<br>最高值459674.38吨，<br>产量最少的江苏省，在2022年达到<br>最低值10400吨。<br> &nbsp;</p>
       </div>
       <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>点击“茶园面积图”中的省份查看近几年的产量产销变化图。<br>点击右上角的产量产值以实现数据切换~</div>
-      <canvas ref="lineChart" width="450" height="300" style="margin-top: -7vh;"></canvas>
+      <canvas ref="lineChart" width="450" height="300" style="margin-top: -5vh;"></canvas>
 
     </div>
 

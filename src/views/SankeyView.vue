@@ -4,17 +4,17 @@
             <div class="title" style="padding: 16px 24px 0px 24px;">茶味溯源</div>
             <div class="subtitle" style="padding: 0 24px;">{{subtitle}}</div>
             <div class="content-container">
-                <p class="font-content">{{ content }}</p>
-                <p class="font-content">右侧桑基图展示了茶种各成分与滋味和味觉感受的对应关系。</p>
+                <p class="font-content">{{ $t(content) }}</p>
+                <p class="font-content">{{ $t('右侧桑基图展示了茶种各成分与滋味和味觉感受的对应关系。') }}</p>
             </div>
         </div>
         <div style="padding: 16px 24px 16px 0;width: calc(100% - 300px);">
             <div id="sankey-chart" style="width: 100%;height: 100%;background-color:rgb(255, 254, 242)">
                 <div style="display: flex;width: calc(100% - 120px);height: 60px;padding: 0px 60px 0 60px;">
-                    <p class="type-text type-text-first" style="width: 16.67%;">化合物种类</p>
-                    <p class="type-text" style="width: 33.33%;">茶中成味成分</p>
-                    <p class="type-text" style="width: 33.33%;">茶的滋味</p>
-                    <p class="type-text type-text-last" style="width: 16.67%;">味觉感受</p>
+                    <p class="type-text type-text-first" style="width: 16.67%;">{{ $t('化合物种类') }}</p>
+                    <p class="type-text" style="width: 33.33%;">{{ $t('茶中成味成分') }}</p>
+                    <p class="type-text" style="width: 33.33%;">{{ $t('茶的滋味') }}</p>
+                    <p class="type-text type-text-last" style="width: 16.67%;">{{ $t('味觉感受') }}</p>
                 </div>
             </div>
         </div>
@@ -32,16 +32,523 @@
     data() {
       return {
         subtitle:'TEA FLAVOR FORMATION',
-        content:"茶叶滋味是茶叶化学组成部分含量和人的感官对它的综合反应。茶叶有甜、酸、苦、鲜、涩等多种滋味。鲜味主要成分是多种氨基酸，氨基酸鲜中带甜，有的鲜中带酸。涩的主要特质是多酚类化合物。甜味物质主要有部分氨基酸和可溶性糖。苦味物质主要有咖啡碱、花青素、茶叶皂素。酸味物质主要是多种有机酸。"
+        content:'茶叶滋味是茶叶化学组成部分含量和人的感官对它的综合反应。茶叶有甜、酸、苦、鲜、涩等多种滋味。鲜味主要成分是多种氨基酸，氨基酸鲜中带甜，有的鲜中带酸。涩的主要特质是多酚类化合物。甜味物质主要有部分氨基酸和可溶性糖。苦味物质主要有咖啡碱、花青素、茶叶皂素。酸味物质主要是多种有机酸。'
       };
     },
     components: {
-      
+    },
+    watch:{
+        //监听语言是否变化，若变化调用createPieChart()
+        '$i18n.locale': {
+            handler() {
+                // 处理语言变化的逻辑
+                this.handleResize()
+            },
+            immediate: true // 立即执行一次回调函数
+        }
     },
     methods: {
         createSankey(){
 
-            var data = sankey_data
+            var data = {
+                nodes:[{
+        name:this.$t('糖类'),
+        category:this.$t('糖类'),
+        color:'#bbbcac'
+    },
+    {
+        name:this.$t('氨基酸'),
+        category:this.$t('氨基酸'),
+        color:'#5a705b'
+    },{
+        name:this.$t('嘌呤碱'),
+        category:this.$t('嘌呤碱'),
+        color:'#d7b669'
+    },{
+        name:this.$t('酚性物及其氧化物'),
+        category:this.$t('酚性物及其氧化物'),
+        color:'#738b6d'
+    },{
+        name:this.$t('有机酸类'),
+        category:this.$t('有机酸类'),
+        color:'#f99f52'
+    },{
+        name:this.$t('茶皂素'),
+        category:this.$t('茶皂素'),
+        color:'#ba948b'
+    },
+    
+    {
+        name:this.$t('糖'),
+        category:this.$t('成味成分'),
+        color:'#d9dace'
+    },
+    {
+        name:this.$t('甘氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+
+    },{
+        name:this.$t('丙氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('茶红素'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('氨基酸类'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('茶氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('咖啡碱'),
+        category:this.$t('氨基酸'),
+        color:'#dbcaa1'
+    },{
+        name:this.$t('茶黄素'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('表儿茶素'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('没食子儿茶素'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('精氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('酚性酸儿茶素类'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('酯型儿茶素黄酮类'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('花表素'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('谷氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('谷氨酰胺'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('天冬氨酸'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('天冬氨酰胺'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('没食子酸'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('有机酸'),
+        category:this.$t('氨基酸'),
+        color:'#dbcaa1'
+    },{
+        name:this.$t('抗坏血酸'),
+        category:this.$t('氨基酸'),
+        color:'#dbcaa1'
+    },{
+        name:this.$t('茶皂素类'),
+        category:this.$t('氨基酸'),
+        color:'#ba948b'
+    },{
+        name:this.$t('果胶素'),
+        category:this.$t('氨基酸'),
+        color:'#d9dace'
+    },{
+        name:this.$t('茶褐素'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },
+    
+    {
+        name:this.$t('甜'),
+        category:'滋味',
+        color:'#a7b9a8'
+    },{
+        name:this.$t('鲜甜'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('鲜爽甜'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('爽'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('涩'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('甜苦'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('苦涩'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('苦'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('鲜甜酸'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },{
+        name:this.$t('酸'),
+        category:this.$t('氨基酸'),
+        color:'#dbcaa1'
+    },{
+        name:this.$t('辛辣苦'),
+        category:this.$t('氨基酸'),
+        color:'#c9b0aa'
+    },{
+        name:this.$t('厚'),
+        category:this.$t('氨基酸'),
+        color:'#a7b9a8'
+    },{
+        name:this.$t('淡'),
+        category:this.$t('氨基酸'),
+        color:'#acbba6'
+    },
+    
+    {
+        name:this.$t('甜味'),
+        category:'味觉',
+        color:'#bbbcac'
+    },{
+        name:this.$t('鲜味'),
+        category:this.$t('氨基酸'),
+        color:'#5a705b'
+    },{
+        name:this.$t('苦味'),
+        category:this.$t('氨基酸'),
+        color:'#738b6d'
+    },{
+        name:this.$t('酸味'),
+        category:this.$t('氨基酸'),
+        color:'#f99f52'
+    },{
+        name:this.$t(this.$t('辣味')),
+        category:this.$t('氨基酸'),
+        color:'#ba948b'
+    },{
+        name:'空',
+        category:'空',
+        color:'#ba948b'
+    }
+],
+    links:[
+            {
+            source:this.$t('糖类'),
+            target:this.$t('糖'),
+            value:1
+        },
+        {
+            source:this.$t('糖'),
+            target:this.$t('甜'),
+            value:1
+        },{
+            source:this.$t('甜'),
+            target:this.$t('甜味'),
+            value:1
+        },
+        
+        {
+            source:this.$t('氨基酸'),
+            target:this.$t('甘氨酸'),
+            value:1
+        },{
+            source:this.$t('甘氨酸'),
+            target:this.$t('甜'),
+            value:1
+        },
+        
+        {
+            source:this.$t('氨基酸'),
+            target:this.$t('丙氨酸'),
+            value:1
+        },{
+            source:this.$t('丙氨酸'),
+            target:this.$t('甜'),
+            value:1
+        },
+        
+        {
+            source:this.$t('氨基酸'),
+            target:this.$t('氨酸'),
+            value:1
+        },{
+            source:this.$t('氨酸'),
+            target:this.$t('甜'),
+            value:1
+        },
+        
+        {
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('茶红素'),
+            value:1
+        },{
+            source:this.$t('茶红素'),
+            target:this.$t('鲜甜'),
+            value:1
+        },{
+            source:this.$t('鲜甜'),
+            target:this.$t('甜味'),
+            value:1
+        },
+        
+        {
+            source:this.$t('氨基酸'),
+            target:this.$t('氨基酸类'),
+            value:1
+        },{
+            source:this.$t('氨基酸类'),
+            target:this.$t('鲜甜'),
+            value:1
+        },
+        
+        {
+            source:this.$t('嘌呤碱'),
+            target:this.$t('咖啡碱'),
+            value:1
+        },
+        {
+            source:this.$t('氨基酸'),
+            target:this.$t('茶氨酸'),
+            value:1
+        },{
+            source:this.$t('茶氨酸'),
+            target:this.$t('鲜爽甜'),
+            value:1
+        },{
+            source:this.$t('鲜爽甜'),
+            target:this.$t('鲜味'),
+            value:1
+        },
+        {
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('茶黄素'),
+            value:1
+        },
+        
+        {
+            source:this.$t('茶黄素'),
+            target:this.$t('爽'),
+            value:1
+        },{
+            source:this.$t('爽'),
+            target:this.$t(this.$t('鲜味')),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('表儿茶素'),
+            value:1
+        },{
+            source:this.$t('表儿茶素'),
+            target:this.$t('涩'),
+            value:1
+        },{
+            source:this.$t('涩'),
+            target:this.$t('鲜味'),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('没食子儿茶素'),
+            value:1
+        },{
+            source:this.$t('没食子儿茶素'),
+            target:this.$t('涩'),
+            value:1
+        },{
+            source:this.$t('氨基酸'),
+            target:this.$t('精氨酸'),
+            value:1
+        },{
+            source:this.$t('精氨酸'),
+            target:this.$t('甜苦'),
+            value:1
+        },{
+            source:this.$t('甜苦'),
+            target:this.$t('苦味'),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('酚性酸儿茶素类'),
+            value:1
+        },{
+            source:this.$t('酚性酸儿茶素类'),
+            target:this.$t('苦涩'),
+            value:1
+        },{
+            source:this.$t('苦涩'),
+            target:this.$t('鲜味'),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('酯型儿茶素黄酮类'),
+            value:1
+        },{
+            source:this.$t('酯型儿茶素黄酮类'),
+            target:this.$t('苦涩'),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('花表素'),
+            value:1
+        },{
+            source:this.$t('花表素'),
+            target:this.$t('苦'),
+            value:1
+        },{
+            source:this.$t('苦'),
+            target:this.$t('苦味'),
+            value:1
+        },{
+            source:this.$t('咖啡碱'),
+            target:this.$t('苦'),
+            value:1
+        },{
+            source:this.$t('氨基酸'),
+            target:this.$t('谷氨酸'),
+            value:1
+        },{
+            source:this.$t('氨基酸'),
+            target:this.$t('谷氨酰胺'),
+            value:1
+        },{
+            source:this.$t('氨基酸'),
+            target:this.$t('天冬氨酸'),
+            value:1
+        },{
+            source:this.$t('氨基酸'),
+            target:this.$t('天冬氨酰胺'),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('没食子酸'),
+            value:1
+        },{
+            source:this.$t('没食子酸'),
+            target:this.$t('鲜甜酸'),
+            value:1
+        },{
+            source:this.$t('谷氨酸'),
+            target:this.$t('鲜甜酸'),
+            value:1
+        },{
+            source:this.$t('谷氨酰胺'),
+            target:this.$t('鲜甜酸'),
+            value:1
+        },{
+            source:this.$t('天冬氨酸'),
+            target:this.$t('鲜甜酸'),
+            value:1
+        },{
+            source:this.$t('天冬氨酰胺'),
+            target:this.$t('鲜甜酸'),
+            value:1
+        },{
+            source:this.$t('鲜甜酸'),
+            target:this.$t('鲜味'),
+            value:1
+        },{
+            source:this.$t('鲜甜酸'),
+            target:this.$t('甜味'),
+            value:1
+        },{
+            source:this.$t('鲜甜酸'),
+            target:this.$t('酸味'),
+            value:1
+        },
+        
+        {
+            source:this.$t('有机酸类'),
+            target:this.$t('有机酸'),
+            value:1
+        },{
+            source:this.$t('有机酸'),
+            target:this.$t('酸'),
+            value:1
+        },{
+            source:this.$t('酸'),
+            target:this.$t('酸味'),
+            value:1
+        },{
+            source:this.$t('有机酸类'),
+            target:this.$t('抗坏血酸'),
+            value:1
+        },{
+            source:this.$t('抗坏血酸'),
+            target:this.$t('酸'),
+            value:1
+        },{
+            source:this.$t('茶皂素类'),
+            target:this.$t('茶皂素'),
+            value:1
+        },{
+            source:this.$t('茶皂素'),
+            target:this.$t('辛辣苦'),
+            value:1
+        },{
+            source:this.$t('辛辣苦'),
+            target:this.$t('辣味'),
+            value:1
+        },{
+            source:this.$t('辛辣苦'),
+            target:this.$t('苦味'),
+            value:1
+        },{
+            source:this.$t('酚性物及其氧化物'),
+            target:this.$t('茶褐素'),
+            value:1
+        },{
+            source:this.$t('茶褐素'),
+            target:this.$t('淡'),
+            value:1
+        },{
+            source:this.$t('糖类'),
+            target:this.$t('果胶素'),
+            value:1
+        },{
+            source:this.$t('果胶素'),
+            target:this.$t('厚'),
+            value:1
+        },{
+            source:this.$t('厚'),
+            target:'空',
+            value:1
+        },{
+            source:this.$t('淡'),
+            target:'空',
+            value:1
+        },
+    ]
+}
 
             // 0-6代表化合物分类的颜色，第二排是这六个颜色的浅色调 中间的结点分为六类使用浅色调，
             // var color = ['#5a705b','#738b6d','#bbbcac','f99f52','d7b669','ba948b',
@@ -135,9 +642,6 @@
             link.append("title")
                 .text(d => `${d.source.name} → ${d.target.name}`);
 
-
-            
-
             // Adds labels on the nodes。为结点添加label
             svg.append("g")
                 .selectAll()
@@ -201,9 +705,20 @@
 
 
         },
-      
+        handleResize(){
+            // 清除当前的 SVG
+
+            // 清除当前的 SVG
+        const svgContainer = document.getElementById('sankey-chart');
+        while (svgContainer.firstChild) {
+            svgContainer.removeChild(svgContainer.firstChild);
+        }
+            this.createSankey()
+
+        }
     },
     mounted(){
+        window.addEventListener('resize', this.handleResize); //监听窗口大小改变
         this.createSankey()
         // this._createSankey();
     },
@@ -235,6 +750,7 @@
     }
 
     .font-content{
+
         text-align: left;
         text-indent: 2em;
         font-size: 14px;

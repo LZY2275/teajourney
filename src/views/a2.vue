@@ -10,7 +10,7 @@
           而江苏、广东和广西省的产值较少。<br>产值最高的贵州省，在2022年达到<br>最高值498亿元，<br>产值最少的江苏省，在2018年达到<br>最低值26.22亿元。<br> &nbsp;</p>
       </div>
       <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>点击“茶园面积图”中的省份查看近几年的产量产销变化图。<br>点击右上角的产量产值以实现数据切换~</div>
-      <canvas ref="lineChart" width="450" height="300" style="margin-top: -7vh;"></canvas>
+      <canvas ref="lineChart" width="450" height="300" style="margin-top: -5vh;"></canvas>
 
     </div>
     <div class="line-chart-container">
