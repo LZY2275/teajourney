@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="position: absolute;right:20px;height:100vh;width:176px;">
-      <div style="position: absolute;bottom: 40px;display: flex;">
+      <div style="position: absolute;bottom: 20px;display: flex;">
         <span class="note">The chart is inspired by</span>
         <t-link underline href="https://www.xiaohongshu.com/explore/64d456a4000000000103f7b0" theme="primary" target="_blank"> 观茶</t-link>
       </div>
