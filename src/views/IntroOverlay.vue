@@ -7,7 +7,7 @@
                 :strings="typingTexts"
                 :loop="false"
                 :startDelay="600"
-                :typeSpeed="100"
+                :typeSpeed="80"
                 :contentType="'html'"
                 :showCursor="false"
             >
@@ -29,7 +29,7 @@ export default {
         return {
             title: '灵芽之旅',
             typingTexts: [
-                "纠正一个错误的方法有很多，而解决一个错误的终极方法, 就是不给它发生</br>的机会。",
+                "复此雪山客，晨朝掇灵芽</br>茶作为中华优秀传统文化的重要组成部分，随着现代生活节奏加快，真正的茶文化渐渐淡出大众视野<br>我们以茶的相关数据为基础，通过展现茶的生态旅途，宣传茶行业和茶文化</br><br>且听我们娓娓道来...",
             ],
         };
     },

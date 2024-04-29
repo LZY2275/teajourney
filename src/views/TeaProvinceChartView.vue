@@ -9,10 +9,10 @@
         <template>
           <t-tabs :defaultValue="1" @change="selectTab">
             <!-- 默认插槽 和 具名插槽（panel）都是用来渲染面板内容 -->
-            <t-tab-panel :value="1" label="产量（吨）" >
+            <t-tab-panel :value="1" :label = "$t('产量（吨）')" >
 
             </t-tab-panel>
-            <t-tab-panel :value="2" label="产值（亿元）" >
+            <t-tab-panel :value="2" :label = "$t('产值（亿元）')" >
 
             </t-tab-panel>
 
