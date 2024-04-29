@@ -642,6 +642,9 @@ export default{
     "产量":"Yield",
     "产值":"Output",
     "产量（吨）":"Production (tons)",
-    "产值（亿元）":"Output (100 million yuan)"
+    "产值（亿元）":"Output (100 million yuan)",
+    
+    "ZH":"EN",
+    "zh-CN":"en-EN"
 }
 
