@@ -13,8 +13,11 @@
       <div style="flex:1"></div>
       <div style="margin-right: 25px;">
         <t-popup :content="$t('切换语言')">
-          <t-icon name="earth" color="white" size="24" style="cursor: pointer;" @click="switchLanguage">
-          </t-icon>
+          <div style="display: flex;align-items: center;cursor: pointer;" @click="switchLanguage">
+            <t-icon name="earth" color="white" size="24" >
+            </t-icon>
+            <p style="color:white;margin-left: 8px;font-size: 14px">{{$t("切换语言")}}</p>
+          </div>
         </t-popup>
       </div>
       <div style="display: flex;">
