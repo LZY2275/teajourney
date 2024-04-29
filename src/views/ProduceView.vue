@@ -17,7 +17,7 @@
         <p class="caption">{{$t('绿茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
-          <ul class="sub-caption">
+          <ul class="sub-caption" id="steps-container">
             <li><strong>{{$t('采青')}}：</strong> {{$t('在春季或早夏，嫩叶最为嫩绿，因此是最佳采摘时机。通常选择手工采摘，保证采摘到最嫩的茶叶。')}}</li>
             <li><strong>{{$t('杀青')}}：</strong> {{$t('将采摘的茶叶经过高温处理，阻止叶中酶的活动，保留茶叶的颜色、香气和营养成分。')}}</li>
             <li><strong>{{$t('揉捻')}}：</strong> {{$t('经过杀青后，茶叶进行揉捻，帮助茶叶保持特定的形状，同时有助于释放茶叶的香气。')}}</li>
@@ -30,7 +30,7 @@
         <p class="caption">{{$t('白茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
-          <ul class="sub-caption">
+          <ul class="sub-caption" id="steps-container">
             <li><strong>{{$t('采青')}}：</strong> {{$t('与其他茶类制作过程相似，白茶的制作也始于采摘。采摘白茶时，通常选择嫩绿的茶芽和叶子作为原料。')}}</li>
             <li><strong>{{$t('晾干')}}：</strong> {{$t('采摘后的茶叶会进行晾晒处理。这个步骤不涉及高温处理或杀青，而是让茶叶自然地在阳光下或通风良好的环境中晾干，使其逐渐失去水分。')}}</li>
             <li><strong>{{$t('干燥')}}：</strong> {{$t('在晾干之后，茶叶经过最终的干燥阶段。这个步骤有助于确保茶叶的水分含量达到适当的水平，以便储存和保持其品质。')}}</li>
@@ -40,8 +40,8 @@
         <div v-if="showImage3" style="height: 50%;">
         <p class="caption">{{$t('黄茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
-        <div>
-          <ul class="sub-caption">
+        <div id="steps-container">
+          <ul class="sub-caption" id="steps-container">
             <li><strong>{{$t('采青')}}：</strong> {{$t("和其他茶类一样，黄茶的制作始于采摘。采摘时通常选择嫩绿的茶芽和叶子作为原料。")}}</li>
             <li><strong>{{$t('萎凋')}}：</strong> {{$t("采摘的茶叶会经历一个特殊的萎凋过程，与其他茶类不同，黄茶的萎凋阶段时间较长，让茶叶逐渐失去水分并变软。")}}</li>
             <li><strong>{{$t('杀青')}}：</strong> {{$t("经过萎凋后，茶叶会进行杀青处理，这个阶段的杀青相对柔和，不像绿茶那样高温处理。杀青有助于保留茶叶的颜色和香气。")}}</li>
@@ -54,7 +54,7 @@
         <p class="caption">{{$t('乌龙茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
-          <ul class="sub-caption">
+          <ul class="sub-caption" id="steps-container">
             <li><strong>{{$t('采青')}}：</strong> {{$t("茶叶制作始于采摘。在制作时，通常选择嫩绿的茶芽和嫩叶作为原料。")}}</li>
             <li><strong>{{$t('摇青')}}：</strong> {{$t("在采摘后，茶叶经过摇晃或轻轻滚动的过程，这有助于破碎叶缘并释放汁液。")}}</li>
             <li><strong>{{$t('杀青')}}：</strong> {{$t("接下来的步骤是进行杀青，阻止茶叶发酵并保留茶叶的颜色和香气。这个步骤通常涉及高温处理。")}}</li>
@@ -67,7 +67,7 @@
         <p class="caption">{{$t('红茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
-          <ul class="sub-caption">
+          <ul class="sub-caption" id="steps-container">
             <li><strong>{{$t('采青')}}：</strong> {{$t("茶叶制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作红茶的原料。")}}</li>
             <li><strong>{{$t('萎凋')}}：</strong> {{$t("采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。")}}</li>
             <li><strong>{{$t('揉捻')}}：</strong> {{$t("茶叶进行揉捻，帮助释放茶叶内部的汁液，形成特定的形状。")}}</li>
@@ -80,7 +80,7 @@
         <p class="caption">{{$t('黑茶')}}</p>
         <p class="sub-title">TEA PRODUCTION PROCESS</p>
         <div>
-          <ul class="sub-caption">
+          <ul class="sub-caption" id="steps-container">
             <li><strong>{{$t('采青')}}：</strong> {{$t("黑茶的制作始于采摘。通常会选择嫩绿的茶芽和嫩叶作为制作黑茶的原料。")}}</li>
             <li><strong>{{$t('萎凋')}}：</strong> {{$t("采摘后的茶叶经历萎凋过程，让茶叶逐渐失去水分并变软。这个过程有助于茶叶中化学成分的改变。")}}</li>
             <li><strong>{{$t('杀青')}}：</strong> {{$t("接下来的步骤是进行杀青处理，这个过程相对较温和，有助于保留茶叶的颜色和香气。")}}</li>
@@ -146,6 +146,7 @@
             <!-- 步骤条 -->
       <div style="width: calc(100vw - 350px); display: flex;justify-content: center;position: relative;top: 4px;">
         <div style="width: calc(100vw - 460px);"   :class="{ 'last-step': showImage6 }">
+          <!-- <div>点击查看详细步骤</div> -->
           <div v-if="showImage1" style="display: flex; justify-content: center; align-items: center; ">
             <template>
               <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
@@ -166,19 +167,10 @@
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
-                <template slot="extra" v-if="current === 0">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('晾干')" :content="$t('自然风干茶叶')">
-                <template slot="extra" v-if="current === 1">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>
             </t-steps>
           </template>
@@ -190,22 +182,12 @@
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
               </t-step-item>
               <t-step-item :title="$t('萎凋')" :content="$t('失水软化叶片')">
-                <template slot="extra" v-if="current === 1">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('烘青')" :content="$t('高温稳定品质')">
-                <template slot="extra" v-if="current === 3">
-                </template>
               </t-step-item>
               <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
-                <template slot="extra" v-if="current === 4">
-                </template>
               </t-step-item>
             </t-steps>
           </template>
@@ -215,29 +197,14 @@
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
-                <template slot="extra" v-if="current === 0">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('摇青')" :content="$t('破碎叶缘释汁液')">
-                <template slot="extra" v-if="current === 1">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>.
               <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>
             </t-steps>
           </template>
@@ -249,22 +216,12 @@
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
               </t-step-item>
               <t-step-item :title="$t('萎凋')" :content="$t('失水软化叶片')">
-                <template slot="extra" v-if="current === 1">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('氧化发酵')" :content="$t('空气中发酵茶叶')">
-                <template slot="extra" v-if="current === 3">
-                </template>
               </t-step-item>
               <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
-                <template slot="extra" v-if="current === 4">
-                </template>
               </t-step-item>
             </t-steps>
           </template>
@@ -274,33 +231,16 @@
           <template>
             <t-steps layout="horizontal" current="FINISH" :onChange="onCurChanged" theme="dot">
               <t-step-item :title="$t('采青')" :content="$t('收集茶叶原料')">
-                <template slot="extra" >
-                </template>
               </t-step-item>
               <t-step-item :title="$t('萎凋')" :content="$t('失水软化叶片')">
-                <template slot="extra" v-if="current === 1">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('杀青')" :content="$t('保留颜色香气')">
-                <template slot="extra" v-if="current === 2">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('揉捻')" :content="$t('形成特定形状')">
-                <template slot="extra" v-if="current === 3">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('晒青')" :content="$t('自然晾干茶叶')">
-                <template slot="extra" v-if="current === 4">
-
-                </template>
               </t-step-item>
               <t-step-item :title="$t('干燥')" :content="$t('完全除去水分')">
-                <template slot="extra" v-if="current === 5">
-
-                </template>
               </t-step-item>
             </t-steps>
           </template>
@@ -609,6 +549,20 @@ export default {
   methods: {
     onCurChanged(cur, pre) {
       this.current = cur;
+      // console.log(this.current)
+      var stepsContainer = document.getElementById('steps-container');
+      var liElements = stepsContainer.getElementsByTagName('li');
+      var liElement = liElements[this.current];
+      // this.$scrollto(liElement,500,{contianer:'#steps-container'})
+      // this.$scrollto('#test-id')
+      liElement.classList.add('animate__animated')
+      liElement.classList.add('animate__pulse')
+      liElement.classList.add('sub-caption-emphasis')
+      setTimeout(() => {
+        liElement.classList.remove('animate__animated')
+        liElement.classList.remove('animate__pulse')
+        liElement.classList.remove('sub-caption-emphasis')
+      }, 1000);
     },
     initGraph1() {
       const data = {
@@ -1826,6 +1780,10 @@ export default {
   color: rgba(50, 132, 110, 0.5);
   max-height:calc(30vh - 90px);
   overflow:auto;
+}
+
+.sub-caption-emphasis{
+  color: rgba(50, 132, 110, 1);
 }
 
 .last-step{
