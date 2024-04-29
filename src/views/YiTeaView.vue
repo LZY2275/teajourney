@@ -2,27 +2,28 @@
     <div class="yicha-container">
         <!-- 上方标题区域 -->
         <div style="display: flex;height:136px;">
-            <div class="title" style="width: 180px;white-space: nowrap;">回忆茶史</div>
+            <div class="title" style="width: 160px;">{{$t('回忆茶史')}}</div>
             <t-divider layout="vertical" style="height:90%"></t-divider>
             <div
                 style="flex:1 ;height: 136px;white-space: normal;padding: 0 36px 0 0;text-align: left;display: flex;align-items: center">
                 <div>
-                    <p class="textsub" style="text-indent: 0;font-size: 16px;margin-bottom: 12px;">{{ current_title }}
+                    <p style="text-indent: 0;color: var(--td-brand-color-6);text-align: left;line-height: 17px;font-size: 16px;margin-top: 10px;margin-bottom: 10px;">{{ $t(current_title)}}
                     </p>
                     <p class="textsub">
-                        {{ current_description }}
+                        {{ $t(current_description) }}
                     </p>
                 </div>
             </div>
             <div style="display: flex;align-items: center;margin-right: 12px;">
-                <t-radio-group variant="primary-filled" default-value="1" @change="onChangeChart">
-                    <t-radio-button value="1">上古先秦</t-radio-button>
-                    <t-radio-button value="2">魏晋南北朝</t-radio-button>
-                    <t-radio-button value="3">隋唐</t-radio-button>
-                    <t-radio-button value="4">宋元</t-radio-button>
-                    <t-radio-button value="5">明</t-radio-button>
-                    <t-radio-button value="6">清</t-radio-button>
-                    <t-radio-button value="7">现代</t-radio-button>
+<!--  原本是<t-radio-group variant="primary-filled"default-value="1" @change="onChangeChart" >  -->
+                <t-radio-group class="t-radio-button" default-value="1" @change="onChangeChart">
+                    <t-radio-button value="1">{{$t('上古先秦')}}</t-radio-button>
+                    <t-radio-button  value="2">{{$t('魏晋南北朝')}}</t-radio-button>
+                    <t-radio-button value="3">{{$t('隋唐')}}</t-radio-button>
+                    <t-radio-button value="4">{{$t('宋元')}}</t-radio-button>
+                    <t-radio-button value="5">{{$t('明')}}</t-radio-button>
+                    <t-radio-button value="6">{{$t('清')}}</t-radio-button>
+                    <t-radio-button value="7">{{$t('现代')}}</t-radio-button>
                 </t-radio-group>
             </div>
         </div>
@@ -42,7 +43,9 @@ import { line } from 'd3';
 
 export default {
     data() {
+        var that = this
         return {
+            
             options:
             {
                 xAxis: {
@@ -82,20 +85,22 @@ export default {
                 },
                 tooltip: {
                     formatter: function (params) {
-                        return '公元' + params.data[6] + '年:' + params.data[4];
+
+                        var locale = that.$i18n.locale
+                        if (locale == 'en') {
+                                    return 'A.D.' + params.data[0] + ' : ' + that.$t(params.data[4]);
+                                } else {
+                                    return '公元' + params.data[0] + '年：' + params.data[4];
+                                }
+                        
                     },
+                    
                     // trigger: 'axis',
                     // position: function (pt) {
                     // return [pt[0], '10%'];
                     // }
                 },
-                toolbox: {
-                    feature: {
-                        dataZoom: {
-                            yAxisIndex: 'none'
-                        },
-                    }
-                },
+
                 series: [
                     // 散点图
                     {
@@ -182,7 +187,7 @@ export default {
             line_data: [],
             is_data_loaded: false,
             current_chart: 1,
-            current_description: '鼠标悬浮或点击图表散点查看详细历史事件；右侧选项卡可以切换图表~',
+            current_description: this.$t('鼠标悬浮或点击图表散点查看详细历史事件；右侧选项卡可以切换图表~'),
             current_title: 'Tips：'
 
         }
@@ -195,6 +200,10 @@ export default {
     },
     methods: {
         handleResize() {
+            console.log("qiehuan")
+              // 初始化图表
+            this.echarts.init(document.getElementById('yitea-chart'));
+            this.initChart();
             // console.log('yitea-resize');
 
         },
@@ -345,7 +354,7 @@ export default {
         },
 
         onClickSeries(params) {
-            this.current_description = params.data[5]
+            this.current_description =params.data[5]
             this.current_title = params.data[4]
         },
 
@@ -368,6 +377,14 @@ export default {
                 }
             },
             deep: true
+        },
+         //监听语言是否变化，若变化调用createPieChart()
+         '$i18n.locale': {
+            handler() {
+                // 处理语言变化的逻辑
+                this.handleResize()
+            },
+            immediate: true // 立即执行一次回调函数
         }
     }
 }
@@ -396,10 +413,17 @@ export default {
 
 .textsub {
     /* 设置首行缩进为 20px，可以根据需要调整 */
+    overflow: auto;
+    height: 100px;
     color: var(--td-brand-color-6);
     text-align: left;
     text-indent: 2em;
     line-height: 17px;
     font-size: 14px;
 }
+.t-radio-button {
+    background-color: #e2dfdf; /* 设置未选中时的背景色为灰色 */
+    border: none; /* 去除边框 */
+}
+
 </style>
