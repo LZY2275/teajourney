@@ -448,6 +448,7 @@
 
 <script>
 
+import { log } from '@antv/g2plot/lib/utils';
 import SankeyView from '../views/SankeyView.vue';
 import TeaFragranceView from '../views/TeaFragranceView.vue'
 import * as echarts from 'echarts';
@@ -694,6 +695,7 @@ export default {
   data() {
     return {
       items: [
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/1H3rMxknaFbpuTl.jpg', title: '艳绿', description: '“艳绿”所指的茶汤色泽，通常为清澈透明、明亮鲜艳的绿色，展现出茶叶新鲜、活力的特质，其色泽饱满生动，常被视为绿茶优质的象征之一。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/4Monmf3IsGSlpLB.jpg', title: '绿黄', description: '“绿黄”茶汤色泽具有一定的绿色和黄色的混合特征，呈现出柔和明亮的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9ivw27oMRquN3yP.jpg', title: '黄绿', description: '“黄绿”茶汤色泽具有一定的黄色和绿色的混合特征，呈现出柔和、明亮、清澈的外观，通常不如艳绿那样饱满明亮，而是更具有一种柔和平和的感觉。' },
@@ -702,9 +704,8 @@ export default {
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/OP4ICcgqY9ZKnvu.jpg', title: '橙黄', description: '“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/5GZsXROPhnwCgHQ.jpg', title: '橙红', description: '“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/VCUpOEnwTZRrJsz.jpg', title: '红汤', description: '“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。' },
-        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/iQtS1RGn8YzAmZv.jpg', title: '明亮', description: '“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/MGh2NjbgvPuf7BY.jpg', title: '浑浊', description: '“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。' },
+        { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/9yvYoe6NlSG5tnV.jpg', title: '凝乳', description: '“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。' },
         { isTrue: false, imageSrc: 'https://s2.loli.net/2024/04/24/Fwe15xYVZjyAcJp.jpg', title: '昏暗', description: '“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。' },
       ],
       lastHighlightedIndex: '',
@@ -829,6 +830,7 @@ export default {
       } else {
         this.currentIndex = (this.currentIndex + 1) % this.items.length;
       }
+
       this.items[this.currentIndex].isTrue = true;
       this.myChart.dispatchAction({
         type: 'highlight', // 触发高亮效果，实现放大过渡
@@ -942,20 +944,20 @@ export default {
       this.handleClick(dataIndex);
       if (params.componentType === 'series') {
         if (params.seriesType === 'pie') {
-          if (params.data.name === '艳绿') {
+          if (params.data.name === this.$t('明亮')) {
             this.items[0].isTrue = true
             for (let i = 1; i < this.items.length; i++) {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '绿黄') {
+          if (params.data.name === this.$t('艳绿')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = true
             for (let i = 2; i < this.items.length; i++) {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '黄绿') {
+          if (params.data.name === this.$t('绿黄')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = true
@@ -963,7 +965,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '浅黄') {
+          if (params.data.name === this.$t('黄绿')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -972,7 +974,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '金黄') {
+          if (params.data.name === this.$t('浅黄')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -982,7 +984,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '橙黄') {
+          if (params.data.name === this.$t('金黄')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -993,7 +995,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '橙红') {
+          if (params.data.name === this.$t('橙黄')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -1005,7 +1007,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '红汤') {
+          if (params.data.name === this.$t('橙红')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -1018,7 +1020,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '凝乳') {
+          if (params.data.name === this.$t('红汤')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -1032,7 +1034,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '明亮') {
+          if (params.data.name === this.$t('浑浊')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -1047,7 +1049,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '浑浊') {
+          if (params.data.name === this.$t('凝乳')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
@@ -1063,7 +1065,7 @@ export default {
               this.items[i].isTrue = false
             }
           }
-          if (params.data.name === '昏暗') {
+          if (params.data.name === this.$t('昏暗')) {
             this.items[0].isTrue = false
             this.items[1].isTrue = false
             this.items[2].isTrue = false
