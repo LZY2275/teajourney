@@ -161,7 +161,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
         let myChart = this.$echarts.init(document.getElementById("calendar"), null, { renderer: 'svg' });
         let progressChart = echarts.init(this.$refs.ganttChart, null, { renderer: 'svg' });
         this.createCalendar();
-      this.createGantt();
+        this.createGantt();
       },
       getVirtualData(year) {
         const date = +echarts.time.parse(year + '-01-01');
@@ -337,13 +337,13 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 show: false,
               },
               monthLabel: {
-                nameMap: 'cn',
+                nameMap: this.$t('ZH'),
                 margin: 4,
                 color: 'rgb(140,140,140)',
                 align: 'center',
               },
               dayLabel: {
-              nameMap: 'cn',
+              nameMap: this.$t('ZH'),
               margin: 10,
               color: 'rgb(140,140,140)'
             },
@@ -367,13 +367,13 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 show: false,
               },
               monthLabel: {
-                nameMap: 'cn',
+                nameMap: this.$t('ZH'),
                 margin: 4,
                 color: 'rgb(140,140,140)',
                 align: 'center',
               },
               dayLabel: {
-              nameMap: 'cn',
+              nameMap: this.$t('ZH'),
               margin: 10,
               color: 'rgb(140,140,140)'
             },
@@ -875,7 +875,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
             axisLabel: {
               formatter: function(value, index) {
                 const date = new Date(value);
-                return date.toLocaleDateString('zh-CN', { month: '2-digit' });
+                return date.toLocaleDateString(that.$t('zh-CN'), { month: '2-digit' });
               }
             }
           },
