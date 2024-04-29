@@ -1,6 +1,6 @@
 <template>
   <div class="global" >
-    <IntroOverlay style="position: absolute;z-index: 999;"></IntroOverlay>
+    <IntroOverlay style="position: absolute;z-index: 999;" @overlayVisible="handleOverlayVisible" v-if="overlayVisible"></IntroOverlay>
     <div style="padding:5.17578vh 5.347vw 0 5.347vw;display: flex;align-items: center;">
       <div style="display: flex;">
         <div class="top">
@@ -65,9 +65,20 @@ export default {
       title:'灵芽之旅',
       right:'<p style="color: rgba(255, 255, 255, 1);font-weight: 10;text-align: right;font-size: 20px;"><span style="font-weight: 500;font-size: 24px">灵芽[ líng yá ]：</span><br>1. 瑞草。<br>2. 指<span style="font-weight: 500;font-size: 24px">茶叶</span>。<br>3.神明本性。</p>',
       titleen:'Tea Journey',
+      overlayVisible:true,
     };
   },
+  mounted(){
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    this.scrollHeight = scrollTop
+    if(this.scrollHeight > 20){
+      this.overlayVisible = false
+    }
+  },
   methods:{
+    handleOverlayVisible(visible){
+      this.overlayVisible = visible
+    },
     switchLanguage(){
       var curr_language = this.$i18n.locale
       console.log('cur:',curr_language);

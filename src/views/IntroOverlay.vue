@@ -1,5 +1,5 @@
 <template>
-    <div class="intro-overlay" v-if="showOverlay">
+    <div class="intro-overlay" id="intro-container">
         <div class="container">
             <div class="title">{{ title }}</div>
             <vue-typed-js
@@ -20,7 +20,7 @@
         </div>
     </div>
 </template>
-  
+
 <script>
 
 export default {
@@ -28,7 +28,6 @@ export default {
     data() {
         return {
             title: '灵芽之旅',
-            showOverlay: true,
             typingTexts: [
                 "纠正一个错误的方法有很多，而解决一个错误的终极方法, 就是不给它发生</br>的机会。",
             ],
@@ -36,19 +35,34 @@ export default {
     },
     methods: {
         handleScroll() {
-            this.showOverlay = false;
+            // 2秒后设置showOverlay
+            var that = this
+            var container = document.getElementById('intro-container')
+            container.classList.add('animate__animated')
+            container.classList.add('animate__fadeOutUp');
+            setTimeout(function(){
+                that.showOverlay = false;
+                document.body.style.overflow = '';
+                that.$emit('overlayVisible', false)
+            },500)
+
         },
     },
     mounted() {
-        window.addEventListener('scroll', this.handleScroll);
+        var container = document.getElementById('intro-container')
+        container.classList.add('animate__animated')
+        container.classList.add('animate__fadeInDown');
+        window.addEventListener('wheel', this.handleScroll);
+        document.body.style.overflow = 'hidden';
     },
     beforeDestroy() {
         this.$el.classList.add('fade-out');
-        window.removeEventListener('scroll', this.handleScroll);
+        document.body.style.overflow = '';
+        window.removeEventListener('wheel', this.handleScroll);
     },
     };
 </script>
-  
+
 <style scoped>
     .title{
         text-shadow: 0px 1.82px 7.29px;
