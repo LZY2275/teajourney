@@ -8,6 +8,13 @@
           @click="handleClickSticky"
         >
           <t-sticky-item
+              :label="$t('回到顶部')"
+              :icon="renderBackTopIcon"
+              trigger="click"
+              popupProps="top"
+              >
+          </t-sticky-item>
+          <t-sticky-item
             :label="$t('聊天')"
             :icon="renderChatIcon"
             trigger="click"
@@ -119,8 +126,7 @@ import YiTeaView from './views/YiTeaView.vue';
 import ChatView from './views/ChatView.vue';
 
 
-import { ChatIcon ,EarthIcon} from 'tdesign-icons-vue';
-import { log } from '@antv/g2plot/lib/utils';
+import { ChatIcon ,EarthIcon, BacktopIcon} from 'tdesign-icons-vue';
   export default {
     components:{
         HomeView,
@@ -133,7 +139,8 @@ import { log } from '@antv/g2plot/lib/utils';
         AboutView,
         PlaceView,
         YiTeaView,
-        ChatView
+        ChatView,
+        BacktopIcon
     },
     computed:{
       title(){
@@ -189,6 +196,10 @@ import { log } from '@antv/g2plot/lib/utils';
 
       },
 
+      renderBackTopIcon(){
+        return <BacktopIcon />
+      },
+
       renderChatIcon() {
         return <ChatIcon />;
       },
@@ -199,16 +210,11 @@ import { log } from '@antv/g2plot/lib/utils';
         // return <img alt="TDesign Logo" width="120" height="120" src="https://tdesign.gtimg.com/site/site.jpg" />;
         return <ChatView />;
       },
-      handleClickSticky(e,item){
-        //var lang = this.$i18n.locale;
-        //if (lang == 'en'){
-        //  localStorage.setItem("language", 'ch');
-        //  this.$i18n.locale = 'ch'
-        //}else{
-        //  localStorage.setItem("language", 'en');
-        //  this.$i18n.locale = 'en'
-        //}
-        //this.$forceUpdate()
+      handleClickSticky(item){
+        if(item.item.popupProps == 'top'){
+          this.$scrollTo('#homeview')
+        }
+
       },
       onChangeSteps(e){
         this.current=e;
