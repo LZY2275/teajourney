@@ -6,6 +6,8 @@ export default{
     "品茶":"Taste Tea",
     "忆茶":"Remember Tea",
 
+    "回到顶部":'Top',
+
     "春风吹绿苗":"Spring breeze blows green seedlings",
     "晨朝掇灵芽":"Morning pick tea buds",
     "蒸青是主流":"Steaming green is the mainstream",
@@ -339,7 +341,7 @@ export default{
     "主要的采摘季节有春、夏、秋这三个季节，冬季主要预留给茶树恢复调养。":"The main picking seasons are spring, summer, and autumn, and winter is mainly reserved for the restoration and maintenance of tea trees.",
     "其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。":"Among them, spring tea is harvested from March to May; Summer tea is harvested from May to July; Autumn tea is harvested from August to October; Winter tea is harvested in late October. Due to different types of tea, the requirements for the tenderness of tea raw materials vary, so the picking time may also vary. Relatively tender tea leaves are mostly spring tea and autumn tea; Coarse tea leaves are mostly summer tea and autumn tea.",
     "开始采摘时间":"Start",
-    "结束采摘时间":"End",    
+    "结束采摘时间":"End",
     "提示":"Notation",
     "由于该省份不是主要产茶省份，暂无数据！":"As this province is not a major tea producing province, there is no data.",
 
@@ -418,7 +420,7 @@ export default{
     "湖北":"Hubei",
     "云南":"Yunnan",
     "广东":"Guangdong",
-    
+
     "2022年":"2022",
     "2021年":"2021",
     "2020年":"2020",
@@ -493,8 +495,8 @@ export default{
     "麦香":"Fragrance of wheat",
     "经过麦香香精的注入或者与麦香干燥花朵混合加工而成的香气。":"An aroma made by injecting wheat essence or mixing it with dried wheat flowers.",
     "由于茶汤中的茶多酚与空气接触会很快氧化，以致茶汤容易变色。因而要及时欣赏汤色，主要从色度、亮度、清浊度等方面，辨别茶汤颜色深浅、正常与否、茶汤暗明、清澈或浑浊程度。":"Because the tea polyphenols in the tea soup will oxidize quickly when in contact with air, the tea soup will easily change color. Therefore, it is necessary to appreciate the color of the tea soup in time, mainly from the aspects of chroma, brightness, turbidity, etc., to identify the depth of the color of the tea soup, whether it is normal or not, and the degree of darkness, clarity or turbidity of the tea soup.",
-    
-    
+
+
     "艳绿":"Brilliant green",
     "绿黄":"Green yellow",
     "黄绿":"Yellow green",
@@ -519,7 +521,7 @@ export default{
     "“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。":"'Bright' tea soup shows a clear and transparent color, bright and bright color, high transparency, without any signs of turbidity or turbidity, which is one of the typical characteristics of high-quality tea soup and a symbol of its unique flavor.",
     "“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。":"The color of 'turbid' tea soup is unclear and opaque, with a certain degree of turbidity. It is usually caused by tea leaf debris, fine particles or tea soup sediments suspended in the tea soup, which affects the transparency and taste of the tea soup. It is usually not of high quality. Characteristics of tea soup.",
     "“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。":"The color of 'dim' tea soup is dim and not bright. It is dark in color and lacks luster and vitality. It is an unideal tea soup state and usually does not meet the characteristics of high-quality tea soup.",
-    
+
     "右侧桑基图展示了茶种各成分与滋味和味觉感受的对应关系。":"The Sankey diagram on the right shows the correspondence between each component of tea and its taste and taste sensation.",
     "化合物种类":"Compound type",
     "茶中成味成分":"Flavor ingredients in tea",

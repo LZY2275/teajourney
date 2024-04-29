@@ -3,14 +3,14 @@
 
     <div style="width:21% ;">
 
-      <div class="left-content">
+      <div class="left-content" style="max-height: 250px;overflow: auto;">
         <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、四川和福建的产值较多，') }}<br>
         </p>
         <p class="text bottom-right">
           {{ $t('而江苏、广东和广西省的产值较少。') }}<br>{{ $t('产值最高的贵州省，在2022年达到') }}<br>{{ $t('最高值498亿元，') }}<br>{{ $t('产值最少的江苏省，在2018年达到') }}<br>{{ $t('最低值26.22亿元。') }}<br> &nbsp;</p>
       </div>
       <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>{{ $t('点击“茶园面积图”中的省份查看近几年的产量产销变化图。') }}<br>{{ $t('点击右上角的产量产值以实现数据切换~') }}</div>
-      <canvas ref="lineChart" width="450" height="300" style="margin-top: -5vh;"></canvas>
+      <canvas ref="lineChart" width="450" height="300" style="margin-top: 12px;"></canvas>
 
     </div>
     <div class="line-chart-container">
@@ -328,7 +328,7 @@ export default {
         .attr('transform', `translate(0, ${height})`)
         .call(d3.axisBottom(xScale))
         .selectAll("text") // 选择所有的文本标签
-        .attr("dy", "3.5em") // 调整垂直偏移 
+        .attr("dy", "3.5em") // 调整垂直偏移
         .style('font-size', '12px')
 
       svg.select('.x-axis path').attr('display', 'none');  // 隐藏横轴的线
@@ -692,16 +692,14 @@ export default {
 }
 .empty-box{
   color:var(--td-brand-color-6);
-    font-size: small; 
+    font-size: small;
     width: 15vw;
     height: 20vh;
     background-color: var(--td-brand-color-1);
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    margin-top: -12vh;
-    margin-left: 0.55vw;
+    margin-top: 12px;
   }
 </style>

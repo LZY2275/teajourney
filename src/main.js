@@ -18,6 +18,8 @@ import './assets/css/theme.css';
 import VueTypedJs from 'vue-typed-js';
 const VueScrollTo = require('vue-scrollto')
 
+import 'animate.css';
+
 Vue.use(VueTypedJs);
 // import './assets/css/fy.css'
 
