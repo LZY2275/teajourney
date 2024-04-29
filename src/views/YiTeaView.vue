@@ -376,11 +376,11 @@ export default {
 
 <style scoped>
 .yicha-container {
-    height: 100vh;
+    height: 80vh;
 }
 
 .chart-container {
-    height: calc(100vh - 148px);
+    height: calc(80vh - 148px);
     width: 100%;
 }
 

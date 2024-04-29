@@ -258,7 +258,7 @@ export default {
           },
           plugins: {
             tooltip: {
-              intersect: true, // 设置为false以在x轴方向上悬停时显示标签
+              intersect: false, // 设置为false以在x轴方向上悬停时显示标签
               mode: 'index', // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
               position: 'average',
               xAlign: 'center',
