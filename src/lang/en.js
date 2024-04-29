@@ -644,6 +644,9 @@ export default{
     "产量（吨）":"Production (tons)",
     "产值（亿元）":"Output (100 million yuan)",
 
+    "ZH":"EN",
+    "zh-CN":"en-EN",
+
     "回忆茶史":"Recalling the history",
     "上古先秦":"Ancient pre-Qin",
     "魏晋南北朝":"Wei and Jin",
