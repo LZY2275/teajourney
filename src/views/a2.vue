@@ -4,7 +4,7 @@
     <div style="width:21% ;">
 
       <div class="left-content">
-        <p class="text top-left"><br>观察右图可知，各个省份的产值<br>在2018—2022这个时间段内很接近，<br>但各省份之间的产值却存在差异，<br>比如贵州、四川和福建的产值较多，<br>
+        <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>比如贵州、四川和福建的产值较多，<br>
         </p>
         <p class="text bottom-right">
           而江苏、广东和广西省的产值较少。<br>产值最高的贵州省，在2022年达到<br>最高值498亿元，<br>产值最少的江苏省，在2018年达到<br>最低值26.22亿元。<br> &nbsp;</p>
@@ -24,6 +24,7 @@
 import * as d3 from 'd3';
 import Chart from 'chart.js/auto';
 import { EventBus } from '../EventBus.js';
+import $ from 'jquery';
 export default {
   data() {
     return {
@@ -37,6 +38,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [44.34, 105, 153.79, 156.8, 179.13]
         }]
       },
@@ -47,6 +49,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [118.02, 145.5, 146.17, 175.73, 182.6]
         }]
       },
@@ -57,6 +60,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [186.17, 146.85, 158.27, 171.57, 1770.1]
         }]
       },
@@ -67,6 +71,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [206.25, 224.74, 238.6, 259.14, 264]
         }]
       },
@@ -77,6 +82,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [281, 321.86, 405.84, 414.6, 498]
         }]
       },
@@ -87,6 +93,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [164.61, 198.17, 204.85, 202.12, 232.21]
         }]
       },
@@ -97,6 +104,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [56.97, 68.33, 82.76, 98.3, 124.66]
         }]
       },
@@ -107,6 +115,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [26.22, 27.66, 29.24, 33.09, 32.74]
         }]
       },
@@ -117,6 +126,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [246.04, 279.69, 285.07, 335, 367.19]
         }]
       },
@@ -127,6 +137,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [257.36, 297.27, 290.42, 298.12, 309.58]
         }]
       },
@@ -137,6 +148,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [140.55, 162.96, 163.21, 196.32, 212.65]
         }]
       },
@@ -147,6 +159,7 @@ export default {
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
+          fill: true,
           data: [145.96, 157.49, 188, 221.91, 217.29]
         }]
       }
@@ -167,63 +180,64 @@ export default {
   },
   methods: {
     renderLineChart(newValue) {
+      var that = this;
       let chartData = null;
-      if (newValue === '粤') {
+      if (newValue === that.$t('粤')) {
         chartData = this.guangdongData;
         chartData.datasets[0].label = '广东省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '皖') {
+      if (newValue === that.$t('皖')) {
         chartData = this.anhuiData;
         chartData.datasets[0].label = '安徽省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '湘') {
+      if (newValue === that.$t('湘')) {
         chartData = this.hunanData;
         chartData.datasets[0].label = '湖南省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '浙') {
+      if (newValue === that.$t('浙')) {
         chartData = this.zhejiangData;
         chartData.datasets[0].label = '浙江省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '黔') {
+      if (newValue === that.$t('黔')) {
         chartData = this.guizhouData;
         chartData.datasets[0].label = '贵州省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '滇') {
+      if (newValue === that.$t('滇')) {
         chartData = this.yunnanData;
         chartData.datasets[0].label = '云南省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '桂') {
+      if (newValue === that.$t('桂')) {
         chartData = this.guangxiData;
         chartData.datasets[0].label = '广西省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '苏') {
+      if (newValue === that.$t('苏')) {
         chartData = this.jiangsuData;
         chartData.datasets[0].label = '江苏省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '川') {
+      if (newValue === that.$t('川')) {
         chartData = this.sichuanData;
         chartData.datasets[0].label = '四川省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '闽') {
+      if (newValue === that.$t('闽')) {
         chartData = this.fujianData;
         chartData.datasets[0].label = '福建省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '陕') {
+      if (newValue === that.$t('陕')) {
         chartData = this.shanxiData;
         chartData.datasets[0].label = '陕西省近几年产值（亿元）';
         this.currentProvince = newValue;
       }
-      if (newValue === '鄂') {
+      if (newValue === that.$t('鄂')) {
         chartData = this.hubeiData;
         chartData.datasets[0].label = '湖北省近几年产值（亿元）';
         this.currentProvince = newValue;
@@ -243,9 +257,22 @@ export default {
           },
           plugins: {
             tooltip: {
-              intersect: false, // 设置为false以在x轴方向上悬停时显示标签
-              mode: 'index' // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
-            }
+              intersect: true, // 设置为false以在x轴方向上悬停时显示标签
+              mode: 'index', // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
+              position: 'average',
+              xAlign: 'center',
+              yAlign: 'top',
+              backgroundColor: '#FFFFFF',
+              titleColor: '#000000',
+              bodyColor: '#000000',
+              borderWidth: 1,
+              borderColor: 'rgba(75, 192, 192, 1)'
+            },
+            legend:{
+              labels:{
+                boxWidth: 12
+              }
+            },
           }
         }
       });

@@ -26,6 +26,7 @@ import $ from 'jquery';
     data(){
       return{
         title:'茶园面积图',
+        myCharts:null
         //cell_ratio : 0.026836,
       };
     },
@@ -464,11 +465,14 @@ import $ from 'jquery';
     },
     mounted() {
       this.createPie();
+
+      // this.myChart = echarts.init(document.getElementById('pie'))
     },
     methods:{
       createPie(){
         let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
-        let myCharts = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
+        this.myCharts = myChart
+        // let myCharts = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
         let radarData = [
           [149.31, 123.13, 104.08, 100.12, 93.014],
           [307.52, 295.73, 286.32, 280.25, 254.51],
@@ -503,8 +507,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '皖') {
-                EventBus.$emit('message-received', '皖');  
+              } else if (params.name === that.$t('皖')) {
+                EventBus.$emit('message-received', that.$t('皖'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[1];
                 let avg = 284.87;
@@ -514,8 +518,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '湘') {
-                EventBus.$emit('message-received', '湘');  
+              } else if (params.name === that.$t('湘')) {
+                EventBus.$emit('message-received', that.$t('湘'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[2];
                 let avg = 280.52;
@@ -525,8 +529,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '浙') {
-                EventBus.$emit('message-received', '浙');  
+              } else if (params.name === that.$t('浙')) {
+                EventBus.$emit('message-received', that.$t('浙'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[3];
                 let avg = 306.11;
@@ -536,8 +540,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '黔') {
-                EventBus.$emit('message-received', '黔');  
+              } else if (params.name === that.$t('黔')) {
+                EventBus.$emit('message-received', that.$t('黔'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[4];
                 let avg = 704.46;
@@ -547,8 +551,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '滇') {
-                EventBus.$emit('message-received', '滇');  
+              } else if (params.name === that.$t('滇')) {
+                EventBus.$emit('message-received', that.$t('滇'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[5];
                 let avg = 710.72;
@@ -558,8 +562,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '桂') {
-                EventBus.$emit('message-received', '桂');  
+              } else if (params.name === that.$t('桂')) {
+                EventBus.$emit('message-received', that.$t('桂'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[6];
                 let avg = 128.72;
@@ -569,8 +573,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '苏') {
-                EventBus.$emit('message-received', '苏');  
+              } else if (params.name === that.$t('苏')) {
+                EventBus.$emit('message-received', that.$t('苏'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[7];
                 let avg = 50.955;
@@ -580,8 +584,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '川') {
-                EventBus.$emit('message-received', '川');  
+              } else if (params.name === that.$t('川')) {
+                EventBus.$emit('message-received', that.$t('川'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[8];
                 let avg = 581.52;
@@ -591,8 +595,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '闽') {
-                EventBus.$emit('message-received', '闽');  
+              } else if (params.name === that.$t('闽')) {
+                EventBus.$emit('message-received', that.$t('闽'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[9];
                 let avg = 333.46;
@@ -602,8 +606,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '陕') {
-                EventBus.$emit('message-received', '陕');  
+              } else if (params.name === that.$t('陕')) {
+                EventBus.$emit('message-received', that.$t('陕'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[10];
                 let avg = 224.96;
@@ -613,8 +617,8 @@ import $ from 'jquery';
                 option.series[2].data[1].value = mid;
                 option.series[2].data[2].value = v;
                 myChart.setOption(option);
-              } else if (params.name === '鄂') {
-                EventBus.$emit('message-received', '鄂');  
+              } else if (params.name === that.$t('鄂')) {
+                EventBus.$emit('message-received', that.$t('鄂'));  
                 let option = myChart.getOption();
                 option.series[3].data[0].value = radarData[11];
                 let avg = 512.15;
@@ -630,10 +634,24 @@ import $ from 'jquery';
           }
         });
         //屏幕自适应
-        window.addEventListener('resize', function (){
-          myChart.resize();
-        });
-      }
+        // window.addEventListener('resize', function (){
+        //   myChart.resize();
+        // });
+      },
+      handleResize(){
+            // this.updateMapOption()
+            this.myCharts.resize();
+        },
+    },
+    watch:{
+        //监听语言是否变化，若变化调用createPieChart()
+        '$i18n.locale': {
+            handler() {
+                // 处理语言变化的逻辑
+                this.handleResize()
+            },
+            immediate: true // 立即执行一次回调函数
+        }
     }
   }
 </script>

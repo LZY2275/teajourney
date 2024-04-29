@@ -616,5 +616,17 @@ export default{
     "熟果香":"Ripe fruit aroma",
     "烤番薯香":"Roasted sweet potato",
     "陈香":"Chen Xiang",
+
+    "观察右图可知，各个省份的产量":"Observing the figure on the right, it can be seen that the production of each province",
+    "在2018—2022这个时间段内很接近，":"is very close during the period of 2018-2022.",
+    "但各省份之间的产量却存在差异，":"However, there are differences in production among provinces,",
+    "比如贵州、云南和福建的产量较多，":"such as Guizhou, Yunnan, and Fujian with higher yields,",
+    "而江苏、陕西和广西省的产量较少。":"while Jiangsu, Shaanxi, and Guangxi provinces have lower yields.",
+    "产量最高的福建省，在2022年达到":"Fujian Province, with the highest production, reached",
+    "最高值459674.38吨，":"a peak of 459674.38 tons in 2022,",
+    "产量最少的江苏省，在2022年达到":"while Jiangsu Province, with the lowest production, reached",
+    "最低值10400吨。":"a minimum of 10400 tons in 2022.",
+    "点击右上角的产量产值以实现数据切换~":"Click on the output value in the upper right corner to achieve data switching~"
+
 }
 

@@ -4,12 +4,12 @@
     <div style="width:21% ;">
 
       <div class="left-content">
-        <p class="text top-left"><br>观察右图可知，各个省份的产量<br>在2018—2022这个时间段内很接近，<br>但各省份之间的产量却存在差异，<br>比如贵州、云南和福建的产量较多，<br>
+        <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、云南和福建的产量较多，') }}<br>
         </p>
         <p class="text bottom-right">
-          而江苏、陕西和广西省的产量较少。<br>产量最高的福建省，在2022年达到<br>最高值459674.38吨，<br>产量最少的江苏省，在2022年达到<br>最低值10400吨。<br> &nbsp;</p>
+          {{ $t('而江苏、陕西和广西省的产量较少。') }}<br>{{ $t('产量最高的福建省，在2022年达到') }}<br>{{ $t('最高值459674.38吨，') }}<br>{{ $t('产量最少的江苏省，在2022年达到') }}<br>{{ $t('最低值10400吨。') }}<br> &nbsp;</p>
       </div>
-      <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>点击“茶园面积图”中的省份查看近几年的产量产销变化图。<br>点击右上角的产量产值以实现数据切换~</div>
+      <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>点击“茶园面积图”中的省份查看近几年的产量产销变化图。<br>{{ $t('点击右上角的产量产值以实现数据切换~') }}</div>
       <canvas ref="lineChart" width="450" height="300" style="margin-top: -5vh;"></canvas>
 
     </div>
@@ -181,63 +181,64 @@ export default {
   },
   methods: {
     renderLineChart(newValue) {
+      var that = this;
       let chartData = null;
-      if (newValue === '粤') {
+      if (newValue === that.$t('粤')) {
         chartData = this.guangdongData;
         chartData.datasets[0].label = '广东省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '皖') {
+      if (newValue === that.$t('皖')) {
         chartData = this.anhuiData;
         chartData.datasets[0].label = '安徽省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '湘') {
+      if (newValue === that.$t('湘')) {
         chartData = this.hunanData;
         chartData.datasets[0].label = '湖南省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '浙') {
+      if (newValue === that.$t('浙')) {
         chartData = this.zhejiangData;
         chartData.datasets[0].label = '浙江省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '黔') {
+      if (newValue === that.$t('黔')) {
         chartData = this.guizhouData;
         chartData.datasets[0].label = '贵州省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '滇') {
+      if (newValue === that.$t('滇')) {
         chartData = this.yunnanData;
         chartData.datasets[0].label = '云南省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '桂') {
+      if (newValue === that.$t('桂')) {
         chartData = this.guangxiData;
         chartData.datasets[0].label = '广西省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '苏') {
+      if (newValue === that.$t('苏')) {
         chartData = this.jiangsuData;
         chartData.datasets[0].label = '江苏省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '川') {
+      if (newValue === that.$t('川')) {
         chartData = this.sichuanData;
         chartData.datasets[0].label = '四川省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '闽') {
+      if (newValue === that.$t('闽')) {
         chartData = this.fujianData;
         chartData.datasets[0].label = '福建省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '陕') {
+      if (newValue === that.$t('陕')) {
         chartData = this.shanxiData;
         chartData.datasets[0].label = '陕西省近几年产量（吨）';
         this.currentProvince = newValue;
       }
-      if (newValue === '鄂') {
+      if (newValue === that.$t('鄂')) {
         chartData = this.hubeiData;
         chartData.datasets[0].label = '湖北省近几年产量（吨）';
         this.currentProvince = newValue;
