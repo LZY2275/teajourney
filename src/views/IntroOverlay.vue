@@ -49,10 +49,10 @@ export default {
         },
     },
     mounted() {
+        window.addEventListener('wheel', this.handleScroll);
         var container = document.getElementById('intro-container')
         container.classList.add('animate__animated')
         container.classList.add('animate__fadeInDown');
-        window.addEventListener('wheel', this.handleScroll);
         document.body.style.overflow = 'hidden';
     },
     beforeDestroy() {

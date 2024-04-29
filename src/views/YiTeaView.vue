@@ -45,7 +45,7 @@ export default {
     data() {
         var that = this
         return {
-            
+
             options:
             {
                 xAxis: {
@@ -92,9 +92,9 @@ export default {
                                 } else {
                                     return '公元' + params.data[0] + '年：' + params.data[4];
                                 }
-                        
+
                     },
-                    
+
                     // trigger: 'axis',
                     // position: function (pt) {
                     // return [pt[0], '10%'];
@@ -408,7 +408,7 @@ export default {
     color: rgba(50, 132, 110, 1);
     text-align: left;
     vertical-align: top;
-    padding: 48px 0;
+    align-items: center;
 }
 
 .textsub {

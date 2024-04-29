@@ -83,8 +83,10 @@ export default {
       var curr_language = this.$i18n.locale
       console.log('cur:',curr_language);
       if(curr_language == 'en'){
+        this.$message.success('语言已切换为中文');
         this.$i18n.locale = 'zh'
       }else if (curr_language == 'zh'){
+        this.$message.success('Language has been changed to English');
         this.$i18n.locale = 'en'
       }
       console.log(this.$i18n.locale);
