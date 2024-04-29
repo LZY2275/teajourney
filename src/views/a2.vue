@@ -4,12 +4,12 @@
     <div style="width:21% ;">
 
       <div class="left-content">
-        <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>比如贵州、四川和福建的产值较多，<br>
+        <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、四川和福建的产值较多，') }}<br>
         </p>
         <p class="text bottom-right">
-          而江苏、广东和广西省的产值较少。<br>产值最高的贵州省，在2022年达到<br>最高值498亿元，<br>产值最少的江苏省，在2018年达到<br>最低值26.22亿元。<br> &nbsp;</p>
+          {{ $t('而江苏、广东和广西省的产值较少。') }}<br>{{ $t('产值最高的贵州省，在2022年达到') }}<br>{{ $t('最高值498亿元，') }}<br>{{ $t('产值最少的江苏省，在2018年达到') }}<br>{{ $t('最低值26.22亿元。') }}<br> &nbsp;</p>
       </div>
-      <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>点击“茶园面积图”中的省份查看近几年的产量产销变化图。<br>点击右上角的产量产值以实现数据切换~</div>
+      <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>{{ $t('点击“茶园面积图”中的省份查看近几年的产量产销变化图。') }}<br>{{ $t('点击右上角的产量产值以实现数据切换~') }}</div>
       <canvas ref="lineChart" width="450" height="300" style="margin-top: -5vh;"></canvas>
 
     </div>
@@ -178,6 +178,24 @@ export default {
       this.renderLineChart(newValue);
     }
   },
+  computed:{
+    dataX(){
+      return [
+        { province: this.$t('安徽省') },
+        { province: this.$t('湖南省') },
+        { province: this.$t('浙江省') },
+        { province: this.$t('贵州省') },
+        { province: this.$t('云南省') },
+        { province: this.$t('广西省') },
+        { province: this.$t('江苏省') },
+        { province: this.$t('四川省') },
+        { province: this.$t('福建省') },
+        { province: this.$t('陕西省') },
+        { province: this.$t('湖北省') },
+        { province: this.$t('广东省') },
+      ];
+    }
+  },
   methods: {
     renderLineChart(newValue) {
       var that = this;
@@ -280,20 +298,8 @@ export default {
     drawLineChart() {
 
       // 数据：12个省份和5个年份的示例数据
-      const data = [
-        { province: '安徽省' },
-        { province: '湖南省' },
-        { province: '浙江省' },
-        { province: '贵州省' },
-        { province: '云南省' },
-        { province: '广西省' },
-        { province: '江苏省' },
-        { province: '四川省' },
-        { province: '福建省' },
-        { province: '陕西省' },
-        { province: '湖北省' },
-        { province: '广东省' },
-      ];
+      const data = this.dataX;
+      var that = this;
       // 定义容器尺寸
       const margin = { top: 40, right: 20, bottom: 60, left: 60 };
       const container = d3.select('.line-chart-container');
@@ -335,102 +341,102 @@ export default {
         .attr("dx", "-1em"); // 调整偏移
       // 安徽省的圆
       const data1 = [
-        { province: '安徽省', year: 2018, radius: 14.865, value: 118.02 },
-        { province: '安徽省', year: 2019, radius: 16.321, value: 145.50 },
-        { province: '安徽省', year: 2020, radius: 16.356, value: 146.17 },
-        { province: '安徽省', year: 2021, radius: 17.923, value: 175.73 },
-        { province: '安徽省', year: 2022, radius: 18.287, value: 182.60 },
+        { province: this.$t('安徽省'), year: 2018, radius: 14.865, value: 118.02 },
+        { province: this.$t('安徽省'), year: 2019, radius: 16.321, value: 145.50 },
+        { province: this.$t('安徽省'), year: 2020, radius: 16.356, value: 146.17 },
+        { province: this.$t('安徽省'), year: 2021, radius: 17.923, value: 175.73 },
+        { province: this.$t('安徽省'), year: 2022, radius: 18.287, value: 182.60 },
       ];
       // 湖南省的圆
       const data2 = [
-        { province: '湖南省', year: 2018, radius: 18.476, value: 186.17 },
-        { province: '湖南省', year: 2019, radius: 16.392, value: 146.85 },
-        { province: '湖南省', year: 2020, radius: 16.997, value: 158.27 },
-        { province: '湖南省', year: 2021, radius: 17.702, value: 171.57 },
-        { province: '湖南省', year: 2022, radius: 17.990, value: 177.01 },
+        { province: this.$t('湖南省'), year: 2018, radius: 18.476, value: 186.17 },
+        { province: this.$t('湖南省'), year: 2019, radius: 16.392, value: 146.85 },
+        { province: this.$t('湖南省'), year: 2020, radius: 16.997, value: 158.27 },
+        { province: this.$t('湖南省'), year: 2021, radius: 17.702, value: 171.57 },
+        { province: this.$t('湖南省'), year: 2022, radius: 17.990, value: 177.01 },
       ];
       // 浙江省的圆
       const data3 = [
-        { province: '浙江省', year: 2018, radius: 19.540, value: 206.25 },
-        { province: '浙江省', year: 2019, radius: 20.520, value: 224.74 },
-        { province: '浙江省', year: 2020, radius: 21.254, value: 238.60 },
-        { province: '浙江省', year: 2021, radius: 22.343, value: 259.14 },
-        { province: '浙江省', year: 2022, radius: 22.600, value: 264.00 },
+        { province: this.$t('浙江省'), year: 2018, radius: 19.540, value: 206.25 },
+        { province: this.$t('浙江省'), year: 2019, radius: 20.520, value: 224.74 },
+        { province: this.$t('浙江省'), year: 2020, radius: 21.254, value: 238.60 },
+        { province: this.$t('浙江省'), year: 2021, radius: 22.343, value: 259.14 },
+        { province: this.$t('浙江省'), year: 2022, radius: 22.600, value: 264.00 },
       ];
       // 贵州省的圆
       const data4 = [
-        { province: '贵州省', year: 2018, radius: 23.501, value: 281.00 },
-        { province: '贵州省', year: 2019, radius: 25.666, value: 321.86 },
-        { province: '贵州省', year: 2020, radius: 30.116, value: 405.84 },
-        { province: '贵州省', year: 2021, radius: 30.581, value: 414.60 },
-        { province: '贵州省', year: 2022, radius: 34, value: 498.00 },
+        { province: this.$t('贵州省'), year: 2018, radius: 23.501, value: 281.00 },
+        { province: this.$t('贵州省'), year: 2019, radius: 25.666, value: 321.86 },
+        { province: this.$t('贵州省'), year: 2020, radius: 30.116, value: 405.84 },
+        { province: this.$t('贵州省'), year: 2021, radius: 30.581, value: 414.60 },
+        { province: this.$t('贵州省'), year: 2022, radius: 34, value: 498.00 },
       ];
       // 云南省的圆
       const data5 = [
-        { province: '云南省', year: 2018, radius: 17.333, value: 164.61 },
-        { province: '云南省', year: 2019, radius: 19.112, value: 198.17 },
-        { province: '云南省', year: 2020, radius: 19.466, value: 204.85 },
-        { province: '云南省', year: 2021, radius: 19.321, value: 202.12 },
-        { province: '云南省', year: 2022, radius: 20.916, value: 232.21 },
+        { province: this.$t('云南省'), year: 2018, radius: 17.333, value: 164.61 },
+        { province: this.$t('云南省'), year: 2019, radius: 19.112, value: 198.17 },
+        { province: this.$t('云南省'), year: 2020, radius: 19.466, value: 204.85 },
+        { province: this.$t('云南省'), year: 2021, radius: 19.321, value: 202.12 },
+        { province: this.$t('云南省'), year: 2022, radius: 20.916, value: 232.21 },
       ];
 
       // 广西省的圆
       const data6 = [
-        { province: '广西省', year: 2018, radius: 11.629, value: 56.97 },
-        { province: '广西省', year: 2019, radius: 12.231, value: 68.33 },
-        { province: '广西省', year: 2020, radius: 12.996, value: 82.76 },
-        { province: '广西省', year: 2021, radius: 13.820, value: 98.30 },
-        { province: '广西省', year: 2022, radius: 15.216, value: 124.66 },
+        { province: this.$t('广西省'), year: 2018, radius: 11.629, value: 56.97 },
+        { province: this.$t('广西省'), year: 2019, radius: 12.231, value: 68.33 },
+        { province: this.$t('广西省'), year: 2020, radius: 12.996, value: 82.76 },
+        { province: this.$t('广西省'), year: 2021, radius: 13.820, value: 98.30 },
+        { province: this.$t('广西省'), year: 2022, radius: 15.216, value: 124.66 },
       ];
       // 江苏省的圆
       const data7 = [
-        { province: '江苏省', year: 2018, radius: 10, value: 26.22 },
-        { province: '江苏省', year: 2019, radius: 10.076, value: 27.66 },
-        { province: '江苏省', year: 2020, radius: 10.160, value: 29.24 },
-        { province: '江苏省', year: 2021, radius: 10.364, value: 33.09 },
-        { province: '江苏省', year: 2022, radius: 10.346, value: 32.74 },
+        { province: this.$t('江苏省'), year: 2018, radius: 10, value: 26.22 },
+        { province: this.$t('江苏省'), year: 2019, radius: 10.076, value: 27.66 },
+        { province: this.$t('江苏省'), year: 2020, radius: 10.160, value: 29.24 },
+        { province: this.$t('江苏省'), year: 2021, radius: 10.364, value: 33.09 },
+        { province: this.$t('江苏省'), year: 2022, radius: 10.346, value: 32.74 },
       ];
 
       // 四川省的圆
       const data8 = [
-        { province: '四川省', year: 2018, radius: 21.648, value: 246.04 },
-        { province: '四川省', year: 2019, radius: 23.432, value: 279.69 },
-        { province: '四川省', year: 2020, radius: 23.717, value: 285.07 },
-        { province: '四川省', year: 2021, radius: 26.362, value: 335.00 },
-        { province: '四川省', year: 2022, radius: 28.068, value: 367.19 },
+        { province: this.$t('四川省'), year: 2018, radius: 21.648, value: 246.04 },
+        { province: this.$t('四川省'), year: 2019, radius: 23.432, value: 279.69 },
+        { province: this.$t('四川省'), year: 2020, radius: 23.717, value: 285.07 },
+        { province: this.$t('四川省'), year: 2021, radius: 26.362, value: 335.00 },
+        { province: this.$t('四川省'), year: 2022, radius: 28.068, value: 367.19 },
       ];
       // 福建省的圆
       const data9 = [
-        { province: '福建省', year: 2018, radius: 22.248, value: 257.36 },
-        { province: '福建省', year: 2019, radius: 24.363, value: 297.27 },
-        { province: '福建省', year: 2020, radius: 24.000, value: 290.42 },
-        { province: '福建省', year: 2021, radius: 24.408, value: 298.12 },
-        { province: '福建省', year: 2022, radius: 25.015, value: 309.58 },
+        { province: this.$t('福建省'), year: 2018, radius: 22.248, value: 257.36 },
+        { province: this.$t('福建省'), year: 2019, radius: 24.363, value: 297.27 },
+        { province: this.$t('福建省'), year: 2020, radius: 24.000, value: 290.42 },
+        { province: this.$t('福建省'), year: 2021, radius: 24.408, value: 298.12 },
+        { province: this.$t('福建省'), year: 2022, radius: 25.015, value: 309.58 },
       ];
       // 陕西省的圆
       const data10 = [
-        { province: '陕西省', year: 2018, radius: 16.058, value: 140.55 },
-        { province: '陕西省', year: 2019, radius: 17.246, value: 162.96 },
-        { province: '陕西省', year: 2020, radius: 17.259, value: 163.21 },
-        { province: '陕西省', year: 2021, radius: 19.014, value: 196.32 },
-        { province: '陕西省', year: 2022, radius: 19.879, value: 212.65 },
+        { province: this.$t('陕西省'), year: 2018, radius: 16.058, value: 140.55 },
+        { province: this.$t('陕西省'), year: 2019, radius: 17.246, value: 162.96 },
+        { province: this.$t('陕西省'), year: 2020, radius: 17.259, value: 163.21 },
+        { province: this.$t('陕西省'), year: 2021, radius: 19.014, value: 196.32 },
+        { province: this.$t('陕西省'), year: 2022, radius: 19.879, value: 212.65 },
       ];
 
       // 湖北省的圆
       const data11 = [
-        { province: '湖北省', year: 2018, radius: 16.345, value: 145.96 },
-        { province: '湖北省', year: 2019, radius: 16.956, value: 157.49 },
-        { province: '湖北省', year: 2020, radius: 18.573, value: 188 },
-        { province: '湖北省', year: 2021, radius: 20.370, value: 221.91 },
-        { province: '湖北省', year: 2022, radius: 20.125, value: 217.29 },
+        { province: this.$t('湖北省'), year: 2018, radius: 16.345, value: 145.96 },
+        { province: this.$t('湖北省'), year: 2019, radius: 16.956, value: 157.49 },
+        { province: this.$t('湖北省'), year: 2020, radius: 18.573, value: 188 },
+        { province: this.$t('湖北省'), year: 2021, radius: 20.370, value: 221.91 },
+        { province: this.$t('湖北省'), year: 2022, radius: 20.125, value: 217.29 },
       ];
       // 广东省的圆
       const data12 = [
-        { province: '广东省', year: 2018, radius: 10.960, value: 44.34 },
-        { province: '广东省', year: 2019, radius: 14.175, value: 105.00 },
-        { province: '广东省', year: 2020, radius: 16.760, value: 153.79 },
-        { province: '广东省', year: 2021, radius: 16.920, value: 156.80 },
-        { province: '广东省', year: 2022, radius: 18.103, value: 179.13 },
+        { province: this.$t('广东省'), year: 2018, radius: 10.960, value: 44.34 },
+        { province: this.$t('广东省'), year: 2019, radius: 14.175, value: 105.00 },
+        { province: this.$t('广东省'), year: 2020, radius: 16.760, value: 153.79 },
+        { province: this.$t('广东省'), year: 2021, radius: 16.920, value: 156.80 },
+        { province: this.$t('广东省'), year: 2022, radius: 18.103, value: 179.13 },
       ];
       const combinedData = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12]
       function drawCircles(data, xScale, yScale, circleColor) {
@@ -465,7 +471,7 @@ export default {
           })
           .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
-            tooltip.html(`产值&nbsp&nbsp${d.value}`);
+            tooltip.html(that.$t('产值') + `&nbsp&nbsp${d.value}`);
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持

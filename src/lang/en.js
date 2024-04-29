@@ -143,6 +143,8 @@ export default{
     "广东省":"Guangdong Province",
     "广东大叶青-广东省韶关市":"Dayeqing - Shaoguan City, Guangdong Province",
 
+    "广西省":"Guangxi Province",
+
     "元/斤":"Yuan/jin",
     "平均价格":"Average Price",
     "发酵度":"Fermentation",
@@ -621,12 +623,23 @@ export default{
     "在2018—2022这个时间段内很接近，":"is very close during the period of 2018-2022.",
     "但各省份之间的产量却存在差异，":"However, there are differences in production among provinces,",
     "比如贵州、云南和福建的产量较多，":"such as Guizhou, Yunnan, and Fujian with higher yields,",
+    "比如贵州、四川和福建的产值较多，":"such as Guizhou, Sichuan, and Fujian with higher yields,",
     "而江苏、陕西和广西省的产量较少。":"while Jiangsu, Shaanxi, and Guangxi provinces have lower yields.",
+    "而江苏、广东和广西省的产值较少。":"while Jiangsu, Guangdong, and Guangxi provinces have lower yields.",
     "产量最高的福建省，在2022年达到":"Fujian Province, with the highest production, reached",
+    "产值最高的贵州省，在2022年达到":"Guizhou Province, with the highest production, reached",
     "最高值459674.38吨，":"a peak of 459674.38 tons in 2022,",
+    "最高值498亿元，":"a peak of 49.8 billion yuan in 2022,",
     "产量最少的江苏省，在2022年达到":"while Jiangsu Province, with the lowest production, reached",
+    "产值最少的江苏省，在2018年达到":"while Jiangsu Province, with the lowest production, reached",
     "最低值10400吨。":"a minimum of 10400 tons in 2022.",
-    "点击右上角的产量产值以实现数据切换~":"Click on the output value in the upper right corner to achieve data switching~"
+    "最低值26.22亿元。":"a minimum of 2.622 billion yuan in 2018.",
+    "点击右上角的产量产值以实现数据切换~":"Click on the output value in the upper right corner to achieve data switching~",
+    "点击“茶园面积图”中的省份查看近几年的产量产销变化图。":"Click on the provinces in the 'Tea Garden Area Map' to view the production and sales changes in recent years.",
 
+    "产量":"Yield",
+    "产值":"Output",
+    "产量（吨）":"Production (tons)",
+    "产值（亿元）":"Output (100 million yuan)"
 }
 
