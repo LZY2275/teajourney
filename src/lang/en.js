@@ -893,5 +893,6 @@ export default{
     "【风靡世界】截止2017年底，中国茶区面积4588万亩，产量260.9万吨，出口35.5万吨，实现了茶业前所未有的巅峰。至此，中国茶风靡世界":"Popular around the world [Sweeping around the world] By the end of 2017, China's tea area covered an area of 45.88 million acres, with a production of 2.609 million tons and an export of 355,000 tons, reaching an unprecedented peak in the tea industry. So far, Chinese tea has become popular all over the world",
     "国际茶日":"International tea day",
     "第74届联合国大会宣布每年5月21日为“国际茶日”，以赞美茶叶对经济、社会和文化的价值，这是以中国为主的产茶国家首次成功推动设立的农业领域国际性节日。":"The 74th United Nations General Assembly declared May 21st each year as 'International Tea Day' to praise the economic, social and cultural value of tea. This is the first time that tea-producing countries, mainly China, have successfully promoted the establishment of an international festival in the agricultural field. ",
+
 }
 
