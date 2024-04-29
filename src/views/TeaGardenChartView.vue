@@ -641,6 +641,7 @@ import $ from 'jquery';
       handleResize(){
             // this.updateMapOption()
             this.myCharts.resize();
+            this.createPie();
         },
     },
     watch:{

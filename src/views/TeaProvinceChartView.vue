@@ -22,8 +22,11 @@
       </div>
 
     </div>
-
-    <component :is="selectedTab === 1 ? 'a1' : 'a2'"></component>
+    
+    <div>
+    <A1 v-if="selectedTab === 1"></A1>
+    <A2 v-if="selectedTab === 2"></A2>
+  </div>
 
   </div>
 </template>

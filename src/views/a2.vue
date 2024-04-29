@@ -14,8 +14,8 @@
 
     </div>
     <div class="line-chart-container">
-      <div class="line-chart"></div>
-      <div class="tooltip" style="display: none;"></div>
+      <div class="line-chart2"></div>
+      <div id="show" class="tooltip" style="display: none;"></div>
     </div>
   </div>
 </template>
@@ -306,7 +306,7 @@ export default {
       const width = container.node().getBoundingClientRect().width - margin.left - margin.right;
       const height = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
       // 创建SVG容器
-      const svg = d3.select('.line-chart')
+      const svg = d3.select('.line-chart2')
         .append('svg')
         .attr('width', '100%') // 使用百分比宽度
         .attr('height', '100%') // 使用百分比高度
@@ -472,6 +472,7 @@ export default {
           .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
             tooltip.html(that.$t('产值') + `&nbsp&nbsp${d.value}`);
+            console.log(tooltip.html)
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持
@@ -479,6 +480,7 @@ export default {
             tooltip.style('display', 'block');
             tooltip.style('left', left + xOffset + 'px');
             tooltip.style('top', top + yOffset + 'px');
+            tooltip.style('box-shadow', circleColor)
           })
           .on('mouseout', function () {
             // 当鼠标离开圆时，隐藏提示框和还原圆的大小和颜色
@@ -570,7 +572,7 @@ export default {
   height: calc(58.5vh - 72px);
 }
 
-.line-chart {
+.line-chart2 {
   width: 100%;
   height: 100%;
 }

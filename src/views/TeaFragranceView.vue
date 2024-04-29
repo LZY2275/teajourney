@@ -772,6 +772,7 @@ export default {
 }
 
 .chart-container {
+
   padding: 0 24px;
 }
 </style>

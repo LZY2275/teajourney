@@ -28,7 +28,7 @@
               style="width:35vw;border:0px; margin-bottom:3vh; margin-top:2vh;background-color: var(--td-bg-color-container);; display: flex; flex-direction: column; align-items: center;">
               <div style="display: flex; width: 100%;margin-bottom: 2vh;">
                 <div style="flex: 1;">
-                  <p class="Three">{{ $t('评茶方式') }}</p>
+                  <p class="Three">评茶方式</p>
                   <p class="ThreeSub">TEAWARE EVALUATOION</p>
                 </div>
                 <p class="Caption2">{{ $t('评茶是一种传统的中国茶文化活动，通常由茶艺师或茶叶爱好者主持。在评茶过程中，参与者会品尝不同种类的茶叶，并对其外形、香气、滋味、汤色等方面进行评价。')
@@ -433,7 +433,7 @@
         </p>
       </div>
 
-      <div ref="main" style="width: 60vw; height: 60vh;margin-left: -8vw;margin-top: -6vh;"></div>
+      <div ref="main" style="width: 60vw; height: 60vh;margin-left: -10vw;margin-top: -6vh;"></div>
 
       <div v-for="(item, index) in items" v-if="item.isTrue" :key="index" style="margin-left: -12vw">
         <img :src="item.imageSrc" style="width: 100px; height: 100px; border-radius: 50%;margin-top: 2vh;">
@@ -1312,15 +1312,14 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
   text-align: left;
   vertical-align: middle;
 }
-
 .Caption6 {
   text-indent: 2em;
-  width: 170px;
-  height: 43px;
+  width: 220px;
+  height: 20px;
   margin-top: 20px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 15px;
+  line-height: 1.5em;
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
   vertical-align: middle;
@@ -1386,11 +1385,11 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 
 .Caption7 {
   text-indent: 2em;
-  width: 250px;
+  width: 260px;
   height: 43px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 1.5em;
   color: rgba(50, 132, 110, 0.5);
   text-align: left;
   vertical-align: middle;
@@ -1406,7 +1405,7 @@ src: url("E:/program_respository/teajourney/public/HanaMinA.ttf") format("ttf"),
 }
 
 .card {
-  background-color: rgba(255, 249, 232, 1);
+  background-color: var(--td-bg-color-container);
   /* 设置背景颜色 */
   margin-left: 4.3vw;
   margin-top: 4vh;

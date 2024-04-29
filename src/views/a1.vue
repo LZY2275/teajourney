@@ -16,7 +16,7 @@
       </div>
 
     <div class="line-chart-container">
-      <div class="line-chart"></div>
+      <div class="line-chart1"></div>
       <div id="show" class="tooltip" style="display: none;"></div>
     </div>
 
@@ -170,7 +170,7 @@ export default {
   created() {
     if (EventBus) {
       EventBus.$on('message-received', (message) => {
-        this.value = message
+        this.value = this.$t(message)
         console.log(this.value);
       });
     }
@@ -306,7 +306,7 @@ export default {
       const width = container.node().getBoundingClientRect().width - margin.left - margin.right;
       const height = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
       // 创建SVG容器
-      const svg = d3.select('.line-chart')
+      const svg = d3.select('.line-chart1')
         .append('svg')
         .attr('width', '100%') // 使用百分比宽度
         .attr('height', '100%') // 使用百分比高度
@@ -577,7 +577,7 @@ export default {
   height: calc(58.5vh - 72px);
 }
 
-.line-chart {
+.line-chart1 {
   width: 100%;
   height: 100%;
 }
