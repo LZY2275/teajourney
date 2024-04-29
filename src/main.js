@@ -16,6 +16,7 @@ window.$ = $
 import 'tdesign-vue/es/style/index.css';
 import './assets/css/theme.css';
 import VueTypedJs from 'vue-typed-js';
+const VueScrollTo = require('vue-scrollto')
 
 Vue.use(VueTypedJs);
 // import './assets/css/fy.css'
@@ -26,6 +27,8 @@ Vue.config.productionTip = false
 
 //需要挂载到Vue原型上
 Vue.prototype.$echarts = echarts
+
+Vue.use(VueScrollTo)
 
 new Vue({
   router,

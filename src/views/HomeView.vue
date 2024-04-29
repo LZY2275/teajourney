@@ -40,12 +40,12 @@
     <!-- 右下方页面卡片实现 -->
     <div style="width:70vw;height: 73vh;position: absolute;right: 0;bottom: -16px;overflow: hidden;">
       <!-- 卡片1 -->
-      <div style="width: 69vw;height: 68vh;position: absolute;top: 3vw;left: 3vw;background-color: #0d6b5624;" class="card card1"></div>
-      <div style="width: 69vw;height: 68vh;position: absolute;top: 5vw;left: 10vw;background-color:#0d6b5650;" class="card card2"></div>
-      <div style="width: 69vw;height: 68vh;position: absolute;top: 7vw;left: 17vw;background-color:#0d6b5670;" class="card card3"></div>
-      <div style="width: 69vw;height: 68vh;position: absolute;top: 9vw;left: 24vw;background-color:#0d6b5690;" class="card card4"></div>
-      <div style="width: 69vw;height: 68vh;position: absolute;top: 11vw;left: 31vw;background-color:#0d6b5695;" class="card card5"></div>
-      <div style="width: 69vw;height: 68vh;position: absolute;top: 13vw;left: 38vw;background-color:#0d6b56;" class="card card6"></div>
+      <div style="width: 69vw;height: 68vh;position: absolute;top: 3vw;left: 3vw;background-color: #0d6b5624;" class="card card1" @click="onClickToNavigate(1)"></div>
+      <div style="width: 69vw;height: 68vh;position: absolute;top: 5vw;left: 10vw;background-color:#0d6b5650;" class="card card2" @click="onClickToNavigate(2)"></div>
+      <div style="width: 69vw;height: 68vh;position: absolute;top: 7vw;left: 17vw;background-color:#0d6b5670;" class="card card3" @click="onClickToNavigate(3)"></div>
+      <div style="width: 69vw;height: 68vh;position: absolute;top: 9vw;left: 24vw;background-color:#0d6b5690;" class="card card4" @click="onClickToNavigate(4)"></div>
+      <div style="width: 69vw;height: 68vh;position: absolute;top: 11vw;left: 31vw;background-color:#0d6b5695;" class="card card5" @click="onClickToNavigate(5)"></div>
+      <div style="width: 69vw;height: 68vh;position: absolute;top: 13vw;left: 38vw;background-color:#0d6b56;" class="card card6" @click="onClickToNavigate(6)"></div>
     </div>
 
   </div>
@@ -78,6 +78,10 @@ export default {
       }
       console.log(this.$i18n.locale);
     },
+    onClickToNavigate(page){
+      // console.log(page);
+      this.$emit('pageToNavigate', page);
+    }
   },
   components:{
     IntroOverlay,
@@ -141,6 +145,7 @@ export default {
     background-repeat: no-repeat;
     background-clip: padding-box;
     background-size: cover;
+    cursor: pointer;
   }
 
   .card1{

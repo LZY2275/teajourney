@@ -20,7 +20,7 @@
     <!-- 首页 -->
     <div style="width: 99vw;height: 100vh;background: linear-gradient(180deg, rgba(20, 81, 82, 1) 0%, rgba(218, 231, 182, 1) 100%);">
       <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views 高度为100vh-->
-      <HomeView></HomeView>
+      <HomeView id="homeview" @pageToNavigate="handleNavigation"></HomeView>
     </div>
     <div style="display: flex;">
       <!-- 左侧导航栏 -->
@@ -40,6 +40,9 @@
         <div class="nav">
           <p class="nav-title">{{ title[current] }}</p>
           <t-divider></t-divider>
+          <!-- <button v-scroll-to="'#huiyi'">
+              Scroll to #element
+          </button> -->
           <template>
             <t-steps :defaultCurrent="current"
                       separator="dashed"
@@ -68,7 +71,7 @@
           <!-- <PlantView @customEvent="handleCustomEvent"></PlantView> -->
           <PlantView></PlantView>
         </section>
-        <section id="plant" class="section-second-3-add" style="position: relative;">
+        <section id="place" class="section-second-3-add" style="position: relative;">
           <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views，页面的宽度为calc（100vw - 300px） -->
           <!-- <PlantView @customEvent="handleCustomEvent"></PlantView> -->
         <PlaceView></PlaceView>
@@ -159,7 +162,32 @@ import { log } from '@antv/g2plot/lib/utils';
       //   e.preventDefault();
       //   console.log('click', href, title);
       // },
+      handleNavigation(page){
+        // console.log('navigate to',page);
+        // this.toArea(page-1)
+        switch (page){
+          case 1:
+            this.$scrollTo('#plant')
+            break;
+          case 2:
+            this.$scrollTo('#pick')
+            break;
+          case 3:
+            this.$scrollTo('#produce')
+            break;
+          case 4:
+            this.$scrollTo('#sale')
+            break;
+          case 5:
+            this.$scrollTo('#taste')
+            break;
+          case 6:
+            this.$scrollTo('#huiyi')
+            break;
 
+        }
+
+      },
 
       renderChatIcon() {
         return <ChatIcon />;
@@ -184,7 +212,8 @@ import { log } from '@antv/g2plot/lib/utils';
       },
       onChangeSteps(e){
         this.current=e;
-        this.toArea(e);
+        // this.toArea(e);
+        this.handleNavigation(e+1)
       },
       handleScroll(e){
         // console.log(e)
@@ -207,62 +236,62 @@ import { log } from '@antv/g2plot/lib/utils';
           this.current=5;
         }
       },
-      toArea(index) { // 这里的index是左侧导航栏传的参数，是不同区域设定好的索引值
-        switch (index) { // 匹配不同区域的滚轮高度
-          case 0: //区域一
-            this.targetHeight= this.clientHeight  //这里将第一步获取到的滚轮高度取整
-            break;
-          case 1: //区域二
-            this.targetHeight= 3*this.clientHeight
-            break;
-          case 2: //区域三
-            this.targetHeight= 4*this.clientHeight
-            break;
-          case 3: //区域四
-            this.targetHeight= 5*this.clientHeight
-            break;
-          case 4: //区域五
-            this.targetHeight= 6*this.clientHeight
-            break;
-          case 5: //区域六
-            this.targetHeight= 9.5*this.clientHeight
-            break;
-          default: //默认：区域一
-            this.targetHeight= this.clientHeight
-            break;
-        }
+      // toArea(index) { // 这里的index是左侧导航栏传的参数，是不同区域设定好的索引值
+      //   switch (index) { // 匹配不同区域的滚轮高度
+      //     case 0: //区域一
+      //       this.targetHeight= this.clientHeight  //这里将第一步获取到的滚轮高度取整
+      //       break;
+      //     case 1: //区域二
+      //       this.targetHeight= 3*this.clientHeight
+      //       break;
+      //     case 2: //区域三
+      //       this.targetHeight= 4*this.clientHeight
+      //       break;
+      //     case 3: //区域四
+      //       this.targetHeight= 5*this.clientHeight
+      //       break;
+      //     case 4: //区域五
+      //       this.targetHeight= 6*this.clientHeight
+      //       break;
+      //     case 5: //区域六
+      //       this.targetHeight= 9.5*this.clientHeight
+      //       break;
+      //     default: //默认：区域一
+      //       this.targetHeight= this.clientHeight
+      //       break;
+      //   }
 
-        // 当指定区域高度大于当前滚动条位置时（即目标区在当前滚轮的下方）
-        if(this.targetHeight> this.scrollHeight){
-          // 计算高度差
-          let x = this.targetHeight- this.scrollHeight;
-          // 先加上余数，保证高度差能整除设定的最小移动单位
-          document.documentElement.scrollTop += x%this.metaHeight;
-          x -= x%this.metaHeight;
-          const goto = setInterval(() => { // 建立执行操作的定时器
-            document.documentElement.scrollTop  += this.metaHeight; // 控制移动滚动条
-            x-= this.metaHeight; // 缩减高度差
-            if (x == 0) { // 到达指定位置后清除定时器
-              clearInterval(goto); //清除定时器
-            }
-          }, this.metaTime);
-        }
-        // 当指定区域高度小于当前滚动条位置时（即目标区在当前滚轮的上方）
-        else{
-          // 计算高度差
-          let x = this.scrollHeight - this.targetHeight;
-          // 先减去余数，保证高度差能整除设定的最小移动单位
-          document.documentElement.scrollTop -= x%this.metaHeight;
-          x -= x%this.metaHeight;
-          const goto = setInterval(() => {
-            document.documentElement.scrollTop -= this.metaHeight;
-            x-= this.metaHeight;
-            if (x == 0) {
-              clearInterval(goto); //清除定时器
-            }
-          }, 1);
-        }
-      },
+      //   // 当指定区域高度大于当前滚动条位置时（即目标区在当前滚轮的下方）
+      //   if(this.targetHeight> this.scrollHeight){
+      //     // 计算高度差
+      //     let x = this.targetHeight- this.scrollHeight;
+      //     // 先加上余数，保证高度差能整除设定的最小移动单位
+      //     document.documentElement.scrollTop += x%this.metaHeight;
+      //     x -= x%this.metaHeight;
+      //     const goto = setInterval(() => { // 建立执行操作的定时器
+      //       document.documentElement.scrollTop  += this.metaHeight; // 控制移动滚动条
+      //       x-= this.metaHeight; // 缩减高度差
+      //       if (x == 0) { // 到达指定位置后清除定时器
+      //         clearInterval(goto); //清除定时器
+      //       }
+      //     }, this.metaTime);
+      //   }
+      //   // 当指定区域高度小于当前滚动条位置时（即目标区在当前滚轮的上方）
+      //   else{
+      //     // 计算高度差
+      //     let x = this.scrollHeight - this.targetHeight;
+      //     // 先减去余数，保证高度差能整除设定的最小移动单位
+      //     document.documentElement.scrollTop -= x%this.metaHeight;
+      //     x -= x%this.metaHeight;
+      //     const goto = setInterval(() => {
+      //       document.documentElement.scrollTop -= this.metaHeight;
+      //       x-= this.metaHeight;
+      //       if (x == 0) {
+      //         clearInterval(goto); //清除定时器
+      //       }
+      //     }, 1);
+      //   }
+      // },
       handleCustomEvent(data){
         this.customEventData = data
         console.log(data);
