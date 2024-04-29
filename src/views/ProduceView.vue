@@ -144,7 +144,7 @@
 
 
             <!-- 步骤条 -->
-      <div style="width: calc(100vw - 350px); display: flex;justify-content: center;position: relative;top: 24px;">
+      <div style="width: calc(100vw - 350px); display: flex;justify-content: center;position: relative;top: 4px;">
         <div style="width: calc(100vw - 460px);"   :class="{ 'last-step': showImage6 }">
           <div v-if="showImage1" style="display: flex; justify-content: center; align-items: center; ">
             <template>
