@@ -6,7 +6,7 @@
         </div>
       </div>
       <div class="title">
-        <p>{{ title }}</p>
+        <p>{{ $t(title) }}</p>
       </div>
       <div>
         <div id="pie" class="pie"></div>
@@ -641,6 +641,7 @@ import $ from 'jquery';
       handleResize(){
             // this.updateMapOption()
             this.myCharts.resize();
+            this.createPie();
         },
     },
     watch:{

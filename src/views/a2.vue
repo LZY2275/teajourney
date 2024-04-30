@@ -3,7 +3,7 @@
 
     <div style="width:21% ;">
 
-      <div class="left-content" style="max-height: 250px;overflow: auto;">
+      <div class="left-content" style="max-height: 206px;overflow: auto;">
         <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、四川和福建的产值较多，') }}<br>
         </p>
         <p class="text bottom-right">
@@ -15,7 +15,7 @@
     </div>
     <div class="line-chart-container">
       <div class="line-chart"></div>
-      <div class="tooltip" style="display: none;"></div>
+      <div id="show" class="tooltip" style="display: none;"></div>
     </div>
   </div>
 </template>
@@ -202,62 +202,62 @@ export default {
       let chartData = null;
       if (newValue === that.$t('粤')) {
         chartData = this.guangdongData;
-        chartData.datasets[0].label = '广东省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('广东省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('皖')) {
         chartData = this.anhuiData;
-        chartData.datasets[0].label = '安徽省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('安徽省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('湘')) {
         chartData = this.hunanData;
-        chartData.datasets[0].label = '湖南省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('湖南省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('浙')) {
         chartData = this.zhejiangData;
-        chartData.datasets[0].label = '浙江省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('浙江省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('黔')) {
         chartData = this.guizhouData;
-        chartData.datasets[0].label = '贵州省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('贵州省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('滇')) {
         chartData = this.yunnanData;
-        chartData.datasets[0].label = '云南省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('云南省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('桂')) {
         chartData = this.guangxiData;
-        chartData.datasets[0].label = '广西省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('广西省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('苏')) {
         chartData = this.jiangsuData;
-        chartData.datasets[0].label = '江苏省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('江苏省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('川')) {
         chartData = this.sichuanData;
-        chartData.datasets[0].label = '四川省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('四川省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('闽')) {
         chartData = this.fujianData;
-        chartData.datasets[0].label = '福建省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('福建省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('陕')) {
         chartData = this.shanxiData;
-        chartData.datasets[0].label = '陕西省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('陕西省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('鄂')) {
         chartData = this.hubeiData;
-        chartData.datasets[0].label = '湖北省近几年产值（亿元）';
+        chartData.datasets[0].label = that.$t('湖北省近几年产值（亿元）');
         this.currentProvince = newValue;
       }
       if (this.lineChart) {
@@ -275,7 +275,7 @@ export default {
           },
           plugins: {
             tooltip: {
-              intersect: true, // 设置为false以在x轴方向上悬停时显示标签
+              intersect: false, // 设置为false以在x轴方向上悬停时显示标签
               mode: 'index', // 设置为'index'以在x轴方向上悬停时显示所有数据点的标签
               position: 'average',
               xAlign: 'center',
@@ -471,7 +471,13 @@ export default {
           })
           .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
-            tooltip.html(that.$t('产值') + `&nbsp&nbsp${d.value}`);
+            var tooltipContent = '<div class="tooltip-content">'
+                    + '<span class="tooltip-dot" style="color:' + circleColor + '">● </span>'
+                    + that.$t('产值') + '&nbsp;&nbsp;' + d.value
+                    + '</div>';
+
+tooltip.html(tooltipContent);
+            console.log(tooltip.html)
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持
@@ -479,6 +485,7 @@ export default {
             tooltip.style('display', 'block');
             tooltip.style('left', left + xOffset + 'px');
             tooltip.style('top', top + yOffset + 'px');
+            tooltip.style('box-shadow', circleColor)
           })
           .on('mouseout', function () {
             // 当鼠标离开圆时，隐藏提示框和还原圆的大小和颜色

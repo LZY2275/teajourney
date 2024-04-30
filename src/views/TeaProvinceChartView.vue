@@ -3,7 +3,7 @@
 
     <div style="display: flex;justify-content: space-between;align-items: center;">
       <p class="title">
-        茶省产销气泡图
+        {{$t('茶省产销气泡图')}}
       </p>
       <div class="tabs">
         <template>
@@ -22,8 +22,11 @@
       </div>
 
     </div>
-
-    <component :is="selectedTab === 1 ? 'a1' : 'a2'"></component>
+    
+    <div>
+    <A1 v-if="selectedTab === 1"></A1>
+    <A2 v-else="selectedTab === 2"></A2>
+  </div>
 
   </div>
 </template>

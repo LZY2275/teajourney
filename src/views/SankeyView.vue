@@ -708,7 +708,6 @@
         handleResize(){
             // 清除当前的 SVG
 
-            // 清除当前的 SVG
         const svgContainer = document.getElementById('sankey-chart');
         while (svgContainer.firstChild) {
             svgContainer.removeChild(svgContainer.firstChild);
@@ -750,7 +749,6 @@
     }
 
     .font-content{
-
         text-align: left;
         text-indent: 2em;
         font-size: 14px;
