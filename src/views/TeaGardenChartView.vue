@@ -473,7 +473,7 @@ import $ from 'jquery';
         // 首先检查是否存在已有的实例
 if (this.myCharts) {
     // 如果存在，先销毁它
-    this.myCharts.remove();
+    this.myCharts.dispose();
 }
         let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
         this.myCharts = myChart

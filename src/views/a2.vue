@@ -314,6 +314,10 @@ export default {
       });
     },
     drawLineChart() {
+      if (this.myCharts) {
+    // 如果存在，先销毁它
+    this.myCharts.dispose();
+}
       d3.select('#line-chart').selectAll('*').remove();
 
       // 数据：12个省份和5个年份的示例数据
