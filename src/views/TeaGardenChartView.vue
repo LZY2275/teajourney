@@ -6,7 +6,7 @@
         </div>
       </div>
       <div class="title">
-        <p>{{ title }}</p>
+        <p>{{ $t(title) }}</p>
       </div>
       <div>
         <div id="pie" class="pie"></div>
@@ -470,6 +470,11 @@ import $ from 'jquery';
     },
     methods:{
       createPie(){
+        // 首先检查是否存在已有的实例
+if (this.myCharts) {
+    // 如果存在，先销毁它
+    this.myCharts.dispose();
+}
         let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
         this.myCharts = myChart
         // let myCharts = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
@@ -641,6 +646,7 @@ import $ from 'jquery';
       handleResize(){
             // this.updateMapOption()
             this.myCharts.resize();
+            this.createPie();
         },
     },
     watch:{

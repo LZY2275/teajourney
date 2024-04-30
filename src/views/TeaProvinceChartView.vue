@@ -3,28 +3,28 @@
 
     <div style="display: flex;justify-content: space-between;align-items: center;">
       <p class="title">
-        茶省产销气泡图
+        {{$t('茶省产销气泡图')}}
       </p>
       <div class="tabs">
         <template>
           <t-tabs :defaultValue="1" @change="selectTab">
             <!-- 默认插槽 和 具名插槽（panel）都是用来渲染面板内容 -->
             <t-tab-panel :value="1" :label = "$t('产量（吨）')" >
-
             </t-tab-panel>
             <t-tab-panel :value="2" :label = "$t('产值（亿元）')" >
-
             </t-tab-panel>
-
           </t-tabs>
         </template>
-
       </div>
-
     </div>
-
-    <component :is="selectedTab === 1 ? 'a1' : 'a2'"></component>
-
+  
+  <div>
+    <A1 v-if="selectedTab === 1"></A1>
+  </div>
+  <div>
+    <A2 v-if="selectedTab === 2"></A2>
+  </div>
+  
   </div>
 </template>
 

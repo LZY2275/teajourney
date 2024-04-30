@@ -37,7 +37,7 @@
             <img :src="tea_info[current].teaimg" alt="" class="tea-info-img">
             <p class="tea-info-content" v-html="tea_info[current].teacontent"></p>
         </t-drawer>
-        <t-guide :current.sync="guide_current" :steps="steps" @change="handleChange" @finish="handleFinish"
+        <t-guide :current.sync="guide_current" :steps="steps" @finish="handleFinish"
             @skip="handleFinish" :nextButtonProps="{ content: $t('下一步'), theme: 'primary' }" :prevButtonProps="{ content: $t('上一步'), theme: 'primary' }" :skipButtonProps="{ content:$t('跳过') }" :finishButtonProps="{ content:$t('完成') }"/>
 
         <div style="top: 20px; right: 20px; z-index:99;position:absolute ">

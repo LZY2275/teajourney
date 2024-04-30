@@ -517,11 +517,10 @@ export default{
     "“橙黄”茶汤色泽呈现出明显的橙色和黄色的混合特征，通常呈现出明亮而饱满的外观，色泽鲜艳，但不像金黄那样明亮，而是更倾向于橙色。":"The color of 'orange-yellow' tea soup shows obvious mixed characteristics of orange and yellow, usually showing a bright and full appearance, and the color is bright, but not as bright as golden yellow, but more inclined to orange.",
     "“橙红”茶汤色泽呈现出明显的橙色和红色的混合特征，通常呈现出鲜艳而丰富的外观，色泽明亮，光泽度较高，是一种具有特殊风味的茶汤色泽。":"The color of 'orange red' tea soup shows obvious mixed characteristics of orange and red, usually showing a bright and rich appearance, bright color and high gloss. It is a kind of tea soup color with special flavor.",
     "“红汤”茶汤色泽呈现出明显的红色调，色泽鲜艳而丰富，具有浓烈的红色，香气浓郁，口感醇厚，是红茶特有的一种茶汤颜色，也是其独特风味的象征。":"'Red soup' tea soup has an obvious red hue, bright and rich color, strong red color, rich aroma and mellow taste. It is a unique color of black tea and a symbol of its unique flavor.",
-    "“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。":"The 'curd' tea soup has a special milky white or milky white color, with very low transparency and turbidity, and exudes a special frankincense or milky aroma. It is one of the unique characteristics of some high-quality white tea or Pu'er tea, and is also one of the unique characteristics of some high-quality white tea or Pu'er tea. A symbol of unique flavor.",
+    "“凝乳”茶汤色泽呈现出乳白色或者奶白色的特殊状态，具有非常低的透明度和浑浊感，散发出特殊的乳香或者奶香，是某些优质白茶或者普洱茶的特有特征之一，也是其独特风味的象征。":"'Curd' display a milky or creamy state with low transparency and a cloudy texture, emitting a milky or creamy aroma. It's a unique feature of high-quality white teas or Pu-erh teas, symbolizing their distinct flavor profile.",
     "“明亮”茶汤色泽呈现出清澈透明的状态，色泽鲜艳明亮，通透度高，没有任何混浊或浑浊的迹象，是优质茶汤的典型特征之一，也是其独特风味的象征。":"'Bright' tea soup shows a clear and transparent color, bright and bright color, high transparency, without any signs of turbidity or turbidity, which is one of the typical characteristics of high-quality tea soup and a symbol of its unique flavor.",
     "“浑浊”茶汤色泽呈现出不清晰、不透明的状态，具有一定的混浊度，通常是茶汤中悬浮着茶叶碎屑、细小颗粒或者茶汤沉淀物所致，影响了茶汤的透明度和口感，通常不是优质茶汤的特征。":"The color of 'turbid' tea soup is unclear and opaque, with a certain degree of turbidity. It is usually caused by tea leaf debris, fine particles or tea soup sediments suspended in the tea soup, which affects the transparency and taste of the tea soup. It is usually not of high quality. Characteristics of tea soup.",
-    "“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。":"The color of 'dim' tea soup is dim and not bright. It is dark in color and lacks luster and vitality. It is an unideal tea soup state and usually does not meet the characteristics of high-quality tea soup.",
-
+    "“昏暗”茶汤色泽呈现出暗淡、不明亮的状态，颜色偏暗，缺乏光泽和活力，是一种不理想的茶汤状态，通常不符合优质茶汤的特征。":"'Dim' manifests as a dull, lackluster state with a dark, uninspiring color, lacking shine and vitality. It represents an undesirable condition for tea infusion, typically not characteristic of high-quality tea.",
     "右侧桑基图展示了茶种各成分与滋味和味觉感受的对应关系。":"The Sankey diagram on the right shows the correspondence between each component of tea and its taste and taste sensation.",
     "化合物种类":"Compound type",
     "茶中成味成分":"Flavor ingredients in tea",
@@ -893,6 +892,53 @@ export default{
     "【风靡世界】截止2017年底，中国茶区面积4588万亩，产量260.9万吨，出口35.5万吨，实现了茶业前所未有的巅峰。至此，中国茶风靡世界":"Popular around the world [Sweeping around the world] By the end of 2017, China's tea area covered an area of 45.88 million acres, with a production of 2.609 million tons and an export of 355,000 tons, reaching an unprecedented peak in the tea industry. So far, Chinese tea has become popular all over the world",
     "国际茶日":"International tea day",
     "第74届联合国大会宣布每年5月21日为“国际茶日”，以赞美茶叶对经济、社会和文化的价值，这是以中国为主的产茶国家首次成功推动设立的农业领域国际性节日。":"The 74th United Nations General Assembly declared May 21st each year as 'International Tea Day' to praise the economic, social and cultural value of tea. This is the first time that tea-producing countries, mainly China, have successfully promoted the establishment of an international festival in the agricultural field. ",
+
+
+    "广东省近几年产量（吨）":"Output of Guangdong (tons)",
+    "安徽省近几年产量（吨）":"Output of Anhui (tons)",
+    "湖南省近几年产量（吨）":"Output of Hunan (tons)",
+    "浙江省近几年产量（吨）":"Output of Zhejiang (tons)",
+    "贵州省近几年产量（吨）":"Output of Guizhou (tons)",
+    "云南省近几年产量（吨）":"Output of Yunnan (tons)",
+    "广西省近几年产量（吨）":"Output of Guangxi (tons)",
+    "江苏省近几年产量（吨）":"Output of Jiangsu (tons)",
+    "四川省近几年产量（吨）":"Output of Sichuan (tons)",
+    "福建省近几年产量（吨）":"Output of Fujian (tons)",
+    "陕西省近几年产量（吨）":"Output of Shanxi (tons)",
+    "湖北省近几年产量（吨）":"Output of Hubei (tons)",
+    
+    "广东省近几年产值（亿元）":"Output value of Guangdong (100 million yuan)",
+    "安徽省近几年产值（亿元）":"Output value of Anhui (100 million yuan)",
+    "湖南省近几年产值（亿元）":"Output value of Hunan (100 million yuan)",
+    "浙江省近几年产值（亿元）":"Output value of Zhejiang (100 million yuan)",
+    "贵州省近几年产值（亿元）":"Output value of Guizhou (100 million yuan)",
+    "云南省近几年产值（亿元）":"Output value of Yunnan (100 million yuan)",
+    "广西省近几年产值（亿元）":"Output value of Guangxi (100 million yuan)",
+    "江苏省近几年产值（亿元）":"Output value of Jiangsu (100 million yuan)",
+    "四川省近几年产值（亿元）":"Output value of Sichuan (100 million yuan)",
+    "福建省近几年产值（亿元）":"Output value of Fujian (100 million yuan)",
+    "陕西省近几年产值（亿元）":"Output value of Shanxi (100 million yuan)",
+    "湖北省近几年产值（亿元）":"Output value of Hubei (100 million yuan)",
+
+    "茶省产销气泡图":"Bubble chart of tea province production and sales",
+    "茶品产销丝绸图":"Tea production and sales silk map",
+    "茶园面积图":"Tea garden area map",
+    "产量(万吨)":"Output(million tons)",
+    "内销量(万吨)":"Domestic sales volume (million tons)",
+    "内销额(亿元)":"Domestic sales (billion yuan)",
+    "选择所有":"Select all",
+    "丝绸图":"Silk figure",
+    "显示各类茶近五年数据的详细情况，颜色代表茶的类别":"Displays the detailed data of various types of tea in the past five years. The color represents the type of tea.",
+    "选择图例":"Select legend",
+    "点击小圆圈，详细查看某种茶的数据":"Click the small circle to view the data of a certain tea in detail",
+    "点击此处，选择查看所有图例":"Click here to view all legends",
+    "选项卡":"Tabs",
+    "可以选择要查看的数据类别":"Ability to select the categories of data to view",
+    "万吨":" million tons",
+    "亿元":" billion yuan",
+
+
+
 
 }
 
