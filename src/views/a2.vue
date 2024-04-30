@@ -28,6 +28,7 @@ import $ from 'jquery';
 export default {
   data() {
     return {
+      x: null, // 在组件实例中定义 x
       currentProvince:'',
       value: '',
       lineChart: null,
@@ -175,9 +176,20 @@ export default {
   },
   watch: {
     value(newValue) {
+      this.x = newValue; // 将 value 的新值赋给 x
       this.renderLineChart(newValue);
+    },
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize(this.$t(this.x))
+      },
+      immediate: true // 立即执行一次回调函数
     }
-  },
+       
+},
+
   computed:{
     dataX(){
       return [
@@ -197,10 +209,15 @@ export default {
     }
   },
   methods: {
+    handleResize(newValue){
+      d3.select("#lineChart").selectAll('*').remove();
+      this.renderLineChart(newValue)
+    },
     renderLineChart(newValue) {
       var that = this;
       let chartData = null;
       if (newValue === that.$t('粤')) {
+        console.log('进入粤')
         chartData = this.guangdongData;
         chartData.datasets[0].label = that.$t('广东省近几年产值（亿元）');
         this.currentProvince = newValue;

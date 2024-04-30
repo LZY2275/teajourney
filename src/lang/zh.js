@@ -904,4 +904,19 @@ export default{
 "万吨":"万吨",
 "亿元":"亿元",
 
+/* 别删这一段！ 真有用*/
+"Anhui":"皖",
+"Hunan":"湘",
+"Jiangsu":"苏",
+"Zhejiang":"浙",
+"Guizhou":"黔",
+"Sichuan":"川",
+"Yunnan":"滇",
+"Guangxi":"桂",
+"Fujian":"闽",
+"Hubei":"鄂",
+"Shaanxi":"陕",
+"Jiangxi":"赣",
+"Guangdong":"粤",
+
 }
