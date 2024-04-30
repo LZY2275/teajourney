@@ -34,6 +34,7 @@ import { contains } from 'jquery';
 export default {
   data() {
     return {
+      x: null, // 在组件实例中定义 x
       currentProvince: '',
       value: '',
       lineChart: null,
@@ -181,16 +182,18 @@ export default {
   },
   watch: {
     value(newValue) {
+      this.x = newValue; // 将 value 的新值赋给 x
       this.renderLineChart(newValue);
     },
-       //监听语言是否变化，若变化调用createPieChart()
-       '$i18n.locale': {
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
       handler() {
         // 处理语言变化的逻辑
-        this.handleResize()
+        this.handleResize(this.$t(this.x))
       },
       immediate: true // 立即执行一次回调函数
     }
+       
 },
   computed: {
     dataX() {
@@ -211,8 +214,9 @@ export default {
     }
   },
   methods: {
-    handleResize(){
-
+    handleResize(newValue){
+      d3.select("#lineChart").selectAll('*').remove();
+      this.renderLineChart(newValue)
     },
     renderLineChart(newValue) {
       var that = this;
@@ -313,6 +317,11 @@ export default {
       });
     },
     drawLineChart() {
+      if (this.myCharts) {
+    // 如果存在，先销毁它
+    this.myCharts.dispose();
+}
+      d3.select('#line-chart').selectAll('*').remove();
       const data = this.dataX;
       var that = this;
       // 定义容器尺寸
@@ -395,7 +404,6 @@ export default {
         { province: this.$t('云南'), year: 2021, radius: 26.454, value: 380023.00 },
         { province: this.$t('云南'), year: 2022, radius: 28.808, value: 432904.09 },
       ];
-
       // 广西省的圆
       const data6 = [
         { province: this.$t('广西'), year: 2018, radius: 12.787, value: 73000.00 },
@@ -412,7 +420,6 @@ export default {
         { province: this.$t('江苏'), year: 2021, radius: 10.013, value: 10703.00 },
         { province: this.$t('江苏'), year: 2022, radius: 10, value: 10400.00 },
       ];
-
       // 四川省的圆
       const data8 = [
         { province: this.$t('四川'), year: 2018, radius: 22.669, value: 295000.00 },
@@ -437,7 +444,6 @@ export default {
         { province: this.$t('陕西'), year: 2021, radius: 13.868, value: 97297.16 },
         { province: this.$t('陕西'), year: 2022, radius: 14.865, value: 119689.49 },
       ];
-
       // 湖北省的圆
       const data11 = [
         { province: this.$t('湖北'), year: 2018, radius: 23.535, value: 314453.00 },
@@ -464,7 +470,10 @@ export default {
         if (circleGroup.empty()) {
           circleGroup = svg.append('g')
             .attr('class', 'circles');
-        }
+        }else {
+        // 如果circles组存在，则移除旧的圆
+        circleGroup.selectAll('.circles').remove();
+    }
 
         const newCircleGroup = circleGroup.selectAll('.circle')
           .data(data)
@@ -494,7 +503,6 @@ export default {
               + '</div>';
 
             tooltip.html(tooltipContent);
-
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持
@@ -557,33 +565,15 @@ export default {
         .attr('class', 'line')
         .attr('d', line);
 
-      window.addEventListener('resize', () => {
-        const newWidth = container.node().getBoundingClientRect().width - margin.left - margin.right;
-        const newHeight = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
-
-        xScale.range([0, newWidth]);
-        yScale.range([newHeight, 0]);
-
-        svg.select('.x-axis')
-          .attr('transform', `translate(0, ${newHeight})`)
-          .call(d3.axisBottom(xScale));
-
-        svg.select('.y-axis')
-          .call(d3.axisLeft(yScale).ticks(5).tickFormat(d3.format('d')));
-
-        path.attr('d', line);
-
-      });
-
-      window.dispatchEvent(new Event('resize'));
-
     },
 
   },
 
   mounted() {
+   
     this.drawLineChart();
-  }
+  },
+
 };
 </script>
 

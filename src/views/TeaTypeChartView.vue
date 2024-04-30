@@ -420,8 +420,6 @@ export default {
     drawSlik(_data, value) {
       var that =this
       d3.select('#silkchart').selectAll('*').remove();
-
-
       var padding = { top: 10, right: 20, bottom: 15, left: 20 };
 
       const container = d3.select('#silkchart-container');

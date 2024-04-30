@@ -13,10 +13,12 @@
       <canvas ref="lineChart" width="450" height="300" style="margin-top: 12px;"></canvas>
 
     </div>
+
     <div class="line-chart-container">
       <div class="line-chart"></div>
       <div id="show" class="tooltip" style="display: none;"></div>
     </div>
+    
   </div>
 </template>
 
@@ -28,6 +30,7 @@ import $ from 'jquery';
 export default {
   data() {
     return {
+      x: null, // 在组件实例中定义 x
       currentProvince:'',
       value: '',
       lineChart: null,
@@ -175,9 +178,19 @@ export default {
   },
   watch: {
     value(newValue) {
+      this.x = newValue; // 将 value 的新值赋给 x
       this.renderLineChart(newValue);
+    },
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize(this.$t(this.x))
+      },
+      immediate: true // 立即执行一次回调函数
     }
-  },
+       
+},
   computed:{
     dataX(){
       return [
@@ -197,10 +210,15 @@ export default {
     }
   },
   methods: {
+    handleResize(newValue){
+      d3.select("#lineChart").selectAll('*').remove();
+      this.renderLineChart(newValue)
+    },
     renderLineChart(newValue) {
       var that = this;
       let chartData = null;
       if (newValue === that.$t('粤')) {
+        console.log('进入粤')
         chartData = this.guangdongData;
         chartData.datasets[0].label = that.$t('广东省近几年产值（亿元）');
         this.currentProvince = newValue;
@@ -296,6 +314,11 @@ export default {
       });
     },
     drawLineChart() {
+      if (this.myCharts) {
+    // 如果存在，先销毁它
+    this.myCharts.dispose();
+}
+      d3.select('#line-chart').selectAll('*').remove();
 
       // 数据：12个省份和5个年份的示例数据
       const data = this.dataX;
@@ -476,8 +499,7 @@ export default {
                     + that.$t('产值') + '&nbsp;&nbsp;' + d.value
                     + '</div>';
 
-tooltip.html(tooltipContent);
-            console.log(tooltip.html)
+            tooltip.html(tooltipContent);
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持
@@ -539,30 +561,12 @@ tooltip.html(tooltipContent);
         .attr('class', 'line')
         .attr('d', line);
 
-      window.addEventListener('resize', () => {
-        const newWidth = container.node().getBoundingClientRect().width - margin.left - margin.right;
-        const newHeight = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
-
-        xScale.range([0, newWidth]);
-        yScale.range([newHeight, 0]);
-
-        svg.select('.x-axis')
-          .attr('transform', `translate(0, ${newHeight})`)
-          .call(d3.axisBottom(xScale));
-
-        svg.select('.y-axis')
-          .call(d3.axisLeft(yScale).ticks(5).tickFormat(d3.format('d')));
-
-        path.attr('d', line);
-      });
-
-      window.dispatchEvent(new Event('resize'));
-
     },
   },
   mounted() {
     this.drawLineChart();
-  }
+  },
+
 };
 </script>
 
