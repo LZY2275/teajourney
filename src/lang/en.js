@@ -893,5 +893,52 @@ export default{
     "国际茶日":"International tea day",
     "第74届联合国大会宣布每年5月21日为“国际茶日”，以赞美茶叶对经济、社会和文化的价值，这是以中国为主的产茶国家首次成功推动设立的农业领域国际性节日。":"The 74th United Nations General Assembly declared May 21st each year as 'International Tea Day' to praise the economic, social and cultural value of tea. This is the first time that tea-producing countries, mainly China, have successfully promoted the establishment of an international festival in the agricultural field. ",
 
+
+    "广东省近几年产量（吨）":"Output of Guangdong (tons)",
+    "安徽省近几年产量（吨）":"Output of Anhui (tons)",
+    "湖南省近几年产量（吨）":"Output of Hunan (tons)",
+    "浙江省近几年产量（吨）":"Output of Zhejiang (tons)",
+    "贵州省近几年产量（吨）":"Output of Guizhou (tons)",
+    "云南省近几年产量（吨）":"Output of Yunnan (tons)",
+    "广西省近几年产量（吨）":"Output of Guangxi (tons)",
+    "江苏省近几年产量（吨）":"Output of Jiangsu (tons)",
+    "四川省近几年产量（吨）":"Output of Sichuan (tons)",
+    "福建省近几年产量（吨）":"Output of Fujian (tons)",
+    "陕西省近几年产量（吨）":"Output of Shanxi (tons)",
+    "湖北省近几年产量（吨）":"Output of Hubei (tons)",
+    
+    "广东省近几年产值（亿元）":"Output value of Guangdong (100 million yuan)",
+    "安徽省近几年产值（亿元）":"Output value of Anhui (100 million yuan)",
+    "湖南省近几年产值（亿元）":"Output value of Hunan (100 million yuan)",
+    "浙江省近几年产值（亿元）":"Output value of Zhejiang (100 million yuan)",
+    "贵州省近几年产值（亿元）":"Output value of Guizhou (100 million yuan)",
+    "云南省近几年产值（亿元）":"Output value of Yunnan (100 million yuan)",
+    "广西省近几年产值（亿元）":"Output value of Guangxi (100 million yuan)",
+    "江苏省近几年产值（亿元）":"Output value of Jiangsu (100 million yuan)",
+    "四川省近几年产值（亿元）":"Output value of Sichuan (100 million yuan)",
+    "福建省近几年产值（亿元）":"Output value of Fujian (100 million yuan)",
+    "陕西省近几年产值（亿元）":"Output value of Shanxi (100 million yuan)",
+    "湖北省近几年产值（亿元）":"Output value of Hubei (100 million yuan)",
+
+    "茶省产销气泡图":"Bubble chart of tea province production and sales",
+    "茶品产销丝绸图":"Tea production and sales silk map",
+    "茶园面积图":"Tea garden area map",
+    "产量(万吨)":"Output(million tons)",
+    "内销量(万吨)":"Domestic sales volume (million tons)",
+    "内销额(亿元)":"Domestic sales (billion yuan)",
+    "选择所有":"Select all",
+    "丝绸图":"Silk figure",
+    "显示各类茶近五年数据的详细情况，颜色代表茶的类别":"Displays the detailed data of various types of tea in the past five years. The color represents the type of tea.",
+    "选择图例":"Select legend",
+    "点击小圆圈，详细查看某种茶的数据":"Click the small circle to view the data of a certain tea in detail",
+    "点击此处，选择查看所有图例":"Click here to view all legends",
+    "选项卡":"Tabs",
+    "可以选择要查看的数据类别":"Ability to select the categories of data to view",
+    "万吨":" million tons",
+    "亿元":" billion yuan",
+
+
+
+
 }
 

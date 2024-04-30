@@ -6,7 +6,7 @@
         </div>
       </div>
       <div class="title">
-        <p>{{ title }}</p>
+        <p>{{ $t(title) }}</p>
       </div>
       <div>
         <div id="pie" class="pie"></div>

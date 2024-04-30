@@ -200,7 +200,6 @@ export default {
     },
     methods: {
         handleResize() {
-            console.log("qiehuan")
               // 初始化图表
             this.echarts.init(document.getElementById('yitea-chart'));
             this.initChart();
