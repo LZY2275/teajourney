@@ -470,6 +470,11 @@ import $ from 'jquery';
     },
     methods:{
       createPie(){
+        // 首先检查是否存在已有的实例
+if (this.myCharts) {
+    // 如果存在，先销毁它
+    this.myCharts.remove();
+}
         let myChart = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });
         this.myCharts = myChart
         // let myCharts = this.$echarts.init(document.getElementById("pie"), null, { renderer: 'svg' });

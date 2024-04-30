@@ -23,10 +23,18 @@
 
     </div>
     
-    <div>
+
+  <div>
     <A1 v-if="selectedTab === 1"></A1>
-    <A2 v-else="selectedTab === 2"></A2>
   </div>
+
+
+
+  <div>
+    <A2 v-if="selectedTab === 2"></A2>
+  </div>
+
+
 
   </div>
 </template>
