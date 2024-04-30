@@ -453,8 +453,8 @@ export default{
     "该有的茶味：香味、纯净度：不该有的茶味：杂味、陈味、霉味、沾染的其他味道。":"What the tea should have: aroma, purity; what the tea should not have: miscellaneous, stale, musty, and other contaminating smells.",
     "热闻（冲泡后）":"Hot smell (after brewing)",
     "在茶温度较高时闻香。闻香形式：盖碗缝隙、盖香、茶香、公道杯香。":"Smell the tea when it is warmer. Smell mode: Gaiwan gap, lid fragrance, tea fragrance, fair cup fragrance.",
-    "冷闻（器皿及茶底）":"Cold smell (vessels and tea base)",
-    "温度降低后再闻茶盖或杯底留香，这时可闻到在高温时，因茶叶芬香物大量挥发而掩盖的其他香味。":"After the temperature is lowered, smell the fragrance left on the tea lid or the bottom of the cup. At this time, you can smell other fragrances that are masked by the large amount of tea fragrance evaporating at high temperatures.",
+    "冷闻（器皿及茶底）":"Cold smell (vessel and base)",
+    "温度降低后再闻茶盖或杯底留香，这时可闻到在高温时，因茶叶芬香物大量挥发而掩盖的其他香味。":"After the temperature is lowered, smell the fragrance left on the lid or the bottom. At this time, you can smell other fragrances that are masked by the large amount of tea fragrance evaporating at high temperatures.",
     "甘、润、韵。品茶方法：将茶汤含在嘴里，像含着一朵鲜花一样慢慢感受，细细品味，吞下去时还要注意感受茶汤过喉时是否爽滑。":"Sweet, moist and rhyming. How to taste tea: Hold the tea soup in your mouth, feel it slowly like holding a flower, savor it carefully, and when swallowing, pay attention to whether the tea soup is smooth when it passes through the throat.",
     "滋味":"Taste",
     "让茶汤在口腔内流动，与舌部充分接触，细品茶味是浓烈鲜爽、甜爽，还是苦涩、淡薄。":"Let the tea soup flow in the mouth, fully contact with the tongue, and taste the tea whether it is strong, fresh and sweet, or bitter and light.",
@@ -608,8 +608,8 @@ export default{
     "葡萄碎玉":"grape broken jade",
     "铁观音遇上当季葡萄，王者相逢，清甜顺滑的茶香融入葡萄的鲜甜可口。":"When Tieguanyin meets the seasonal grapes, the kings meet. The sweet and smooth tea aroma blends into the fresh and sweet taste of the grapes.",
 
-    "截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。":"Up to now, more than 700 tea aromatic substances have been confirmed, but there are only about dozens of core components. The table below lists some of the main ingredients for reference.",
-    "普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。":"Generally speaking, tea with a low degree of fermentation and low heating has a lower boiling point and a higher aroma type. On the other hand, tea with a high degree of fermentation and high heating has a higher boiling point and a higher aroma type. . In addition, due to the unique fermentation principle of dark tea, it usually has the characteristics of aging.",
+    "截至目前，已确认存在700多种茶叶芳香物质，但其核心成分仅约数十种。下表列出了一些主要成分以供参考。":"Until now, more than 700 tea aromatic substances have been confirmed, but there are only dozens of core components. The table below lists the main ingredients.",
+    "普遍来说，发酵程度轻、受热程度低的茶叶，其香气特性的沸点更低，香型更靠前；而发酵程度高、受热程度高的茶叶则相反，沸点更高，香型更靠后。另外，由于黑茶类的发酵原理独特，通常带有陈香的特性。":"Generally, tea with a low degree of fermentation and heating has a lower boiling point and a higher aroma type. On the other hand, higher degree of fermentation and heating has a higher boiling point and a lower roma type.",
 
     "青草气":"Green grass",
     "兰花香":"Orchid fragrance",
