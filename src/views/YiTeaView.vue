@@ -200,7 +200,6 @@ export default {
     },
     methods: {
         handleResize() {
-            console.log("qiehuan")
               // 初始化图表
             this.echarts.init(document.getElementById('yitea-chart'));
             this.initChart();
@@ -422,7 +421,7 @@ export default {
     font-size: 14px;
 }
 .t-radio-button {
-    background-color: #e2dfdf; /* 设置未选中时的背景色为灰色 */
+    
     border: none; /* 去除边框 */
 }
 

@@ -3,17 +3,20 @@
 
     <div style="width:21% ;">
 
-      <div class="left-content" style="max-height: 250px;overflow: auto;">
-        <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、云南和福建的产量较多，') }}<br>
+      <div class="left-content" style="max-height: 206px;overflow: auto;">
+        <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{
+          $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、云南和福建的产量较多，') }}<br>
         </p>
         <p class="text bottom-right">
-          {{ $t('而江苏、陕西和广西省的产量较少。') }}<br>{{ $t('产量最高的福建省，在2022年达到') }}<br>{{ $t('最高值459674.38吨，') }}<br>{{ $t('产量最少的江苏省，在2022年达到') }}<br>{{ $t('最低值10400吨。') }}<br> &nbsp;</p>
+          {{ $t('而江苏、陕西和广西省的产量较少。') }}<br>{{ $t('产量最高的福建省，在2022年达到') }}<br>{{ $t('最高值459674.38吨，') }}<br>{{
+          $t('产量最少的江苏省，在2022年达到') }}<br>{{ $t('最低值10400吨。') }}<br> &nbsp;</p>
       </div>
 
-      <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>{{ $t('点击“茶园面积图”中的省份查看近几年的产量产销变化图。') }}<br>{{ $t('点击右上角的产量产值以实现数据切换~') }}</div>
-        <canvas ref="lineChart" width="450" height="300" style="margin-top: 12px;"></canvas>
+      <div v-show="currentProvince == ''" class="empty-box">Tips:<br>{{ $t('点击“茶园面积图”中的省份查看近几年的产量产销变化图。') }}<br>{{
+          $t('点击右上角的产量产值以实现数据切换~') }}</div>
+      <canvas ref="lineChart" width="450" height="300" style="margin-top: 12px;"></canvas>
 
-      </div>
+    </div>
 
     <div class="line-chart-container">
       <div class="line-chart"></div>
@@ -27,10 +30,12 @@
 import Chart from 'chart.js/auto';
 import { EventBus } from '../EventBus.js';
 import * as d3 from 'd3';
+import { contains } from 'jquery';
 export default {
   data() {
     return {
-      currentProvince:'',
+      x: null, // 在组件实例中定义 x
+      currentProvince: '',
       value: '',
       lineChart: null,
       guangdongData: {
@@ -170,18 +175,28 @@ export default {
   created() {
     if (EventBus) {
       EventBus.$on('message-received', (message) => {
-        this.value = message
+        this.value = this.$t(message)
         console.log(this.value);
       });
     }
   },
   watch: {
     value(newValue) {
+      this.x = newValue; // 将 value 的新值赋给 x
       this.renderLineChart(newValue);
+    },
+    //监听语言是否变化，若变化调用createPieChart()
+    '$i18n.locale': {
+      handler() {
+        // 处理语言变化的逻辑
+        this.handleResize(this.$t(this.x))
+      },
+      immediate: true // 立即执行一次回调函数
     }
-  },
-  computed:{
-    dataX(){
+       
+},
+  computed: {
+    dataX() {
       return [
         { province: this.$t('安徽') },
         { province: this.$t('湖南') },
@@ -199,67 +214,71 @@ export default {
     }
   },
   methods: {
+    handleResize(newValue){
+      d3.select("#lineChart").selectAll('*').remove();
+      this.renderLineChart(newValue)
+    },
     renderLineChart(newValue) {
       var that = this;
       let chartData = null;
       if (newValue === that.$t('粤')) {
         chartData = this.guangdongData;
-        chartData.datasets[0].label = '广东省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('广东省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('皖')) {
         chartData = this.anhuiData;
-        chartData.datasets[0].label = '安徽省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('安徽省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('湘')) {
         chartData = this.hunanData;
-        chartData.datasets[0].label = '湖南省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('湖南省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('浙')) {
         chartData = this.zhejiangData;
-        chartData.datasets[0].label = '浙江省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('浙江省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('黔')) {
         chartData = this.guizhouData;
-        chartData.datasets[0].label = '贵州省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('贵州省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('滇')) {
         chartData = this.yunnanData;
-        chartData.datasets[0].label = '云南省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('云南省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('桂')) {
         chartData = this.guangxiData;
-        chartData.datasets[0].label = '广西省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('广西省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('苏')) {
         chartData = this.jiangsuData;
-        chartData.datasets[0].label = '江苏省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('江苏省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('川')) {
         chartData = this.sichuanData;
-        chartData.datasets[0].label = '四川省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('四川省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('闽')) {
         chartData = this.fujianData;
-        chartData.datasets[0].label = '福建省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('福建省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('陕')) {
         chartData = this.shanxiData;
-        chartData.datasets[0].label = '陕西省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('陕西省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (newValue === that.$t('鄂')) {
         chartData = this.hubeiData;
-        chartData.datasets[0].label = '湖北省近几年产量（吨）';
+        chartData.datasets[0].label = that.$t('湖北省近几年产量（吨）');
         this.currentProvince = newValue;
       }
       if (this.lineChart) {
@@ -288,8 +307,8 @@ export default {
               borderWidth: 1,
               borderColor: 'rgba(75, 192, 192, 1)'
             },
-            legend:{
-              labels:{
+            legend: {
+              labels: {
                 boxWidth: 12
               }
             },
@@ -298,6 +317,11 @@ export default {
       });
     },
     drawLineChart() {
+      if (this.myCharts) {
+    // 如果存在，先销毁它
+    this.myCharts.dispose();
+}
+      d3.select('#line-chart').selectAll('*').remove();
       const data = this.dataX;
       var that = this;
       // 定义容器尺寸
@@ -380,7 +404,6 @@ export default {
         { province: this.$t('云南'), year: 2021, radius: 26.454, value: 380023.00 },
         { province: this.$t('云南'), year: 2022, radius: 28.808, value: 432904.09 },
       ];
-
       // 广西省的圆
       const data6 = [
         { province: this.$t('广西'), year: 2018, radius: 12.787, value: 73000.00 },
@@ -397,7 +420,6 @@ export default {
         { province: this.$t('江苏'), year: 2021, radius: 10.013, value: 10703.00 },
         { province: this.$t('江苏'), year: 2022, radius: 10, value: 10400.00 },
       ];
-
       // 四川省的圆
       const data8 = [
         { province: this.$t('四川'), year: 2018, radius: 22.669, value: 295000.00 },
@@ -422,7 +444,6 @@ export default {
         { province: this.$t('陕西'), year: 2021, radius: 13.868, value: 97297.16 },
         { province: this.$t('陕西'), year: 2022, radius: 14.865, value: 119689.49 },
       ];
-
       // 湖北省的圆
       const data11 = [
         { province: this.$t('湖北'), year: 2018, radius: 23.535, value: 314453.00 },
@@ -449,7 +470,10 @@ export default {
         if (circleGroup.empty()) {
           circleGroup = svg.append('g')
             .attr('class', 'circles');
-        }
+        }else {
+        // 如果circles组存在，则移除旧的圆
+        circleGroup.selectAll('.circles').remove();
+    }
 
         const newCircleGroup = circleGroup.selectAll('.circle')
           .data(data)
@@ -473,7 +497,12 @@ export default {
           })
           .on('mousemove', function (event, d) {
             const tooltip = d3.select('.tooltip');
-            tooltip.html(that.$t('产量') + `&nbsp&nbsp${d.value}`);
+            var tooltipContent = '<div class="tooltip-content">'
+              + '<span class="tooltip-dot" style="color:' + circleColor + '">● </span>'
+              + that.$t('产量') + '&nbsp;&nbsp;' + d.value
+              + '</div>';
+
+            tooltip.html(tooltipContent);
             const xOffset = -60;
             const yOffset = 20;
             let left = event.pageX;  // IE8不支持
@@ -536,33 +565,15 @@ export default {
         .attr('class', 'line')
         .attr('d', line);
 
-      window.addEventListener('resize', () => {
-        const newWidth = container.node().getBoundingClientRect().width - margin.left - margin.right;
-        const newHeight = container.node().getBoundingClientRect().height - margin.top - margin.bottom;
-
-        xScale.range([0, newWidth]);
-        yScale.range([newHeight, 0]);
-
-        svg.select('.x-axis')
-          .attr('transform', `translate(0, ${newHeight})`)
-          .call(d3.axisBottom(xScale));
-
-        svg.select('.y-axis')
-          .call(d3.axisLeft(yScale).ticks(5).tickFormat(d3.format('d')));
-
-        path.attr('d', line);
-
-      });
-
-      window.dispatchEvent(new Event('resize'));
-
     },
 
   },
 
   mounted() {
+   
     this.drawLineChart();
-  }
+  },
+
 };
 </script>
 
@@ -697,16 +708,17 @@ export default {
   cursor: pointer;
   /* 鼠标悬停时显示手型 */
 }
-.empty-box{
-    color:var(--td-brand-color-6);
-    font-size: small;
-    width: 15vw;
-    height: 20vh;
-    background-color: var(--td-brand-color-1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    margin-top: 12px;
-  }
+
+.empty-box {
+  color: var(--td-brand-color-6);
+  font-size: small;
+  width: 15vw;
+  height: 20vh;
+  background-color: var(--td-brand-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-top: 12px;
+}
 </style>

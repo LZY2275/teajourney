@@ -123,7 +123,7 @@ export default {
                 //color: 'white', // 设置字体颜色
                 fontWeight: 'bold',
                 //fontStyle: 'oblique',
-                fontFamily: 'monospace'
+                // fontFamily: 'monospace'
               }
             },
             tooltip: {
@@ -425,7 +425,7 @@ export default {
                   color: 'white', // 设置字体颜色
                   fontWeight: 'bold',
                   //fontStyle: 'oblique',
-                  fontFamily: 'monospace'
+                  // fontFamily: 'monospace'
                 }
               },
               itemStyle: {
@@ -772,6 +772,7 @@ export default {
 }
 
 .chart-container {
+
   padding: 0 24px;
 }
 </style>
