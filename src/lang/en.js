@@ -924,7 +924,7 @@ export default{
     "福建省近几年产量（吨）":"Output of Fujian (tons)",
     "陕西省近几年产量（吨）":"Output of Shanxi (tons)",
     "湖北省近几年产量（吨）":"Output of Hubei (tons)",
-    
+
     "广东省近几年产值（亿元）":"Output value of Guangdong (100 million yuan)",
     "安徽省近几年产值（亿元）":"Output value of Anhui (100 million yuan)",
     "湖南省近几年产值（亿元）":"Output value of Hunan (100 million yuan)",
@@ -954,6 +954,8 @@ export default{
     "可以选择要查看的数据类别":"Ability to select the categories of data to view",
     "万吨":" million tons",
     "亿元":" billion yuan",
+
+    "2022年各茶采制时间表":"Schedule of each tea harvest in 2022",
 
 
 

@@ -2,7 +2,7 @@
     <div>
       <div style="display:flex;height:136px">
         <div class="title" style="width:512px">
-          <p>{{ title }}</p>
+          <p>{{ $t(title) }}</p>
         </div>
         <t-divider layout="vertical" style="height:90%"></t-divider>
         <div  class="note-container">
@@ -12,14 +12,14 @@
             <p class="note">{{ $t('其中，3-5月采制的为春茶；5-7月采制的为夏茶；8-10月采制的为秋茶；10月下旬采制的为冬茶。由于不同的茶类，对茶叶原料的嫩度要求不同，因此采摘时间也会有所区别。相对嫩的茶叶，多为春茶、秋茶；粗大的茶叶，多为夏茶、秋茶。') }}</P></div>
           </div>
       </div>
-      
+
       <div style="display: flex;">
         <div id="calendar" class="calendar"></div>
         <div ref="ganttChart" class="gantt"></div>
       </div>
     </div>
   </template>
-  
+
 <script>
   import { color } from "d3";
 import * as echarts from "echarts/core";
@@ -266,7 +266,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
           {name: '2022-04-12', value: 14, begin: '无', end: '蒙顶黄芽'},
           {name: '2022-04=15', value: 12, begin: '无', end: '滇青、黄山毛峰'},
           {name: '2022-04-16', value: 13, begin: '泾阳茯砖茶', end: '无'},
-          
+
           {name: '2022-04-18', value: 13, begin: '正山小种', end: '西湖龙井'},
           {name: '2022-04-19', value: 12, begin: '无', end: '玉露'},
           {name: '2022-04-20', value: 12, begin: '安化黑茶', end: '北港毛尖'},
@@ -324,11 +324,11 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               bottom: '0%',
               //bottom: 0
             },
-            
+
           ],
           calendar: [
             {
-              orient: 'vertical',  
+              orient: 'vertical',
               splitLine: {
                 // 去掉月份分割线
                 show: false,
@@ -493,7 +493,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               },
               emphasis: {
                 lineStyle: {
-                  color: 'rgba(1, 1, 1, 1)', 
+                  color: 'rgba(1, 1, 1, 1)',
                   width: 4,
                 },
                 symbolSize: 10,
@@ -628,7 +628,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                     content += '<div style="text-align: left;">' + that.$t(textData[20][2]) + '<br>';
                     content += that.$t("结束采摘时间") + ': ' + params.data[0] + '</div>';
                     return content;
-                  }             
+                  }
                   else if (params.data[0] == textData[21][0]) {
                     content += '<div style="text-align: left;">' + that.$t(textData[21][1]) + '<br>';
                     content += that.$t("开始采摘时间") + ': ' + params.data[0] + '</div>';
@@ -773,7 +773,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 }
               }
             },
-            
+
             {
               type: 'heatmap',
               coordinateSystem: 'calendar',
@@ -783,7 +783,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
                 borderWidth: 0.15,
                 borderType: 'solid',
                 borderColor: '#000000',
-                
+
               },
               emphasis: {
                 disabled: false,
@@ -893,8 +893,8 @@ echarts.use([SVGRenderer, CanvasRenderer]);
               // 显示网格线
               show: true
             },
-            axisPointer: {  
-              type: 'shadow'  
+            axisPointer: {
+              type: 'shadow'
             },
             dataZoom: [
               {
@@ -966,7 +966,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
         }
 
         progressChart.setOption(option);
-        
+
         // Enable data zoom when user click bar.
         const zoomSize = 6;
         progressChart.on('click', function (params) {
@@ -990,7 +990,7 @@ echarts.use([SVGRenderer, CanvasRenderer]);
 
 <style scoped>
   .calendar{
-    width: 40%; 
+    width: 40%;
     height:calc(100vh - 170px);
   }
   .gantt{
