@@ -16,6 +16,7 @@ export default{
     "帮我推荐一款茶叶":"Recommend me a tea",
     "后一页":"Next",
     "在这里输入...":"Enter here...",
+    "你好":"Hello",
 
     "今天":"Tody-",
     "请求失败，请重试。":"The request failed. Please try again.",

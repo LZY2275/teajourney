@@ -87,7 +87,7 @@ export default {
                     formatter: function (params) {
 
                         var locale = that.$i18n.locale
-                        console.log(params.data)
+                        // console.log(params.data)
                         if (locale == 'en') {
                                     return 'A.D.' + params.data[7] + ' : ' + that.$t(params.data[4]);
                                 } else {

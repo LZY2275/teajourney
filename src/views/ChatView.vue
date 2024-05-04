@@ -48,7 +48,7 @@
                     <t-swiper :current="current" :navigation="{ showSlideBtn:'never' }" :autoplay="false" :loop="true">
                         <t-swiper-item>
                             <div style="display: flex;">
-                                <div class="input-yuxian-container" @click="handleSend($t('你是谁'))">{{$t('你是谁')}}</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('你好'))">{{$t('你好')}}</div>
                                 <div class="input-yuxian-container" @click="handleSend($t('六大茶类'))">{{$t('六大茶类')}}</div>
                             </div>
                         </t-swiper-item>
