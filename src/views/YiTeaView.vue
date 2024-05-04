@@ -18,7 +18,7 @@
 <!--  原本是<t-radio-group variant="primary-filled"default-value="1" @change="onChangeChart" >  -->
                 <t-radio-group class="t-radio-button" default-value="1" @change="onChangeChart">
                     <t-radio-button value="1">{{$t('上古先秦')}}</t-radio-button>
-                    <t-radio-button  value="2">{{$t('魏晋南北朝')}}</t-radio-button>
+                    <t-radio-button value="2">{{$t('魏晋南北朝')}}</t-radio-button>
                     <t-radio-button value="3">{{$t('隋唐')}}</t-radio-button>
                     <t-radio-button value="4">{{$t('宋元')}}</t-radio-button>
                     <t-radio-button value="5">{{$t('明')}}</t-radio-button>
@@ -90,7 +90,7 @@ export default {
                         if (locale == 'en') {
                                     return 'A.D.' + params.data[0] + ' : ' + that.$t(params.data[4]);
                                 } else {
-                                    return '公元' + params.data[0] + '年：' + params.data[4];
+                                    return '公元' + params.data[0]+ '年：' + that.$t(params.data[4]);
                                 }
 
                     },
@@ -187,7 +187,7 @@ export default {
             line_data: [],
             is_data_loaded: false,
             current_chart: 1,
-            current_description: this.$t('鼠标悬浮或点击图表散点查看详细历史事件；右侧选项卡可以切换图表~'),
+            current_description: '鼠标悬浮或点击图表散点查看详细历史事件；右侧选项卡可以切换图表~',
             current_title: 'Tips：'
 
         }
