@@ -6,6 +6,24 @@ export default{
     "品茶":"Taste Tea",
     "忆茶":"Remember Tea",
 
+    "在这里可以向我提问关于茶的专业知识":"Here you can ask me about tea expertise",
+    "你好！我能为你做些什么？":"Hello! What can I do for you?",
+    "停止生成":"Stop generation",
+    "清除对话内容":"Clear content",
+    "前一页":"Previous",
+    "你是谁":"Who are you",
+    "六大茶类":"Six kinds of tea",
+    "帮我推荐一款茶叶":"Recommend me a tea",
+    "后一页":"Next",
+    "在这里输入...":"Enter here...",
+
+    "今天":"Tody-",
+    "请求失败，请重试。":"The request failed. Please try again.",
+    '小灵':"Xiao Ling ",
+    '清除上下文完成！':'Clear context complete!',
+    '已取消生成。':'Generation has been cancelled.',
+    "你":"You",
+
     "回到顶部":'Top',
 
     "春风吹绿苗":"Spring breeze blows green seedlings",
@@ -643,7 +661,7 @@ export default{
     "产值":"Output",
     "产量（吨）":"Production (tons)",
     "产值（亿元）":"Output (100 million yuan)",
-  
+
     "ZH":"EN",
     "zh-CN":"en-EN",
 
@@ -791,8 +809,8 @@ export default{
     "到18世纪下半叶，零售茶叶的业务逐渐从药店转到食品杂货店，反映了茶从药品到饮料的角色转变，真正成为广大社会下层平民的日常饮料。": "By the second half of the 18th century, the business of retail tea has gradually moved from pharmacies to food grocery stores, reflecting the change of tea from drugs to drinks, and truly becomes a daily drink for the lower levels of civilians in the society.",
     "饮茶有害论": "Drinking tea is harmful",
     "饮茶有害论。早在1722年，当时饮茶还不太普遍的时候，有人就通过给动物喝茶的方法来测试茶叶的副作用。": "Drinking tea is harmful.As early as 1722, when drinking tea was not very common, some people tested the side effects of tea by drinking tea for animals.",
-    "波士顿倾茶事件": "Boston Tea incident",
-    "波士顿倾茶事件，由殖民地的民间反抗组织“自由之子”领导并行动，反对英国政府在殖民地征税并借此控制殖民地政府，以及反对英国东印度公司利用法案垄断北美的茶叶进口贸易，最终导致1775年美国革命战争爆发。": "The Boston tea incident was led by the colonial folk resistance organization 'Son of Freedom' and acted to oppose the British government's taxation in the colonies and use it to control the colonial government, as well as against the use of the British East Indian company to monopolize the import trade in North America.The American Revolutionary War broke out in 1775.",
+    "波士顿倾茶事件": "Boston Tea Party",
+    "波士顿倾茶事件，由殖民地的民间反抗组织“自由之子”领导并行动，反对英国政府在殖民地征税并借此控制殖民地政府，以及反对英国东印度公司利用法案垄断北美的茶叶进口贸易，最终导致1775年美国革命战争爆发。": "The Boston tea party was led by the colonial folk resistance organization 'Son of Freedom' and acted to oppose the British government's taxation in the colonies and use it to control the colonial government, as well as against the use of the British East Indian company to monopolize the import trade in North America.The American Revolutionary War broke out in 1775.",
     "茶进入美国": "Tea enters the United States",
     "随着英国人移民北美，茶因此进入美国，并在公元（1775年）见证了因「茶叶条款」引发的美国独立战争事件。": "As the British immigrated to North America, tea entered the United States, and witnessed the American independence war incident caused by the 'tea clause' in AD (1775).",
     "《抵代税法》": "'Tax Law'",

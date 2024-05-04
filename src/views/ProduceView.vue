@@ -564,6 +564,24 @@ export default {
         liElement.classList.remove('sub-caption-emphasis')
       }, 1000);
     },
+    // handleMouseOver(index){
+    //   console.log(index)
+    //   this.current = index;
+    //   // console.log(this.current)
+    //   var stepsContainer = document.getElementById('steps-container');
+    //   var liElements = stepsContainer.getElementsByTagName('li');
+    //   var liElement = liElements[this.current];
+    //   // this.$scrollto(liElement,500,{contianer:'#steps-container'})
+    //   // this.$scrollto('#test-id')
+    //   liElement.classList.add('animate__animated')
+    //   liElement.classList.add('animate__pulse')
+    //   liElement.classList.add('sub-caption-emphasis')
+    //   setTimeout(() => {
+    //     liElement.classList.remove('animate__animated')
+    //     liElement.classList.remove('animate__pulse')
+    //     liElement.classList.remove('sub-caption-emphasis')
+    //   }, 1000);
+    // },
     initGraph1() {
       const data = {
         nodes: [
