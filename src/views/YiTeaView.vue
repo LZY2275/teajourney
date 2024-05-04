@@ -87,10 +87,11 @@ export default {
                     formatter: function (params) {
 
                         var locale = that.$i18n.locale
+                        console.log(params.data)
                         if (locale == 'en') {
-                                    return 'A.D.' + params.data[0] + ' : ' + that.$t(params.data[4]);
+                                    return 'A.D.' + params.data[7] + ' : ' + that.$t(params.data[4]);
                                 } else {
-                                    return '公元' + params.data[0] + '年：' + params.data[4];
+                                    return '公元' + params.data[7] + '年：' + params.data[4];
                                 }
 
                     },
@@ -421,7 +422,7 @@ export default {
     font-size: 14px;
 }
 .t-radio-button {
-    
+
     border: none; /* 去除边框 */
 }
 
