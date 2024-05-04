@@ -87,6 +87,7 @@ export default {
                     formatter: function (params) {
 
                         var locale = that.$i18n.locale
+                        // console.log(params.data)
                         if (locale == 'en') {
                                     return 'A.D.' + params.data[0] + ' : ' + that.$t(params.data[4]);
                                 } else {
@@ -421,7 +422,7 @@ export default {
     font-size: 14px;
 }
 .t-radio-button {
-    
+
     border: none; /* 去除边框 */
 }
 

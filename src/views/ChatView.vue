@@ -2,8 +2,8 @@
     <div class="chat-container" style="height: 60vh;width:37vh;">
         <!-- 标题区域 -->
         <div class="title-container">
-            <div class="title-name">聊天</div>
-            <div class="title-sub">在这里可以向我提问关于茶的专业知识~</div>
+            <div class="title-name">{{$t('聊天')}}</div>
+            <div class="title-sub">{{$t('在这里可以向我提问关于茶的专业知识')}}~</div>
         </div>
         <!-- 主要聊天内容区域 -->
         <div class="message-container">
@@ -11,7 +11,7 @@
             <div v-if="messageList.length == 0" class="default-container">
                 <div style="text-align: center;">
                     <t-icon name="gesture-ranslation-1" size="40" color="var(--td-brand-color-4)"></t-icon>
-                    <div class="title-sub">你好！我能为你做些什么？</div>
+                    <div class="title-sub">{{$t('你好！我能为你做些什么？')}}</div>
                 </div>
             </div>
             <div class="message-item" v-for="item,index in messageList" :key="index">
@@ -24,7 +24,7 @@
                 </t-comment>
             </div>
             <div v-if="isgenerating" class="stop-generating-container">
-                <t-popup content="停止生成">
+                <t-popup :content="$t('停止生成')">
                     <t-icon name="stop-circle" size="14" style="cursor: pointer;" @click="onClickCancel"></t-icon>
                 </t-popup>
             </div>
@@ -35,12 +35,12 @@
             <!-- 上方工具栏区域 -->
             <div class="input-toolbox-container">
                 <div style="display: flex;align-items: center;height: 23.33px;">
-                    <t-popup content="清除对话内容">
+                    <t-popup :content="$t('清除对话内容')">
                         <t-icon name="clear" size="16" @click="clearMessage" style="cursor: pointer;"></t-icon>
                     </t-popup>
                 </div>
                 <div style="display: flex;align-items: center;height: 23.33px;">
-                    <t-popup content="前一页">
+                    <t-popup :content="$t('前一页')">
                         <t-icon name="chevron-left" size="16" @click="current = current - 1 < 0 ? 1 : current - 1" style="cursor: pointer;"></t-icon>
                     </t-popup>
                 </div>
@@ -48,26 +48,26 @@
                     <t-swiper :current="current" :navigation="{ showSlideBtn:'never' }" :autoplay="false" :loop="true">
                         <t-swiper-item>
                             <div style="display: flex;">
-                                <div class="input-yuxian-container">你是谁</div>
-                                <div class="input-yuxian-container">六大茶类</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('你好'))">{{$t('你好')}}</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('六大茶类'))">{{$t('六大茶类')}}</div>
                             </div>
                         </t-swiper-item>
                         <t-swiper-item>
                             <div style="display: flex;">
-                                <div class="input-yuxian-container">红茶</div>
-                                <div class="input-yuxian-container">帮我推荐一款茶叶</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('红茶'))">{{$t('红茶')}}</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('帮我推荐一款茶叶'))">{{$t('帮我推荐一款茶叶')}}</div>
                             </div>
                         </t-swiper-item>
                         <t-swiper-item>
                             <div style="display: flex;">
-                                <div class="input-yuxian-container">绿茶</div>
-                                <div class="input-yuxian-container">波士顿倾茶事件</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('绿茶'))">{{$t('绿茶')}}</div>
+                                <div class="input-yuxian-container" @click="handleSend($t('波士顿倾茶事件'))">{{$t('波士顿倾茶事件')}}</div>
                             </div>
                         </t-swiper-item>
                     </t-swiper>
                 </div>
                 <div style="display: flex;align-items: center;height: 23.33px;">
-                    <t-popup content="后一页">
+                    <t-popup :content="$t('后一页')">
                         <t-icon name="chevron-right" size="16" @click="current = current + 1 > yuxianMax-1 ? 0 : current + 1" style="cursor: pointer;"></t-icon>
                     </t-popup>
                 </div>
@@ -76,7 +76,7 @@
             <div style="display: flex;">
                 <t-textarea
                 v-model="inputvalue"
-                placeholder="在这里输入..."
+                :placeholder="$t('在这里输入...')"
                 name="description"
                 :autosize="{ minRows: 2, maxRows: 2 }"
             />
@@ -122,10 +122,13 @@ export default{
             timeoutID:null,
             avatarList:[
                 <div><t-avatar>User</t-avatar></div>,
-                <div><t-avatar>小灵</t-avatar></div>
+                <div><t-avatar image="https://i.postimg.cc/hPpPpCbs/62f66965f3daaaee03e755d7c3a78fad.jpg"></t-avatar></div>
             ],
             controller_async :null
         }
+    },
+    mounted(){
+
     },
     methods:{
         // async getResponseFromQingyunkeAPI(msg){
@@ -175,10 +178,10 @@ export default{
         },
 
         async getResponseFromQingyunkeAPI(msg){
-            var author = '小灵'
+            var author = this.$t('小灵')
             var avatar = this.avatarList[1]
             // 先给用户一个正在加载的动画,并且可以取消
-            var response_loading = <div><t-loading text="加载中..." size="small"></t-loading></div>
+            var response_loading = <div><t-loading text="Loading..." size="small"></t-loading></div>
             let new_response = this.createMessage(avatar,author,response_loading)
             this.messageList.push(new_response)
 
@@ -189,7 +192,7 @@ export default{
 
             var that = this
 
-            axios.get('/api/api/getResponse?message='+msg,{signal})
+            axios.get('/api/getResponse?message='+msg,{signal})
             .then((response)=>{
                 // console.log('response:',response)
                 if (response.status == 200){
@@ -207,7 +210,7 @@ export default{
                 }
                 else{
                     var length = this.messageList.length
-                    that.messageList[length-1].content = '请求失败，请重试。'
+                    that.messageList[length-1].content = that.$t('请求失败，请重试。')
                     that.isgenerating=false
                 }
             })
@@ -217,12 +220,23 @@ export default{
             })
         },
 
+        async handleSend(msg){
+            var author = this.$t('你')
+            var avatar = this.avatarList[0]
+            let new_message = this.createMessage(avatar,author,msg);
+            this.messageList.push(new_message)
+
+
+            this.isgenerating=true
+            await this.getResponseFromAPI(msg)
+        },
+
 
         async sendMessage(){
             if (this.inputvalue == ''){
                 return
             }
-            var author = '你'
+            var author = this.$t('你')
             var avatar = this.avatarList[0]
             let new_message = this.createMessage(avatar,author,this.inputvalue);
             this.messageList.push(new_message)
@@ -248,7 +262,7 @@ export default{
             let message = {
                 avatar:avatar,
                 author:author,
-                datetime:"今天"+now_time,
+                datetime:this.$t("今天")+now_time,
                 content:content_string
             }
             return message
@@ -258,11 +272,11 @@ export default{
             // console.log('clear');
             this.messageList = []
             var that = this
-            axios.get('/api/api/clearMessage')
+            axios.get('/api/clearMessage')
             .then((response)=>{
                 if (response.status == 200){
                     console.log('clear message success')
-                    that.$message.info('清除上下文完成！');
+                    that.$message.info(that.$t('清除上下文完成！'));
                 }
                 else{
                     console.log('clear message failed')
@@ -275,7 +289,7 @@ export default{
             // clearTimeout(this.timeoutID)
             this.controller_async.abort()
             var length = this.messageList.length
-            this.messageList[length-1].content = '已取消生成。'
+            this.messageList[length-1].content = this.$t('已取消生成。')
             this.isgenerating=false
         },
 
@@ -328,7 +342,7 @@ export default{
         // 清除所有的message，包括后台清除
         this.messageList = []
         var that = this
-        axios.get('/api/api/clearMessage')
+        axios.get('/clearMessage')
         .then((response)=>{
             if (response.status == 200){
                 console.log('clear message success')
