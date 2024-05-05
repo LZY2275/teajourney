@@ -9,24 +9,28 @@
             </div>
         </div>
         <div style="padding: 16px 24px 16px 0;width: calc(100% - 300px);">
-            <div id="sankey-chart" style="width: 100%;height: 100%;background-color:rgb(255, 254, 242)">
-                <div style="display: flex;width: calc(100% - 120px);height: 60px;padding: 0px 60px 0 60px;">
-                    <p class="type-text type-text-first" style="width: 16.67%;">{{ $t('化合物种类') }}</p>
-                    <p class="type-text" style="width: 33.33%;">{{ $t('茶中成味成分') }}</p>
-                    <p class="type-text" style="width: 33.33%;">{{ $t('茶的滋味') }}</p>
-                    <p class="type-text type-text-last" style="width: 16.67%;">{{ $t('味觉感受') }}</p>
-                </div>
+
+            <div id="sankey-chart" style="width: 100%;height: calc(100%);background-color:rgb(255, 254, 242)">
+                <!-- <div style="display: flex;width: calc(100% - 120px);height: 60px;padding: 0px 60px 0 60px;">
+
+                </div> -->
+                <t-space size="12vw">
+                    <p class="type-text">{{ $t('化合物种类') }}</p>
+                    <p class="type-text">{{ $t('茶中成味成分') }}</p>
+                    <p class="type-text">{{ $t('茶的滋味') }}</p>
+                    <p class="type-text">{{ $t('味觉感受') }}</p>
+                </t-space>
             </div>
         </div>
     </div>
   </template>
-  
+
   <script>
   import * as d3 from 'd3';
   import * as d3_sankey from 'd3-sankey';
   import {sankey_data} from '../assets/js/sankeydata.js';
   import * as echarts from 'echarts';
-  
+
   export default {
     name:'SankeyView',
     data() {
@@ -77,7 +81,7 @@
         category:this.$t('茶皂素'),
         color:'#ba948b'
     },
-    
+
     {
         name:this.$t('糖'),
         category:this.$t('成味成分'),
@@ -181,7 +185,7 @@
         category:this.$t('氨基酸'),
         color:'#acbba6'
     },
-    
+
     {
         name:this.$t('甜'),
         category:'滋味',
@@ -235,7 +239,7 @@
         category:this.$t('氨基酸'),
         color:'#acbba6'
     },
-    
+
     {
         name:this.$t('甜味'),
         category:'味觉',
@@ -277,7 +281,7 @@
             target:this.$t('甜味'),
             value:1
         },
-        
+
         {
             source:this.$t('氨基酸'),
             target:this.$t('甘氨酸'),
@@ -287,7 +291,7 @@
             target:this.$t('甜'),
             value:1
         },
-        
+
         {
             source:this.$t('氨基酸'),
             target:this.$t('丙氨酸'),
@@ -297,7 +301,7 @@
             target:this.$t('甜'),
             value:1
         },
-        
+
         {
             source:this.$t('氨基酸'),
             target:this.$t('氨酸'),
@@ -307,7 +311,7 @@
             target:this.$t('甜'),
             value:1
         },
-        
+
         {
             source:this.$t('酚性物及其氧化物'),
             target:this.$t('茶红素'),
@@ -321,7 +325,7 @@
             target:this.$t('甜味'),
             value:1
         },
-        
+
         {
             source:this.$t('氨基酸'),
             target:this.$t('氨基酸类'),
@@ -331,7 +335,7 @@
             target:this.$t('鲜甜'),
             value:1
         },
-        
+
         {
             source:this.$t('嘌呤碱'),
             target:this.$t('咖啡碱'),
@@ -355,7 +359,7 @@
             target:this.$t('茶黄素'),
             value:1
         },
-        
+
         {
             source:this.$t('茶黄素'),
             target:this.$t('爽'),
@@ -485,7 +489,7 @@
             target:this.$t('酸味'),
             value:1
         },
-        
+
         {
             source:this.$t('有机酸类'),
             target:this.$t('有机酸'),
@@ -556,7 +560,7 @@
 
             var linkColor = 'source-target'
 
-            var padding = { top: 15, right: 20, bottom: 15, left: 20 };
+            var padding = { top: 15, right: 0, bottom: 0, left: 0 };
             const container = d3.select('#sankey-chart');
             const width = container.node().getBoundingClientRect().width - padding.left - padding.right;
             const height = container.node().getBoundingClientRect().height - padding.top - padding.bottom;
@@ -603,7 +607,7 @@
                 .attr("height", d => d.y1 - d.y0)
                 .attr("width", d => d.x1 - d.x0)
                 .attr("fill", d => d.color);
-            
+
 
              // 创建代表link的路径
             const link = svg.append("g")
@@ -635,7 +639,7 @@
                 .attr("d", d3_sankey.sankeyLinkHorizontal())
                 .attr("stroke", linkColor === "source-target" ? (d) => { return 'url(#'+d.uid+')'}
                     : linkColor === "source" ? (d) => color(d.source.category)
-                    : linkColor === "target" ? (d) => color(d.target.category) 
+                    : linkColor === "target" ? (d) => color(d.target.category)
                     : linkColor)
                 .attr("stroke-width", d => Math.max(1, d.width));
 
@@ -721,10 +725,10 @@
         this.createSankey()
         // this._createSankey();
     },
-  
+
   };
   </script>
-  
+
   <style scoped>
 
   .title{
