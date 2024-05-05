@@ -215,7 +215,9 @@ export default {
   },
   methods: {
     handleResize(newValue){
+
       d3.select("#lineChart").selectAll('*').remove();
+      if(newValue)
       this.renderLineChart(newValue)
     },
     renderLineChart(newValue) {
