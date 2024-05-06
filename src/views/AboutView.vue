@@ -5,16 +5,16 @@
       <div style="margin-top: 12px;">
         <div style="display: flex">
           <p style="color:var(--td-brand-color-5); font-weight: bold; font-size: 16px;line-height: 22px;margin-right: 12px;">FOLLOW:</p>
-          <t-link theme="primary" href="https://github.com/LZY2275" target="_blank">
+          <!-- <t-link theme="primary" href="https://github.com/LZY2275" target="_blank">
             <t-icon slot="prefix-icon" name="logo-github" size="22"></t-icon>
             <span>GITHUB</span>
-          </t-link>
+          </t-link> -->
         </div>
-        <div style="margin-top: 24px; font-size: 14px;color: var(--td-brand-color-5);">
+        <!-- <div style="margin-top: 24px; font-size: 14px;color: var(--td-brand-color-5);">
           © 2024 <t-link href="https://github.com/LZY2275" target="_blank" theme="primary">Zhouyou Lai</t-link>,
           <t-link href="https://github.com/wubeizi" target="_blank" theme="primary">JIafeng Li</t-link> and
           <t-link href="https://github.com/XiongHaocheng" target="_blank" theme="primary">Haocheng Xiong</t-link>. All rights reserved.
-        </div>
+        </div> -->
       </div>
       <div>
         <p class="footer-title" style="margin-top: 12px;">Reference</p>
