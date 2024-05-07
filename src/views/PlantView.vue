@@ -47,6 +47,7 @@
         </div>
 
         <div style="bottom: 20px; right: 20px; z-index:99;position:absolute ">
+
             <p class="note">The chart is inspired by <t-link theme="primary" underline
                     href="https://cardcaptorsakura.visualcinnamon.com/" target="_blank">
                     <link-icon slot="prefix-icon"></link-icon>

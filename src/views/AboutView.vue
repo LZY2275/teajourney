@@ -23,7 +23,8 @@
           <p class="note" style="color: var(--td-brand-color-5);">[1] Zhang C, Wang X, Zhao C, et al. PromotionLens: Inspecting Promotion Strategies of Online E-commerce via Visual Analytics[J]. IEEE Transactions on Visualization and Computer Graphics, 2022, 29(1): 767-777.</p>
           <p class="note" style="color: var(--td-brand-color-5);">[2] Tovanich N, Soulié N, Heulot N, et al. MiningVis: visual analytics of the Bitcoin mining economy[J]. IEEE Transactions on Visualization and Computer Graphics, 2021, 28(1): 868-878.</p>
         </div>
-    </div>
+      </div>
+      <p class="note" style="margin-bottom: 20px;">【注】:所有地图审图号为 高德软件 GS 京(2022)1061 号</p>
     </div>
   </footer>
 </template>
