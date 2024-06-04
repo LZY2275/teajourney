@@ -29,6 +29,10 @@
       <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views 高度为100vh-->
       <HomeView id="homeview" @pageToNavigate="handleNavigation"></HomeView>
     </div>
+    <div style="width: 99vw;height: 100vh;background-color: #FFFEF2;">
+      <!-- 不要直接在这里编写代码！！！！先只在views文件夹下编写views 高度为100vh-->
+      <LanguageMap></LanguageMap>
+    </div>
     <div style="display: flex;">
       <!-- 左侧导航栏 -->
       <div>
@@ -124,6 +128,7 @@ import AboutView from './views/AboutView.vue';
 import PlaceView from './views/PlaceView.vue';
 import YiTeaView from './views/YiTeaView.vue';
 import ChatView from './views/ChatView.vue';
+import LanguageMap from './views/LanguageMap.vue';
 
 
 import { ChatIcon ,EarthIcon, BacktopIcon} from 'tdesign-icons-vue';
@@ -140,7 +145,8 @@ import { ChatIcon ,EarthIcon, BacktopIcon} from 'tdesign-icons-vue';
         PlaceView,
         YiTeaView,
         ChatView,
-        BacktopIcon
+        BacktopIcon,
+        LanguageMap
     },
     computed:{
       title(){
