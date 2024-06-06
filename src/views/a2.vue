@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex;">
 
-    <div style="width:21% ;">
+    <!-- <div style="width:21% ;">
 
       <div class="left-content" style="max-height: 206px;overflow: auto;">
         <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{ $t('但各省份之间的产量却存在差异，') }}<br>{{ $t('比如贵州、四川和福建的产值较多，') }}<br>
@@ -12,13 +12,13 @@
       <div v-show="currentProvince == ''"  class="empty-box">Tips:<br>{{ $t('点击“茶园面积图”中的省份查看近几年的产量产销变化图。') }}<br>{{ $t('点击右上角的产量产值以实现数据切换~') }}</div>
       <canvas ref="lineChart" width="450" height="300" style="margin-top: 12px;"></canvas>
 
-    </div>
+    </div> -->
 
     <div class="line-chart-container">
       <div class="line-chart"></div>
       <div id="show" class="tooltip" style="display: none;"></div>
     </div>
-    
+
   </div>
 </template>
 
@@ -189,7 +189,7 @@ export default {
       },
       immediate: true // 立即执行一次回调函数
     }
-       
+
 },
   computed:{
     dataX(){
@@ -578,7 +578,7 @@ export default {
 .line-chart-container {
   float: right;
   text-align: center;
-  width: 80%;
+  width: 100%;
   height: calc(58.5vh - 72px);
 }
 

@@ -8,16 +8,20 @@
         <TeaTypeChartView></TeaTypeChartView>
       </div>
     </div>
-    <div style="height: calc(60vh - 20px); width: 100%;">
-      <TeaProvinceChartView></TeaProvinceChartView>
+    <div style="height: calc(60vh - 20px); width: 100%;display: flex;">
+      <TeaProvinceChartView style="width: 55%"></TeaProvinceChartView>
+      <div style="width: 45%;">
+        <TeaWorldSale></TeaWorldSale>
+      </div>
     </div>
   </div>
 </template>
-  
+
 <script>
 import TeaGardenChartView from './TeaGardenChartView.vue';
 import TeaProvinceChartView from './TeaProvinceChartView.vue';
 import TeaTypeChartView from './TeaTypeChartView.vue';
+import TeaWorldSale from './TeaWorldSale.vue';
 
 export default {
   name: 'SaleView',
@@ -25,6 +29,7 @@ export default {
     TeaGardenChartView,
     TeaProvinceChartView,
     TeaTypeChartView,
+    TeaWorldSale
   }
 
 }

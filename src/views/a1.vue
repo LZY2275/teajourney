@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex;">
 
-    <div style="width:21% ;">
+    <!-- <div style="width:21% ;">
 
       <div class="left-content" style="max-height: 206px;overflow: auto;">
         <p class="text top-left"><br>{{ $t('观察右图可知，各个省份的产量') }}<br>{{ $t('在2018—2022这个时间段内很接近，') }}<br>{{
@@ -16,7 +16,7 @@
           $t('点击右上角的产量产值以实现数据切换~') }}</div>
       <canvas ref="lineChart" width="450" height="300" style="margin-top: 12px;"></canvas>
 
-    </div>
+    </div> -->
 
     <div class="line-chart-container">
       <div class="line-chart"></div>
@@ -193,7 +193,7 @@ export default {
       },
       immediate: true // 立即执行一次回调函数
     }
-       
+
 },
   computed: {
     dataX() {
@@ -572,7 +572,7 @@ export default {
   },
 
   mounted() {
-   
+
     this.drawLineChart();
   },
 
@@ -586,7 +586,7 @@ export default {
 .line-chart-container {
   float: right;
   text-align: center;
-  width: 80%;
+  width: 100%;
   height: calc(58.5vh - 72px);
 }
 
