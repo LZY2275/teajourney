@@ -518,7 +518,7 @@ export default {
             this.myChart = echarts.init(document.getElementById('chineView'));
             this.myChart.setOption(this.chineView);
             this.myChart.on('click', function (params) {
-                console.log(params)
+                //console.log(params)
 
                 //如果点击的是面积区域
                 if (params.componentType === 'geo' && params.name && this.getChineseName(params.name)) {
