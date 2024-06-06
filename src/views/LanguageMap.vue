@@ -418,14 +418,14 @@ export default {
         // 获取中文国家名称
         getChineseName(name) {
             const countryNames = {
-                'Russia': '俄罗斯',
-                'United States': '美国',
-                'France': '法国',
-                'United Kingdom': '英国',
-                'Australia': '澳大利亚',
-                'Japan': '日本',
-                'Turkey': '土耳其',
-                'Sri Lanka': '斯里兰卡'
+                '俄罗斯': '俄罗斯',
+                '美国': '美国',
+                '法国': '法国',
+                '英国': '英国',
+                '澳大利亚': '澳大利亚',
+                '日本': '日本',
+                '土耳其': '土耳其',
+                '斯里兰卡': '斯里兰卡'
             };
 
             return countryNames[name] || '';
@@ -518,13 +518,13 @@ export default {
             this.myChart = echarts.init(document.getElementById('chineView'));
             this.myChart.setOption(this.chineView);
             this.myChart.on('click', function (params) {
-                //console.log(params)
+                console.log(params)
 
                 //如果点击的是面积区域
-                if (params.componentType === 'geo' && params.name && this.getChineseName(params.name)) {
-                    this.image = require('../assets/img/' + this.getChineseName(params.name) + '.png');
-                    this.text = countryText[this.getChineseName(params.name)] || '';
-                    var toName = this.getChineseName(params.name)
+                if (params.componentType === 'geo' && params.name && this.getChineseName( params.name)) {
+                    this.image = require('../assets/img/' + params.name + '.png');
+                    this.text = countryText[params.name] || '';
+                    var toName = params.name
                     // 遍历 pronunciationText 数组
                     for (var i = 0; i < pronunciationText.length; i++) {
                         var item = pronunciationText[i];
