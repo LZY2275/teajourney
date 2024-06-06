@@ -111,7 +111,7 @@
         <div style="position: absolute;right: 74px;bottom: 17px;z-index: 10;">
             <p class="title-sub">{{ $t('主要产区种植面积') }}</p>
             <div style=" position: relative;z-index: 1;">
-                <div v-if="currentProvince == ''" class="empty-box">
+                <div v-if="currentProvince == ''" class="title-sub">
                     Tips:<br>{{ $t('点击省份查看省份种植面积变化折线图。') }}<br>{{ $t('点击右上角的茶类别切换视图') }}~</div>
             </div>
             <canvas id="lineChart" ref="lineChart"
