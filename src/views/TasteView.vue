@@ -418,6 +418,12 @@
     </div>
 
     <div style="padding:26px 45px 0 68px">
+      <div style="width: 100%; height: 65vh;">
+        <WorldTea></WorldTea>
+      </div>
+    </div>
+
+    <div style="padding:26px 45px 0 68px">
       <div style="width: 100%; height: 70vh;">
         <SankeyView></SankeyView>
       </div>
@@ -453,11 +459,13 @@ import SankeyView from '../views/SankeyView.vue';
 import TeaFragranceView from '../views/TeaFragranceView.vue'
 import * as echarts from 'echarts';
 import Vue from 'vue';
+import WorldTea from '../views/WorldTea.vue'
 export default {
   name: 'TasteView',
   components: {
     SankeyView,
-    TeaFragranceView
+    TeaFragranceView,
+    WorldTea
   },
 
   computed: {
