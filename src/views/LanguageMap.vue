@@ -5,7 +5,9 @@
             <p class="titlesub">这是标题介绍这是标题介绍这是标题介绍这是标题介绍这是标题介绍这是标题介绍这是标题介绍</p>
         </div>
 
-        <div id="chineView" style="width: 100%;height: 80%;display: flex;margin: 0px auto;"></div>
+        <div id="chineView" style="width: 100%;height: 100%;display: flex;margin: 0px auto;">
+
+        </div>
 
         <div style="display: flex;">
             <div>
@@ -15,7 +17,7 @@
             </div>
             <div style="position: absolute;right: 200px;display: flex;">
                 <p class="text">{{ text }}</p>
-                <img :src="image" style="width: 107px; height: 107px; border-radius: 50%;margin-top: -50px;">
+                <img :src="image" style="width: 107px; height: 107px; border-radius: 50%;margin-top: -150px;margin-right: 100px;">
             </div>
 
         </div>
@@ -373,7 +375,7 @@ export default {
         return {
             //右下角区域内容
             image: require('../assets/img/俄罗斯.png'),
-            text: '俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容',
+            text: '俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容俄罗斯的内容',
             //左下角区域内容
             teaStyle: '“чай”',//不同国家茶的文字（默认俄罗斯）
             showPronunciation: '读音为：chai',//展示读音
@@ -586,13 +588,14 @@ export default {
 </script>
 <style scoped>
 .text {
-    margin-top: -50px;
+    font-weight: bold;
+    margin-top: -150px;
     margin-right: 20px;
     font-size: 15px;
     color: rgba(50, 132, 110, 0.5);
     display: flex;
     align-items: center;
-    width: 400px;
+    width: 300px;
     justify-content: flex-end;
 }
 
@@ -606,6 +609,7 @@ export default {
 }
 
 .titlesub {
+    
     display: flex;
     font-size: 18px;
     color: rgba(50, 132, 110, 1);
@@ -615,28 +619,31 @@ export default {
 }
 
 .teaName {
+
     display: flex;
     font-size: 30px;
     font-weight: bold;
     color: rgba(50, 132, 110, 1);
-    margin-left: 100px;
-    margin-top: -50px;
+    margin-left: 20px;
+    margin-top: -150px;
 }
 
-.teaNamesub1 {
+.teaNamesub1 { 
     display: flex;
     font-size: 18px;
     color: rgba(50, 132, 110, 1);
-    margin-left: 100px;
+    margin-left: 20px;
 
 }
 
-.teaNamesub2 {
+.teaNamesub2 {    
+    margin-left: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    position: absolute;
     display: flex;
     font-size: 15px;
     color: rgba(50, 132, 110, 0.5);
-    align-items: center;
-    margin-left: 100px;
-    width: 400px;
+    width: 300px;
 }
 </style>

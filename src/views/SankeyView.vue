@@ -14,7 +14,7 @@
                 <!-- <div style="display: flex;width: calc(100% - 120px);height: 60px;padding: 0px 60px 0 60px;">
 
                 </div> -->
-                <t-space size="12vw">
+                <t-space size="11vw">
                     <p class="type-text">{{ $t('化合物种类') }}</p>
                     <p class="type-text">{{ $t('茶中成味成分') }}</p>
                     <p class="type-text">{{ $t('茶的滋味') }}</p>
