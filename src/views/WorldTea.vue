@@ -20,15 +20,15 @@
                         <p class="tea-text">玄米茶</p>
                     </div>
                 </div>
-                <div>
+                <!-- <div>
                     <p class="type-text">{{ $t('白茶') }}</p>
-                </div>
-                <div>
+                </div> -->
+                <!-- <div>
                     <p class="type-text">{{ $t('黄茶') }}</p>
-                </div>
-                <div>
+                </div> -->
+                <!-- <div>
                     <p class="type-text">{{ $t('乌龙茶') }}</p>
-                </div>
+                </div> -->
                 <div>
                     <p class="type-text">{{ $t('红茶') }}</p>
                     <div style="align-items: center; justify-content: center;">
@@ -48,12 +48,28 @@
                         <p class="tea-text">格雷伯爵茶</p>
                     </div>
                 </div>
-                <div>
-                    <p class="type-text">{{ $t('黑茶') }}</p>
-                </div>
                 <!-- <div>
-                    <p class="type-text">{{ $t('特色茶') }}</p>
+                    <p class="type-text">{{ $t('黑茶') }}</p>
                 </div> -->
+                <div>
+                    <p class="type-text">{{ $t('特色茶') }}</p>
+                    <div style="align-items: center; justify-content: center; margin-top: 20px;">
+                        <img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2024%2F0611%2F390909c7j00sewq75000wd200dw0099g00it00ci.jpg&thumbnail=660x2147483647&quality=80&type=jpg" style="width: 80px; height: 80px; border-radius: 50%;">
+                        <p class="tea-text">摩洛哥薄荷茶</p>
+                    </div>
+                    <div style="align-items: center; justify-content: center; margin-top: 20px;">
+                        <img src="http://5b0988e595225.cdn.sohucs.com/images/20190120/0dd514fbbe134e35964cbc30e0132b1d.jpeg" style="width: 80px; height: 80px; border-radius: 50%;">
+                        <p class="tea-text">欧洲洋甘菊茶</p>
+                    </div>
+                    <div style="align-items: center; justify-content: center; margin-top: 20px;">
+                        <img src="http://5b0988e595225.cdn.sohucs.com/images/20190120/90ede00fe2d34c7fb6a30b3f47f6bbb1.jpeg" style="width: 80px; height: 80px; border-radius: 50%;">
+                        <p class="tea-text">南非如意茶</p>
+                    </div>
+                    <div style="align-items: center; justify-content: center; margin-top: 20px;">
+                        <img src="https://k.sinaimg.cn/n/sinakd20210616ac/560/w1080h1080/20210616/2745-krpikqf4356890.jpg/w700d1q75cms.jpg" style="width: 80px; height: 80px; border-radius: 50%;">
+                        <p class="tea-text">泰舒茶</p>
+                    </div>
+                </div>
             </t-space>
         </div>
     </div>
