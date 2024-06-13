@@ -1,11 +1,13 @@
 <template>
     <div style="width: 100%;height: 100%;position: relative;">
-        <div style="background-color:#fffef2 ;position:absolute;filter: blur(10px);width:100vw;height: 90px;z-index: 900;"></div>
+        <div
+            style="background-color:#fffef2 ;position:absolute;filter: blur(10px);width:100vw;height: 90px;z-index: 900;">
+        </div>
         <div style="display: flex;position:absolute;z-index: 999; top: 2.5vh;left: 3.5vw;align-items: center;">
             <div class="title">{{ $t("茶与世界") }}</div>
-            <t-divider layout="vertical"/>
+            <t-divider layout="vertical" />
             <p class="titlesub">茶的英文叫tea，但你知道吗？目前全世界有5000多种语言，然而在众多的语言中，茶的读音却表现出了惊人的一致性。<br>
-除了少数地区之外，全世界的茶实际上只有两大类读法。一种与英语说法tea类似，比如西班牙语中的té和阿非利卡语中的tee。另一种是cha的读音类似，例如印地语中的chay和俄语中的чай。</p>
+                除了少数地区之外，全世界的茶实际上只有两大类读法。一种与英语说法tea类似，比如西班牙语中的té和阿非利卡语中的tee。另一种是cha的读音类似，例如印地语中的chay和俄语中的чай。</p>
         </div>
 
 
@@ -107,9 +109,45 @@ var trackData = [
         },
     ],
 ];
+//从福建延伸的线条
+var trackNewData = [
+    [
+        {
+            name: '福建',
+        },
+        {
+            name: '柬埔寨',
+        },
+    ],
+    [
+        {
+            name: '福建',
+        },
+        {
+            name: '印度尼西亚',
+        },
+    ],
+    [
+        {
+            name: '福建',
+        },
+        {
+            name: '马达加斯加',
+        },
+    ],
+    [
+        {
+            name: '福建',
+        },
+        {
+            name: '西班牙',
+        },
+    ],
+]
 //地理坐标
 var geoCoordMap = {
     '中国': [104, 36], // 中国的经纬度
+    '福建': [118.3006, 26.0789],//福建
     '俄罗斯': [105, 60], // 俄罗斯的经纬度
     '美国': [-95.7129, 37.0902], // 美国的经纬度
     '法国': [2.2137, 46.2276], // 法国的经纬度
@@ -118,6 +156,10 @@ var geoCoordMap = {
     '日本': [138.2529, 36.2048], // 日本的经纬度
     '土耳其': [35.2433, 38.9637], // 土耳其的经纬度
     '斯里兰卡': [80.7718, 7.8731], // 斯里兰卡的经纬度
+    '柬埔寨': [104.990963, 12.565679],//柬埔寨的经纬度
+    '印度尼西亚':[115.4259,-7.9667],//印度尼西亚的经纬度
+    '马达加斯加':[47,-20],//马达加斯加的经纬度
+    '西班牙':[-5,40],//西班牙的经纬度
 };
 //各个国家的茶介绍
 var countryText = {
@@ -374,7 +416,7 @@ var countryNameZH = {
     Zimbabwe: "津巴布韦",
 };
 
-// 高亮其他国家的颜色
+// 高亮其他国家的颜色（从中国中心出发）
 var areaColor_other = {
     type: 'linear', // 设置渐变色
     x: 0,
@@ -392,10 +434,28 @@ var areaColor_other = {
         }
     ]
 }
-
-// 线条的颜色
-var lineColor="#005240"
-
+// 高亮其他国家的颜色（从福建出发）
+var areaColor_NewOther = {
+    type: 'linear', // 设置渐变色
+    x: 0,
+    y: 0,
+    x2: 0.5,
+    y2: 1,
+    colorStops: [
+        {
+            offset: 0,
+            color: '#0052d9' // 起始颜色
+        },
+        {
+            offset: 1,
+            color: '#f2f3ff' // 结束颜色
+        }
+    ]
+}
+// 中国中心向外延伸线条的颜色
+var lineColor = "#005240"
+// 福建向外延伸线条的颜色
+var lineNewColor = "#0052d9"
 export default {
     name: '',
     data() {
@@ -452,22 +512,22 @@ export default {
                                 },
                                 emphasis: {
                                     areaColor: {
-                                    type: 'linear', // 设置渐变色
-                                    x: 0,
-                                    y: 0,
-                                    x2: 0.5,
-                                    y2: 1,
-                                    colorStops: [
-                                        {
-                                            offset: 0,
-                                            color: '#5eb139' // 起始颜色
-                                        },
-                                        {
-                                            offset: 1,
-                                            color: '#2d8241' // 结束颜色
-                                        }
-                                    ]
-                                },
+                                        type: 'linear', // 设置渐变色
+                                        x: 0,
+                                        y: 0,
+                                        x2: 0.5,
+                                        y2: 1,
+                                        colorStops: [
+                                            {
+                                                offset: 0,
+                                                color: '#5eb139' // 起始颜色
+                                            },
+                                            {
+                                                offset: 1,
+                                                color: '#2d8241' // 结束颜色
+                                            }
+                                        ]
+                                    },
                                 },
                             },
 
@@ -475,6 +535,17 @@ export default {
                         // 以下是有面积区域的地图区域
                         {
                             name: '马来西亚',
+                            itemStyle: {
+                                borderColor: '#ffd591',
+                                borderWidth: 0,
+                                areaColor: areaColor_other,
+                                emphasis: {
+                                    areaColor: areaColor_other
+                                },
+                            },
+                        },
+                        {
+                            name: '日本',
                             itemStyle: {
                                 borderColor: '#ffd591',
                                 borderWidth: 0,
@@ -671,6 +742,50 @@ export default {
                                 },
                             },
                         },
+                        {
+                            name: '马达加斯加',
+                            itemStyle: {
+                                borderColor: '#ffd591',
+                                borderWidth: 0,
+                                areaColor: areaColor_NewOther,
+                                emphasis: {
+                                    areaColor: areaColor_NewOther
+                                },
+                            },
+                        },
+                        {
+                            name: '柬埔寨',
+                            itemStyle: {
+                                borderColor: '#ffd591',
+                                borderWidth: 0,
+                                areaColor: areaColor_NewOther,
+                                emphasis: {
+                                    areaColor: areaColor_NewOther
+                                },
+                            },
+                        },
+                        {
+                            name: '印度尼西亚',
+                            itemStyle: {
+                                borderColor: '#ffd591',
+                                borderWidth: 0,
+                                areaColor: areaColor_NewOther,
+                                emphasis: {
+                                    areaColor: areaColor_NewOther
+                                },
+                            },
+                        },
+                        {
+                            name: '西班牙',
+                            itemStyle: {
+                                borderColor: '#ffd591',
+                                borderWidth: 0,
+                                areaColor: areaColor_NewOther,
+                                emphasis: {
+                                    areaColor: areaColor_NewOther
+                                },
+                            },
+                        },
                     ],
                     // 所有国家的翻译
                     nameMap: countryNameZH,
@@ -695,7 +810,7 @@ export default {
 
             return countryNames[name] || '';
         },
-        //坐标转换
+        //中国中心向外延伸坐标转换
         coordinateData(data) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
@@ -712,11 +827,79 @@ export default {
             }
             return res;
         },
+        //从福建开始延伸
+        makeLines(trackNewData) {
+            return trackNewData.map(dataItem => {
+                const fromCoord = geoCoordMap[dataItem[0].name];
+                const toCoord = geoCoordMap[dataItem[1].name];
+                if (fromCoord && toCoord) {
+                    return {
+                        fromName: dataItem[0].name,
+                        toName: dataItem[1].name,
+                        coords: [fromCoord, toCoord]
+                    };
+                }
+            }).filter(item => item);
+        }
     },
     mounted() {
         var series = [
             {
-                name: 'track',
+                name: '福建路线',
+                type: 'lines',
+                zlevel: 2,
+                effect: {
+                    show: true,
+                    period: 6,
+                    trailLength: 0,
+                    symbol: this.planePath,
+                    symbolSize: 15,
+                },
+                lineStyle: {
+                    normal: {
+                        color:lineNewColor,
+                        width: 2,
+                        opacity: 0.4,
+                        curveness: 0.3
+                    }
+                },
+                tooltip: {
+                    show: true,
+                    formatter: function (params) {
+                        var fromName = params.data.fromName;
+                        var toName = params.data.toName;
+                        return '从 ' + fromName + ' 到 ' + toName;
+                    }
+                },
+                data: this.makeLines(trackNewData)//福建路线的数据为trackNewData
+            },
+            {
+                name: '福建路线',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: {
+                    brushType: 'stroke',
+                },
+                itemStyle: {
+                    color: "#0052d9",
+                },
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter: '{b}',
+                },
+
+                data: trackNewData.map(function (dataItem) {
+                    return {
+                        name: dataItem[1].name,
+                        value: geoCoordMap[dataItem[1].name].concat([dataItem[1].icon]),
+                    };
+                }),
+
+            },
+            {
+                name: '中国中心路线',
                 type: 'lines',
                 zlevel: 2,
                 effect: {
@@ -749,7 +932,7 @@ export default {
                 data: this.coordinateData(trackData),
             },
             {
-                name: 'track',
+                name: '中国中心路线',
                 type: 'effectScatter',
                 coordinateSystem: 'geo',
                 zlevel: 2,
@@ -787,7 +970,7 @@ export default {
                 console.log(params)
 
                 //如果点击的是面积区域
-                if (params.componentType === 'geo' && params.name && this.getChineseName( params.name)) {
+                if (params.componentType === 'geo' && params.name && this.getChineseName(params.name)) {
                     this.image = require('../assets/img/' + params.name + '.png');
                     this.text = countryText[params.name] || '';
                     var toName = params.name
@@ -865,7 +1048,7 @@ export default {
     font-size: 30px;
     font-weight: bold;
     color: rgba(50, 132, 110, 1);
-    width:186px;
+    width: 186px;
 }
 
 .titlesub {
