@@ -410,7 +410,7 @@ export default {
         handleResize() {
             // this.updateMapOption()
             this.myChart.resize();
-            console.log(this.currentProvince);
+            //console.log(this.currentProvince);
             if (this.currentProvince != '') {
                 this.renderLineChart(this.currentProvince)
             }
