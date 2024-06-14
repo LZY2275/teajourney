@@ -14,22 +14,28 @@
         </div>
 
 
-        <t-tabs v-model="value" style="position: absolute;left: 1vw;top: 20vh;">
-            <t-tab-panel value="first" label="读音cha">
+        <t-tabs v-model="value" style="position: absolute;z-index: 999;right: 2.5vw;top: 2.5vh;">
+            <t-tab-panel value="first" label="陆上丝绸之路">
             </t-tab-panel>
-            <t-tab-panel value="second" label="读音te"></t-tab-panel>
+            <t-tab-panel value="second" label="海上丝绸之路"></t-tab-panel>
         </t-tabs>
 
         <div style="display: flex;position: absolute;z-index: 999;bottom: 1.5vh;left: 3.5vw;">
             <div>
-                <div class="teaName"> {{ teaStyle }} </div>
-                <div class="teaNamesub1"> {{ showPronunciation }} </div>
+                <div class="teaName"> {{ displayteaInfo.teaStyle }} </div>
+                <div class="divider" v-if="displayteaInfo.language"></div>
+                <div class="teaNamesub1"> {{ displayteaInfo.showPronunciation }} </div>
+                <div class="teaNamesub1" v-if="displayteaInfo.language">语言：{{ displayteaInfo.language }}</div>
             </div>
         </div>
 
-        <div style="position: absolute;bottom: 1.5vh;right: 160px;display: flex;">
+        <div class="background-gradient-left-bottom" style="display: flex;position: absolute;z-index: 998;bottom: 0;left:0;width: 400px;height: 200px;"></div>
+        <div class="background-gradient-bottom" style="display: flex;position: absolute;z-index: 998;bottom: 0;left:0;width: 100vw;height: 100px;"></div>
+        <div class="background-gradient-right-bottom" style="display: flex;position: absolute;z-index: 998;bottom: 0;right:0;width: 800px;height: 130px;"></div>
+        <div style="position: absolute;bottom: 1.5vh;right: 160px;display: flex;z-index: 999;align-items: center;">
             <p class="text" style="text-align: right;margin-right: 24px;">{{ text }}</p>
-            <img :src="image" style="width: 107px; height: 107px; border-radius: 50%;" v-if="image">
+            <div class="divider-vertical" style="margin-right: 24px;"></div>
+            <p class="teaName" >{{ dispalyContryName }}</p>
         </div>
     </div>
 
@@ -789,9 +795,9 @@ var countryText = {
     '马来西亚': '马来西亚喜饮拉茶。当茶泡好之后,调茶人用两个杯子将茶倒过来又倒过去，由于两个杯子离得比较远,茶的用料又与奶茶相差不多，因此看上去像是一条白色的粗线被拉长了一样，因此被称为拉茶。',
     '澳大利亚': '澳大利亚的牧民居住在高寒的山区，喜欢饮红茶，而且必须在煮好的茶汤内加入甜酒、柠檬和牛乳，这种有各种味道的茶汤营养丰富,能增加人体的热量。',
     '斯里兰卡': '斯里兰卡的居民酷爱喝浓茶，茶叶又苦又涩，他们却觉得津津有味。该国红茶畅销世界各地，在首都科伦坡有经销茶叶的大商行，设有试茶部，由专家凭舌试味，再核等级和价格。',
-    '法国': '印度尼西亚人有个习惯，就是无论春夏秋冬，只要吃完中餐之后，就一定要喝一碗冰茶。冰茶，又称为凉茶。冰茶的制作方法并不复杂，当地人常常在红茶中加人一些糖和配料，之后放人冰箱，以便于降低温度。,即取茶一小撮或一小包（指袋泡茶）,冲入沸水后，配以糖或糖和牛乳。加入的牛奶与红茶水比例为3：2最适宜。',
-    '印度尼西亚': '英国各阶层人士都喜爱饮料。茶，几乎可称为英国的民族饮料。他们喜爱现煮的浓茶，并放一二块糖，加少许冷牛奶。',
-    '英国': '北非人喝茶，喜欢在绿茶里放几片新鲜薄荷叶和一些冰糖，饮时清凉可口。有客来访，客人得将主人向他敬的三杯茶喝完，才算有礼貌。',
+    '法国': '法国人饮茶，始盛于室贵族以及有闲阶层，以饮用红茶者最多，且一般习惯冲（煮）饮法,即取茶一小撮或一小包（指袋泡茶）,冲入沸水后，配以糖或糖和牛乳。加入的牛奶与红茶水比例为3：2最适宜。',
+    '印度尼西亚': '印度尼西亚人有个习惯，就是无论春夏秋冬，只要吃完中餐之后，就一定要喝一碗冰茶。冰茶，又称为凉茶。冰茶的制作方法并不复杂，当地人常常在红茶中加人一些糖和配料，之后放人冰箱，以便于降低温度。',
+    '英国': '英国各阶层人士都喜爱饮料。茶，几乎可称为英国的民族饮料。他们喜爱现煮的浓茶，并放一二块糖，加少许冷牛奶。',
     '伊拉克': '伊拉克人煮的是很浓的红茶，味苦色黑所以有些伊拉克人喝茶时先舔一下白糖,然后呷一口茶，循环往复;也有的在喝茶时把糖放在面前，望糖喝茶,大概还颇有点“望梅止渴”的情趣,边想白糖边喝苦茶。',
     '美国': '美国人喜欢速溶的袋泡茶。大家都知道美国是一个变化极其迅速的国家，讲究高效简便，时间就像金钱一样被精丁细算着花，饮茶也是以最为快速的方式被喝下去。,然后呷一口茶，循环往复;也有的在喝茶时把糖放在面前，望糖喝茶,大概还颇有点“望梅止渴”的情趣,边想白糖边喝苦茶。',
 };
@@ -800,215 +806,252 @@ var pronunciationText = [
     {
         name: '韩国',
         teaStyle: 'tcha',//不同国家茶的文字（默认俄罗斯）
+        language:"Korean	朝鲜语 ",
         showPronunciation: '读音：[tcha]',//展示读音
 
     },
     {
         name: '日本',
         teaStyle: 'ocha',//不同国家茶的文字（默认俄罗斯）
+        language:"Japanese	日语 ",
         showPronunciation: '读音：[ocha]',//展示读音
 
     },
     {
         name: '蒙古',
         teaStyle: 'tsay',//不同国家茶的文字（默认俄罗斯）
+        language:"Monglian	蒙古语",
         showPronunciation: '读音：[tsay]',//展示读音
     },
     {
         name: '乌兹别克斯坦',
         teaStyle: 'choy',//不同国家茶的文字（默认俄罗斯）
+        language:"Uzbek	乌兹别克语 ",
         showPronunciation: '读音：[choy]',//展示读音
 
     },
     {
         name: '尼泊尔',
         teaStyle: 'ja',//不同国家茶的文字（默认俄罗斯）
+        language:"Tibetian	藏语",
         showPronunciation: '读音：[ja]',//展示读音
 
     },
     {
         name: '巴基斯坦',
         teaStyle: 'tja',//不同国家茶的文字（默认俄罗斯）
+        language:"panjabi	旁遮普语",
         showPronunciation: '读音：[tja]',//展示读音
 
     },
     {
         name: '伊朗',
         teaStyle: 'caj',//不同国家茶的文字（默认俄罗斯）
+        language:"Persian	波斯语",
         showPronunciation: '读音：[caj]',//展示读音
 
     },
     {
         name: '阿富汗',
         teaStyle: 'caj',//不同国家茶的文字（默认俄罗斯）
+        language:"Persian	波斯语",
         showPronunciation: '读音：[caj]',//展示读音
 
     },
     {
         name: '塔吉克斯坦',
         teaStyle: 'caj、chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Persian	波斯语",
         showPronunciation: '读音：[caj、chay]',//展示读音
 
     },
     {
         name: '哈萨克斯坦',
         teaStyle: 'shai',//不同国家茶的文字（默认俄罗斯）
+        language:"Persian	波斯语",
         showPronunciation: '读音：[shai]',//展示读音
     },
     {
         name: '俄罗斯',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Russian	俄语 ",
         showPronunciation: '读音：[chay]',//展示读音
 
     },
     {
         name: '白俄罗斯',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Russian	俄语 ",
         showPronunciation: '读音：[chay]',//展示读音
 
     },
     {
         name: '乌克兰',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Russian	俄语 ",
         showPronunciation: '读音：[chay]',//展示读音
 
     },
     {
         name: '吉尔吉斯斯坦',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Russian	俄语 ",
         showPronunciation: '读音：[chay]',//展示读音
     },
     {
         name: '捷克共和国',
         teaStyle: 'caj',//不同国家茶的文字（默认俄罗斯）
+        language:"Czech	捷克语",
         showPronunciation: '读音：[caj]',//展示读音
 
     },
     {
         name: '希腊',
         teaStyle: 'tsai',//不同国家茶的文字（默认俄罗斯）
+        language:"Greek	希腊语 ",
         showPronunciation: '读音：[tsai]',//展示读音
     },
     {
         name: '阿尔及利亚',
         teaStyle: 'shay',//不同国家茶的文字（默认俄罗斯）
+        language:"Arabic	阿拉伯语 ",
         showPronunciation: '读音：[shay]',//展示读音
 
     },
     {
         name: '巴林',
         teaStyle: 'shay',//不同国家茶的文字（默认俄罗斯）
+        language:"Arabic	阿拉伯语",
         showPronunciation: '读音：[shay]',//展示读音
 
     },
     {
         name: '科威特',
         teaStyle: 'shay',//不同国家茶的文字（默认俄罗斯）
+        language:"Arabic	阿拉伯语",
         showPronunciation: '读音：[shay]',//展示读音
 
     },
     {
         name: '埃塞俄比亚',
         teaStyle: 'tchay',//不同国家茶的文字（默认俄罗斯）
+        language:"Arabic	阿拉伯语",
         showPronunciation: '读音：[tchay]',//展示读音
 
     },
     {
         name: '索马里',
         teaStyle: 'shaah-a',//不同国家茶的文字（默认俄罗斯）
+        language:"Somali	索马里语",
         showPronunciation: '读音：[shaah-a]',//展示读音
     },
     {
         name: '塞内加尔',
         teaStyle: 'saayi',//不同国家茶的文字（默认俄罗斯）
+        language:"Fula	富拉语",
         showPronunciation: '读音：[saayi]',//展示读音
 
     },
     {
         name: '尼日利亚',
         teaStyle: 'shayi',//不同国家茶的文字（默认俄罗斯）
+        language:"Hausa	豪萨语",
         showPronunciation: '读音：[shayi]',//展示读音
 
     },
     {
         name: '尼日尔',
         teaStyle: 'shayi',//不同国家茶的文字（默认俄罗斯）
+        language:"Hausa	豪萨语",
         showPronunciation: '读音：[shayi]',//展示读音
 
     },
     {
         name: '肯尼亚',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Swahili	斯瓦希里语",
         showPronunciation: '读音：[chay]',//展示读音
 
     },
     {
         name: '坦桑尼亚',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Swahili	斯瓦希里语",
         showPronunciation: '读音：[chay]',//展示读音
     },
     {
         name: '乌干达',
         teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+        language:"Swahili	斯瓦希里语",
         showPronunciation: '读音：[chay]',//展示读音
 
     },
     {
         name: '布隆迪',
         teaStyle: 'icyayi',//不同国家茶的文字（默认俄罗斯）
+        language:"Kirundi	基隆迪语",
         showPronunciation: '读音：[icyayi]',//展示读音
 
     },
     {
         name: '阿尔巴尼亚',
         teaStyle: 'tay',//不同国家茶的文字（默认俄罗斯）
+        language:"Algerian Arbic	阿尔巴尼亚语",
         showPronunciation: '读音：[tay]',//展示读音
 
     },
     {
         name: '摩洛哥',
         teaStyle: '摩洛哥',//不同国家茶的文字（默认俄罗斯）
-        showPronunciation: '读音：[摩洛哥]',//展示读音
+        language:"Berber	柏柏尔语",
+        showPronunciation: '读音：[ashahi]',//展示读音
 
     },
     {
         name: '毛里塔尼亚',
         teaStyle: 'atay',//不同国家茶的文字（默认俄罗斯）
+        language:"Hassaniya	哈萨尼亚语",
         showPronunciation: '读音：[atay]',//展示读音
     },
     {
         name: '冈比亚',
         teaStyle: 'attaya',//不同国家茶的文字（默认俄罗斯）
+        language:"Wolof	沃洛夫语 ",
         showPronunciation: '读音：[attaya]',//展示读音
 
     },
     {
         name: '葡萄牙',
         teaStyle: 'cha',//不同国家茶的文字（默认俄罗斯）
+        language:"Portugese	葡萄牙语 ",
         showPronunciation: '读音：[cha]',//展示读音
 
     },
     {
         name: '巴西',
         teaStyle: 'cha',//不同国家茶的文字（默认俄罗斯）
+        language:"Portugese	葡萄牙语 ",
         showPronunciation: '读音：[cha]',//展示读音
 
     },
     {
         name: '安哥拉',
         teaStyle: 'cha',//不同国家茶的文字（默认俄罗斯）
+        language:"Portugese	葡萄牙语 ",
         showPronunciation: '读音：[cha]',//展示读音
 
     },
     {
         name: '莫桑比克',
         teaStyle: 'cha',//不同国家茶的文字（默认俄罗斯）
+        language:"Portugese	葡萄牙语 ",
         showPronunciation: '读音：[cha]',//展示读音
 
     },
     {
         name: '泰国',
         teaStyle: 'cha',//不同国家茶的文字（默认俄罗斯）
+        language:"Thai	泰语",
         showPronunciation: '读音：[cha]',//展示读音
 
     },
@@ -1018,211 +1061,253 @@ var pronunciationNewText = [
     {
         name: '菲律宾',
         teaStyle: 'tsaa', // 不同国家茶的文字（默认俄罗斯）
+        language:"Filinino	菲律宾语 ",
         showPronunciation: '读音：[tsaa]', // 展示读音
     },
     {
         name: '柬埔寨',
         teaStyle: 'tae',
+        language:"Khmer	高棉语 ",
         showPronunciation: '读音：[tae]',
     },
     {
         name: '印度尼西亚',
         teaStyle: 'teh',
+        language:"Indonesian	印度尼西亚语",
         showPronunciation: '读音：[teh]',
     },
     {
         name: '马来西亚',
         teaStyle: 'teh',
+        language:"Malay	马来语",
         showPronunciation: '读音：[teh]',
     },
     {
         name: '文莱',
         teaStyle: 'teh',
+        language:"Malay	马来语",
         showPronunciation: '读音：[teh]',
     },
     {
         name: '新加坡',
         teaStyle: 'teh',
+        language:"Malay	马来语",
         showPronunciation: '读音：[teh]',
     },
     {
         name: '巴布亚新几内亚',
         teaStyle: 'teh',
+        language:"Koiari	科亚里语",
         showPronunciation: '读音：[teh]',
     },
     {
         name: '澳大利亚',
         teaStyle: 'thii',
+        language:"Gamilaraay	加米拉拉语 ",
         showPronunciation: '读音：[thii]',
     },
     {
         name: '新西兰',
         teaStyle: 'tii',
+        language:"Maori	毛利语",
         showPronunciation: '读音：[tii]',
     },
     {
         name: '斯里兰卡',
         teaStyle: 'te',
+        language:"Sinhala	僧伽罗语",
         showPronunciation: '读音：[te]',
     },
     {
         name: '马拉维',
         teaStyle: 'tiyi',
+        language:"Chewa	奇瓦瓦语",
         showPronunciation: '读音：[tiyi]',
     },
     {
         name: '赞比亚',
         teaStyle: 'tiyi',
+        language:"Chewa	奇瓦瓦语",
         showPronunciation: '读音：[tiyi]',
     },
     {
         name: '莫桑比克',
         teaStyle: 'tiyi',
+        language:"Chewa	奇瓦瓦语",
         showPronunciation: '读音：[tiyi]',
     },
     {
         name: '马达加斯加',
         teaStyle: 'dite',
+        language:"Malaggasy	马达加斯加语",
         showPronunciation: '读音：[dite]',
     },
     {
         name: '南非共和国',
         teaStyle: 'tee',
+        language:"Afrikaans	南非荷兰语",
         showPronunciation: '读音：[tee]',
     },
     {
         name: '刚果民主共和国',
         teaStyle: 'ti',
+        language:"Lingala	林加拉语",
         showPronunciation: '读音：[ti]',
     },
     {
         name: '刚果共和国',
         teaStyle: 'ti',
+        language:"Lingala	林加拉语",
         showPronunciation: '读音：[ti]',
     },
     {
         name: '加纳',
         teaStyle: 'ti',
+        language:"Ewe	埃维语 ",
         showPronunciation: '读音：[ti]',
     },
     {
         name: '多哥',
         teaStyle: 'ti',
+        language:"Ewe	埃维语 ",
         showPronunciation: '读音：[ti]',
     },
     {
         name: '塞拉利昂',
         teaStyle: 'ti',
+        language:"Krio	克里奥语",
         showPronunciation: '读音：[ti]',
     },
     {
         name: '英国',
         teaStyle: 'tea',
+        language:"English	英语",
         showPronunciation: '读音：[tea]',
     },
     {
         name: '加拿大',
         teaStyle: 'tea',
+        language:"English	英语",
         showPronunciation: '读音：[tea]',
     },
     {
         name: '美国',
         teaStyle: 'tea',
+        language:"English	英语",
         showPronunciation: '读音：[tea]',
     },
     {
         name: '爱尔兰',
         teaStyle: 'tae',
+        language:"Irish	爱尔兰语",
         showPronunciation: '读音：[tae]',
     },
     {
         name: '苏格兰',
         teaStyle: 'ti',
+        language:"Scots Gaelic	苏格兰盖尔语 ",
         showPronunciation: '读音：[ti]',
     },
     {
         name: '法国',
         teaStyle: 'thé',
+        language:"French	法语",
         showPronunciation: '读音：[thé]',
     },
     {
         name: '比利时',
         teaStyle: 'thé',
+        language:"French	法语",
         showPronunciation: '读音：[thé]',
     },
     {
         name: '西班牙',
         teaStyle: 'té',
+        language:"Spanish	西班牙语 ",
         showPronunciation: '读音：[té]',
     },
     {
         name: '墨西哥',
         teaStyle: 'té',
+        language:"Spanish	西班牙语 ",
         showPronunciation: '读音：[té]',
     },
     {
         name: '哥伦比亚',
         teaStyle: 'té',
+        language:"Spanish	西班牙语 ",
         showPronunciation: '读音：[té]',
     },
     {
         name: '阿根廷',
         teaStyle: 'té',
+        language:"Spanish	西班牙语 ",
         showPronunciation: '读音：[té]',
     },
     {
         name: '意大利',
         teaStyle: 'tè',
+        language:"Italian	意大利语 ",
         showPronunciation: '读音：[tè]',
     },
     {
         name: '德国',
         teaStyle: 'tee',
+        language:"German	德语",
         showPronunciation: '读音：[tee]',
     },
     {
         name: '奥地利',
         teaStyle: 'tee',
+        language:"German	德语",
         showPronunciation: '读音：[tee]',
     },
     {
         name: '瑞士',
         teaStyle: 'tee',
+        language:"German	德语",
         showPronunciation: '读音：[tee]',
     },
     {
         name: '荷兰',
         teaStyle: 'thee',
+        language:"Dutch	荷兰语 ",
         showPronunciation: '读音：[thee]',
     },
     {
         name: '比利时',
         teaStyle: 'thee',
+        language:"Dutch	荷兰语 ",
         showPronunciation: '读音：[thee]',
     },
     {
         name: '瑞典',
         teaStyle: 'te',
+        language:"Swedish	瑞典语",
         showPronunciation: '读音：[te]',
     },
     {
         name: '挪威',
         teaStyle: 'te',
+        language:"Norwegian	挪威语",
         showPronunciation: '读音：[te]',
     },
     {
         name: '芬兰',
         teaStyle: 'tee',
+        language:"Fnnish	芬兰语 ",
         showPronunciation: '读音：[tee]',
     },
     {
         name: '拉脱维亚',
         teaStyle: 'teja',
+        language:"Latvian	拉脱维亚语",
         showPronunciation: '读音：[teja]',
     },
     {
         name: '冰岛',
         teaStyle: 'te',
+        language:"Icelandic	冰岛语 ",
         showPronunciation: '读音：[te]',
     }
 
@@ -1430,11 +1515,11 @@ var areaColor_other = {
     colorStops: [
         {
             offset: 0,
-            color: '#e37318' // 起始颜色
+            color: '#d0dc89' // 起始颜色
         },
         {
             offset: 1,
-            color: '#ffd9c2' // 结束颜色
+            color: '#69a550' // 结束颜色
         }
     ]
 }
@@ -1459,11 +1544,21 @@ var areaColor_NewOther = {
 // 中国中心向外延伸线条的颜色
 var lineColor = "#005240"
 // 福建向外延伸线条的颜色
-var lineNewColor = "#0052d9"
+var lineNewColor = "#1565C0"
+
+// 地图的背景颜色
+var mapBackground = "#E0F7FA"
 export default {
     name: '',
     data() {
         return {
+            dispalyContryName : '俄罗斯',
+            displayteaInfo :{
+                name: '俄罗斯',
+                teaStyle: 'chay',//不同国家茶的文字（默认俄罗斯）
+                language:"Russian	俄语 ",
+                showPronunciation: '读音：[chay]',//展示读音
+            },
             myChart: null,
             value: 'first',
             //右下角区域内容
@@ -1475,7 +1570,7 @@ export default {
             //导航线上的茶叶图标
             planePath: 'path://M549.479739 345.51634c42.164706-81.484967 127.163399-157.615686 300.005228-144.062745 8.366013 0.669281 15.226144 5.521569 18.572549 13.385621 87.173856 197.772549 3.848366 406.253595-146.739869 474.0183 0 0-9.537255-112.104575-54.044444-199.780392-39.152941-77.803922-117.793464-143.560784-117.793464-143.560784zM783.393464 658.572549c-3.681046 0-7.362092-1.673203-10.039216-4.684967-4.517647-5.521569-3.681046-13.720261 1.840523-18.070589 9.537255-7.696732 18.405229-16.397386 27.105883-25.6 4.852288-5.186928 13.05098-5.521569 18.070588-0.669281 5.186928 4.852288 5.521569 13.05098 0.669281 18.070589-9.369935 10.039216-19.24183 19.24183-29.615686 27.775163-2.342484 2.175163-5.186928 3.179085-8.031373 3.179085z m53.040523-56.888889c-2.509804 0-5.354248-0.836601-7.529412-2.342484-5.856209-4.183007-7.027451-12.214379-2.844444-17.903268 73.620915-101.396078 85.333333-241.610458 30.284967-365.929411-1.505882-3.346405-4.183007-5.354248-7.864052-5.688889-138.039216-10.708497-234.750327 35.471895-287.62353 137.202614-3.179085 6.19085-11.043137 8.867974-17.401307 5.521569-6.19085-3.179085-8.867974-11.043137-5.521568-17.401307 25.6-49.359477 61.239216-87.173856 106.081045-112.941177 55.215686-31.623529 124.820915-44.50719 206.305883-37.981699 13.218301 1.003922 24.094118 8.867974 29.448366 20.915033 58.394771 132.684967 45.845752 282.603922-33.129412 391.362091-2.342484 3.346405-6.35817 5.186928-10.206536 5.186928zM726.504575 444.737255c-2.677124 0-5.688889-1.003922-7.864052-2.677124-5.688889-4.350327-6.52549-12.54902-2.007843-17.903268C778.039216 346.352941 857.014379 229.898039 884.454902 118.462745c1.840523-6.860131 8.700654-11.043137 15.560784-9.369935 6.860131 1.840523 11.043137 8.700654 9.369935 15.560785-28.779085 115.952941-109.762092 235.586928-172.67451 315.566013-2.677124 2.844444-6.35817 4.517647-10.206536 4.517647zM691.36732 924.109804c-1.840523 0-3.513725-0.16732-5.354248-0.334641-181.207843-26.269281-319.74902-87.341176-411.105882-181.375163-5.019608-5.186928-4.852288-13.218301 0.33464-18.070588 5.186928-5.019608 13.218301-4.852288 18.070588 0.33464 87.341176 89.85098 220.862745 148.413072 396.3817 173.845752 5.019608 0.836601 9.871895-2.677124 10.708496-7.864052 35.806536-203.963399-9.202614-384.501961-126.326797-508.318955-97.715033-103.236601-238.264052-154.938562-375.968627-138.708496-4.015686 0.501961-6.860131 3.011765-8.031373 7.027451-14.389542 54.713725-53.542484 246.128105 51.534641 409.098039 3.848366 6.023529 2.007843 13.887582-3.848366 17.903268-6.023529 3.848366-13.887582 2.007843-17.903268-3.848366-110.766013-171.670588-69.939869-372.287582-54.881046-429.511111 3.848366-14.222222 15.226144-24.261438 29.783006-25.934641 71.278431-8.533333 145.233987 0.16732 213.500654 25.098039 69.270588 25.265359 132.852288 67.095425 184.052287 121.30719 122.980392 129.840523 170.164706 318.243137 133.186929 530.405229-2.677124 17.066667-17.233987 28.946405-34.133334 28.946405zM537.098039 715.963399c-2.844444 0-6.023529-1.003922-8.366013-3.011765-6.19085-5.521569-12.71634-10.875817-18.907189-16.732026-5.354248-4.684967-5.856209-12.88366-1.003922-18.070588 4.684967-5.354248 12.88366-5.856209 18.070588-1.003922 6.19085 5.521569 12.54902 11.043137 18.572549 16.230065 5.521569 4.684967 6.023529 12.71634 1.505883 18.070589-2.509804 3.179085-6.19085 4.517647-9.871896 4.517647z m-53.877124-49.192157c-3.179085 0-6.35817-1.171242-8.867974-3.513726-11.043137-10.708497-22.253595-21.918954-33.296732-33.296732-5.019608-5.186928-4.852288-13.218301 0.334641-18.070588 5.186928-5.019608 13.218301-4.852288 18.070588 0.334641 10.708497 11.043137 21.751634 21.918954 32.627451 32.627451 5.186928 5.019608 5.354248 13.05098 0.33464 18.070588-2.509804 2.677124-5.856209 3.848366-9.202614 3.848366zM409.934641 590.807843c-3.513725 0-7.027451-1.505882-9.704576-4.350327-180.036601-202.290196-271.393464-417.631373-275.074509-426.666666-2.844444-6.35817 0-13.887582 6.52549-16.899347 6.35817-2.844444 14.054902 0.16732 17.066666 6.52549 0 0.16732 0.16732 0.334641 0.167321 0.334641 3.681046 8.867974 93.532026 220.528105 270.891503 419.471895 4.684967 5.354248 4.183007 13.552941-1.003922 18.070589-2.677124 2.342484-5.688889 3.513725-8.867973 3.513725z',
             chaView: {
-                backgroundColor: 'transparent',
+                backgroundColor: mapBackground,
                 tooltip: {
                     trigger: 'item',
                     formatter: (params) => {
@@ -2190,13 +2285,13 @@ export default {
                     name: '中国中心路线',
                     type: 'lines',
                     zlevel: 2,
-                    effect: {
-                        show: true,
-                        period: 6,
-                        trailLength: 0,
-                        symbol: this.planePath,
-                        symbolSize: 15,
-                    },
+                    // effect: {
+                    //     show: true,
+                    //     period: 6,
+                    //     trailLength: 0,
+                    //     symbol: this.planePath,
+                    //     symbolSize: 15,
+                    // },
                     lineStyle: {
                         color: lineColor,
                         width: 2,
@@ -2257,8 +2352,10 @@ export default {
                         if (params.name in countryText) {
                             this.image = require('../assets/img/' + params.name + '.png');
                             this.text = countryText[params.name] || '';
+                            this.dispalyContryName = params.name || '';
                         }
                         else{
+                            this.dispalyContryName = '';
                             this.image = '';
                             this.text = '';
                         }
@@ -2268,16 +2365,19 @@ export default {
                         for (var i = 0; i < pronunciationText.length; i++) {
                             var item = pronunciationText[i];
                             // 如果找到与目的地名称匹配的项
+
                             if (item.name === toName) {
+                                this.displayteaInfo = item
                                 this.teaStyle = item.teaStyle; // 获取该项的 teaStyle
                                 this.showPronunciation = item.showPronunciation; // 获取该项的 teaStyle
                                 break; // 找到匹配项后结束循环
                             }
                         }
                         }else{
+                            this.displayteaInfo = {}
                             this.teaStyle = ''; // 设为空
                             this.showPronunciation = ''; // 设为空
-                        } 
+                        }
                         return
                     }
 
@@ -2286,8 +2386,10 @@ export default {
                         if (params.data.toName in countryText) {
                             this.image = require('../assets/img/' + params.data.toName + '.png');
                             this.text = countryText[params.data.toName] || '';
+                            this.dispalyContryName = params.name || '';
                         }
                         else{
+                            this.dispalyContryName = '';
                             this.image = '';
                             this.text = '';
                         }
@@ -2298,15 +2400,17 @@ export default {
                             var item = pronunciationText[i];
                             // 如果找到与目的地名称匹配的项
                             if (item.name === toName) {
+                                this.displayteaInfo = item
                                 this.teaStyle = item.teaStyle; // 获取该项的 teaStyle
                                 this.showPronunciation = item.showPronunciation; // 获取该项的 teaStyle
                                 break; // 找到匹配项后结束循环
                             }
                         }
                         }else{
+                            this.displayteaInfo = {}
                             this.teaStyle = ''; // 设为空
                             this.showPronunciation = ''; // 设为空
-                        } 
+                        }
                         return
                     }
 
@@ -2315,8 +2419,10 @@ export default {
                         if (params.name in countryText) {
                             this.image = require('../assets/img/' + params.name + '.png');
                             this.text = countryText[params.name] || '';
+                            this.dispalyContryName = params.name || '';
                         }
                         else{
+                            this.dispalyContryName = '';
                             this.image = null;
                             this.text = '';
                         }
@@ -2327,15 +2433,17 @@ export default {
                             var item = pronunciationText[i];
                             // 如果找到与目的地名称匹配的项
                             if (item.name === toName) {
+                                this.displayteaInfo = item
                                 this.teaStyle = item.teaStyle; // 获取该项的 teaStyle
                                 this.showPronunciation = item.showPronunciation; // 获取该项的 teaStyle
                                 break; // 找到匹配项后结束循环
                             }
                         }
                         }else{
+                            this.displayteaInfo = {}
                             this.teaStyle = ''; // 设为空
                             this.showPronunciation = ''; // 设为空
-                        } 
+                        }
                         return
                     }
 
@@ -2350,13 +2458,13 @@ export default {
                     name: '福建路线',
                     type: 'lines',
                     zlevel: 2,
-                    effect: {
-                        show: true,
-                        period: 6,
-                        trailLength: 0,
-                        symbol: this.planePath,
-                        symbolSize: 15,
-                    },
+                    // effect: {
+                    //     show: false,
+                    //     period: 6,
+                    //     trailLength: 0,
+                    //     symbol: this.planePath,
+                    //     symbolSize: 15,
+                    // },
                     lineStyle: {
                         normal: {
                             color: lineNewColor,
@@ -2384,7 +2492,7 @@ export default {
                         brushType: 'stroke',
                     },
                     itemStyle: {
-                        color: "#0052d9",
+                        color: lineNewColor,
                     },
                     label: {
                         show: true,
@@ -2416,8 +2524,10 @@ export default {
                         if (params.name in countryText) {
                             this.image = require('../assets/img/' + params.name + '.png');
                             this.text = countryText[params.name] || '';
+                            this.dispalyContryName = params.name || '';
                         }
                         else{
+                            this.dispalyContryName = '';
                             this.image = '';
                             this.text = '';
                         }
@@ -2428,15 +2538,17 @@ export default {
                             var item = pronunciationNewText[i];
                             // 如果找到与目的地名称匹配的项
                             if (item.name === toName) {
+                                this.displayteaInfo = item
                                 this.teaStyle = item.teaStyle; // 获取该项的 teaStyle
                                 this.showPronunciation = item.showPronunciation; // 获取该项的 teaStyle
                                 break; // 找到匹配项后结束循环
                             }
                         }
                         }else{
+                            this.displayteaInfo = {}
                             this.teaStyle = ''; // 设为空
                             this.showPronunciation = ''; // 设为空
-                        } 
+                        }
                         return
                     }
 
@@ -2445,8 +2557,10 @@ export default {
                         if (params.data.toName in countryText) {
                             this.image = require('../assets/img/' + params.data.toName + '.png');
                             this.text = countryText[params.data.toName] || '';
+                            this.dispalyContryName = params.name || '';
                         }
                         else{
+                            this.dispalyContryName = '';
                             this.image = '';
                             this.text = '';
                         }
@@ -2457,15 +2571,17 @@ export default {
                             var item = pronunciationNewText[i];
                             // 如果找到与目的地名称匹配的项
                             if (item.name === toName) {
+                                this.displayteaInfo = item
                                 this.teaStyle = item.teaStyle; // 获取该项的 teaStyle
                                 this.showPronunciation = item.showPronunciation; // 获取该项的 teaStyle
                                 break; // 找到匹配项后结束循环
                             }
                         }
                         }else{
+                            this.displayteaInfo = {}
                             this.teaStyle = ''; // 设为空
                             this.showPronunciation = ''; // 设为空
-                        } 
+                        }
                         return
                     }
 
@@ -2474,8 +2590,10 @@ export default {
                         if (params.name in countryText) {
                             this.image = require('../assets/img/' + params.name + '.png');
                             this.text = countryText[params.name] || '';
+                            this.dispalyContryName = params.name || '';
                         }
                         else{
+                            this.dispalyContryName = '';
                             this.image = null;
                             this.text = '';
                         }
@@ -2486,15 +2604,17 @@ export default {
                             var item = pronunciationNewText[i];
                             // 如果找到与目的地名称匹配的项
                             if (item.name === toName) {
+                                this.displayteaInfo = item
                                 this.teaStyle = item.teaStyle; // 获取该项的 teaStyle
                                 this.showPronunciation = item.showPronunciation; // 获取该项的 teaStyle
                                 break; // 找到匹配项后结束循环
                             }
                         }
                         }else{
+                            this.displayteaInfo = {}
                             this.teaStyle = ''; // 设为空
                             this.showPronunciation = ''; // 设为空
-                        } 
+                        }
                         return
                     }
 
@@ -2542,19 +2662,24 @@ export default {
 }
 
 .teaName {
-
     display: flex;
     font-size: 50px;
     font-weight: bold;
     color: rgba(50, 132, 110, 1);
-    margin-top: -150px;
 }
 
 .teaNamesub1 {
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(50, 132, 110, 1);
+}
 
+.divider{
+    width: 200px;
+    height: 1px;
+    background-color: rgba(50, 132, 110, 0.5);
+    margin-top: 12px;
+    margin-bottom: 12px
 }
 
 .teaNamesub2 {
@@ -2563,5 +2688,24 @@ export default {
     font-size: 14px;
     color: rgba(50, 132, 110, 1);
     width: 22vw;
+}
+
+.background-gradient-left-bottom{
+    opacity: 1;
+    background: radial-gradient(79.75% 81% at 0% 100%, #fffef2 0%, rgba(212, 119, 119, 0) 100%);
+
+}
+.background-gradient-bottom{
+    background: linear-gradient(180deg, rgba(204, 204, 204, 0) 0%, #fffef2 100%);
+}
+.background-gradient-right-bottom{
+    background: radial-gradient(83.38% 100% at 92.25% 100%, #fffef2 0%, rgba(212, 119, 119, 0) 100%);
+
+}
+
+.divider-vertical{
+    height: 60px;
+    width: 1px;
+    background-color: rgba(50, 132, 110, 1);
 }
 </style>
