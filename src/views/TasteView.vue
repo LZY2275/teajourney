@@ -418,7 +418,7 @@
     </div>
 
     <div style="padding:26px 45px 0 68px">
-      <div style="width: 100%; height: 65vh;">
+      <div style="width: 100%; height: 59vh;">
         <WorldTea></WorldTea>
       </div>
     </div>
