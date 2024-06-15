@@ -1882,7 +1882,7 @@ export default {
 
             },
             teView: {
-                backgroundColor: 'transparent',
+                backgroundColor: mapBackground,
                 tooltip: {
                     trigger: 'item',
                     formatter: (params) => {
