@@ -234,17 +234,17 @@ import { ChatIcon ,EarthIcon, BacktopIcon} from 'tdesign-icons-vue';
         let clientHeight = window.innerHeight;
         this.clientHeight = clientHeight
         // console.log(scrollTop,clientHeight);
-        if(scrollTop >= 2*clientHeight-300 && scrollTop < 3*clientHeight-300){
+        if(scrollTop >= 3*clientHeight-300 && scrollTop < 4*clientHeight-300){
           this.current=0;
-        }else if(scrollTop >= 3*clientHeight-300 && scrollTop < 4*clientHeight-300){
-          this.current=1
         }else if(scrollTop >= 4*clientHeight-300 && scrollTop < 5*clientHeight-300){
-          this.current=2;
+          this.current=1
         }else if(scrollTop >= 5*clientHeight-300 && scrollTop < 6*clientHeight-300){
+          this.current=2;
+        }else if(scrollTop >= 6*clientHeight-300 && scrollTop < 7*clientHeight-300){
           this.current=3;
-        }else if(scrollTop >= 6*clientHeight-300 && scrollTop < 8.5*clientHeight-300){
+        }else if(scrollTop >= 7*clientHeight-300 && scrollTop < 9.5*clientHeight){
           this.current=4;
-        }else if(scrollTop >= 8.5*clientHeight+600){
+        }else if(scrollTop >= 9.5*clientHeight+900){
           this.current=5;
         }
       },
